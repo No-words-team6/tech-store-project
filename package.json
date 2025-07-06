@@ -13,8 +13,12 @@
     "prepare": "husky && husky install"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "classnames": "^2.5.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
