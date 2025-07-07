@@ -1,20 +1,42 @@
-import React from 'react';
-import { ProductCard } from '../ProductCard/ProductCard';
-
-const arrJustForMapping = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-];
+import React, { useEffect, useState } from 'react';
+import { getProductsByCategory } from '@/api';
+import type { Category, Product } from '@/types';
+import { ProductCard } from '../ProductCard';
+import { Loader } from '../Loader';
 
 interface Props {
-  category: string;
+  category: Category;
 }
 
 export const PageBodyTemplate: React.FC<Props> = ({ category }) => {
+  const [data, setData] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setData([]);
+    setIsLoading(true);
+
+    getProductsByCategory(category)
+      .then(setData)
+      .catch(() => {
+        setData([]);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [category]);
+
   return (
-    <div className="grid grid grid-cols-4 gap-5">
-      {arrJustForMapping.map((num) => (
-        <ProductCard key={num} num={num} category={category} />
-      ))}
-    </div>
+    <>
+      {isLoading && <Loader />}
+
+      {!isLoading && (
+        <div className="grid grid grid-cols-4 gap-5">
+          {data.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
