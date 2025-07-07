@@ -19,64 +19,32 @@ import { ContactsPage } from './pages/ContactsPage';
 export const Root = () => (
   <Router>
     <Routes>
-      <Route
-        path="/"
-        element={<App />}
-      >
-        <Route
-          index
-          element={<HomePage />}
-        />
-        <Route
-          path="home"
-          element={
-            <Navigate
-              to="/"
-              replace
-            />
-          }
-        />
+      <Route path="/" element={<App />}>
+        <Route index element={<HomePage />} />
+        <Route path="home" element={<Navigate to="/" replace />} />
 
-        <Route
-          path="phones"
-          element={<PhonesCatalogPage />}
-        />
-        <Route
-          path="tablets"
-          element={<TabletsCatalogPage />}
-        />
-        <Route
-          path="accessories"
-          element={<AccessoriesCatalogPage />}
-        />
+        <Route path="phones">
+          <Route index element={<PhonesCatalogPage />} />
+          <Route path=":itemId" element={<ItemCardPage />} />
+        </Route>
 
-        <Route
-          path="favourites"
-          element={<FavouritesPage />}
-        />
-        <Route
-          path="cart"
-          element={<CartPage />}
-        />
+        <Route path="tablets">
+          <Route index element={<TabletsCatalogPage />} />
+          <Route path=":itemId" element={<ItemCardPage />} />
+        </Route>
 
-        <Route
-          path=":category/:itemId"
-          element={<ItemCardPage />}
-        />
+        <Route path="accessories">
+          <Route index element={<AccessoriesCatalogPage />} />
+          <Route path=":itemId" element={<ItemCardPage />} />
+        </Route>
 
-        <Route
-          path="contacts"
-          element={<ContactsPage />}
-        />
-        <Route
-          path="rights"
-          element={<RightsPage />}
-        />
+        <Route path="favourites" element={<FavouritesPage />} />
+        <Route path="cart" element={<CartPage />} />
+
+        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="rights" element={<RightsPage />} />
       </Route>
-      <Route
-        path="*"
-        element={<ErrorPage />}
-      />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
 );
