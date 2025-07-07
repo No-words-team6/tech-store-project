@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 
 export const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen scroll-smooth">
       <Header />
 
       <main className="flex-grow flex">
