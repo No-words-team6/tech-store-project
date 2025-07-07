@@ -7,7 +7,13 @@ const isLinkActive = ({ isActive }: { isActive: boolean }) =>
 export const Header = () => {
   return (
     <header className="bg-blue-400 flex items-center justify-center gap-x-10 h-16">
-      <div className="border-2 border-black bg-green-300 px-4 py-2">LOGO</div>
+      <div className="flex items-center gap-8">
+        <img
+          src="src/components/atoms/images/Logo.svg"
+          alt="Nice Gadgets"
+          className="h-6 w-auto"
+        />
+      </div>
 
       <div className="font-mont font-bold flex flex-row gap-x-5 uppercase">
         <NavLink
