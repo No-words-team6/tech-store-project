@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 import { Heart, ShoppingBag } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 
+import './header.css';
+
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-content leading-none text-sm font-semibold uppercase transition-colors border-b-4 ${
     isActive ?
@@ -18,14 +20,17 @@ const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full h-16 bg-black font-[montBold] shadow-[0_1px_0_0_#323542]">
-      <div className="w-full pl-6 pr-0 lg:pl-12 flex items-center justify-between">
-        <div className="flex items-center gap-8">
+    <header className="back-color sticky top-0 z-50 w-full h-16 font-[montBold] shadow-[0_1px_0_0_#323542]">
+      <div className="w-full flex items-center justify-between">
+        <div className="pl-4 flex items-center gap-8">
           <NavLink to="/">
             <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
           </NavLink>
 
-          <nav className="flex items-center h-16 gap-8">
+          <nav
+            className="flex items-center h-16 gap-8"
+            aria-label="Main navigation"
+          >
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
@@ -41,7 +46,7 @@ export const Header = () => {
           </nav>
         </div>
 
-        <div className="flex items-center pr-6 lg:pr-12">
+        <div className="flex items-center">
           <NavLink
             to="/favourites"
             className={iconLinkClass}
