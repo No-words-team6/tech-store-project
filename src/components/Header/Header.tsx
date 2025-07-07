@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Heart, ShoppingBag } from 'lucide-react';
-import logo from '../../assets/images/Logo.svg';
+import logo from '@/assets/images/Logo.svg';
 
 const isLinkActive = ({ isActive }: { isActive: boolean }) =>
   isActive ? 'border-b-4 border-black pb-1' : '';
