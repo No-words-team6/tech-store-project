@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../index.css';
-import productImage from './productImage.png';
 import { Button } from '../Button';
 import { ButtonHeart } from '../ButtonHeart';
+import type { Product } from '@/types';
+
+// import productImage from './productImage.png'; - плейсхолдер
 
 interface Props {
-  num: number;
-  category: string;
+  product: Product;
 }
 
-export const ProductCard: React.FC<Props> = ({ num, category }) => {
+export const ProductCard: React.FC<Props> = ({ product }) => {
+  const { itemId, category, image } = product;
   return (
     <div className="bg-[#161827] text-[#F1F2F9] w-[272px] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]">
-      <Link to={`/${category}/${num}`}>
+      <Link to={`/${category}/${itemId}`}>
         <img
-          src={productImage}
-          alt="product.name"
+          src={image}
+          alt={product.name}
           className="w-[208px] h-[196px] mb-2"
         />
 
