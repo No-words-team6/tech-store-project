@@ -26,6 +26,50 @@
   font-family: 'Mont', 'sans-serif';
 }
 
+.color-secondary {
+  color: #75767f;
+}
+
+.color-icons {
+  color: #4a4d58;
+}
+
+.color-elements {
+  color: #3b3e4a;
+}
+
+.color-surface2 {
+  color: #323542;
+}
+
+.color-surface1 {
+  color: #161827;
+}
+
+.background-surface1 {
+  background-color: #161827;
+}
+
+.color-black {
+  color: #0f1121;
+}
+
+.color-white {
+  color: #f1f2f9;
+}
+
+.color-accent {
+  color: #905bff;
+}
+
+.color-green {
+  color: #27ae60;
+}
+
+.color-red {
+  color: #eb5757;
+}
+
 /* @theme {
   --font-mont: "Mont", "sans-serif"; 
 } */
