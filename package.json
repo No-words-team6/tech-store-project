@@ -10,7 +10,8 @@
     "lint": "eslint . --fix",
     "fix-style": "npm run format & npm run lint",
     "preview": "vite preview",
-    "prepare": "husky && husky install"
+    "prepare": "husky && husky install",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
