@@ -31,7 +31,7 @@ export const PageBodyTemplate: React.FC<Props> = ({ category }) => {
       {isLoading && <Loader />}
 
       {!isLoading && (
-        <div className="grid grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-4 gap-5">
           {data.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
