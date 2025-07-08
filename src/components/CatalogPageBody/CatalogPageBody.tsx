@@ -1,27 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { getProductsByCategory } from '@/api';
-import type { Category, Product } from '@/types';
+import { type Category, type Product } from '@/types';
 import { ProductCard } from '../ProductCard';
 import { Loader } from '../Loader';
-import { SelectorSortBy } from '../SelectorSortBy';
-import { SelectorTimesItems } from '../SelectorItemsOnPage';
+import { SortBar } from '../SortBar';
+import { useSearchParams } from 'react-router-dom';
+import { sortProducts } from '@/utils/sortProducts';
 
 interface Props {
   category: Category;
 }
 
 export const CatalogPageBody: React.FC<Props> = ({ category }) => {
-  const [data, setData] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [searchParams] = useSearchParams();
+  const selectedSortBy = searchParams.get('sortBy') ?? '';
+  const selectedTimesItems = searchParams.get('timesItems') ?? '';
+
+  const sortedProducts = sortProducts(products, {
+    selectedSortBy,
+    selectedTimesItems,
+  });
+
   useEffect(() => {
-    setData([]);
+    setProducts([]);
     setIsLoading(true);
 
     getProductsByCategory(category)
-      .then(setData)
+      .then(setProducts)
       .catch(() => {
-        setData([]);
+        setProducts([]);
       })
       .finally(() => {
         setIsLoading(false);
@@ -30,17 +40,13 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
 
   return (
     <div className="col-span-24 grid grid-cols-24 gap-[24px]">
-      <div className="col-span-24 flex gap-x-2">
-        <SelectorSortBy title="Sort by" selectorWidth="w-44" />
-
-        <SelectorTimesItems title="Items on page" selectorWidth="w-32" />
-      </div>
+      {!isLoading && <SortBar />}
 
       {isLoading && <Loader />}
 
       {!isLoading && (
         <div className="col-span-24 grid grid-cols-24 gap-x-[24px] gap-y-[40px]">
-          {data.map((product) => (
+          {sortedProducts.map((product) => (
             <div className="col-span-6" key={product.id}>
               <ProductCard product={product} />
             </div>
