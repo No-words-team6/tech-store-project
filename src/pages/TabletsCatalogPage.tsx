@@ -2,8 +2,10 @@ import { CatalogPageBody } from '@/components/CatalogPageBody';
 
 export const TabletsCatalogPage = () => {
   return (
-    <div className="back-color flex-grow flex items-center justify-center flex-col gap-y-10 pt-5 pb-5">
-      <p className="text-gray-100 font-bold">Tablets Catalog Body</p>
+    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[56px] pb-[80px] gap-y-10 pt-5 pb-5">
+      <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
+        Tablets
+      </h1>
 
       <CatalogPageBody category={'tablets'} />
     </div>

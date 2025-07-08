@@ -8,9 +8,8 @@ import accessoriesCaregory from '../../../public/img/category-accessories.png';
 import './homePage.css';
 import { useEffect, useState } from 'react';
 import { getProducts } from '@/api';
-import { Loader } from '@/components/Loader';
-import { ProductCard } from '@/components/ProductCard';
 import { Link } from 'react-router-dom';
+import { ProductSlider } from '@/components/ProductSlider';
 
 const latestProductYear = 2022;
 
@@ -54,36 +53,14 @@ export const HomePage = () => {
       <section className="col-span-24">
         <div className="grid grid-cols-24 gap-x-[16px]">
           <button className="col-span-1 button-color text-white">←</button>
-          <div className="bg-red-500 col-span-22">
+          <div className="col-span-22">
             <img src={placeHolder} alt="test1" className="w-full" />
           </div>
           <button className="col-span-1 button-color text-white">→</button>
         </div>
       </section>
 
-      <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
-        <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
-          <h2 className="color-white font-mont font-bold text-[32px] col-span-12">
-            Brand new models
-          </h2>
-
-          <button className="col-start-23 col-span-1 button-color text-white">
-            ←
-          </button>
-          <button className="col-start-24 col-span-1 button-color text-white">
-            →
-          </button>
-        </div>
-
-        {isLoading && <Loader />}
-        <div className="col-span-24 grid grid-cols-24 gap-[16px]">
-          {newModelsList.map((product) => (
-            <div key={product.id} className="col-span-6">
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProductSlider productList={newModelsList} isLoading={isLoading} />
 
       <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
         <h2 className="col-span-12 color-white font-mont font-bold text-[32px]">
@@ -140,29 +117,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
-        <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
-          <h2 className="color-white font-mont font-bold text-[32px] col-start-1 col-span-12">
-            Brand new models
-          </h2>
-
-          <button className="col-start-23 col-span-1 button-color text-white">
-            ←
-          </button>
-          <button className="col-start-24 col-span-1 button-color text-white">
-            →
-          </button>
-        </div>
-
-        {isLoading && <Loader />}
-        <div className="col-span-24 grid grid-cols-24 gap-[16px]">
-          {hotPricesList.map((product) => (
-            <div key={product.id} className="col-span-6">
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProductSlider productList={hotPricesList} isLoading={isLoading} />
     </div>
   );
 };
