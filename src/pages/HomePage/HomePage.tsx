@@ -46,7 +46,7 @@ export const HomePage = () => {
   const accessoriesCount = 100;
 
   return (
-    <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-y-[80px]">
+    <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-x-[16px] gap-y-[80px]">
       <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
         Welcome to Nice Gadgets store!
       </h1>
