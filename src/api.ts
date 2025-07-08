@@ -2,6 +2,20 @@ import type { Category, Item, Product } from './types';
 
 const customDelay = 300;
 
+export async function getNewestProducts(): Promise<Product[]> {
+  const response = await fetch(`/gadgets/products.json`);
+
+  if (!response.ok) {
+    return [];
+  }
+
+  const data: Product[] = await response.json();
+
+  await new Promise((resolve) => setTimeout(resolve, customDelay));
+
+  return data;
+}
+
 export async function getProductsByCategory(
   category: Category,
 ): Promise<Product[]> {
