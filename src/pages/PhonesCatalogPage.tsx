@@ -1,5 +1,6 @@
 import { PageBodyTemplate } from '@/components/PageBodyTemplate';
-import { Selector } from '@/components/Selector';
+import { SelectorTimesItems } from '@/components/SelectorItemsOnPage';
+import { SelectorSortBy } from '@/components/SelectorSortBy';
 
 export const PhonesCatalogPage = () => {
   return (
@@ -7,19 +8,9 @@ export const PhonesCatalogPage = () => {
       <p className="text-gray-100 font-bold">Phones Catalog Body</p>
 
       <div className="flex gap-x-1">
-        <Selector
-          selectValue="Newest"
-          title="Sort by"
-          items={['Newest', 'Cheapest', 'Aplphabetically']}
-          selectorWidth="w-44"
-        />
+        <SelectorSortBy title="Sort by" selectorWidth="w-44" />
 
-        <Selector
-          selectValue="16"
-          title="Items on page"
-          items={['4', '8', '12']}
-          selectorWidth="w-32"
-        />
+        <SelectorTimesItems title="Items on page" selectorWidth="w-32" />
       </div>
 
       <PageBodyTemplate category={'phones'} />

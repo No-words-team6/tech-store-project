@@ -1,3 +1,4 @@
+import type { SortBy } from '@/types';
 import {
   Select,
   SelectContent,
@@ -6,27 +7,32 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
+import type { TimesItems } from '@/types/TimesItems';
 
 interface SelectorProps {
-  selectValue: string;
   title: string;
-  items: string[];
+  items: SortBy[] | TimesItems[];
   selectorWidth: string;
+  selectedSort: string;
+  handleSelectChange: (value: string) => void;
 }
 
 export const Selector: React.FC<SelectorProps> = ({
-  selectValue,
   title,
   items,
   selectorWidth = 'w-auto',
+  selectedSort,
+  handleSelectChange,
 }) => {
+  console.log(selectedSort);
+
   return (
     <div className="flex flex-col gap-1">
       <p className="font-mont text-xs text-gray-500">{title}</p>
 
-      <Select>
+      <Select value={selectedSort} onValueChange={handleSelectChange}>
         <SelectTrigger className={`text-white ${selectorWidth}`}>
-          <SelectValue placeholder={selectValue} />
+          <SelectValue placeholder={!selectedSort && 'Choose filter'} />
         </SelectTrigger>
 
         <SelectContent>
