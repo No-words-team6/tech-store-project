@@ -5,7 +5,7 @@ import logo from '@/assets/images/Logo.svg';
 import './header.css';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `h-16 flex items-center justify-center box-content text-[12px] leading-[11px] font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
+  `h-16 flex items-center justify-center box-content text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
     isActive ?
       'border-[#F1F2F9] text-[#F1F2F9]'
     : 'border-transparent text-[#75767F] hover:text-[#F1F2F9]'
@@ -19,7 +19,7 @@ const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export const Header = () => {
   return (
-    <header className="back-color sticky top-0 z-50 w-full h-16 font-[montBold] shadow-[0_1px_0_0_#323542]">
+    <header className="back-color sticky top-0 z-50 w-full h-16 shadow-[0_1px_0_0_#323542]">
       <div className="w-full flex items-center justify-between">
         <div className="pl-4 flex items-center gap-8">
           <NavLink to="/">

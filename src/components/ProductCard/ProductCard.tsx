@@ -10,8 +10,17 @@ interface Props {
 }
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
-  const { itemId, category, image, fullPrice, price, screen, capacity, ram } =
-    product;
+  const {
+    itemId,
+    category,
+    name,
+    image,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+  } = product;
 
   return (
     <div className="bg-[#161827] text-[#F1F2F9] w-[272px] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]">
@@ -20,9 +29,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           <img src={image} alt={product.name} className="h-[196px] mb-2" />
         </div>
 
-        <h3 className="text-sm font-semibold pt-4">
-          Apple iPhone 14 Pro 128GB Silver (MQ023)
-        </h3>
+        <h3 className="text-sm font-semibold pt-4 min-h-[4rem]">{name}</h3>
       </Link>
 
       <div className="flex gap-2 mt-2 mb-2 text-[22px]">

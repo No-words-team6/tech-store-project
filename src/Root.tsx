@@ -5,7 +5,6 @@ import {
   Routes,
 } from 'react-router-dom';
 import { App } from './App';
-import { HomePage } from './pages/HomePage';
 import { ErrorPage } from './pages/ErrorPage';
 import { CartPage } from './pages/CartPage';
 import { ItemCardPage } from './pages/ItemCardPage';
@@ -15,6 +14,7 @@ import { AccessoriesCatalogPage } from './pages/AccessoriesCatalogPage';
 import { TabletsCatalogPage } from './pages/TabletsCatalogPage';
 import { RightsPage } from './pages/RightsPage';
 import { ContactsPage } from './pages/ContactsPage';
+import { HomePage } from './pages/HomePage';
 
 export const Root = () => (
   <Router>
