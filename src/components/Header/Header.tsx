@@ -5,12 +5,11 @@ import logo from '@/assets/images/Logo.svg';
 import './header.css';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `h-16 flex items-center justify-center box-content leading-none text-sm font-mont font-bold uppercase transition-colors border-b-4 ${
+  `h-16 flex items-center justify-center box-content text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
     isActive ?
       'border-[#F1F2F9] text-[#F1F2F9]'
     : 'border-transparent text-[#75767F] hover:text-[#F1F2F9]'
   }`;
-
 const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 w-16 flex items-center justify-center group border border-[#323542] transition-colors ${
     isActive ?
@@ -27,10 +26,7 @@ export const Header = () => {
             <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
           </NavLink>
 
-          <nav
-            className="flex items-center h-16 gap-8"
-            aria-label="Main navigation"
-          >
+          <nav className="flex items-center h-16 gap-16">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
