@@ -1,6 +1,5 @@
 import type { Product } from '@/types';
 
-import placeHolder from '../../../public/img/banner-placeholder.png';
 import phonesCaregory from '../../../public/img/category-phones.webp';
 import tabletsCaregory from '../../../public/img/category-tablets.png';
 import accessoriesCaregory from '../../../public/img/category-accessories.png';
@@ -11,6 +10,7 @@ import { getNewestProducts } from '@/api';
 import { Loader } from '@/components/Loader';
 import { ProductCard } from '@/components/ProductCard';
 import { Link } from 'react-router-dom';
+import { ImageSlider } from '@/components/BannerSlider';
 
 const latestProductYear = 2022;
 
@@ -54,7 +54,9 @@ export const HomePage = () => {
       <section className="">
         <div className="flex gap-x-[16px]">
           <button className="w-[32px] button-color text-white">←</button>
-          <img src={placeHolder} alt="test1" />
+          <div className="w-[600px] max-w-full">
+            <ImageSlider />
+          </div>
           <button className="w-[32px] button-color text-white">→</button>
         </div>
       </section>
