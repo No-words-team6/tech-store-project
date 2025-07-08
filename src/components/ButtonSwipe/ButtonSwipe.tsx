@@ -7,12 +7,12 @@ type Props = {
   onNextClick?: () => void;
 };
 
-export const SectionArrows = ({ onPrevClick, onNextClick }: Props) => {
+export const ButtonSwipe = ({ onPrevClick, onNextClick }: Props) => {
   return (
-    <div className="flex gap-x-[16px] ml-auto">
+    <div className="col-start-23 col-span-2 flex justify-between gap-x-[8px]">
       <button
         onClick={onPrevClick}
-        className="w-[32px] h-[32px] flex items-center justify-center button-color text-white hover:opacity-80 transition"
+        className="w-full h-[32px] flex items-center justify-center button-color text-white hover:opacity-80 transition"
         aria-label="Scroll left"
       >
         <ChevronLeft size={20} />
@@ -20,7 +20,7 @@ export const SectionArrows = ({ onPrevClick, onNextClick }: Props) => {
 
       <button
         onClick={onNextClick}
-        className="w-[32px] h-[32px] flex items-center justify-center button-color text-white hover:opacity-80 transition"
+        className="w-full h-[32px] flex items-center justify-center button-color text-white hover:opacity-80 transition"
         aria-label="Scroll right"
       >
         <ChevronRight size={20} />
