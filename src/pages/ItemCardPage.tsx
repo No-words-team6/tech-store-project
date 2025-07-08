@@ -19,12 +19,12 @@ export const ItemCardPage = () => {
 
   useEffect(() => {
     setItem(null);
+    setIsLoading(true);
 
     if (!category || !itemId) {
       return;
     }
 
-    setIsLoading(true);
     getProductById(category, itemId)
       .then((data) => {
         if (data?.images?.length) {
@@ -86,6 +86,7 @@ export const ItemCardPage = () => {
                   );
                 })}
               </div>
+
               <div className="w-[464px] h-[464px] flex justify-center items-center">
                 <img
                   src={`/${selectedPhoto}`}
