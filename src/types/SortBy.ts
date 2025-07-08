@@ -1,7 +1,7 @@
 export const SortBy = {
-  Newest: 'newest',
-  Alphabetically: 'alphabetically',
-  Cheapest: 'cheapest',
+  Newest: 'Newest',
+  Alphabetically: 'Alphabetically',
+  Cheapest: 'Cheapest',
 } as const;
 
 export type SortBy = (typeof SortBy)[keyof typeof SortBy];
