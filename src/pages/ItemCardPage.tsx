@@ -23,12 +23,12 @@ export const ItemCardPage = () => {
 
   useEffect(() => {
     setItem(null);
+    setIsLoading(true);
 
     if (!category || !itemId) {
       return;
     }
 
-    setIsLoading(true);
     getProductById(category, itemId)
       .then((data) => {
         if (data?.images?.length) {

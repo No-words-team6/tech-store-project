@@ -7,7 +7,7 @@ import accessoriesCaregory from '../../../public/img/category-accessories.png';
 
 import './homePage.css';
 import { useEffect, useState } from 'react';
-import { getNewestProducts } from '@/api';
+import { getProducts } from '@/api';
 import { Loader } from '@/components/Loader';
 import { ProductCard } from '@/components/ProductCard';
 import { Link } from 'react-router-dom';
@@ -33,7 +33,7 @@ export const HomePage = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    getNewestProducts()
+    getProducts()
       .then(setData)
       .finally(() => setIsLoading(false));
   }, []);
@@ -46,47 +46,53 @@ export const HomePage = () => {
   const accessoriesCount = 100;
 
   return (
-    <div className="back-color flex-grow flex flex-col items-center gap-y-[80px] pt-[56px] pb-[80px]">
-      <h1 className="color-white font-mont font-bold text-5xl">
+    <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-x-[16px] gap-y-[80px]">
+      <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
         Welcome to Nice Gadgets store!
       </h1>
 
-      <section className="">
-        <div className="flex gap-x-[16px]">
-          <button className="w-[32px] button-color text-white">←</button>
-          <img src={placeHolder} alt="test1" />
-          <button className="w-[32px] button-color text-white">→</button>
+      <section className="col-span-24">
+        <div className="grid grid-cols-24 gap-x-[16px]">
+          <button className="col-span-1 button-color text-white">←</button>
+          <div className="bg-red-500 col-span-22">
+            <img src={placeHolder} alt="test1" className="w-full" />
+          </div>
+          <button className="col-span-1 button-color text-white">→</button>
         </div>
       </section>
 
-      <section className="flex flex-col gap-y-[24px]">
-        <div className="flex items-center justify-between">
-          <h2 className="color-white font-mont font-bold text-[32px]">
+      <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
+        <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
+          <h2 className="color-white font-mont font-bold text-[32px] col-span-12">
             Brand new models
           </h2>
 
-          <div className="flex gap-x-[16px] h-[32px]">
-            <button className="w-[32px] button-color text-white">←</button>
-            <button className="w-[32px] button-color text-white">→</button>
-          </div>
+          <button className="col-start-23 col-span-1 button-color text-white">
+            ←
+          </button>
+          <button className="col-start-24 col-span-1 button-color text-white">
+            →
+          </button>
         </div>
 
         {isLoading && <Loader />}
-        <div className="flex gap-x-[16px]">
+        <div className="col-span-24 grid grid-cols-24 gap-[16px]">
           {newModelsList.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <div key={product.id} className="col-span-6">
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="flex flex-col gap-y-[24px]">
-        <h2 className="color-white font-mont font-bold text-[32px]">
+      <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
+        <h2 className="col-span-12 color-white font-mont font-bold text-[32px]">
           Shop by category
         </h2>
 
-        <div className="flex gap-x-[16px]">
-          <Link to="/phones">
-            <div className="h-[368px] w-[368px] phones-category relative overflow-hidden">
+        <div className="col-span-24 grid grid-cols-24 gap-[16px]">
+          <Link to="/phones" className="col-span-8">
+            <div className="h-[368px] phones-category relative overflow-hidden">
               <img
                 src={phonesCaregory}
                 alt="phones"
@@ -101,8 +107,8 @@ export const HomePage = () => {
             <p className="font-mont text-gray-500 font-regular text-[14px]">{`${phonesCount} models`}</p>
           </Link>
 
-          <Link to="/tablets">
-            <div className="h-[368px] w-[368px] tablets-category relative overflow-hidden">
+          <Link to="/tablets" className="col-span-8">
+            <div className="h-[368px] tablets-category relative overflow-hidden">
               <img
                 src={tabletsCaregory}
                 alt="tablets"
@@ -116,8 +122,8 @@ export const HomePage = () => {
             <p className="font-mont text-gray-500 font-regular text-[14px]">{`${tabletsCount} models`}</p>
           </Link>
 
-          <Link to="/accessories">
-            <div className="h-[368px] w-[368px] accessories-category relative overflow-hidden">
+          <Link to="/accessories" className="col-span-8">
+            <div className="h-[368px] accessories-category relative overflow-hidden">
               <img
                 src={accessoriesCaregory}
                 alt="accessories"
@@ -134,22 +140,26 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="flex flex-col gap-y-[24px]">
-        <div className="flex items-center justify-between">
-          <h2 className="color-white font-mont font-bold text-[32px]">
-            Hot prices
+      <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
+        <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
+          <h2 className="color-white font-mont font-bold text-[32px] col-start-1 col-span-12">
+            Brand new models
           </h2>
 
-          <div className="flex gap-x-[16px] h-[32px]">
-            <button className="w-[32px] button-color text-white">←</button>
-            <button className="w-[32px] button-color text-white">→</button>
-          </div>
+          <button className="col-start-23 col-span-1 button-color text-white">
+            ←
+          </button>
+          <button className="col-start-24 col-span-1 button-color text-white">
+            →
+          </button>
         </div>
 
         {isLoading && <Loader />}
-        <div className="flex gap-x-[16px]">
+        <div className="col-span-24 grid grid-cols-24 gap-[16px]">
           {hotPricesList.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <div key={product.id} className="col-span-6">
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
       </section>
