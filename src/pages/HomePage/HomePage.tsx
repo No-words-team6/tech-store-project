@@ -1,16 +1,17 @@
 import type { Product } from '@/types';
 
-import placeHolder from '../../../public/img/banner-placeholder.png';
 import phonesCaregory from '../../../public/img/category-phones.webp';
 import tabletsCaregory from '../../../public/img/category-tablets.png';
 import accessoriesCaregory from '../../../public/img/category-accessories.png';
+import SwiperCore from 'swiper';
 
 import './homePage.css';
 import { useEffect, useState } from 'react';
 import { getProducts } from '@/api';
 import { Link } from 'react-router-dom';
 import { ProductSlider } from '@/components/ProductSlider';
-
+import { ImageSlider } from '@/components/BannerSlider';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 const latestProductYear = 2022;
 
 const getNewestList = (data: Product[], year: number) => {
@@ -26,6 +27,7 @@ const getCheapest = (data: Product[]) => {
 };
 
 export const HomePage = () => {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
   const [data, setData] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -51,12 +53,24 @@ export const HomePage = () => {
       </h1>
 
       <section className="col-span-24">
-        <div className="grid grid-cols-24 gap-x-[16px]">
-          <button className="col-span-1 button-color text-white">←</button>
-          <div className="col-span-22">
-            <img src={placeHolder} alt="test1" className="w-full" />
+        <div className="grid grid-cols-24 gap-x-[16px] items-start">
+          <button
+            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition"
+            onClick={() => swiperInstance?.slideNext()}
+          >
+            <ChevronLeft />
+          </button>
+
+          <div className="col-span-22 w-full h-[432px]">
+            <ImageSlider setSwiperInstance={setSwiperInstance} />
           </div>
-          <button className="col-span-1 button-color text-white">→</button>
+
+          <button
+            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition"
+            onClick={() => swiperInstance?.slidePrev()}
+          >
+            <ChevronRight />
+          </button>
         </div>
       </section>
 
