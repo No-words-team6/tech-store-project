@@ -1,22 +1,50 @@
-import type { Category, Product } from './types';
+import type { Category, Item, Product } from './types';
+
+const customDelay = 300;
+
+export async function getNewestProducts(): Promise<Product[]> {
+  const response = await fetch(`/gadgets/products.json`);
+
+  if (!response.ok) {
+    return [];
+  }
+
+  const data: Product[] = await response.json();
+
+  await new Promise((resolve) => setTimeout(resolve, customDelay));
+
+  return data;
+}
 
 export async function getProductsByCategory(
   category: Category,
 ): Promise<Product[]> {
-  try {
-    const response = await fetch(`/gadgets/products.json`);
+  const response = await fetch(`/gadgets/products.json`);
 
-    if (!response.ok) {
-      throw new Error('смЄрть?');
-    }
-
-    const data: Product[] = await response.json();
-
-    await new Promise((resolve) => setTimeout(resolve, 300));
-
-    return data.filter((product: Product) => product.category === category);
-  } catch (error) {
-    console.error('чому', error);
-    throw error;
+  if (!response.ok) {
+    return [];
   }
+
+  const data: Product[] = await response.json();
+
+  await new Promise((resolve) => setTimeout(resolve, customDelay));
+
+  return data.filter((product: Product) => product.category === category);
+}
+
+export async function getProductById(
+  category: Category,
+  itemId: string,
+): Promise<Item | null> {
+  const response = await fetch(`/gadgets/${category}.json`);
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const data: Item[] = await response.json();
+
+  await new Promise((resolve) => setTimeout(resolve, customDelay));
+
+  return data.find((item: Item) => item.id === itemId) || null;
 }
