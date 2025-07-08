@@ -1,7 +1,9 @@
 export const CartPage = () => {
   return (
-    <div className="back-color flex-grow flex items-center justify-center">
-      <p className="text-gray-100 font-bold">Cart Body</p>
+    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[56px] pb-[80px] gap-y-10 pt-5 pb-5">
+      <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
+        Cart Page Body
+      </h1>
     </div>
   );
 };
