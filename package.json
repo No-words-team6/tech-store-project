@@ -14,6 +14,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^2.2.5",
     "@tailwindcss/vite": "^4.1.11",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
