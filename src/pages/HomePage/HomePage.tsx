@@ -6,12 +6,10 @@ import accessoriesCaregory from '../../../public/img/category-accessories.png';
 
 import './homePage.css';
 import { useEffect, useState } from 'react';
-import { getNewestProducts } from '@/api';
-import { Loader } from '@/components/Loader';
-import { ProductCard } from '@/components/ProductCard';
+import { getProducts } from '@/api';
 import { Link } from 'react-router-dom';
+import { ProductSlider } from '@/components/ProductSlider';
 import { ImageSlider } from '@/components/BannerSlider';
-
 const latestProductYear = 2022;
 
 const getNewestList = (data: Product[], year: number) => {
@@ -33,7 +31,7 @@ export const HomePage = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    getNewestProducts()
+    getProducts()
       .then(setData)
       .finally(() => setIsLoading(false));
   }, []);
@@ -46,49 +44,31 @@ export const HomePage = () => {
   const accessoriesCount = 100;
 
   return (
-    <div className="back-color flex-grow flex flex-col items-center gap-y-[80px] pt-[56px] pb-[80px]">
-      <h1 className="color-white font-mont font-bold text-5xl">
+    <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-x-[16px] gap-y-[80px]">
+      <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
         Welcome to Nice Gadgets store!
       </h1>
 
-      <section className="">
-        <div className="flex gap-x-[16px]">
-          <button className="w-[32px] button-color text-white">←</button>
-          <div className="w-[600px] max-w-full">
+      <section className="col-span-24">
+        <div className="grid grid-cols-24 gap-x-[16px]">
+          <button className="col-span-1 button-color text-white">←</button>
+          <div className="col-span-22 w-[600px] max-w-full">
             <ImageSlider />
           </div>
-          <button className="w-[32px] button-color text-white">→</button>
+          <button className="col-span-1 button-color text-white">→</button>
         </div>
       </section>
 
-      <section className="flex flex-col gap-y-[24px]">
-        <div className="flex items-center justify-between">
-          <h2 className="color-white font-mont font-bold text-[32px]">
-            Brand new models
-          </h2>
+      <ProductSlider productList={newModelsList} isLoading={isLoading} />
 
-          <div className="flex gap-x-[16px] h-[32px]">
-            <button className="w-[32px] button-color text-white">←</button>
-            <button className="w-[32px] button-color text-white">→</button>
-          </div>
-        </div>
-
-        {isLoading && <Loader />}
-        <div className="flex gap-x-[16px]">
-          {newModelsList.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      <section className="flex flex-col gap-y-[24px]">
-        <h2 className="color-white font-mont font-bold text-[32px]">
+      <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
+        <h2 className="col-span-12 color-white font-mont font-bold text-[32px]">
           Shop by category
         </h2>
 
-        <div className="flex gap-x-[16px]">
-          <Link to="/phones">
-            <div className="h-[368px] w-[368px] phones-category relative overflow-hidden">
+        <div className="col-span-24 grid grid-cols-24 gap-[16px]">
+          <Link to="/phones" className="col-span-8">
+            <div className="h-[368px] phones-category relative overflow-hidden">
               <img
                 src={phonesCaregory}
                 alt="phones"
@@ -103,8 +83,8 @@ export const HomePage = () => {
             <p className="font-mont text-gray-500 font-regular text-[14px]">{`${phonesCount} models`}</p>
           </Link>
 
-          <Link to="/tablets">
-            <div className="h-[368px] w-[368px] tablets-category relative overflow-hidden">
+          <Link to="/tablets" className="col-span-8">
+            <div className="h-[368px] tablets-category relative overflow-hidden">
               <img
                 src={tabletsCaregory}
                 alt="tablets"
@@ -118,8 +98,8 @@ export const HomePage = () => {
             <p className="font-mont text-gray-500 font-regular text-[14px]">{`${tabletsCount} models`}</p>
           </Link>
 
-          <Link to="/accessories">
-            <div className="h-[368px] w-[368px] accessories-category relative overflow-hidden">
+          <Link to="/accessories" className="col-span-8">
+            <div className="h-[368px] accessories-category relative overflow-hidden">
               <img
                 src={accessoriesCaregory}
                 alt="accessories"
@@ -136,25 +116,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="flex flex-col gap-y-[24px]">
-        <div className="flex items-center justify-between">
-          <h2 className="color-white font-mont font-bold text-[32px]">
-            Hot prices
-          </h2>
-
-          <div className="flex gap-x-[16px] h-[32px]">
-            <button className="w-[32px] button-color text-white">←</button>
-            <button className="w-[32px] button-color text-white">→</button>
-          </div>
-        </div>
-
-        {isLoading && <Loader />}
-        <div className="flex gap-x-[16px]">
-          {hotPricesList.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
+      <ProductSlider productList={hotPricesList} isLoading={isLoading} />
     </div>
   );
 };

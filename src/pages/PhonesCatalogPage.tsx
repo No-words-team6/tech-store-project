@@ -1,28 +1,13 @@
-import { PageBodyTemplate } from '@/components/PageBodyTemplate';
-import { Selector } from '@/components/Selector';
+import { CatalogPageBody } from '@/components/CatalogPageBody';
 
 export const PhonesCatalogPage = () => {
   return (
-    <div className="back-color flex-grow flex items-center justify-center flex-col gap-y-10 pt-5 pb-5">
-      <p className="text-gray-100 font-bold">Phones Catalog Body</p>
+    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[56px] pb-[80px] gap-y-10 pt-5 pb-5">
+      <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
+        Mobile phones
+      </h1>
 
-      <div className="flex gap-x-1">
-        <Selector
-          selectValue="Newest"
-          title="Sort by"
-          items={['Newest', 'Cheapest', 'Aplphabetically']}
-          selectorWidth="w-44"
-        />
-
-        <Selector
-          selectValue="16"
-          title="Items on page"
-          items={['4', '8', '12']}
-          selectorWidth="w-32"
-        />
-      </div>
-
-      <PageBodyTemplate category={'phones'} />
+      <CatalogPageBody category={'phones'} />
     </div>
   );
 };
