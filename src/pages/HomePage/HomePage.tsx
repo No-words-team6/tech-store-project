@@ -14,18 +14,14 @@ import { ImageSlider } from '@/components/BannerSlider';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 const latestProductYear = 2022;
 
-const getNewestList = (data: Product[], year: number, limit: number) => {
-  return data
-    .filter((product: Product) => product.year === year)
-    .slice(0, limit);
+const getNewestList = (data: Product[], year: number) => {
+  return data.filter((product: Product) => product.year === year);
 };
 
-const getCheapest = (data: Product[], limit: number) => {
-  return [...data]
-    .sort(
-      (product1: Product, product2: Product) => product1.price - product2.price,
-    )
-    .slice(0, limit);
+const getCheapest = (data: Product[]) => {
+  return [...data].sort(
+    (product1: Product, product2: Product) => product1.price - product2.price,
+  );
 };
 
 export const HomePage = () => {
@@ -41,8 +37,8 @@ export const HomePage = () => {
       .finally(() => setIsLoading(false));
   }, []);
 
-  const newModelsList = getNewestList(data, latestProductYear, 4);
-  const hotPricesList = getCheapest(data, 4);
+  const newModelsList = getNewestList(data, latestProductYear);
+  const hotPricesList = getCheapest(data);
 
   const phonesCount = 95;
   const tabletsCount = 24;
@@ -57,7 +53,7 @@ export const HomePage = () => {
       <section className="col-span-24">
         <div className="grid grid-cols-24 gap-x-[16px] items-start">
           <button
-            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition"
+            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition hover:cursor-pointer"
             onClick={() => swiperInstance?.slidePrev()}
           >
             <ChevronLeft />
@@ -68,7 +64,7 @@ export const HomePage = () => {
           </div>
 
           <button
-            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition"
+            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition hover:cursor-pointer"
             onClick={() => swiperInstance?.slideNext()}
           >
             <ChevronRight />

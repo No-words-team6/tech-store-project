@@ -63,7 +63,7 @@ export const ItemCardPage = () => {
   const reccomendationsList = prepareRecomendationList(data, 4);
 
   return (
-    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] pb-[80px]">
+    <>
       <BreadcrumbNav />
 
       <Link
@@ -125,6 +125,6 @@ export const ItemCardPage = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };

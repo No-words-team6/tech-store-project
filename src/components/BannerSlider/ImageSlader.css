@@ -2,17 +2,6 @@
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 
-.swiper {
-  height: 432px;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0 !important;
-}
-
 .swiper-pagination {
   bottom: 0px !important; /* 432 - 400 - 8 */
   position: absolute !important;
