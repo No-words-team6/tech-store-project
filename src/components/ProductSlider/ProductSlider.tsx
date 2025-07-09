@@ -2,6 +2,7 @@ import type { Product } from '@/types';
 import type React from 'react';
 import { ProductCard } from '../ProductCard';
 import { Loader } from '../Loader';
+import { ButtonSwipe } from '../ButtonSwipe';
 
 interface Props {
   productList: Product[];
@@ -21,12 +22,7 @@ export const ProductSlider: React.FC<Props> = ({
           {title}
         </h2>
 
-        <button className="col-start-23 col-span-1 button-color text-white">
-          ←
-        </button>
-        <button className="col-start-24 col-span-1 button-color text-white">
-          →
-        </button>
+        <ButtonSwipe />
       </div>
 
       {isLoading && <Loader />}
