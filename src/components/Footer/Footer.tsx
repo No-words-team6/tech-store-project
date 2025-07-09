@@ -11,7 +11,7 @@ const isLinkActive = ({ isActive }: { isActive: boolean }) =>
 
 export const Footer = () => {
   return (
-    <footer className="flex justify-between items-center h-24 back-color shadow-[0_-1px_0_0_#323542]">
+    <footer className="col-span-24 flex justify-between items-center h-24 back-color">
       <a href="#" className="px-4 py-2">
         <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
       </a>
