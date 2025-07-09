@@ -5,9 +5,10 @@ import './ImageSlader.css';
 import { Link } from 'react-router-dom';
 
 const images = [
-  { src: '/img/banner-accessories.png', link: '/phones' },
-  { src: '/img/banner-phones.png', link: '/tablets' },
-  { src: '/img/banner-placeholder.png', link: '/accessories' },
+  { src: '/img/banner-placeholder.png', link: '/phones' },
+  { src: '/img/banner-phones.png', link: '/phones' },
+  { src: '/img/banner-tablets.png', link: '/tablets' },
+  { src: '/img/banner-accessories.png', link: '/accessories' },
 ];
 
 type Props = {

@@ -49,8 +49,7 @@ export const Selector: React.FC<SelectorProps> = ({
             border-0
             rounded-none
             hover:border-b-[0.5px]
-            active:border-0
-            focus-visible:ring-0`}
+            active:border-0`}
         >
           <SelectValue placeholder={!selectedSort && 'Choose'} />
         </SelectTrigger>
