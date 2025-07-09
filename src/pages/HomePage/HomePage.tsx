@@ -74,7 +74,11 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <ProductSlider productList={newModelsList} isLoading={isLoading} />
+      <ProductSlider
+        productList={newModelsList}
+        isLoading={isLoading}
+        title={'Brand new models'}
+      />
 
       <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
         <h2 className="col-span-12 color-white font-mont font-bold text-[32px]">
@@ -131,7 +135,11 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <ProductSlider productList={hotPricesList} isLoading={isLoading} />
+      <ProductSlider
+        productList={hotPricesList}
+        isLoading={isLoading}
+        title={'Hot prices'}
+      />
     </div>
   );
 };
