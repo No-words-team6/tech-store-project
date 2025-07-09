@@ -9,7 +9,7 @@ import type { SwiperClass } from 'swiper/react';
 
 import './ProductSlider.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   productList: Product[];
@@ -27,6 +27,14 @@ export const ProductSlider: React.FC<Props> = ({
   );
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+
+  useEffect(() => {
+    if (swiperInstance) {
+      swiperInstance.update();
+      setIsBeginning(swiperInstance.isBeginning);
+      setIsEnd(swiperInstance.isEnd);
+    }
+  }, [swiperInstance, productList.length]);
 
   return (
     <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
@@ -49,8 +57,6 @@ export const ProductSlider: React.FC<Props> = ({
           modules={[Pagination, Autoplay]}
           onSwiper={(swiper) => {
             setSwiperInstance(swiper);
-            setIsBeginning(swiper.isBeginning);
-            setIsEnd(swiper.isEnd);
           }}
           onSlideChange={(swiper) => {
             setIsBeginning(swiper.isBeginning);
