@@ -21,7 +21,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        denis: 'red',
         border: 'rgb(var(--border))',
         input: 'rgb(var(--input))',
         ring: 'rgb(var(--ring))',
