@@ -8,7 +8,6 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import type { SwiperClass } from 'swiper/react';
 
 import './ProductSlider.css';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 interface Props {
@@ -71,12 +70,7 @@ export const ProductSlider: React.FC<Props> = ({
           {productList.map((product) => (
             <SwiperSlide key={product.id}>
               <div className="relative w-full">
-                <Link
-                  to={`/${product.category}/${product.itemId}`}
-                  className="block w-full"
-                >
-                  <ProductCard product={product} />
-                </Link>
+                <ProductCard product={product} />
               </div>
             </SwiperSlide>
           ))}
