@@ -29,7 +29,7 @@ export const ButtonHeart: React.FC<ButtonHeartProps> = ({ product }) => {
       className={cn(
         'w-10 h-10 flex items-center justify-center hover:cursor-pointer rounded-none bg-[#323542] hover:bg-[#4A4D58]',
         {
-          // 'bg-gray-800 border-gray-600 border-2': isInFavorites,
+          'bg-gray-800 border-gray-600 border-2': isInFavorites,
         },
       )}
       onClick={handleToggleHeart}
