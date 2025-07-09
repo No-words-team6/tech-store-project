@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide, type SwiperClass } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 import './ImageSlader.css';
+import { Link } from 'react-router-dom';
 
 const images = [
   { src: '/img/banner-accessories.png', link: '/phones' },
@@ -27,13 +28,13 @@ export const ImageSlider = ({ setSwiperInstance }: Props) => {
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-full pb-[48px]">
-              <a href={image.link} className="block w-full h-[400px]">
+              <Link to={image.link} className="block w-full h-[400px]">
                 <img
                   src={image.src}
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
         ))}

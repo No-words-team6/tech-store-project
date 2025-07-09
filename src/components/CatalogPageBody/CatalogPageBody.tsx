@@ -45,7 +45,7 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
       {isLoading && <Loader />}
 
       {!isLoading && (
-        <div className="col-span-24 grid grid-cols-24 gap-x-[24px] gap-y-[40px]">
+        <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[40px]">
           {sortedProducts.map((product) => (
             <div className="col-span-6" key={product.id}>
               <ProductCard product={product} />
