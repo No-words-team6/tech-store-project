@@ -1,53 +1,32 @@
 import type { Product } from '@/types';
 
-function getItem(key: string) {
-  return JSON.parse(localStorage.getItem(key) || '[]');
-}
+type StorageKey = 'cart' | 'favourites';
 
-function setItem(key: string, value: Product[]) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
+export const getFromLocale = (storageKey: StorageKey) => {
+  return JSON.parse(localStorage.getItem(storageKey) || '[]');
+};
 
-const CART_KEY = 'tech-store-cart';
-const FAV_KEY = 'tech-store-favorites';
+export const setToLocale = (storageKey: StorageKey, value: Product[]) => {
+  localStorage.setItem(storageKey, JSON.stringify(value));
+};
 
-export function getCart() {
-  return getItem(CART_KEY);
-}
+export const isLocaleExists = (
+  productId: Product['itemId'],
+  storageKey: StorageKey,
+): boolean => {
+  const localeData: Product[] = getFromLocale(storageKey);
+  return localeData.some((item) => item.itemId === productId);
+};
 
-export function addToCart(product: Product) {
-  const cart = getCart();
-  const existing = cart.find((item: Product) => item.id === product.id);
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push({ ...product, quantity: 1 });
-  }
-  setItem(CART_KEY, cart);
-}
+export const toggleProd = (product: Product, storageKey: StorageKey) => {
+  const localeData: Product[] = getFromLocale(storageKey);
 
-export function removeFromCart(productId: number) {
-  const cart = getCart().filter((item: Product) => item.id !== productId);
-  setItem(CART_KEY, cart);
-}
+  const exists = isLocaleExists(product.itemId, storageKey);
 
-export function getFavorites() {
-  return getItem(FAV_KEY);
-}
+  const updated =
+    exists ?
+      localeData.filter((item) => item.itemId !== product.itemId)
+    : [...localeData, product];
 
-export function toggleFavorite(product: Product) {
-  const favorites = getFavorites();
-  const exists = favorites.find((item: Product) => item.id === product.id);
-  if (exists) {
-    setItem(
-      FAV_KEY,
-      favorites.filter((item: Product) => item.id !== product.id),
-    );
-  } else {
-    setItem(FAV_KEY, [...favorites, product]);
-  }
-}
-
-export function isFavorite(productId: number): boolean {
-  return getFavorites().some((item: Product) => item.id === productId);
-}
+  setToLocale(storageKey, updated);
+};
