@@ -64,7 +64,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       </div>
 
       <div className="w-full flex justify-between">
-        <ButtonAddToCart />
+        <ButtonAddToCart product={product} />
 
         <ButtonHeart product={product} />
       </div>

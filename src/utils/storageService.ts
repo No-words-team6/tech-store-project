@@ -1,6 +1,6 @@
 import type { Product } from '@/types';
 
-type StorageKey = 'cart' | 'favourites';
+export type StorageKey = 'cart' | 'favourites';
 
 export const getFromLocale = (storageKey: StorageKey) => {
   return JSON.parse(localStorage.getItem(storageKey) || '[]');
