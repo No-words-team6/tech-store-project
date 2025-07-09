@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
 
 export const ContactsPage = () => {
   return (
-    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] font-mont pb-[24px]">
+    <>
       <BreadcrumbNav />
 
       <div
@@ -98,6 +98,6 @@ export const ContactsPage = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };

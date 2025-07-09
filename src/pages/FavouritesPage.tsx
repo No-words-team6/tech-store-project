@@ -8,10 +8,10 @@ export const FavouritesPage = () => {
   const productsLength = products.length;
 
   return (
-    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] pb-[80px]">
+    <>
       <BreadcrumbNav />
 
-      <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
+      <div className="col-span-24 grid gap-y-[24px]">
         <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
           Favourites
         </h1>
@@ -28,6 +28,6 @@ export const FavouritesPage = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
