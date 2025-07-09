@@ -12,7 +12,7 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: 'Denys Kasatskyi',
-    photo: 'public/img/teamFoto/denis.jpg',
+    photo: '/img/teamFoto/denis.jpg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
     position: 'Team Lead & Frontend Developer',
@@ -21,7 +21,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Hryhorii Korsun',
-    photo: 'public/img/teamFoto/gregoryjpeg.jpeg',
+    photo: '/img/teamFoto/gregoryjpeg.jpeg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
     position: 'Frontend Developer',
@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Anna Kolisnichenko',
-    photo: 'public/img/teamFoto/ann.jpeg',
+    photo: '/img/teamFoto/ann.jpeg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
     position: 'Tech Lead & Frontend Developer',
@@ -39,7 +39,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Andrii Kushnirenko',
-    photo: 'public/img/teamFoto/andrii.jpeg',
+    photo: '/img/teamFoto/andrii.jpeg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
     position: 'Frontend Developer',
@@ -50,16 +50,14 @@ const teamMembers: TeamMember[] = [
 
 export const ContactsPage = () => {
   return (
-    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] pb-[24px]">
+    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] font-mont pb-[24px]">
       <BreadcrumbNav />
 
       <div
         id="contact-page"
-        className="col-span-24 min-h-screen bg-[#0F111A] px-10 py-12 text-[#F1F2F9]"
+        className="col-span-24 min-h-screen px-10 py-12 text-[#F1F2F9]"
       >
-        <h1 className="text-4xl font-[montBold] text-center mb-16">
-          TEAM NEMA SLIV
-        </h1>
+        <h1 className="text-4xl font-mont text-center mb-16">TEAM NEMA SLIV</h1>
 
         <div className="grid grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
