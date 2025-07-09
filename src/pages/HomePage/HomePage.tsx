@@ -53,7 +53,7 @@ export const HomePage = () => {
       <section className="col-span-24">
         <div className="grid grid-cols-24 gap-x-[16px] items-start">
           <button
-            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition"
+            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition hover:cursor-pointer"
             onClick={() => swiperInstance?.slidePrev()}
           >
             <ChevronLeft />
@@ -64,7 +64,7 @@ export const HomePage = () => {
           </div>
 
           <button
-            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition"
+            className="col-span-1 h-[400px] bg-[#323542] text-white flex items-center justify-center hover:bg-[#4B4E5A] transition hover:cursor-pointer"
             onClick={() => swiperInstance?.slideNext()}
           >
             <ChevronRight />

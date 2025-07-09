@@ -25,6 +25,8 @@ export const ProductSlider: React.FC<Props> = ({
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
     null,
   );
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   return (
     <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
@@ -36,6 +38,8 @@ export const ProductSlider: React.FC<Props> = ({
         <ButtonSwipe
           onPrevClick={() => swiperInstance?.slidePrev()}
           onNextClick={() => swiperInstance?.slideNext()}
+          disablePrev={isBeginning}
+          disableNext={isEnd}
         />
       </div>
 
@@ -43,10 +47,18 @@ export const ProductSlider: React.FC<Props> = ({
       <div className="col-span-24 grid relative w-full max-w-full h-[432px] mb-[48px]">
         <Swiper
           modules={[Pagination, Autoplay]}
-          onSwiper={setSwiperInstance}
-          loop
+          onSwiper={(swiper) => {
+            setSwiperInstance(swiper);
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
+          }}
+          onSlideChange={(swiper) => {
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
+          }}
+          loop={false}
           slidesPerView={4}
-          slidesPerGroup={4}
+          slidesPerGroup={1}
           spaceBetween={16}
           className="w-full h-[586px]"
         >
