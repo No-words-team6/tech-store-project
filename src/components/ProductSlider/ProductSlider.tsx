@@ -6,14 +6,19 @@ import { Loader } from '../Loader';
 interface Props {
   productList: Product[];
   isLoading: boolean;
+  title: string;
 }
 
-export const ProductSlider: React.FC<Props> = ({ productList, isLoading }) => {
+export const ProductSlider: React.FC<Props> = ({
+  productList,
+  isLoading,
+  title,
+}) => {
   return (
     <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
       <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
         <h2 className="color-white font-mont font-bold text-[32px] col-span-12">
-          Brand new models
+          {title}
         </h2>
 
         <button className="col-start-23 col-span-1 button-color text-white">

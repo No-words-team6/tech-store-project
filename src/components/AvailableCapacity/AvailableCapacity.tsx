@@ -8,7 +8,7 @@ type Props = {
 
 export const AvailableCapacity: React.FC<Props> = ({ item }) => {
   return (
-    <div className="flex gap-2 mt-2">
+    <div className="flex gap-2">
       {item.capacityAvailable.map((capacity) => {
         const isSelected = item.capacity === capacity;
 

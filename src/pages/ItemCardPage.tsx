@@ -1,13 +1,19 @@
-import { getProductById } from '@/api';
-import { AvailableCapacity } from '@/components/AvailableCapacity';
-import { AvailableColors } from '@/components/AvailableColors';
+import { getProductById, getProducts } from '@/api';
+import { BreadcrumbNav } from '@/components/BreadcrumbNav';
 import { ItemDescription } from '@/components/ItemDescription';
 import { Loader } from '@/components/Loader';
-import { Photos } from '@/components/Photos';
-import type { Category, Item } from '@/types';
-import { Heart } from 'lucide-react';
+import { ProductGallery } from '@/components/ProductGallery';
+import { ProductOptions } from '@/components/ProductOptions/ProductOptions';
+import { ProductSlider } from '@/components/ProductSlider';
+import { ProductSpecs } from '@/components/ProductSpecs';
+import type { Category, Item, Product } from '@/types';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { ChevronLeft } from 'lucide-react';
+
+const prepareRecomendationList = (data: Product[], limit: number) => {
+  return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
+};
 
 export const ItemCardPage = () => {
   const location = useLocation();
@@ -20,21 +26,24 @@ export const ItemCardPage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const [data, setData] = useState<Product[]>([]);
+  const [isListLoading, setIsListLoading] = useState(false);
 
   useEffect(() => {
     setItem(null);
     setIsLoading(true);
+    setIsListLoading(true);
 
     if (!category || !itemId) {
       return;
     }
 
     getProductById(category, itemId)
-      .then((data) => {
-        if (data?.images?.length) {
-          setSelectedPhoto(data.images[0]);
+      .then((item) => {
+        if (item?.images?.length) {
+          setSelectedPhoto(item.images[0]);
         }
-        setItem(data);
+        setItem(item);
       })
       .catch(() => {
         setItem(null);
@@ -42,196 +51,79 @@ export const ItemCardPage = () => {
       .finally(() => {
         setIsLoading(false);
       });
+
+    getProducts()
+      .then(setData)
+      .finally(() => {
+        setIsListLoading(false);
+      });
   }, [itemId, category]);
 
   const photoSet: string[] = item?.images || [];
+  const reccomendationsList = prepareRecomendationList(data, 4);
 
   return (
-    <div className="back-color flex-grow flex flex-col gap-y-20">
+    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] pb-[80px]">
+      <BreadcrumbNav />
+
+      <Link
+        to={`/${category}`}
+        className="flex gap-x-[4px] col-span-24 text-gray-100 font-bold cursor-pointer mb-[16px]"
+      >
+        <ChevronLeft className="w-[16px] h-[16px]" />
+        <p className="font-mont text-xs">Back</p>
+      </Link>
+
       {isLoading && !item && (
-        <div className="flex justify-center mt-70">
+        <div className="col-span-24 flex justify-center items-center">
           <Loader />
         </div>
       )}
 
       {!isLoading && item && (
-        <>
-          <div className="flex flex-col gap-y-10">
-            <div className="ml-38 mr-38 flex flex-col gap-y-10">
-              <p className="text-gray-100 font-bold mt-6 cursor-pointer">
-                Navigation
-              </p>
+        <div className="col-span-24">
+          <h1 className="col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
+            {item.name}
+          </h1>
+          <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[80px]">
+            <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
+              <ProductGallery
+                photoSet={photoSet}
+                selectedPhoto={selectedPhoto}
+                setSelectedPhoto={setSelectedPhoto}
+                item={item}
+              />
 
-              <div className="">
-                <p className="text-gray-100 font-bold mb-4 cursor-pointer">
-                  Back
-                </p>
-
-                <h1 className="font-mont font-bold text-white  text-4xl">
-                  {item.name}
-                </h1>
-              </div>
-
-              <div className="grid grid-cols-2 gap-x-16">
-                <div className="flex gap-x-[16px]">
-                  <Photos
-                    photoSet={photoSet}
-                    selectedPhoto={selectedPhoto}
-                    setSelectedPhoto={setSelectedPhoto}
-                    item={item}
-                  />
-
-                  <div className="w-[464px] h-[464px] flex justify-center items-center">
-                    <img
-                      src={`/${selectedPhoto}`}
-                      alt={item.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-y-8 w-80">
-                  <div className="flex flex-col gap-y-6">
-                    <div className="text-xs font-bold text-[#75767F] ">
-                      <p>Available colors</p>
-                      <AvailableColors item={item} />
-                    </div>
-
-                    <hr className="w-full border-t border-[#3B3E4A]" />
-
-                    <div className="text-xs font-bold text-[#75767F] ">
-                      <p>Select capacity</p>
-                      <AvailableCapacity item={item} />
-                    </div>
-
-                    <hr className="w-full border-t border-[#3B3E4A]" />
-                  </div>
-
-                  <div className="flex flex-col gap-y-4">
-                    <div className="flex gap-2 items-center">
-                      <p className="text-[#F1F2F9] text-[32px] font-extrabold">
-                        ${item.priceDiscount}
-                      </p>
-                      <p className="text-[#75767F] line-through text-[22px]">
-                        ${item.priceRegular}
-                      </p>
-                    </div>
-
-                    <div className="flex justify-between">
-                      <button className="bg-[#905BFF] text-[#F1F2F9] w-[263px] h-[48px] text-sm font-bold hover:bg-[#A378FF] hover:cursor-pointer">
-                        Add to cart
-                      </button>
-
-                      <button className="w-12 h-12 bg-[#323542] hover:bg-[#4A4D58] flex items-center justify-center hover:cursor-pointer">
-                        <Heart color="white" className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="text-xs text-[#75767F] font-bold ">
-                    <div className="pb-2 flex justify-between">
-                      <span>Screen</span>
-
-                      <span className="text-[#F1F2F9]">{item.screen}</span>
-                    </div>
-
-                    <div className="pb-2 flex justify-between">
-                      <span>Resolution</span>
-
-                      <span className="text-[#F1F2F9]">{item.resolution}</span>
-                    </div>
-
-                    <div className="pb-2 flex justify-between">
-                      <span>Processor</span>
-
-                      <span className="text-[#F1F2F9]">{item.processor}</span>
-                    </div>
-
-                    <div className="pb-2 flex justify-between">
-                      <span>RAM</span>
-
-                      <span className="text-[#F1F2F9]">{item.ram}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="ml-38 mr-38 grid grid-cols-2 gap-x-16 text-[#F1F2F9]">
-            <div className="flex flex-col gap-y-8">
-              <div>
-                <h2 className="text-[22px] font-extrabold">About</h2>
-                <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
-              </div>
-
-              <ItemDescription item={item} />
+              <ProductOptions item={item} />
             </div>
 
-            <div className="flex flex-col">
-              <h2 className="text-[22px] font-extrabold">Tech specs</h2>
-              <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
-
-              <div className="text-sm text-[#75767F] font-semibold ">
-                <div className="pb-2 flex justify-between">
-                  <span>Screen</span>
-
-                  <span className="text-[#F1F2F9]">{item.screen}</span>
+            <div className="col-span-24 grid grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
+              <div className="col-span-12 flex flex-col gap-y-8">
+                <div>
+                  <h2 className="text-[22px] font-extrabold">About</h2>
+                  <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
                 </div>
 
-                <div className="pb-2 flex justify-between">
-                  <span>Resolution</span>
+                <ItemDescription item={item} />
+              </div>
 
-                  <span className="text-[#F1F2F9]">{item.resolution}</span>
+              <div className="col-start-14 col-span-11 flex flex-col">
+                <div>
+                  <h2 className="text-[22px] font-extrabold">Tech specs</h2>
+                  <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
                 </div>
 
-                <div className="pb-2 flex justify-between">
-                  <span>Processor</span>
-
-                  <span className="text-[#F1F2F9]">{item.processor}</span>
-                </div>
-
-                <div className="pb-2 flex justify-between">
-                  <span>RAM</span>
-
-                  <span className="text-[#F1F2F9]">{item.ram}</span>
-                </div>
-
-                <div className="pb-2 flex justify-between">
-                  <span>Built in memory</span>
-
-                  <span className="text-[#F1F2F9]">{item.capacity}</span>
-                </div>
-
-                {item.camera && (
-                  <div className="pb-2 flex justify-between">
-                    <span>Camera</span>
-
-                    <span className="text-[#F1F2F9]">{item.camera}</span>
-                  </div>
-                )}
-
-                {item.zoom && (
-                  <div className="pb-2 flex justify-between">
-                    <span>Zoom</span>
-
-                    <span className="text-[#F1F2F9]">{item.zoom}</span>
-                  </div>
-                )}
-
-                <div className="pb-2 flex justify-between">
-                  <span>Cell</span>
-
-                  <span className="text-[#F1F2F9]">{item.cell.join(', ')}</span>
-                </div>
+                <ProductSpecs item={item} />
               </div>
             </div>
-          </div>
 
-          <div className="ml-38 mb-20 text-[32px] font-extrabold text-[#F1F2F9]">
-            You may also like
+            <ProductSlider
+              productList={reccomendationsList}
+              isLoading={isListLoading}
+              title={'You may also like'}
+            />
           </div>
-        </>
+        </div>
       )}
     </div>
   );

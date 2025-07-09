@@ -22,11 +22,13 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     ram,
   } = product;
 
+  const imagePath = image.startsWith('/') ? image : `/${image}`;
+
   return (
-    <div className="bg-[#161827] text-[#F1F2F9] w-[272px] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]">
+    <div className="bg-[#161827] text-[#F1F2F9] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]">
       <Link to={`/${category}/${itemId}`}>
         <div className="flex justify-center">
-          <img src={image} alt={product.name} className="h-[196px] mb-2" />
+          <img src={imagePath} alt={product.name} className="h-[196px] mb-2" />
         </div>
 
         <h3 className="text-sm font-semibold pt-4 min-h-[4rem]">{name}</h3>

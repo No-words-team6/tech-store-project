@@ -8,7 +8,7 @@ type Props = {
 
 export const AvailableColors: React.FC<Props> = ({ item }) => {
   return (
-    <div className="flex gap-2 mt-2">
+    <div className="flex gap-2">
       {item.colorsAvailable.map((color) => {
         const isSelected = item.color === color;
 
