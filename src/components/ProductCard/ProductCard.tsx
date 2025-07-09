@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../index.css';
-import { Button } from '../Button';
 import { ButtonHeart } from '../ButtonHeart';
 import type { Product } from '@/types';
+import { ButtonAddToCart } from '../ButtonAddToCart';
 
 interface Props {
   product: Product;
@@ -64,9 +64,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       </div>
 
       <div className="w-full flex justify-between">
-        <Button />
+        <ButtonAddToCart />
 
-        <ButtonHeart />
+        <ButtonHeart product={product} />
       </div>
     </div>
   );

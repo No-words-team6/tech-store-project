@@ -193,3 +193,5 @@
     @apply bg-background text-foreground;
   }
 }
+
+@config '../tailwind.config.js';
