@@ -8,8 +8,8 @@ import { ProductSlider } from '@/components/ProductSlider';
 import { ProductSpecs } from '@/components/ProductSpecs';
 import type { Category, Item, Product } from '@/types';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { NavBack } from '@/components/NavBack';
 
 const prepareRecomendationList = (data: Product[], limit: number) => {
   return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
@@ -27,12 +27,10 @@ export const ItemCardPage = () => {
 
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [data, setData] = useState<Product[]>([]);
-  const [isListLoading, setIsListLoading] = useState(false);
 
   useEffect(() => {
     setItem(null);
     setIsLoading(true);
-    setIsListLoading(true);
 
     if (!category || !itemId) {
       return;
@@ -54,25 +52,19 @@ export const ItemCardPage = () => {
 
     getProducts()
       .then(setData)
-      .finally(() => {
-        setIsListLoading(false);
-      });
+      .finally(() => {});
   }, [itemId, category]);
 
   const photoSet: string[] = item?.images || [];
-  const reccomendationsList = prepareRecomendationList(data, 4);
+  const reccomendationsList = prepareRecomendationList(data, 10);
+
+  const currentProduct = data.find((product) => product.itemId === item?.id);
 
   return (
     <>
       <BreadcrumbNav />
 
-      <Link
-        to={`/${category}`}
-        className="flex gap-x-[4px] col-span-24 text-gray-100 font-bold cursor-pointer mb-[16px]"
-      >
-        <ChevronLeft className="w-[16px] h-[16px]" />
-        <p className="font-mont text-xs">Back</p>
-      </Link>
+      <NavBack to={category} />
 
       {isLoading && !item && (
         <div className="col-span-24 flex justify-center items-center">
@@ -80,7 +72,7 @@ export const ItemCardPage = () => {
         </div>
       )}
 
-      {!isLoading && item && (
+      {!isLoading && item && currentProduct && (
         <div className="col-span-24">
           <h1 className="col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
             {item.name}
@@ -94,7 +86,7 @@ export const ItemCardPage = () => {
                 item={item}
               />
 
-              <ProductOptions item={item} />
+              <ProductOptions item={item} product={currentProduct} />
             </div>
 
             <div className="col-span-24 grid grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
@@ -119,7 +111,6 @@ export const ItemCardPage = () => {
 
             <ProductSlider
               productList={reccomendationsList}
-              isLoading={isListLoading}
               title={'You may also like'}
             />
           </div>

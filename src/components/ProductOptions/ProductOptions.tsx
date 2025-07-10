@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AvailableColors } from '../AvailableColors';
 import { AvailableCapacity } from '../AvailableCapacity';
-import type { Item } from '@/types';
-import { Heart } from 'lucide-react';
+import type { Item, Product } from '@/types';
+import { ButtonAddToCart } from '../ButtonAddToCart';
+import { ButtonHeart } from '../ButtonHeart';
 
 interface Props {
   item: Item;
+  product: Product;
 }
 
-export const ProductOptions: React.FC<Props> = ({ item }) => {
+export const ProductOptions: React.FC<Props> = ({ item, product }) => {
   const navigate = useNavigate();
   const [products, setProducts] = useState<Item[]>([]);
 
@@ -80,7 +82,7 @@ export const ProductOptions: React.FC<Props> = ({ item }) => {
         <hr className="w-full border-t border-[#3B3E4A]" />
       </div>
 
-      <div className="col-span-7">
+      <div className="col-span-7 flex flex-col gap-y-[16px]">
         <div className="flex gap-x-[8px] items-center">
           <p className="text-[#F1F2F9] text-[32px] font-extrabold">
             ${item.priceDiscount}
@@ -92,13 +94,9 @@ export const ProductOptions: React.FC<Props> = ({ item }) => {
         </div>
 
         <div className="flex h-[48px] gap-x-[8px]">
-          <button className="flex-1 bg-[#905BFF] text-[#F1F2F9] text-sm font-bold hover:bg-[#A378FF] hover:cursor-pointer">
-            Add to cart
-          </button>
+          <ButtonAddToCart product={product} />
 
-          <button className="w-[48px] bg-[#323542] hover:bg-[#4A4D58] flex items-center justify-center hover:cursor-pointer">
-            <Heart color="white" className="w-[16px] h-[16px]" />
-          </button>
+          <ButtonHeart product={product} />
         </div>
       </div>
 

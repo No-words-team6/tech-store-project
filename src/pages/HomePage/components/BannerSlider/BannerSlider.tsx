@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide, type SwiperClass } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 
-import './ImageSlader.css';
+import './BannerSlider.css';
 import { Link } from 'react-router-dom';
 
 const images = [
@@ -15,7 +15,7 @@ type Props = {
   setSwiperInstance: (swiper: SwiperClass) => void;
 };
 
-export const ImageSlider = ({ setSwiperInstance }: Props) => {
+export const BannerSlider = ({ setSwiperInstance }: Props) => {
   return (
     <div className="relative w-full max-w-full h-[432px]">
       <Swiper
