@@ -3,7 +3,7 @@ import { getCategoryCounts } from '@/utils/getCategoryCounts';
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import phonesCaregory from '../../../../public/img/category-phones.webp';
+import phonesCaregory from '../../../../public/img/category-phones.png';
 import tabletsCaregory from '../../../../public/img/category-tablets.png';
 import accessoriesCaregory from '../../../../public/img/category-accessories.png';
 
@@ -21,12 +21,12 @@ export const CategoryCardsSection: React.FC = () => {
       </h2>
 
       <div className="col-span-24 grid grid-cols-24 gap-[16px]">
-        <Link to="/phones" className="col-span-8">
-          <div className="h-[368px] phones-category relative overflow-hidden">
+        <Link to="/phones" className="col-span-8 group">
+          <div className="h-[368px] phones-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0_14px_#6D6474]">
             <img
               src={phonesCaregory}
               alt="phones"
-              className="absolute bottom-0 right-0 h-[100%] object-contain translate-x-1/4 translate-y-1/4"
+              className="absolute bottom-0 right-0 object-contain translate-x-1/4 translate-y-1/7 transition duration-1000 group-hover:scale-110"
             />
           </div>
 
@@ -37,12 +37,12 @@ export const CategoryCardsSection: React.FC = () => {
           <p className="font-mont text-gray-500 font-regular text-[14px]">{`${phonesCount} models`}</p>
         </Link>
 
-        <Link to="/tablets" className="col-span-8">
-          <div className="h-[368px] tablets-category relative overflow-hidden">
+        <Link to="/tablets" className="col-span-8 group">
+          <div className="h-[368px] tablets-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#75767F]">
             <img
               src={tabletsCaregory}
               alt="tablets"
-              className="absolute bottom-0 right-0 h-[100%] object-contain translate-x-1/4 translate-y-1/4"
+              className="absolute bottom-0 right-0 object-contain translate-x-1/3 translate-y-1/3 scale-150 transition duration-1000 group-hover:scale-160"
             />
           </div>
 
@@ -52,12 +52,12 @@ export const CategoryCardsSection: React.FC = () => {
           <p className="font-mont text-gray-500 font-regular text-[14px]">{`${tabletsCount} models`}</p>
         </Link>
 
-        <Link to="/accessories" className="col-span-8">
-          <div className="h-[368px] accessories-category relative overflow-hidden">
+        <Link to="/accessories" className="col-span-8 group">
+          <div className="h-[368px] accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51]">
             <img
               src={accessoriesCaregory}
               alt="accessories"
-              className="absolute bottom-0 right-0 h-[100%] object-contain translate-x-1/4 translate-y-1/4"
+              className="absolute bottom-0 right-0 object-contain translate-x-1/2 -translate-y-3/8 scale-180 transition duration-1000 group-hover:scale-195"
             />
           </div>
 
