@@ -35,6 +35,7 @@ export const ButtonAddToCart: React.FC<Props> = ({ product }) => {
         handleToggleButton();
       }}
       className={cn(
+        'flex-1',
         'bg-[#905BFF]',
         'text-[#F1F2F9]',
         'h-[40px]',

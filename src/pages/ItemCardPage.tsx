@@ -60,7 +60,9 @@ export const ItemCardPage = () => {
   }, [itemId, category]);
 
   const photoSet: string[] = item?.images || [];
-  const reccomendationsList = prepareRecomendationList(data, 4);
+  const reccomendationsList = prepareRecomendationList(data, 10);
+
+  const currentProduct = data.find((product) => product.itemId === item?.id);
 
   return (
     <>
@@ -74,7 +76,7 @@ export const ItemCardPage = () => {
         </div>
       )}
 
-      {!isLoading && item && (
+      {!isLoading && item && currentProduct && (
         <div className="col-span-24">
           <h1 className="col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
             {item.name}
@@ -88,7 +90,7 @@ export const ItemCardPage = () => {
                 item={item}
               />
 
-              <ProductOptions item={item} />
+              <ProductOptions item={item} product={currentProduct} />
             </div>
 
             <div className="col-span-24 grid grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
