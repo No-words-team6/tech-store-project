@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../../index.css';
 import { ButtonHeart } from '../ButtonHeart';
 import type { Product } from '@/types';
@@ -24,15 +24,22 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
 
   const imagePath = image.startsWith('/') ? image : `/${image}`;
 
-  return (
-    <div className="bg-[#161827] text-[#F1F2F9] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]">
-      <Link to={`/${category}/${itemId}`}>
-        <div className="flex justify-center">
-          <img src={imagePath} alt={product.name} className="h-[196px] mb-2" />
-        </div>
+  const navigate = useNavigate();
 
-        <h3 className="text-sm font-semibold pt-4 min-h-[4rem]">{name}</h3>
-      </Link>
+  const handleCardClick = () => {
+    navigate(`/${category}/${itemId}`);
+  };
+
+  return (
+    <div
+      onClick={handleCardClick}
+      className="bg-[#161827] cursor-pointer text-[#F1F2F9] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]"
+    >
+      <div className="flex justify-center">
+        <img src={imagePath} alt={product.name} className="h-[196px] mb-2" />
+      </div>
+
+      <h3 className="text-sm font-semibold pt-4 min-h-[4rem]">{name}</h3>
 
       <div className="flex gap-2 mt-2 mb-2 text-[22px]">
         <p className="font-extrabold">${price}</p>
@@ -63,8 +70,11 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         </div>
       </div>
 
-      <div className="w-full flex justify-between">
-        <ButtonAddToCart />
+      <div
+        className="w-full flex gap-x-2"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <ButtonAddToCart product={product} />
 
         <ButtonHeart product={product} />
       </div>

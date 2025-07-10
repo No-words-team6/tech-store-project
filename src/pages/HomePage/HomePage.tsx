@@ -14,14 +14,18 @@ import { ImageSlider } from '@/components/BannerSlider';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 const latestProductYear = 2022;
 
-const getNewestList = (data: Product[], year: number) => {
-  return data.filter((product: Product) => product.year === year);
+const getNewestList = (data: Product[], year: number, limit: number) => {
+  return data
+    .filter((product: Product) => product.year === year)
+    .slice(0, limit);
 };
 
-const getCheapest = (data: Product[]) => {
-  return [...data].sort(
-    (product1: Product, product2: Product) => product1.price - product2.price,
-  );
+const getCheapest = (data: Product[], limit: number) => {
+  return [...data]
+    .sort(
+      (product1: Product, product2: Product) => product1.price - product2.price,
+    )
+    .slice(0, limit);
 };
 
 export const HomePage = () => {
@@ -37,8 +41,8 @@ export const HomePage = () => {
       .finally(() => setIsLoading(false));
   }, []);
 
-  const newModelsList = getNewestList(data, latestProductYear);
-  const hotPricesList = getCheapest(data);
+  const newModelsList = getNewestList(data, latestProductYear, 8);
+  const hotPricesList = getCheapest(data, 8);
 
   const phonesCount = 95;
   const tabletsCount = 24;
