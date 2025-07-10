@@ -8,8 +8,8 @@ import { ProductSlider } from '@/components/ProductSlider';
 import { ProductSpecs } from '@/components/ProductSpecs';
 import type { Category, Item, Product } from '@/types';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { NavBack } from '@/components/NavBack';
 
 const prepareRecomendationList = (data: Product[], limit: number) => {
   return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
@@ -66,13 +66,7 @@ export const ItemCardPage = () => {
     <>
       <BreadcrumbNav />
 
-      <Link
-        to={`/${category}`}
-        className="flex gap-x-[4px] col-span-24 text-gray-100 font-bold cursor-pointer mb-[16px]"
-      >
-        <ChevronLeft className="w-[16px] h-[16px]" />
-        <p className="font-mont text-xs">Back</p>
-      </Link>
+      <NavBack to={category} />
 
       {isLoading && !item && (
         <div className="col-span-24 flex justify-center items-center">
