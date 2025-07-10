@@ -2,9 +2,16 @@ import { BreadcrumbNav } from '@/components/BreadcrumbNav';
 import { ProductCard } from '@/components/ProductCard';
 import type { Product } from '@/types';
 import { getFromLocale } from '@/utils/storageService';
+import { useEffect, useState } from 'react';
 
 export const FavouritesPage = () => {
-  const products: Product[] = getFromLocale('favourites');
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const favs = getFromLocale('favourites');
+    setProducts(favs);
+  }, []);
+
   const productsLength = products.length;
 
   return (
