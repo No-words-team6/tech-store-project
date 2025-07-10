@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Heart, ShoppingBag, Menu } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 import { MobileSidebar } from './MobileSidebar';
 
 import './header.css';
+import { getFromLocale, type LocaleProduct } from '@/utils/storageService';
+import type { Product } from '@/types';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
@@ -22,6 +24,17 @@ const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [favData, setFavData] = useState<Product[]>([]);
+  const [cartData, setCartData] = useState<LocaleProduct[]>([]);
+
+  useEffect(() => {
+    setFavData(getFromLocale('favourites'));
+    setCartData(getFromLocale('cart'));
+  }, []);
+
+  const cartItemsAmount = cartData.reduce((acc, product) => {
+    return acc + product.quantity;
+  }, 0);
 
   return (
     <header className="back-color sticky top-0 z-50 w-full h-16 shadow-[0_1px_0_0_#323542]">
@@ -54,11 +67,25 @@ export const Header = () => {
               className={iconLinkClass}
               aria-label="Favourites"
             >
-              <Heart className="w-5 h-5 text-inherit transition-colors" />
+              <div className="absolute">
+                <Heart className="w-5 h-5 text-inherit transition-colors" />
+                {!!favData.length && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
+                    {favData.length}
+                  </span>
+                )}
+              </div>
             </NavLink>
 
             <NavLink to="/cart" className={iconLinkClass} aria-label="Cart">
-              <ShoppingBag className="w-5 h-5 text-inherit transition-colors" />
+              <div className="absolute">
+                <ShoppingBag className="w-5 h-5 text-inherit transition-colors" />
+                {!!cartItemsAmount && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
+                    {cartItemsAmount}
+                  </span>
+                )}
+              </div>
             </NavLink>
           </div>
 
