@@ -9,23 +9,20 @@ import type { SwiperClass } from 'swiper/react';
 
 import './ProductSlider.css';
 import { useEffect, useState } from 'react';
+import { useProductStore } from '@/stores/productStore';
 
 interface Props {
   productList: Product[];
-  isLoading: boolean;
   title: string;
 }
 
-export const ProductSlider: React.FC<Props> = ({
-  productList,
-  isLoading,
-  title,
-}) => {
+export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
     null,
   );
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+  const isLoading = useProductStore((state) => state.isLoading);
 
   useEffect(() => {
     if (swiperInstance) {

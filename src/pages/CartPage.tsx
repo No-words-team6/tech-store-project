@@ -10,7 +10,7 @@ import {
 } from '@/utils/storageService';
 import { useEffect, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import placeholder from '../../public/img/placeholder-empty-cart.png';
+import placeholder from '../../public/img/placeholder-empty-bag.svg';
 import { Link } from 'react-router-dom';
 
 export const CartPage = () => {
@@ -59,19 +59,22 @@ export const CartPage = () => {
       </h1>
 
       {!localData.length && (
-        <div className="col-span-24 grid grid-cols-24 mt-[32px] gap-x-[16px] gap-y-[24px]">
-          <h2 className="col-span-24 font-mont text-white">
+        <div className="col-span-24 grid grid-cols-24 mt-24 gap-y-6 place-items-center">
+          <img
+            src={placeholder}
+            alt="empty bag"
+            className="col-span-2 col-start-12"
+          />
+
+          <h2 className="col-span-6 col-start-10 font-mont text-[#515151]">
             Your cart is empty
           </h2>
 
-          <img
-            src={placeholder}
-            alt="sleeppy"
-            className="col-start-6 col-span-14 mt-[40px]"
-          />
-
-          <Link to={'/'} className="col-span-24 grid grid-cols-24 gap-x-[16px]">
-            <Button className="h-[48px] bg-[#905BFF] rounded-none col-start-10 col-span-6">
+          <Link
+            to={'/'}
+            className="col-span-4 col-start-11 justify-self-stretch mt-2"
+          >
+            <Button className="h-[48px] bg-[#905BFF] rounded-none w-full hover:cursor-pointer">
               Back to shopping
             </Button>
           </Link>

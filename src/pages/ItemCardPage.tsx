@@ -27,12 +27,10 @@ export const ItemCardPage = () => {
 
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [data, setData] = useState<Product[]>([]);
-  const [isListLoading, setIsListLoading] = useState(false);
 
   useEffect(() => {
     setItem(null);
     setIsLoading(true);
-    setIsListLoading(true);
 
     if (!category || !itemId) {
       return;
@@ -54,9 +52,7 @@ export const ItemCardPage = () => {
 
     getProducts()
       .then(setData)
-      .finally(() => {
-        setIsListLoading(false);
-      });
+      .finally(() => {});
   }, [itemId, category]);
 
   const photoSet: string[] = item?.images || [];
@@ -115,7 +111,6 @@ export const ItemCardPage = () => {
 
             <ProductSlider
               productList={reccomendationsList}
-              isLoading={isListLoading}
               title={'You may also like'}
             />
           </div>
