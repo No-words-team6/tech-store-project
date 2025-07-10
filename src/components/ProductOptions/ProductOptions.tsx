@@ -1,4 +1,5 @@
-import type React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AvailableColors } from '../AvailableColors';
 import { AvailableCapacity } from '../AvailableCapacity';
 import type { Item } from '@/types';
@@ -9,6 +10,48 @@ interface Props {
 }
 
 export const ProductOptions: React.FC<Props> = ({ item }) => {
+  const navigate = useNavigate();
+  const [products, setProducts] = useState<Item[]>([]);
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/gadgets/phones.json').then((res) => res.json()),
+      fetch('/gadgets/tablets.json').then((res) => res.json()),
+      fetch('/gadgets/accessories.json').then((res) => res.json()),
+    ])
+      .then(([phones, tablets, accessories]) => {
+        const allItems = [...phones, ...tablets, ...accessories];
+        setProducts(allItems);
+      })
+      .catch((err) => console.error('Failed to load products:', err));
+  }, []);
+
+  const handleColorClick = (color: string) => {
+    const matching = products.find(
+      (p) =>
+        p.namespaceId === item.namespaceId &&
+        p.capacity === item.capacity &&
+        p.color === color,
+    );
+
+    if (matching) {
+      navigate(`/${matching.category}/${matching.id}`);
+    }
+  };
+
+  const handleCapacityClick = (capacity: string) => {
+    const matching = products.find(
+      (p) =>
+        p.namespaceId === item.namespaceId &&
+        p.color === item.color &&
+        p.capacity === capacity,
+    );
+
+    if (matching) {
+      navigate(`/${matching.category}/${matching.id}`);
+    }
+  };
+
   const specs = [
     { label: 'Screen', value: item.screen },
     { label: 'Resolution', value: item.resolution },
@@ -19,16 +62,19 @@ export const ProductOptions: React.FC<Props> = ({ item }) => {
   return (
     <div className="col-start-14 col-span-11 grid grid-cols-12 gap-x-[16px]">
       <div className="col-span-7 flex flex-col gap-y-6">
-        <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F] ">
+        <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
           <p>Available colors</p>
-          <AvailableColors item={item} />
+          <AvailableColors item={item} onColorClick={handleColorClick} />
         </div>
 
         <hr className="w-full border-t border-[#3B3E4A]" />
 
         <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
           <p>Select capacity</p>
-          <AvailableCapacity item={item} />
+          <AvailableCapacity
+            item={item}
+            onCapacityClick={handleCapacityClick}
+          />
         </div>
 
         <hr className="w-full border-t border-[#3B3E4A]" />
