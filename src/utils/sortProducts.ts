@@ -1,5 +1,4 @@
 import { SortBy, type Product } from '@/types';
-import { TimesItems } from '@/types/TimesItems';
 
 interface SortOptions {
   selectedSortBy: string;
@@ -20,23 +19,6 @@ export const sortProducts = (items: Product[], sortOptions: SortOptions) => {
       break;
     case SortBy.Cheapest:
       sortItems = sortItems.sort((item1, item2) => item1.price - item2.price);
-      break;
-  }
-
-  switch (sortOptions.selectedTimesItems) {
-    case TimesItems.Four:
-      sortItems = sortItems.splice(0, 4);
-      break;
-    case TimesItems.Eight:
-      sortItems = sortItems.slice(0, 8);
-      break;
-    case TimesItems.Twelve:
-      sortItems = sortItems.splice(0, 12);
-      break;
-    case TimesItems.TwentyFour:
-      sortItems = sortItems.splice(0, 24);
-      break;
-    case TimesItems.All:
       break;
   }
 
