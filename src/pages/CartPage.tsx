@@ -59,14 +59,14 @@ export const CartPage = () => {
       </h1>
 
       {!localData.length && (
-        <div className="col-span-24 grid grid-cols-24 mt-[32px] gap-x-[16px] gap-y-[24px] place-items-center">
+        <div className="col-span-24 grid grid-cols-24 mt-24 gap-y-6 place-items-center">
           <img
             src={placeholder}
             alt="empty bag"
-            className="col-span-4 col-start-11 "
+            className="col-span-2 col-start-12"
           />
 
-          <h2 className="col-span-6 col-start-10 font-mont text-white">
+          <h2 className="col-span-6 col-start-10 font-mont text-[#515151]">
             Your cart is empty
           </h2>
 
