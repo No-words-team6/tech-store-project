@@ -4,7 +4,6 @@ import { Header } from './components/Header';
 import { GridContainer } from './components/GridContainer';
 import { WidthContainer } from './components/WidthContainer';
 import { PaddingContainer } from './components/PaddingContainer/PaddingContainer';
-import { ShadowContainer } from './components/ShadowContainer';
 
 export const App = () => {
   return (
@@ -21,13 +20,7 @@ export const App = () => {
         </WidthContainer>
       </main>
 
-      <ShadowContainer>
-        <WidthContainer>
-          <GridContainer>
-            <Footer />
-          </GridContainer>
-        </WidthContainer>
-      </ShadowContainer>
+      <Footer />
     </div>
   );
 };
