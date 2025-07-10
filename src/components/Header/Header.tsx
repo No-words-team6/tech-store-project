@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Heart, ShoppingBag } from 'lucide-react';
+import { Heart, ShoppingBag, Menu } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
+import { MobileSidebar } from './MobileSidebar';
 
 import './header.css';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `h-16 flex items-center justify-center box-content text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
+  `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
     isActive ?
       'border-[#F1F2F9] text-[#F1F2F9]'
     : 'border-transparent text-[#75767F] hover:text-[#F1F2F9]'
   }`;
+
 const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 w-16 flex items-center justify-center group border border-[#323542] transition-colors ${
     isActive ?
@@ -18,6 +21,8 @@ const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
   }`;
 
 export const Header = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <header className="back-color sticky top-0 z-50 w-full h-16 shadow-[0_1px_0_0_#323542]">
       <div className="w-full flex items-center justify-between">
@@ -26,7 +31,7 @@ export const Header = () => {
             <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
           </NavLink>
 
-          <nav className="flex items-center h-16 gap-16">
+          <nav className="hidden sm:flex items-center h-16 gap-16">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
@@ -43,19 +48,34 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center">
-          <NavLink
-            to="/favourites"
-            className={iconLinkClass}
-            aria-label="Favourites"
-          >
-            <Heart className="w-5 h-5 text-inherit transition-colors" />
-          </NavLink>
+          <div className="hidden sm:flex">
+            <NavLink
+              to="/favourites"
+              className={iconLinkClass}
+              aria-label="Favourites"
+            >
+              <Heart className="w-5 h-5 text-inherit transition-colors" />
+            </NavLink>
 
-          <NavLink to="/cart" className={iconLinkClass} aria-label="Cart">
-            <ShoppingBag className="w-5 h-5 text-inherit transition-colors" />
-          </NavLink>
+            <NavLink to="/cart" className={iconLinkClass} aria-label="Cart">
+              <ShoppingBag className="w-5 h-5 text-inherit transition-colors" />
+            </NavLink>
+          </div>
+
+          <button
+            className="sm:hidden pr-4"
+            onClick={() => setIsSidebarOpen(true)}
+            aria-label="Open mobile menu"
+          >
+            <Menu className="w-6 h-6 text-[#F1F2F9]" />
+          </button>
         </div>
       </div>
+
+      <MobileSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
     </header>
   );
 };
