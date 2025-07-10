@@ -1,13 +1,13 @@
 import { useProductStore } from '@/stores/productStore';
 import { getCategoryCounts } from '@/utils/getCategoryCounts';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import phonesCaregory from '../../../../public/img/category-phones.webp';
 import tabletsCaregory from '../../../../public/img/category-tablets.png';
 import accessoriesCaregory from '../../../../public/img/category-accessories.png';
 
-export const CategoryCardsSection = () => {
+export const CategoryCardsSection: React.FC = () => {
   const products = useProductStore((state) => state.products);
 
   const { phonesCount, tabletsCount, accessoriesCount } = useMemo(

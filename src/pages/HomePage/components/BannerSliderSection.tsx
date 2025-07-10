@@ -1,10 +1,9 @@
 import SwiperCore from 'swiper';
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { BannerSlider } from './BannerSlider/BannerSlider';
 
-export const BannerSliderSection = () => {
+export const BannerSliderSection: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
   return (
