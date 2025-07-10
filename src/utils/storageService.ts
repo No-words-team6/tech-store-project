@@ -4,10 +4,6 @@ export type StorageKey = 'cart' | 'favourites';
 
 export type LocaleProduct = Product & { quantity: number };
 
-export enum Props {
-  props = 'enum',
-}
-
 export const getFromLocale = (storageKey: StorageKey) => {
   return JSON.parse(localStorage.getItem(storageKey) || '[]');
 };
