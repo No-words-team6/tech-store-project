@@ -11,7 +11,8 @@ const timesItemsOptions: TimesItems[] = Object.values(TimesItems).map(
 export const SortBar = () => {
   const [searchParams] = useSearchParams();
   const selectedSortBy = searchParams.get('sortBy') ?? '';
-  const selectedTimesItems = searchParams.get('timesItems') ?? '';
+  const selectedTimesItems =
+    searchParams.get('timesItems') ?? TimesItems.Twelve;
 
   return (
     <div className="col-span-24 flex gap-x-4">
