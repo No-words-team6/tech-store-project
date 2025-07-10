@@ -39,7 +39,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
   };
 
   const prepareQuantityPages = (): number[] => {
-    if (pagesLength < 5) {
+    if (pagesLength < 7) {
       return quantityPages;
     }
 
@@ -78,8 +78,8 @@ export const Paginator: React.FC<PaginatorProps> = ({
           />
         </PaginationItem>
 
-        {preparedQuantityPages.map((page) => (
-          <PaginationItem key={page}>
+        {preparedQuantityPages.map((page, idx) => (
+          <PaginationItem key={idx}>
             {page === -1 ?
               <PaginationEllipsis />
             : <PaginationLink

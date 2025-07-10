@@ -63,6 +63,13 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   );
 
   useEffect(() => {
+    const maxPage = Math.ceil(sortedProducts.length / +selectedTimesItems);
+    if (currentPage > maxPage) {
+      setCurrentPage(1);
+    }
+  }, [currentPage, selectedTimesItems, sortedProducts.length]);
+
+  useEffect(() => {
     setProducts([]);
     setIsLoading(true);
 
