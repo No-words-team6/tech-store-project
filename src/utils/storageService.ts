@@ -4,6 +4,10 @@ export type StorageKey = 'cart' | 'favourites';
 
 export type LocaleProduct = Product & { quantity: number };
 
+export enum Props {
+  props = 'enum',
+}
+
 export const getFromLocale = (storageKey: StorageKey) => {
   return JSON.parse(localStorage.getItem(storageKey) || '[]');
 };
@@ -23,10 +27,10 @@ export const isLocaleExists = (
 export const toggleProd = (product: Product, storageKey: StorageKey) => {
   const localeData: Product[] = getFromLocale(storageKey);
 
-  const exists = isLocaleExists(product.itemId, storageKey);
+  const isExists = isLocaleExists(product.itemId, storageKey);
 
   const updated =
-    exists ?
+    isExists ?
       localeData.filter((item) => item.itemId !== product.itemId)
     : [
         ...localeData,
@@ -37,17 +41,17 @@ export const toggleProd = (product: Product, storageKey: StorageKey) => {
 };
 
 export const increaseQuantity = (productId: string) => {
-  const data: LocaleProduct[] = getFromLocale('cart');
-  const updated = data.map((item) =>
+  const localeProdData: LocaleProduct[] = getFromLocale('cart');
+  const updated = localeProdData.map((item) =>
     item.itemId === productId ? { ...item, quantity: item.quantity + 1 } : item,
   );
   setToLocale('cart', updated);
 };
 
 export const decreaseQuantity = (productId: string) => {
-  const data: LocaleProduct[] = getFromLocale('cart');
+  const localeProdData: LocaleProduct[] = getFromLocale('cart');
 
-  const updated = data
+  const updated = localeProdData
     .map((item) =>
       item.itemId === productId ?
         { ...item, quantity: item.quantity - 1 }
