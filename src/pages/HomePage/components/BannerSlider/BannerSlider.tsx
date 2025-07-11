@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide, type SwiperClass } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
 import './BannerSlider.css';
 import { Link } from 'react-router-dom';
@@ -19,11 +19,14 @@ export const BannerSlider = ({ setSwiperInstance }: Props) => {
   return (
     <div className="relative w-full max-w-full h-[432px]">
       <Swiper
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay, EffectFade]} // ✅ підключаємо модулі
         onSwiper={setSwiperInstance}
+        effect="fade" // ✅ активуємо fade
+        fadeEffect={{ crossFade: true }} // ✅ плавна заміна
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
+        speed={2000} // ✅ плавність переходу
         className="w-full h-full"
       >
         {images.map((image, index) => (
