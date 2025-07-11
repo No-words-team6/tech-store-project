@@ -7,7 +7,7 @@ type Props = {
   onCapacityClick?: (capacity: string) => void;
 };
 
-export const AvailableCapacity: React.FC<Props> = ({
+export const CapacitySwitcher: React.FC<Props> = ({
   item,
   onCapacityClick,
 }) => {

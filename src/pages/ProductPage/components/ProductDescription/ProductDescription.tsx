@@ -5,7 +5,7 @@ type Props = {
   item: Item;
 };
 
-export const ItemDescription: React.FC<Props> = ({ item }) => {
+export const ProductDescription: React.FC<Props> = ({ item }) => {
   return (
     <>
       {item.description.map((partOfDescription) => {

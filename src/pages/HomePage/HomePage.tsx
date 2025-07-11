@@ -4,6 +4,9 @@ import { ProductSlider } from '@/components/ProductSlider';
 import { useProductStore } from '@/stores/productStore';
 import { CategoryCardsSection } from './components/CategoryCardsSection';
 import { BannerSliderSection } from './components/BannerSliderSection';
+import { PaddingContainer } from '@/components/PaddingContainer';
+import { GridContainer } from '@/components/GridContainer';
+import { WidthContainer } from '@/components/WidthContainer';
 
 export const HomePage = () => {
   const fetchAllProducts = useProductStore((state) => state.fetchAllProducts);
@@ -15,18 +18,27 @@ export const HomePage = () => {
   }, [fetchAllProducts]);
 
   return (
-    <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-x-[16px] gap-y-[80px]">
-      <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
-        Welcome to Nice Gadgets store!
-      </h1>
+    <WidthContainer>
+      <PaddingContainer>
+        <GridContainer>
+          <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-x-[16px] gap-y-[80px]">
+            <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
+              Welcome to Nice Gadgets store!
+            </h1>
 
-      <BannerSliderSection />
+            <BannerSliderSection />
 
-      <ProductSlider productList={newestList} title={'Brand new models'} />
+            <ProductSlider
+              productList={newestList}
+              title={'Brand new models'}
+            />
 
-      <CategoryCardsSection />
+            <CategoryCardsSection />
 
-      <ProductSlider productList={cheapestList} title={'Hot prices'} />
-    </div>
+            <ProductSlider productList={cheapestList} title={'Hot prices'} />
+          </div>
+        </GridContainer>
+      </PaddingContainer>
+    </WidthContainer>
   );
 };

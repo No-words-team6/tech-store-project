@@ -1,18 +1,23 @@
-import { BreadcrumbNav } from '@/components/BreadcrumbNav';
 import { CatalogPageBody } from '@/components/CatalogPageBody';
+import { WidthContainer } from '@/components/WidthContainer';
+import { PaddingContainer } from '@/components/PaddingContainer';
+import { GridContainer } from '@/components/GridContainer';
+import { CatalogPageHeader } from '@/components/CatalogPageHeader';
 
 export const AccessoriesCatalogPage = () => {
   return (
     <>
-      <BreadcrumbNav />
+      <CatalogPageHeader title={'Accessories'} />
 
-      <div className="col-span-24 grid gap-y-[24px]">
-        <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
-          Accessories
-        </h1>
-
-        <CatalogPageBody category={'accessories'} />
-      </div>
+      <WidthContainer>
+        <PaddingContainer>
+          <GridContainer>
+            <div className="col-span-24 grid gap-y-[24px]">
+              <CatalogPageBody category={'accessories'} />
+            </div>
+          </GridContainer>
+        </PaddingContainer>
+      </WidthContainer>
     </>
   );
 };

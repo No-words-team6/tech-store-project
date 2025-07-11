@@ -1,21 +1,21 @@
 import { getProductById, getProducts } from '@/api';
-import { BreadcrumbNav } from '@/components/BreadcrumbNav';
-import { ItemDescription } from '@/components/ItemDescription';
-import { Loader } from '@/components/Loader';
-import { ProductGallery } from '@/components/ProductGallery';
-import { ProductOptions } from '@/components/ProductOptions/ProductOptions';
+import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
+import { Loader } from '@/components/common/Loader';
 import { ProductSlider } from '@/components/ProductSlider';
-import { ProductSpecs } from '@/components/ProductSpecs';
 import type { Category, Item, Product } from '@/types';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { NavBack } from '@/components/NavBack';
+import { NavBack } from '@/components/common/NavBack';
+import { ProductGallery } from './components/ProductGallery';
+import { ProductOptions } from './components/ProductOptions';
+import { ProductDescription } from './components/ProductDescription';
+import { ProductSpecs } from './components/ProductSpecs';
 
 const prepareRecomendationList = (data: Product[], limit: number) => {
   return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
 };
 
-export const ItemCardPage = () => {
+export const ProductPage = () => {
   const location = useLocation();
 
   const pathParts = location.pathname.split('/');
@@ -96,7 +96,7 @@ export const ItemCardPage = () => {
                   <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
                 </div>
 
-                <ItemDescription item={item} />
+                <ProductDescription item={item} />
               </div>
 
               <div className="col-start-14 col-span-11 flex flex-col">

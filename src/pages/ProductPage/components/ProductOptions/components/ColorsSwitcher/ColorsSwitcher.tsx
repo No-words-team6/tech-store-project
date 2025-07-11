@@ -7,7 +7,7 @@ type Props = {
   onColorClick?: (color: string) => void;
 };
 
-export const AvailableColors: React.FC<Props> = ({ item, onColorClick }) => {
+export const ColorsSwitcher: React.FC<Props> = ({ item, onColorClick }) => {
   return (
     <div className="flex gap-2">
       {item.colorsAvailable.map((color) => {
