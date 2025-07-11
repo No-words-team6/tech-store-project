@@ -7,34 +7,35 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '@/components/ui/pagination';
+import { useChangeSearchParam } from '@/hooks/useChangeSearchParam';
 import cn from 'classnames';
 
 interface PaginatorProps {
   quantityPages: number[];
   currentPage: number;
-  setCurrentPage: (value: number) => void;
 }
 
 export const Paginator: React.FC<PaginatorProps> = ({
   quantityPages,
   currentPage,
-  setCurrentPage,
 }) => {
+  const changeSearchParam = useChangeSearchParam();
+
+  const handleSelectChange = (value: string) => {
+    changeSearchParam('numberOfPage', value);
+  };
+
   const pagesLength = quantityPages.length;
 
   const handlePrev = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      handleSelectChange(String(currentPage - 1));
     }
-  };
-
-  const handleChoose = (numberPage: number) => {
-    setCurrentPage(numberPage);
   };
 
   const handleNext = () => {
     if (currentPage < pagesLength) {
-      setCurrentPage(currentPage + 1);
+      handleSelectChange(String(currentPage + 1));
     }
   };
 
@@ -73,7 +74,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
         <PaginationItem className="bg-gray-800 rounded-none">
           <PaginationPrevious
             className="rounded-none"
-            href="#"
+            href="#catalogBar"
             onClick={handlePrev}
           />
         </PaginationItem>
@@ -83,11 +84,11 @@ export const Paginator: React.FC<PaginatorProps> = ({
             {page === -1 ?
               <PaginationEllipsis />
             : <PaginationLink
-                href="#"
+                href="#catalogBar"
                 className={cn('bg-gray-800 rounded-none', {
                   'bg-purple-500': currentPage === page,
                 })}
-                onClick={() => handleChoose(page)}
+                onClick={() => handleSelectChange(page.toString())}
               >
                 {page}
               </PaginationLink>
@@ -97,7 +98,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
 
         <PaginationItem className="bg-gray-800 rounded-none">
           <PaginationNext
-            href="#"
+            href="#catalogBar"
             className="rounded-none"
             onClick={handleNext}
           />

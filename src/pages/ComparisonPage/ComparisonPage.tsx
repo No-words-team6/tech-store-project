@@ -3,18 +3,9 @@ import { PaddingContainer } from '@/components/PaddingContainer';
 import { WidthContainer } from '@/components/WidthContainer';
 import { useProductStore } from '@/stores/productStore';
 import { useState } from 'react';
-import type { Product } from '@/types';
 import { SliderComparison } from './components/SliderComparison';
 import { CardComparison } from './components/CardComparison';
-
-const findProd = (
-  choosedProdId: Product['itemId'],
-  products: Product[],
-): Product | undefined => {
-  return choosedProdId ?
-      products.find((product) => product.itemId === choosedProdId)
-    : undefined;
-};
+import { findProduct } from '@/utils/findProduct';
 
 export const ComparisonPage = () => {
   const [choosedProdId1, setChoosedProdId1] = useState('');
@@ -23,9 +14,9 @@ export const ComparisonPage = () => {
 
   const products = useProductStore((state) => state.products);
 
-  const product1 = findProd(choosedProdId1, products);
-  const product2 = findProd(choosedProdId2, products);
-  const product3 = findProd(choosedProdId3, products);
+  const product1 = findProduct(choosedProdId1, products);
+  const product2 = findProduct(choosedProdId2, products);
+  const product3 = findProduct(choosedProdId3, products);
 
   const choosedItemIds = products
     .filter(

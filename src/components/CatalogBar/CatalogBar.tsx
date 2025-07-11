@@ -15,7 +15,7 @@ export const CatalogBar = () => {
     searchParams.get('timesItems') ?? TimesItems.Twelve;
 
   return (
-    <div className="col-span-24 flex gap-x-4">
+    <div className="col-span-24 flex gap-x-4" id="catalogBar">
       <Selector
         title="Sort by"
         options={sortByOptions}

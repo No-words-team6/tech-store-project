@@ -20,10 +20,11 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   );
 
   const [searchParams] = useSearchParams();
-
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
+  const selectedPage = searchParams.get('numberOfPage') ?? '1';
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const sortedProducts = sortProducts(products, {
@@ -91,11 +92,7 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
       )}
 
       {!isLoading && (
-        <Paginator
-          quantityPages={numberOfPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        <Paginator quantityPages={numberOfPages} currentPage={+selectedPage} />
       )}
     </div>
   );
