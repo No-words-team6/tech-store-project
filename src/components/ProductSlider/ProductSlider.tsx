@@ -1,15 +1,13 @@
 import type { Product } from '@/types';
 import type React from 'react';
 import { ProductCard } from '../ProductCard';
-import { Loader } from '../Loader';
-import { ButtonSwipe } from '../ButtonSwipe';
+import { ButtonSwipe } from '../common/ButtonSwipe';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import type { SwiperClass } from 'swiper/react';
 
 import './ProductSlider.css';
 import { useEffect, useState } from 'react';
-import { useProductStore } from '@/stores/productStore';
 
 interface Props {
   productList: Product[];
@@ -22,7 +20,6 @@ export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
   );
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  const isLoading = useProductStore((state) => state.isLoading);
 
   useEffect(() => {
     if (swiperInstance) {
@@ -47,7 +44,6 @@ export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
         />
       </div>
 
-      {isLoading && <Loader />}
       <div className="col-span-24 grid relative w-full max-w-full h-[432px] mb-[48px]">
         <Swiper
           modules={[Pagination, Autoplay]}

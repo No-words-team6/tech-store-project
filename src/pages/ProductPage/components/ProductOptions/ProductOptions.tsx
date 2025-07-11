@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AvailableColors } from '../AvailableColors';
-import { AvailableCapacity } from '../AvailableCapacity';
 import type { Item, Product } from '@/types';
-import { ButtonAddToCart } from '../ButtonAddToCart';
-import { ButtonHeart } from '../ButtonHeart';
+import { ColorsSwitcher } from './components/ColorsSwitcher';
+import { CapacitySwitcher } from './components/CapacitySwitcher';
+import { ButtonHeart } from '@/components/common/ButtonHeart';
+import { ButtonAddToCart } from '@/components/common/ButtonAddToCart';
 
 interface Props {
   item: Item;
@@ -20,12 +20,10 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
       fetch('/gadgets/phones.json').then((res) => res.json()),
       fetch('/gadgets/tablets.json').then((res) => res.json()),
       fetch('/gadgets/accessories.json').then((res) => res.json()),
-    ])
-      .then(([phones, tablets, accessories]) => {
-        const allItems = [...phones, ...tablets, ...accessories];
-        setProducts(allItems);
-      })
-      .catch((err) => console.error('Failed to load products:', err));
+    ]).then(([phones, tablets, accessories]) => {
+      const allItems = [...phones, ...tablets, ...accessories];
+      setProducts(allItems);
+    });
   }, []);
 
   const handleColorClick = (color: string) => {
@@ -66,17 +64,14 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
       <div className="col-span-7 flex flex-col gap-y-6">
         <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
           <p>Available colors</p>
-          <AvailableColors item={item} onColorClick={handleColorClick} />
+          <ColorsSwitcher item={item} onColorClick={handleColorClick} />
         </div>
 
         <hr className="w-full border-t border-[#3B3E4A]" />
 
         <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
           <p>Select capacity</p>
-          <AvailableCapacity
-            item={item}
-            onCapacityClick={handleCapacityClick}
-          />
+          <CapacitySwitcher item={item} onCapacityClick={handleCapacityClick} />
         </div>
 
         <hr className="w-full border-t border-[#3B3E4A]" />
