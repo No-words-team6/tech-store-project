@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { type Category, type Product } from '@/types';
 import { ProductCard } from '../ProductCard';
-import { SortBar } from '../SortBar';
 import { useSearchParams } from 'react-router-dom';
 import { sortProducts } from '@/utils/sortProducts';
 import { Paginator } from '../Paginator';
 import { TimesItems } from '@/types/TimesItems';
 import { useProductStore } from '@/stores/productStore';
+import { CatalogBar } from '../CatalogBar';
 
 interface Props {
   category: Category;
@@ -20,10 +20,11 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   );
 
   const [searchParams] = useSearchParams();
-
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
+  const selectedPage = searchParams.get('numberOfPage') ?? '1';
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const sortedProducts = sortProducts(products, {
@@ -78,7 +79,7 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
 
   return (
     <div className="col-span-24 grid grid-cols-24 gap-[24px]">
-      <SortBar />
+      <CatalogBar />
 
       {!isLoading && (
         <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[40px]">
@@ -91,11 +92,7 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
       )}
 
       {!isLoading && (
-        <Paginator
-          quantityPages={numberOfPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        <Paginator quantityPages={numberOfPages} currentPage={+selectedPage} />
       )}
     </div>
   );
