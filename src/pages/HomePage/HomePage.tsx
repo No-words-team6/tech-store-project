@@ -21,8 +21,8 @@ export const HomePage = () => {
     <WidthContainer>
       <PaddingContainer>
         <GridContainer>
-          <div className="col-span-24 grid grid-cols-24 pt-[56px] pb-[80px] gap-x-[16px] gap-y-[80px]">
-            <h1 className="col-span-24 color-white font-mont font-bold text-5xl">
+          <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-y-14 sm:gap-y-16 xl:gap-y-20 gap-x-[16px] pt-0 sm:pt-2 xl:pt-8">
+            <h1 className="w-full color-white font-mont font-extrabold text-[32px] sm:text-5xl col-span-4 sm:col-span-12 xl:col-span-24">
               Welcome to Nice Gadgets store!
             </h1>
 
