@@ -30,9 +30,9 @@ export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
   }, [swiperInstance, productList.length]);
 
   return (
-    <section className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
-      <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
-        <h2 className="color-white font-mont font-bold text-[32px] col-span-12">
+    <section className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[24px]">
+      <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px]">
+        <h2 className="color-white font-mont font-extrabold text-[22px] sm:text-[32px] col-span-2 sm:col-span-6 xl:col-span-12">
           {title}
         </h2>
 
@@ -44,7 +44,7 @@ export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
         />
       </div>
 
-      <div className="col-span-24 grid relative w-full max-w-full h-[432px] mb-[48px]">
+      <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid relative w-full max-w-full h-[432px] mb-14 sm:mb-16 xl:mb-20">
         <Swiper
           modules={[Pagination, Autoplay]}
           onSwiper={(swiper) => {
@@ -55,7 +55,11 @@ export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
             setIsEnd(swiper.isEnd);
           }}
           loop={false}
-          slidesPerView={4}
+          breakpoints={{
+            0: { slidesPerView: 1.5 },
+            640: { slidesPerView: 2.5 },
+            1200: { slidesPerView: 4 },
+          }}
           slidesPerGroup={1}
           spaceBetween={16}
           className="w-full h-[586px]"
