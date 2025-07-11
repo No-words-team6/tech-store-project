@@ -5,16 +5,12 @@ import gsap from 'gsap';
 
 interface Props {
   title: string;
+  videoSources: string[];
 }
 
-const videoSources = [
-  '/videos/phonesBanner-1.mp4',
-  '/videos/phonesBanner-2.mp4',
-];
+const positions = ['center 30%', 'center 20%', 'center 20%'];
 
-const positions = ['center 30%', 'center 20%'];
-
-export const CatalogPageHeader: React.FC<Props> = ({ title }) => {
+export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
   const [videoIndex, setVideoIndex] = useState(0);
   const videoRefs = useRef<HTMLVideoElement[]>([]);
 

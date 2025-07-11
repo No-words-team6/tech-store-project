@@ -4,10 +4,15 @@ import { PaddingContainer } from '@/components/PaddingContainer';
 import { GridContainer } from '@/components/GridContainer';
 import { CatalogPageHeader } from '@/components/CatalogPageHeader';
 
+const videoSources = [
+  '/videos/watchesBanner-1.mp4',
+  '/videos/phonesBanner-2.mp4',
+];
+
 export const AccessoriesCatalogPage = () => {
   return (
     <>
-      <CatalogPageHeader title={'Accessories'} />
+      <CatalogPageHeader title={'Accessories'} videoSources={videoSources} />
 
       <WidthContainer>
         <PaddingContainer>
