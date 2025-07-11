@@ -15,6 +15,7 @@ import { RightsPage } from './pages/RightsPage';
 import { ContactsPage } from './pages/ContactsPage';
 import { HomePage } from './pages/HomePage';
 import { ProductPage } from './pages/ProductPage';
+import { ComparisonPage } from './pages/ComparisonPage';
 
 export const Root = () => (
   <Router>
@@ -25,16 +26,19 @@ export const Root = () => (
 
         <Route path="phones">
           <Route index element={<PhonesCatalogPage />} />
+          <Route path="comparison" element={<ComparisonPage />} />
           <Route path=":itemId" element={<ProductPage />} />
         </Route>
 
         <Route path="tablets">
           <Route index element={<TabletsCatalogPage />} />
+          <Route path="comparison" element={<ComparisonPage />} />
           <Route path=":itemId" element={<ProductPage />} />
         </Route>
 
         <Route path="accessories">
           <Route index element={<AccessoriesCatalogPage />} />
+          <Route path="comparison" element={<ComparisonPage />} />
           <Route path=":itemId" element={<ProductPage />} />
         </Route>
 
