@@ -12,7 +12,7 @@ const videoSources = [
   '/videos/phonesBanner-2.mp4',
 ];
 
-const positions = ['center 20%', 'center 20%'];
+const positions = ['center 30%', 'center 20%'];
 
 export const CatalogPageHeader: React.FC<Props> = ({ title }) => {
   const [videoIndex, setVideoIndex] = useState(0);
@@ -46,7 +46,10 @@ export const CatalogPageHeader: React.FC<Props> = ({ title }) => {
   }, [videoIndex]);
 
   return (
-    <div className="relative md:h-[600px] overflow-hidden mb-[20px] bg-black">
+    <div
+      className="relative md:h-[600px] overflow-hidden mb-[20px] bg-black"
+      style={{ height: '800px' }}
+    >
       {videoSources.map((src, i) => (
         <video
           key={i}

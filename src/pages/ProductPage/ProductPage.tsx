@@ -10,6 +10,9 @@ import { ProductGallery } from './components/ProductGallery';
 import { ProductOptions } from './components/ProductOptions';
 import { ProductDescription } from './components/ProductDescription';
 import { ProductSpecs } from './components/ProductSpecs';
+import { WidthContainer } from '@/components/WidthContainer';
+import { PaddingContainer } from '@/components/PaddingContainer';
+import { GridContainer } from '@/components/GridContainer';
 
 const prepareRecomendationList = (data: Product[], limit: number) => {
   return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
@@ -61,61 +64,64 @@ export const ProductPage = () => {
   const currentProduct = data.find((product) => product.itemId === item?.id);
 
   return (
-    <>
-      <BreadcrumbNav />
+    <WidthContainer>
+      <PaddingContainer>
+        <GridContainer>
+          <NavBack to={category} />
 
-      <NavBack to={category} />
-
-      {isLoading && !item && (
-        <div className="col-span-24 flex justify-center items-center">
-          <Loader />
-        </div>
-      )}
-
-      {!isLoading && item && currentProduct && (
-        <div className="col-span-24">
-          <h1 className="col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
-            {item.name}
-          </h1>
-          <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[80px]">
-            <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
-              <ProductGallery
-                photoSet={photoSet}
-                selectedPhoto={selectedPhoto}
-                setSelectedPhoto={setSelectedPhoto}
-                item={item}
-              />
-
-              <ProductOptions item={item} product={currentProduct} />
+          <BreadcrumbNav />
+          {isLoading && !item && (
+            <div className="col-span-24 flex justify-center items-center">
+              <Loader />
             </div>
+          )}
 
-            <div className="col-span-24 grid grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
-              <div className="col-span-12 flex flex-col gap-y-8">
-                <div>
-                  <h2 className="text-[22px] font-extrabold">About</h2>
-                  <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
+          {!isLoading && item && currentProduct && (
+            <div className="col-span-24">
+              <h1 className="col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
+                {item.name}
+              </h1>
+              <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[80px]">
+                <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
+                  <ProductGallery
+                    photoSet={photoSet}
+                    selectedPhoto={selectedPhoto}
+                    setSelectedPhoto={setSelectedPhoto}
+                    item={item}
+                  />
+
+                  <ProductOptions item={item} product={currentProduct} />
                 </div>
 
-                <ProductDescription item={item} />
-              </div>
+                <div className="col-span-24 grid grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
+                  <div className="col-span-12 flex flex-col gap-y-8">
+                    <div>
+                      <h2 className="text-[22px] font-extrabold">About</h2>
+                      <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
+                    </div>
 
-              <div className="col-start-14 col-span-11 flex flex-col">
-                <div>
-                  <h2 className="text-[22px] font-extrabold">Tech specs</h2>
-                  <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
+                    <ProductDescription item={item} />
+                  </div>
+
+                  <div className="col-start-14 col-span-11 flex flex-col">
+                    <div>
+                      <h2 className="text-[22px] font-extrabold">Tech specs</h2>
+                      <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
+                    </div>
+
+                    <ProductSpecs item={item} />
+                  </div>
                 </div>
 
-                <ProductSpecs item={item} />
+                <ProductSlider
+                  productList={reccomendationsList}
+                  title={'You may also like'}
+                />
               </div>
             </div>
-
-            <ProductSlider
-              productList={reccomendationsList}
-              title={'You may also like'}
-            />
-          </div>
-        </div>
-      )}
-    </>
+          )}
+        </GridContainer>
+      </PaddingContainer>
+    </WidthContainer>
   );
 };
