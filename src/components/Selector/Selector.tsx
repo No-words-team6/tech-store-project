@@ -6,9 +6,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import { useSearchParams } from 'react-router-dom';
 import type { SortBy } from '@/types';
 import type { TimesItems } from '@/types/TimesItems';
+import { useChangeSearchParam } from '@/hooks/useChangeSearchParam';
 
 interface SelectorProps {
   title: string;
@@ -25,12 +25,10 @@ export const Selector: React.FC<SelectorProps> = ({
   selectedSort,
   selectorWidth,
 }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const changeSearchParam = useChangeSearchParam();
 
   const handleSelectChange = (value: string) => {
-    const newParams = new URLSearchParams(searchParams);
-    newParams.set(keySelectedSort, value);
-    setSearchParams(newParams);
+    changeSearchParam(keySelectedSort, value);
   };
 
   return (
