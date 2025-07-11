@@ -1,28 +1,21 @@
 import { Button } from '@/components/ui/button';
+import { useProductStore } from '@/stores/productStore';
 import type { Product } from '@/types';
-import { isLocaleExists, toggleProd } from '@/utils/storageService';
 import cn from 'classnames';
 import { Heart } from 'lucide-react';
-import { useEffect, useState } from 'react';
 
 interface ButtonHeartProps {
   product: Product;
 }
 
 export const ButtonHeart: React.FC<ButtonHeartProps> = ({ product }) => {
-  const [isInFavorites, setIsInFavorites] = useState(false);
-
-  useEffect(() => {
-    const isExist = isLocaleExists(product.itemId, 'favourites');
-    setIsInFavorites(isExist);
-  }, [product.itemId]);
-
-  const handleToggleHeart = () => {
-    toggleProd(product, 'favourites');
-
-    const isExist = isLocaleExists(product.itemId, 'favourites');
-    setIsInFavorites(isExist);
-  };
+  const favouritesStore = useProductStore((state) => state.favouritesStore);
+  const isInFavorites = favouritesStore.some(
+    (item) => item.itemId === product.itemId,
+  );
+  const toggleFavouriteProduct = useProductStore(
+    (state) => state.toggleFavouriteProduct,
+  );
 
   return (
     <Button
@@ -32,7 +25,7 @@ export const ButtonHeart: React.FC<ButtonHeartProps> = ({ product }) => {
           'bg-gray-800 border-gray-600 border-2': isInFavorites,
         },
       )}
-      onClick={handleToggleHeart}
+      onClick={() => toggleFavouriteProduct(product)}
     >
       <Heart
         className={cn('w-4 h-4', {

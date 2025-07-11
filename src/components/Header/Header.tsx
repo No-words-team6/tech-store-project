@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Heart, ShoppingBag, Menu } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 import { MobileSidebar } from './MobileSidebar';
 
 import './header.css';
-import { getFromLocale, type LocaleProduct } from '@/utils/storageService';
-import type { Product } from '@/types';
+import { useProductStore } from '@/stores/productStore';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
@@ -24,13 +23,9 @@ const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [favData, setFavData] = useState<Product[]>([]);
-  const [cartData, setCartData] = useState<LocaleProduct[]>([]);
 
-  useEffect(() => {
-    setFavData(getFromLocale('favourites'));
-    setCartData(getFromLocale('cart'));
-  }, []);
+  const favouritesData = useProductStore((state) => state.favouritesStore);
+  const cartData = useProductStore((state) => state.cartStore);
 
   const cartItemsAmount = cartData.reduce((acc, product) => {
     return acc + product.quantity;
@@ -69,9 +64,9 @@ export const Header = () => {
             >
               <div className="absolute">
                 <Heart className="w-5 h-5 text-inherit transition-colors" />
-                {!!favData.length && (
+                {!!favouritesData.length && (
                   <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
-                    {favData.length}
+                    {favouritesData.length}
                   </span>
                 )}
               </div>

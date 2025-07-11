@@ -7,7 +7,6 @@ import {
 import { App } from './App';
 import { ErrorPage } from './pages/ErrorPage';
 import { CartPage } from './pages/CartPage';
-import { ItemCardPage } from './pages/ItemCardPage';
 import { FavouritesPage } from './pages/FavouritesPage';
 import { PhonesCatalogPage } from './pages/PhonesCatalogPage';
 import { AccessoriesCatalogPage } from './pages/AccessoriesCatalogPage';
@@ -15,6 +14,7 @@ import { TabletsCatalogPage } from './pages/TabletsCatalogPage';
 import { RightsPage } from './pages/RightsPage';
 import { ContactsPage } from './pages/ContactsPage';
 import { HomePage } from './pages/HomePage';
+import { ProductPage } from './pages/ProductPage';
 
 export const Root = () => (
   <Router>
@@ -25,17 +25,17 @@ export const Root = () => (
 
         <Route path="phones">
           <Route index element={<PhonesCatalogPage />} />
-          <Route path=":itemId" element={<ItemCardPage />} />
+          <Route path=":itemId" element={<ProductPage />} />
         </Route>
 
         <Route path="tablets">
           <Route index element={<TabletsCatalogPage />} />
-          <Route path=":itemId" element={<ItemCardPage />} />
+          <Route path=":itemId" element={<ProductPage />} />
         </Route>
 
         <Route path="accessories">
           <Route index element={<AccessoriesCatalogPage />} />
-          <Route path=":itemId" element={<ItemCardPage />} />
+          <Route path=":itemId" element={<ProductPage />} />
         </Route>
 
         <Route path="favourites" element={<FavouritesPage />} />

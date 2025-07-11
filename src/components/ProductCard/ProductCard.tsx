@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../index.css';
-import { ButtonHeart } from '../ButtonHeart';
+import { ButtonHeart } from '../common/ButtonHeart';
 import type { Product } from '@/types';
-import { ButtonAddToCart } from '../ButtonAddToCart';
+import { ButtonAddToCart } from '../common/ButtonAddToCart';
 
 interface Props {
   product: Product;

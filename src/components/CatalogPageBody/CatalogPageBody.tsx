@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { getProductsByCategory } from '@/api';
 import { type Category, type Product } from '@/types';
 import { ProductCard } from '../ProductCard';
-import { Loader } from '../Loader';
 import { SortBar } from '../SortBar';
 import { useSearchParams } from 'react-router-dom';
 import { sortProducts } from '@/utils/sortProducts';
 import { Paginator } from '../Paginator';
 import { TimesItems } from '@/types/TimesItems';
+import { useProductStore } from '@/stores/productStore';
 
 interface Props {
   category: Category;
 }
 
 export const CatalogPageBody: React.FC<Props> = ({ category }) => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const products = useProductStore((state) => state.products);
+  const isLoading = useProductStore((state) => state.isLoading);
+  const fetchProductsByCategory = useProductStore(
+    (state) => state.fetchProductsByCategory,
+  );
 
   const [searchParams] = useSearchParams();
+
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
@@ -70,24 +73,12 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   }, [currentPage, selectedTimesItems, sortedProducts.length]);
 
   useEffect(() => {
-    setProducts([]);
-    setIsLoading(true);
-
-    getProductsByCategory(category)
-      .then(setProducts)
-      .catch(() => {
-        setProducts([]);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, [category]);
+    fetchProductsByCategory(category);
+  }, [category, fetchProductsByCategory]);
 
   return (
     <div className="col-span-24 grid grid-cols-24 gap-[24px]">
-      {!isLoading && <SortBar />}
-
-      {isLoading && <Loader />}
+      <SortBar />
 
       {!isLoading && (
         <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[40px]">

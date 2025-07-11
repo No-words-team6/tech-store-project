@@ -1,6 +1,4 @@
-import { BreadcrumbNav } from '@/components/BreadcrumbNav';
-
-const sections = [
+export const sections = [
   {
     title: '1. Ownership and Intellectual Property',
     content:
@@ -37,26 +35,3 @@ const sections = [
       'If you have any questions or feedback about these terms, feel free to reach out via the Contacts page.',
   },
 ];
-
-export const RightsPage = () => {
-  return (
-    <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] pb-[80px]">
-      <BreadcrumbNav />
-
-      <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
-        <h1 className="col-span-24 text-white font-mont font-bold text-5xl">
-          Terms & Policies
-        </h1>
-
-        <div className="col-span-24 text-[#C1C2C7] space-y-8">
-          {sections.map((section, index) => (
-            <div key={index} className="space-y-2">
-              <p className="font-bold">{section.title}</p>
-              <p>{section.content}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
