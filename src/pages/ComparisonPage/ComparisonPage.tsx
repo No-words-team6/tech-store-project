@@ -7,6 +7,15 @@ import type { Product } from '@/types';
 import { SliderComparison } from './components/SliderComparison';
 import { CardComparison } from './components/CardComparison';
 
+const findProd = (
+  choosedProdId: Product['itemId'],
+  products: Product[],
+): Product | undefined => {
+  return choosedProdId ?
+      products.find((product) => product.itemId === choosedProdId)
+    : undefined;
+};
+
 export const ComparisonPage = () => {
   const [choosedProdId1, setChoosedProdId1] = useState('');
   const [choosedProdId2, setChoosedProdId2] = useState('');
@@ -14,15 +23,18 @@ export const ComparisonPage = () => {
 
   const products = useProductStore((state) => state.products);
 
-  const findProd = (choosedProdId: Product['itemId']): Product | undefined => {
-    return choosedProdId ?
-        products.find((product) => product.itemId === choosedProdId)
-      : undefined;
-  };
+  const product1 = findProd(choosedProdId1, products);
+  const product2 = findProd(choosedProdId2, products);
+  const product3 = findProd(choosedProdId3, products);
 
-  const product1 = findProd(choosedProdId1);
-  const product2 = findProd(choosedProdId2);
-  const product3 = findProd(choosedProdId3);
+  const choosedItemIds = products
+    .filter(
+      (prod) =>
+        prod.itemId === choosedProdId1 ||
+        prod.itemId === choosedProdId2 ||
+        prod.itemId === choosedProdId3,
+    )
+    .map((prod) => prod.itemId);
 
   return (
     <WidthContainer>
@@ -33,18 +45,21 @@ export const ComparisonPage = () => {
               products={products}
               choosedProdId={choosedProdId1}
               onProdIdChange={setChoosedProdId1}
+              choosedItemIds={choosedItemIds}
             />
 
             <SliderComparison
               products={products}
               choosedProdId={choosedProdId2}
               onProdIdChange={setChoosedProdId2}
+              choosedItemIds={choosedItemIds}
             />
 
             <SliderComparison
               products={products}
               choosedProdId={choosedProdId3}
               onProdIdChange={setChoosedProdId3}
+              choosedItemIds={choosedItemIds}
             />
           </div>
 

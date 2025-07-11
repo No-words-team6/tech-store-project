@@ -13,12 +13,14 @@ interface SliderComparisonProps {
   products: Product[];
   choosedProdId: Product['itemId'];
   onProdIdChange: (itemId: Product['itemId']) => void;
+  choosedItemIds: Product['itemId'][];
 }
 
 export const SliderComparison: React.FC<SliderComparisonProps> = ({
   products,
   choosedProdId,
   onProdIdChange,
+  choosedItemIds,
 }) => {
   return (
     <div className="flex">
@@ -33,9 +35,9 @@ export const SliderComparison: React.FC<SliderComparisonProps> = ({
                 key={product.id}
                 value={product.itemId}
                 className={cn({
-                  'bg-blue-400': product.itemId === choosedProdId,
+                  'bg-blue-400': choosedItemIds?.includes(product.itemId),
                 })}
-                disabled={product.itemId === choosedProdId}
+                disabled={choosedItemIds?.includes(product.itemId)}
               >
                 {product.name}
               </SelectItem>
