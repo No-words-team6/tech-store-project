@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BreadcrumbNav } from '../common/BreadcrumbNav';
 import { WidthContainer } from '../WidthContainer';
-import gsap from 'gsap';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   title: string;
@@ -13,6 +16,7 @@ const positions = ['center 30%', 'center 20%', 'center 20%'];
 export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
   const [videoIndex, setVideoIndex] = useState(0);
   const videoRefs = useRef<HTMLVideoElement[]>([]);
+  const maskRef = useRef<HTMLDivElement>(null);
 
   const fadeToNextVideo = () => {
     const current = videoRefs.current[videoIndex];
@@ -29,9 +33,7 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
     const currentVideo = videoRefs.current[videoIndex];
     if (!currentVideo) return;
 
-    const handleEnded = () => {
-      fadeToNextVideo();
-    };
+    const handleEnded = () => fadeToNextVideo();
 
     currentVideo.addEventListener('ended', handleEnded);
     currentVideo.play();
@@ -41,32 +43,57 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
     };
   }, [videoIndex]);
 
+  useEffect(() => {
+    if (!maskRef.current) return;
+
+    gsap.to(maskRef.current, {
+      clipPath: 'inset(5% 15% 5% 15%)',
+      borderRadius: '48px',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: maskRef.current,
+        start: 'top top',
+        end: '+=500',
+        scrub: true,
+      },
+    });
+  }, []);
+
   return (
     <div
-      className="relative md:h-[600px] overflow-hidden mb-[20px] bg-black"
-      style={{ height: '800px' }}
+      className="relative mx-auto w-full h-screen max-h-[1016px] max-w-[1920px] overflow-hidden mb-5 flex items-center justify-center"
+      style={{ height: 'calc(100vh - 64px)' }}
     >
-      {videoSources.map((src, i) => (
-        <video
-          key={i}
-          ref={(el) => {
-            if (el) videoRefs.current[i] = el;
-          }}
-          muted
-          loop={false}
-          playsInline
-          onEnded={fadeToNextVideo}
-          className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{
-            objectPosition: positions[i],
-            opacity: i === videoIndex ? 1 : 0,
-            zIndex: i === videoIndex ? 2 : 1,
-          }}
-          src={src}
-        />
-      ))}
+      <div
+        ref={maskRef}
+        className="sticky top-0 h-full w-full flex items-center justify-center z-0 overflow-hidden"
+        style={{
+          clipPath: 'inset(0% 0% 0% 0%)',
+          borderRadius: 0,
+        }}
+      >
+        {videoSources.map((src, i) => (
+          <video
+            key={i}
+            ref={(el) => {
+              if (el) videoRefs.current[i] = el;
+            }}
+            muted
+            loop={false}
+            playsInline
+            onEnded={fadeToNextVideo}
+            className="absolute top-0 left-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+            style={{
+              objectPosition: positions[i],
+              opacity: i === videoIndex ? 1 : 0,
+              zIndex: i === videoIndex ? 2 : 1,
+            }}
+            src={src}
+          />
+        ))}
+      </div>
 
-      <div className="relative z-10 h-full flex flex-col justify-start pt-6 md:pt-10">
+      <div className="absolute top-0 left-0 z-10 w-full h-full flex flex-col justify-start pt-6 md:pt-10">
         <WidthContainer>
           <BreadcrumbNav />
           <h1 className="text-white font-mont font-bold text-5xl">{title}</h1>
