@@ -1,22 +1,30 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 export interface carouselItem {
   id: number;
   name: string;
   image: string;
+  title: string;
+  to: string;
+  price: number;
+  shortDescription: string;
 }
 
 export interface Props {
   carouselItems: carouselItem[];
+  currentIndex: number;
+  setCurrentIndex: (index: number) => void;
 }
 
-export const ItemCarousel: React.FC<Props> = ({ carouselItems }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export const ItemCarousel: React.FC<Props> = ({
+  carouselItems,
+  currentIndex,
+  setCurrentIndex,
+}) => {
   const slidesRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Флаг анимации
   const isAnimating = useRef(false);
 
   const touchData = useRef({ x: 0, startX: 0, dragging: false });
@@ -70,7 +78,6 @@ export const ItemCarousel: React.FC<Props> = ({ carouselItems }) => {
       const position = getPosition(i);
       gsap.set(el, position);
     });
-    // eslint-disable-next-line
   }, []);
 
   function getOffset() {
@@ -101,7 +108,6 @@ export const ItemCarousel: React.FC<Props> = ({ carouselItems }) => {
         duration: 0.5,
         ease: 'power2.inOut',
         ...position,
-        // Сброс флага только после завершения анимации всех слайдов
         onComplete:
           i === slidesRefs.current.length - 1 ?
             () => {
@@ -148,9 +154,8 @@ export const ItemCarousel: React.FC<Props> = ({ carouselItems }) => {
   };
 
   useEffect(() => {
-    const interval = setInterval(goPrev, 2200);
+    const interval = setInterval(goPrev, 4000);
     return () => clearInterval(interval);
-    // eslint-disable-next-line
   }, [currentIndex]);
 
   return (

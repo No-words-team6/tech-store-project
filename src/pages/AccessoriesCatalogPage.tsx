@@ -11,39 +11,53 @@ const videoSources = [
   '/videos/phonesBanner-2.mp4',
 ];
 
-const watches = [
+const smartwatches = [
   {
     id: 1,
     name: 'Apple',
     image: '/img/carousel-items/carousel-watch-apple-1.png',
+    title: 'Apple Watch Series 6',
+    to: 'apple-watch-series-6-44mm-spacegray',
+    price: 399,
+    shortDescription:
+      'Advanced fitness tracking, blood oxygen sensor, and always-on Retina display in a classic design',
   },
   {
     id: 2,
     name: 'Samsung',
     image: '/img/carousel-items/carousel-watch-samsung-1.png',
+    title: 'Samsung Galaxy Watch 8 44mm',
+    to: 'samsung-galaxy-watch-8-44mm-gray',
+    price: 369,
+    shortDescription:
+      'Elegant AMOLED display, powerful health sensors, long battery life and water resistance',
   },
-  // Смарт-годинник Samsung Galaxy Watch 8 44mm SM-L330 Gray
   {
     id: 3,
     name: 'Xiaomi',
     image: '/img/carousel-items/carousel-watch-xiaomi-1.png',
+    title: 'Xiaomi Watch 2',
+    to: 'xiaomi-watch-2-black',
+    price: 199,
+    shortDescription:
+      'Smart, lightweight, and stylish with advanced fitness features and up to 12 days battery life',
   },
 ];
 
-const sources = {
-  apple: '/img/carousel-items/carousel-watch-apple-1.png',
-  samsung: '/img/carousel-items/carousel-watch-samsung-1.png',
-  xiaomi: '/img/carousel-items/carousel-watch-xiaomi-1.png',
-};
+const brands = [
+  { key: 'Apple', image: '/img/carousel-items/carousel-watch-apple-1.png' },
+  { key: 'Samsung', image: '/img/carousel-items/carousel-watch-samsung-1.png' },
+  { key: 'Xiaomi', image: '/img/carousel-items/carousel-watch-xiaomi-1.png' },
+];
 
 export const AccessoriesCatalogPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Accessories'} videoSources={videoSources} />
 
-      <BrandSelectSection brandImageSources={sources} />
+      <BrandSelectSection brandImageSources={brands} />
 
-      <CatalogPageRecomendationsSection carouselItems={watches} />
+      <CatalogPageRecomendationsSection carouselItems={smartwatches} />
 
       <WidthContainer>
         <PaddingContainer>

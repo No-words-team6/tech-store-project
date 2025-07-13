@@ -11,36 +11,56 @@ const videoSources = [
   '/videos/phonesBanner-2.mp4',
 ];
 
+const brands = [
+  { key: 'Apple', image: '/img/carousel-items/carousel-tablet-apple-1.png' },
+  {
+    key: 'Samsung',
+    image: '/img/carousel-items/carousel-tablet-samsung-1.png',
+  },
+  { key: 'Xiaomi', image: '/img/carousel-items/carousel-tablet-xiaomi-1.png' },
+];
+
 const tablets = [
   {
     id: 1,
     name: 'Apple',
     image: '/img/carousel-items/carousel-tablet-apple-1.png',
+    title: 'Apple iPad Pro 12.9',
+    to: 'apple-ipad-pro-2022-12-9-1tb-spacegray',
+    price: 1599,
+    shortDescription:
+      'The ultimate iPad for creatives and professionals with an M2 chip and Liquid Retina XDR display',
   },
   {
     id: 2,
     name: 'Samsung',
     image: '/img/carousel-items/carousel-tablet-samsung-1.png',
+    title: 'Samsung Galaxy Tab S10 Ultra',
+    to: 'samsung-galaxy-tab-s10-ultra-x926-1tb-moonstone-gray',
+    price: 1299,
+    shortDescription:
+      'Premium Android tablet with 16GB RAM, 1TB storage, and stunning 14.6" AMOLED display',
   },
+  //  Samsung Galaxy Tab S10 Ultra 5G X926 16GB/1TB Moonstone Gray
+
   {
     id: 3,
     name: 'Xiaomi',
     image: '/img/carousel-items/carousel-tablet-xiaomi-1.png',
+    title: 'Xiaomi Redmi Pad 2',
+    to: 'xiaomi-redmi-pad-2-128gb-gray',
+    price: 189,
+    shortDescription:
+      'Affordable and stylish tablet with 10.95" display, smooth performance, and long battery life',
   },
 ];
-
-const sources = {
-  apple: '/img/carousel-items/carousel-tablet-apple-1.png',
-  samsung: '/img/carousel-items/carousel-tablet-samsung-1.png',
-  xiaomi: '/img/carousel-items/carousel-tablet-xiaomi-1.png',
-};
 
 export const TabletsCatalogPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Tablets'} videoSources={videoSources} />
 
-      <BrandSelectSection brandImageSources={sources} />
+      <BrandSelectSection brandImageSources={brands} />
 
       <CatalogPageRecomendationsSection carouselItems={tablets} />
 
