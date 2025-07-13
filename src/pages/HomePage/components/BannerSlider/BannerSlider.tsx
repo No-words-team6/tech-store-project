@@ -17,7 +17,7 @@ type Props = {
 
 export const BannerSlider = ({ setSwiperInstance }: Props) => {
   return (
-    <div className="relative w-full max-w-full h-[432px]">
+    <div className="relative w-full max-w-full h-[352px] sm:h-[221px] xl:h-[432px]">
       <Swiper
         modules={[Pagination, Autoplay, EffectFade]} // ✅ підключаємо модулі
         onSwiper={setSwiperInstance}
@@ -32,11 +32,14 @@ export const BannerSlider = ({ setSwiperInstance }: Props) => {
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-full pb-[48px]">
-              <Link to={image.link} className="block w-full h-[400px]">
+              <Link
+                to={image.link}
+                className="block w-full h-[320px] sm:h-[189px] xl:h-[400px]"
+              >
                 <img
                   src={image.src}
                   alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-[320px] sm:h-[189px] xl:h-[400px] object-cover"
                 />
               </Link>
             </div>

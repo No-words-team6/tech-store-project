@@ -67,22 +67,21 @@ export const ProductPage = () => {
     <WidthContainer>
       <PaddingContainer>
         <GridContainer>
-          <NavBack to={category} />
-
           <BreadcrumbNav />
+          <NavBack to={category} />
           {isLoading && !item && (
-            <div className="col-span-24 flex justify-center items-center">
+            <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-center items-center">
               <Loader />
             </div>
           )}
 
           {!isLoading && item && currentProduct && (
-            <div className="col-span-24">
-              <h1 className="col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
+            <div className="col-span-4 sm:col-span-12 xl:col-span-24">
+              <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
                 {item.name}
               </h1>
-              <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[80px]">
-                <div className="col-span-24 grid grid-cols-24 gap-x-[16px]">
+              <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[56px] sm:gap-y-[64px] xl:gap-y-[80px]">
+                <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px]">
                   <ProductGallery
                     photoSet={photoSet}
                     selectedPhoto={selectedPhoto}
@@ -93,17 +92,19 @@ export const ProductPage = () => {
                   <ProductOptions item={item} product={currentProduct} />
                 </div>
 
-                <div className="col-span-24 grid grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
-                  <div className="col-span-12 flex flex-col gap-y-8">
+                <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
+                  <div className="col-span-4 sm:col-span-12 xl:col-span-12 flex flex-col gap-y-8">
                     <div>
-                      <h2 className="text-[22px] font-extrabold">About</h2>
+                      <h2 className="text-[20px] sm:text-[22px] font-extrabold">
+                        About
+                      </h2>
                       <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
                     </div>
 
                     <ProductDescription item={item} />
                   </div>
 
-                  <div className="col-start-14 col-span-11 flex flex-col">
+                  <div className="col-start-1 xl:col-start-14 col-span-4 sm:col-span-12 xl:col-span-11 flex flex-col mt-[56px] sm:mt-[64px] xl:mt-0">
                     <div>
                       <h2 className="text-[22px] font-extrabold">Tech specs</h2>
                       <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />

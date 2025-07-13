@@ -17,11 +17,11 @@ export const ButtonSwipe = ({
   disableNext = false,
 }: Props) => {
   return (
-    <div className="col-start-23 col-span-2 flex justify-between gap-x-[8px]">
+    <div className="-col-start-1 w-[72px] flex justify-between gap-x-[8px]">
       <button
         onClick={onPrevClick}
         className={cn(
-          'w-full h-8 flex items-center justify-center transition border',
+          'w-full h-8 w-8 flex items-center justify-center transition border',
           {
             'bg-[#0F1121] text-[#4A4D58] border-[#3B3E4A]': disablePrev,
             'bg-[#323542] hover:opacity-80 border-transparent text-[#F1F2F9] hover:cursor-pointer':
@@ -36,7 +36,7 @@ export const ButtonSwipe = ({
       <button
         onClick={onNextClick}
         className={cn(
-          'w-full h-8 flex items-center justify-center transition border ',
+          'w-full h-8 w-8 flex items-center justify-center transition border ',
           {
             'bg-[#0F1121] text-[#4A4D58] border-[#3B3E4A]': disableNext,
             'bg-[#323542] hover:opacity-80 border-transparent text-[#F1F2F9] hover:cursor-pointer':
