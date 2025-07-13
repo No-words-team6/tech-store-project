@@ -23,15 +23,15 @@ export const ProductGallery: React.FC<Props> = ({
   );
 
   return (
-    <div className="col-span-12 grid grid-cols-12 gap-x-[16px]">
-      <div className="col-span-2 flex flex-col gap-y-[16px]">
+    <div className="col-span-4 sm:col-span-7 xl:col-span-12 grid grid-cols-4 sm:grid-cols-7 xl:grid-cols-12 gap-x-[16px]">
+      <div className="order-2 sm:order-none col-span-4 sm:col-span-1 xl:col-span-2 flex gap-y-[16px] flex-row sm:flex-col gap-x-[8px] sm:gap-y-[16px] mt-6 mb-10 sm:mt-0 sm:mb-0">
         {photoSet.map((photo, index) => {
           const isActive = currentIndex === index;
 
           return (
             <div
               key={photo}
-              className="h-[80px] cursor-pointer"
+              className="h-[50px] sm:h-[35px] xl:h-[80px] w-[50px] sm:w-[35px] xl:w-[80px] cursor-pointer"
               onClick={() => {
                 setCurrentIndex(index);
                 setSelectedPhoto(photo);
@@ -49,7 +49,7 @@ export const ProductGallery: React.FC<Props> = ({
         })}
       </div>
 
-      <div className="col-span-10 h-[464px] flex items-center">
+      <div className="order-1 sm:order-none col-span-4 sm:col-span-6 xl:col-span-10 h-[288px] xl:h-[464px] flex items-center">
         <Swiper
           modules={[Pagination]}
           loop={false}
