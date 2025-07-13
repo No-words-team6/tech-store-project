@@ -1,13 +1,51 @@
-import { CatalogPageBody } from '@/components/CatalogPageBody';
-import { CatalogPageHeader } from '@/components/CatalogPageHeader';
 import { WidthContainer } from '@/components/WidthContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
 import { GridContainer } from '@/components/GridContainer';
+import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
+import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
+import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
+import { PreviewSection } from '@/components/CatalogPageComponents/PriviewSection';
+import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
+
+const videoSources = [
+  '/videos/tabletsBanner-1.mp4',
+  '/videos/phonesBanner-2.mp4',
+];
+
+const tablets = [
+  {
+    id: 1,
+    name: 'Apple',
+    image: '/img/carousel-items/carousel-tablet-apple-1.png',
+  },
+  {
+    id: 2,
+    name: 'Samsung',
+    image: '/img/carousel-items/carousel-tablet-samsung-1.png',
+  },
+  {
+    id: 3,
+    name: 'Xiaomi',
+    image: '/img/carousel-items/carousel-tablet-xiaomi-1.png',
+  },
+];
+
+const sources = {
+  apple: '/img/carousel-items/carousel-tablet-apple-1.png',
+  samsung: '/img/carousel-items/carousel-tablet-samsung-1.png',
+  xiaomi: '/img/carousel-items/carousel-tablet-xiaomi-1.png',
+};
 
 export const TabletsCatalogPage = () => {
   return (
     <>
-      <CatalogPageHeader title={'Tablets'} />
+      <CatalogPageHeader title={'Tablets'} videoSources={videoSources} />
+
+      <PreviewSection />
+
+      <BrandSelectSection brandImageSources={sources} />
+
+      <CatalogPageRecomendationsSection carouselItems={tablets} />
 
       <WidthContainer>
         <PaddingContainer>
