@@ -2798,5 +2798,61 @@
     "ram": "4GB",
     "year": 2024,
     "image": "img/tablets/xiaomi-redmi-pad-2/black/00.webp"
+  },
+  {
+    "id": 201,
+    "category": "accessories",
+    "itemId": "samsung-galaxy-watch-8-44mm-gray",
+    "name": "Samsung Galaxy Watch 8 44mm SM-L330 Gray",
+    "fullPrice": 399,
+    "price": 369,
+    "screen": "1.5' Super AMOLED",
+    "capacity": "44mm",
+    "color": "gray",
+    "ram": "2GB",
+    "year": 2024,
+    "image": "img/accessories/samsung-galaxy-watch-8/gray/00.webp"
+  },
+  {
+    "id": 202,
+    "category": "accessories",
+    "itemId": "samsung-galaxy-watch-8-44mm-white",
+    "name": "Samsung Galaxy Watch 8 44mm SM-L330 White",
+    "fullPrice": 399,
+    "price": 369,
+    "screen": "1.5' Super AMOLED",
+    "capacity": "44mm",
+    "color": "white",
+    "ram": "2GB",
+    "year": 2024,
+    "image": "img/accessories/samsung-galaxy-watch-8/white/00.webp"
+  },
+  {
+    "id": 203,
+    "category": "accessories",
+    "itemId": "xiaomi-watch-2-black",
+    "name": "Xiaomi Watch 2 Black",
+    "fullPrice": 229,
+    "price": 199,
+    "screen": "1.43' AMOLED",
+    "capacity": "46mm",
+    "color": "black",
+    "ram": "2GB",
+    "year": 2024,
+    "image": "img/accessories/xiaomi-watch-2/black/00.webp"
+  },
+  {
+    "id": 204,
+    "category": "accessories",
+    "itemId": "xiaomi-watch-2-gray",
+    "name": "Xiaomi Watch 2 Gray",
+    "fullPrice": 229,
+    "price": 199,
+    "screen": "1.43' AMOLED",
+    "capacity": "46mm",
+    "color": "gray",
+    "ram": "2GB",
+    "year": 2024,
+    "image": "img/accessories/xiaomi-watch-2/gray/00.webp"
   }
 ]
