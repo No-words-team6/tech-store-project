@@ -15,13 +15,16 @@ export const CatalogBar = () => {
     searchParams.get('timesItems') ?? TimesItems.Twelve;
 
   return (
-    <div className="col-span-24 flex gap-x-4" id="catalogBar">
+    <div
+      className="col-span-4 sm:col-span-12 xl:col-span-24 flex gap-x-4"
+      id="catalogBar"
+    >
       <Selector
         title="Sort by"
         options={sortByOptions}
         keySelectedSort="sortBy"
         selectedSort={selectedSortBy}
-        selectorWidth="w-44"
+        selectorWidth="w-[106px] sm:w-[176px]"
       />
 
       <Selector
@@ -29,7 +32,7 @@ export const CatalogBar = () => {
         options={timesItemsOptions}
         keySelectedSort="timesItems"
         selectedSort={selectedTimesItems}
-        selectorWidth="w-32"
+        selectorWidth="w-[106px] sm:w-[128px]"
       />
 
       <div className="flex flex-col gap-1">
