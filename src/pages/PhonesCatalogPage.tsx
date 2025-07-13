@@ -1,6 +1,3 @@
-import { WidthContainer } from '@/components/WidthContainer';
-import { GridContainer } from '@/components/GridContainer';
-import { PaddingContainer } from '@/components/PaddingContainer';
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
@@ -33,15 +30,7 @@ export const PhonesCatalogPage = () => {
 
       <CatalogPageRecomendationsSection carouselItems={phones} />
 
-      <WidthContainer>
-        <PaddingContainer>
-          <GridContainer>
-            <div className="col-span-24 grid gap-y-[24px]">
-              <CatalogPageBody category={'phones'} />
-            </div>
-          </GridContainer>
-        </PaddingContainer>
-      </WidthContainer>
+      <CatalogPageBody category={'phones'} />
     </>
   );
 };
