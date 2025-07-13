@@ -78,13 +78,13 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   }, [category, fetchProductsByCategory]);
 
   return (
-    <div className="col-span-24 grid grid-cols-24 gap-[24px]">
+    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 px-4 sm:px-6 lg:px-8 xl:px-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px]">
       <CatalogBar />
 
       {!isLoading && (
-        <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[40px]">
+        <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
           {visibleItems.map((product) => (
-            <div className="col-span-6" key={product.id}>
+            <div className="col-span-4 sm:col-span-6" key={product.id}>
               <ProductCard product={product} />
             </div>
           ))}

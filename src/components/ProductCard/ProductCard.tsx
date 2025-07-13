@@ -33,10 +33,14 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="bg-[#161827] cursor-pointer text-[#F1F2F9] h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]"
+      className=" bg-[#161827] cursor-pointer text-[#F1F2F9] h-[440px] sm:h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]"
     >
       <div className="flex justify-center">
-        <img src={imagePath} alt={product.name} className="h-[196px] mb-2" />
+        <img
+          src={imagePath}
+          alt={product.name}
+          className="h-[130px] sm:h-[196px] mb-2"
+        />
       </div>
 
       <h3 className="text-sm font-semibold pt-4 min-h-[4rem]">{name}</h3>
