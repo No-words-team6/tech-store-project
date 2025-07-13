@@ -69,7 +69,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
   const preparedQuantityPages = prepareQuantityPages();
 
   return (
-    <Pagination className="col-span-24">
+    <Pagination className="col-span-4 sm:col-span-12 xl:col-span-24">
       <PaginationContent className="bg-none text-white">
         <PaginationItem className="bg-gray-800 rounded-none">
           <PaginationPrevious
