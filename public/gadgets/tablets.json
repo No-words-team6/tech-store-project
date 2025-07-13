@@ -47,6 +47,53 @@
     "cell": ["Not applicable"]
   },
   {
+    "id": "xiaomi-redmi-pad-2-128gb-gray",
+    "category": "tablets",
+    "namespaceId": "xiaomi-redmi-pad-2",
+    "name": "Xiaomi Redmi Pad 2 128GB Gray",
+    "capacityAvailable": ["128GB"],
+    "capacity": "128GB",
+    "priceRegular": 220,
+    "priceDiscount": 189,
+    "colorsAvailable": ["gray", "black"],
+    "color": "gray",
+    "images": [
+      "img/tablets/xiaomi-redmi-pad-2/gray/00.webp",
+      "img/tablets/xiaomi-redmi-pad-2/gray/01.webp",
+      "img/tablets/xiaomi-redmi-pad-2/gray/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Smooth Visual Experience",
+        "text": [
+          "Enjoy your favorite movies, games, and apps on a 10.95-inch IPS LCD display with a 90Hz refresh rate for smooth and fluid visuals.",
+          "Wide viewing angles and slim bezels make the Redmi Pad 2 perfect for both work and entertainment."
+        ]
+      },
+      {
+        "title": "All-Day Power & Performance",
+        "text": [
+          "Powered by the Snapdragon 680 processor and 4GB RAM, the Redmi Pad 2 delivers reliable performance for multitasking, streaming, and browsing.",
+          "A large 8000mAh battery ensures you stay connected and entertained all day long."
+        ]
+      },
+      {
+        "title": "Lightweight & Versatile",
+        "text": [
+          "Slim and stylish metal design in Gray, with quad speakers for immersive sound.",
+          "Take clear video calls and photos with the 8MP front and rear cameras. Supports fast Wi-Fi for seamless connectivity."
+        ]
+      }
+    ],
+    "screen": "10.95' IPS LCD",
+    "resolution": "1920x1200",
+    "processor": "Qualcomm Snapdragon 680",
+    "ram": "4GB",
+    "camera": "8MP rear, 8MP front",
+    "zoom": "Digital zoom up to 5x",
+    "cell": ["Not applicable"]
+  },
+  {
     "id": "apple-ipad-pro-11-2021-256gb-spacegray",
     "category": "tablets",
     "namespaceId": "apple-ipad-pro-11-2021",
@@ -1696,6 +1743,53 @@
     "processor": "Apple A12 Bionic",
     "ram": "3GB",
     "camera": "8MP",
+    "zoom": "Digital zoom up to 5x",
+    "cell": ["Not applicable"]
+  },
+  {
+    "id": "xiaomi-redmi-pad-2-128gb-black",
+    "category": "tablets",
+    "namespaceId": "xiaomi-redmi-pad-2",
+    "name": "Xiaomi Redmi Pad 2 128GB Black",
+    "capacityAvailable": ["128GB"],
+    "capacity": "128GB",
+    "priceRegular": 220,
+    "priceDiscount": 189,
+    "colorsAvailable": ["gray", "black"],
+    "color": "black",
+    "images": [
+      "img/tablets/xiaomi-redmi-pad-2/black/00.webp",
+      "img/tablets/xiaomi-redmi-pad-2/black/01.webp",
+      "img/tablets/xiaomi-redmi-pad-2/black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Smooth Visual Experience",
+        "text": [
+          "Enjoy your favorite movies, games, and apps on a 10.95-inch IPS LCD display with a 90Hz refresh rate for smooth and fluid visuals.",
+          "Wide viewing angles and slim bezels make the Redmi Pad 2 perfect for both work and entertainment."
+        ]
+      },
+      {
+        "title": "All-Day Power & Performance",
+        "text": [
+          "Powered by the Snapdragon 680 processor and 4GB RAM, the Redmi Pad 2 delivers reliable performance for multitasking, streaming, and browsing.",
+          "A large 8000mAh battery ensures you stay connected and entertained all day long."
+        ]
+      },
+      {
+        "title": "Lightweight & Versatile",
+        "text": [
+          "Slim and stylish metal design in Gray, with quad speakers for immersive sound.",
+          "Take clear video calls and photos with the 8MP front and rear cameras. Supports fast Wi-Fi for seamless connectivity."
+        ]
+      }
+    ],
+    "screen": "10.95' IPS LCD",
+    "resolution": "1920x1200",
+    "processor": "Qualcomm Snapdragon 680",
+    "ram": "4GB",
+    "camera": "8MP rear, 8MP front",
     "zoom": "Digital zoom up to 5x",
     "cell": ["Not applicable"]
   }

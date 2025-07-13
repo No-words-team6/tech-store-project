@@ -11,11 +11,13 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
   carouselItems,
 }) => {
   return (
-    <div className="bg-black">
+    <div className="">
       <WidthContainer>
         <GridContainer>
           <div className="flex justify-center test text-white text-4xl col-span-24">
-            <h2>Elevate Your Tech: Top 3 New Arrivals</h2>
+            <h2 className="color-white font-mont font-extrabold text-[22px] sm:text-[32px]">
+              Elevate Your Tech: Top 3 New Arrivals
+            </h2>
             <ItemCarousel carouselItems={carouselItems} />
           </div>
         </GridContainer>

@@ -4,7 +4,6 @@ import { GridContainer } from '@/components/GridContainer';
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
-import { PreviewSection } from '@/components/CatalogPageComponents/PriviewSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
@@ -41,8 +40,6 @@ export const AccessoriesCatalogPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Accessories'} videoSources={videoSources} />
-
-      <PreviewSection />
 
       <BrandSelectSection brandImageSources={sources} />
 

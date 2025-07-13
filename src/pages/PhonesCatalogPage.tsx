@@ -4,7 +4,6 @@ import { PaddingContainer } from '@/components/PaddingContainer';
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
-import { PreviewSection } from '@/components/CatalogPageComponents/PriviewSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
@@ -29,8 +28,6 @@ export const PhonesCatalogPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Mobile phones'} videoSources={videoSources} />
-
-      <PreviewSection />
 
       <BrandSelectSection brandImageSources={sources} />
 

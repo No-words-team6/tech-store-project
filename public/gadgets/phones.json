@@ -1,5 +1,99 @@
 [
   {
+    "id": "xiaomi-redmi-note-14-pro-256gb-black",
+    "category": "phones",
+    "namespaceId": "xiaomi-redmi-note-14-pro",
+    "name": "Xiaomi Redmi Note 14 Pro 256GB Black",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 480,
+    "priceDiscount": 429,
+    "colorsAvailable": ["yellow", "black"],
+    "color": "black",
+    "images": [
+      "img/phones/xiaomi-redmi-note-14-pro/black/00.webp",
+      "img/phones/xiaomi-redmi-note-14-pro/black/01.webp",
+      "img/phones/xiaomi-redmi-note-14-pro/black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro AMOLED Display",
+        "text": [
+          "Experience vibrant colors and smooth scrolling on the 6.67-inch AMOLED display with a 120Hz refresh rate.",
+          "The screen offers FHD+ resolution for a crisp, immersive viewing experience in any lighting."
+        ]
+      },
+      {
+        "title": "High-Resolution Camera",
+        "text": [
+          "Triple rear camera system with 200MP main sensor for stunning clarity, plus ultra-wide and macro lenses.",
+          "AI features help you shoot beautiful photos and videos day or night."
+        ]
+      },
+      {
+        "title": "Powerful & Reliable",
+        "text": [
+          "Fast Snapdragon 7 Gen 3 processor (or MediaTek Dimensity 7200-Ultra, depending on market) for smooth multitasking and gaming.",
+          "5000mAh battery with 67W turbo charging, 5G support, stereo speakers, and advanced cooling."
+        ]
+      }
+    ],
+    "screen": "6.67' AMOLED",
+    "resolution": "2712x1220",
+    "processor": "Snapdragon 7",
+    "ram": "8GB",
+    "camera": "200 MP + 8 MP + 2 MP",
+    "zoom": "Digital, up to 20x",
+    "cell": ["GSM", "HSPA", "LTE", "5G"]
+  },
+  {
+    "id": "xiaomi-redmi-note-14-pro-256gb-yellow",
+    "category": "phones",
+    "namespaceId": "xiaomi-redmi-note-14-pro",
+    "name": "Xiaomi Redmi Note 14 Pro 8GB/256GB Sand Gold",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 480,
+    "priceDiscount": 429,
+    "colorsAvailable": ["yellow", "black"],
+    "color": "yellow",
+    "images": [
+      "img/phones/xiaomi-redmi-note-14-pro/yellow/00.webp",
+      "img/phones/xiaomi-redmi-note-14-pro/yellow/01.webp",
+      "img/phones/xiaomi-redmi-note-14-pro/yellow/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro AMOLED Display",
+        "text": [
+          "Experience vibrant colors and smooth scrolling on the 6.67-inch AMOLED display with a 120Hz refresh rate.",
+          "The screen offers FHD+ resolution for a crisp, immersive viewing experience in any lighting."
+        ]
+      },
+      {
+        "title": "High-Resolution Camera",
+        "text": [
+          "Triple rear camera system with 200MP main sensor for stunning clarity, plus ultra-wide and macro lenses.",
+          "AI features help you shoot beautiful photos and videos day or night."
+        ]
+      },
+      {
+        "title": "Powerful & Reliable",
+        "text": [
+          "Fast Snapdragon 7 Gen 3 processor (or MediaTek Dimensity 7200-Ultra, depending on market) for smooth multitasking and gaming.",
+          "5000mAh battery with 67W turbo charging, 5G support, stereo speakers, and advanced cooling."
+        ]
+      }
+    ],
+    "screen": "6.67' AMOLED",
+    "resolution": "2712x1220",
+    "processor": "Snapdragon 7",
+    "ram": "8GB",
+    "camera": "200 MP + 8 MP + 2 MP",
+    "zoom": "Digital, up to 20x",
+    "cell": ["GSM", "HSPA", "LTE", "5G"]
+  },
+  {
     "id": "apple-iphone-11-128gb-black",
     "category": "phones",
     "namespaceId": "apple-iphone-11",
@@ -8,7 +102,7 @@
     "capacity": "128GB",
     "priceRegular": 1100,
     "priceDiscount": 1050,
-    "colorsAvailable": ["black", "green", "yellow", "white", "purple", "red"],
+    "colorsAvailable": ["black", "purple"],
     "color": "black",
     "images": [
       "img/phones/apple-iphone-11/black/00.webp",
@@ -45,6 +139,102 @@
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
     "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+  },
+  {
+    "id": "samsung-galaxy-s24-256gb-violet",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s24",
+    "name": "Samsung Galaxy S24 256GB Violet",
+    "capacityAvailable": ["128GB", "256GB"],
+    "capacity": "256GB",
+    "priceRegular": 795,
+    "priceDiscount": 716,
+    "colorsAvailable": ["violet", "black"],
+    "color": "violet",
+    "images": [
+      "img/phones/samsung-galaxy-s24/violet/00.webp",
+      "img/phones/samsung-galaxy-s24/violet/01.webp",
+      "img/phones/samsung-galaxy-s24/violet/02.webp",
+      "img/phones/samsung-galaxy-s24/violet/03.webp"
+    ],
+    "description": [
+      {
+        "title": "Galaxy AI — Your Smart Assistant",
+        "text": [
+          "Experience real-time translation, magic photo editing, smart notes, and enhanced search powered by Galaxy AI.",
+          "Dynamic AMOLED 2X display with stunning colors and smooth 120Hz refresh rate. Water and dust resistance (IP68). Powered by Exynos 2400 or Snapdragon 8 Gen 3 (region dependent)."
+        ]
+      },
+      {
+        "title": "Pro-Grade Camera System",
+        "text": [
+          "Triple camera: 50MP + 12MP + 10MP with optical stabilization and Nightography for bright night shots.",
+          "Shoot 8K video, enjoy lossless zoom, and edit photos with advanced tools."
+        ]
+      },
+      {
+        "title": "Performance & Freedom",
+        "text": [
+          "Fast charging, long-lasting 4000mAh battery, eSIM and Dual SIM support, Wi-Fi 6E, Bluetooth 5.3.",
+          "Premium materials: Gorilla Glass Victus 2 and aluminum frame."
+        ]
+      }
+    ],
+    "screen": "6.2', AMOLED",
+    "resolution": "2340x1080",
+    "processor": "Exynos 2400",
+    "ram": "8GB",
+    "camera": "50 MP + 12 MP + 10 MP",
+    "zoom": "3x Optical, 30x Digital",
+    "cell": ["GSM", "HSPA", "LTE", "5G"]
+  },
+  {
+    "id": "samsung-galaxy-s24-256gb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s24",
+    "name": "Samsung Galaxy S24 256GB Black",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 795,
+    "priceDiscount": 716,
+    "colorsAvailable": ["violet", "black"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-s24/black/00.webp",
+      "img/phones/samsung-galaxy-s24/black/01.webp",
+      "img/phones/samsung-galaxy-s24/black/02.webp",
+      "img/phones/samsung-galaxy-s24/black/03.webp"
+    ],
+    "description": [
+      {
+        "title": "Galaxy AI — Your Smart Assistant",
+        "text": [
+          "Experience real-time translation, magic photo editing, smart notes, and enhanced search powered by Galaxy AI.",
+          "Dynamic AMOLED 2X display with stunning colors and smooth 120Hz refresh rate. Water and dust resistance (IP68). Powered by Exynos 2400 or Snapdragon 8 Gen 3 (region dependent)."
+        ]
+      },
+      {
+        "title": "Pro-Grade Camera System",
+        "text": [
+          "Triple camera: 50MP + 12MP + 10MP with optical stabilization and Nightography for bright night shots.",
+          "Shoot 8K video, enjoy lossless zoom, and edit photos with advanced tools."
+        ]
+      },
+      {
+        "title": "Performance & Freedom",
+        "text": [
+          "Fast charging, long-lasting 4000mAh battery, eSIM and Dual SIM support, Wi-Fi 6E, Bluetooth 5.3.",
+          "Premium materials: Gorilla Glass Victus 2 and aluminum frame."
+        ]
+      }
+    ],
+    "screen": "6.2', AMOLED",
+    "resolution": "2340x1080",
+    "processor": "Exynos 2400",
+    "ram": "8GB",
+    "camera": "50 MP + 12 MP + 10 MP",
+    "zoom": "3x Optical, 30x Digital",
+    "cell": ["GSM", "HSPA", "LTE", "5G"]
   },
 
   {
