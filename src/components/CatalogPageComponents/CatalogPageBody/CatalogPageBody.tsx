@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { type Category, type Product } from '@/types';
 import { useSearchParams } from 'react-router-dom';
 import { sortProducts } from '@/utils/sortProducts';
@@ -19,13 +19,11 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
     (state) => state.fetchProductsByCategory,
   );
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
   const selectedPage = searchParams.get('numberOfPage') ?? '1';
-
-  const [currentPage, setCurrentPage] = useState(1);
 
   const sortedProducts = sortProducts(products, {
     selectedSortBy,
@@ -63,22 +61,25 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   const visibleItems = countVisibleItems(
     sortedProducts,
     +selectedTimesItems,
-    currentPage,
+    +selectedPage,
   );
 
   useEffect(() => {
     const maxPage = Math.ceil(sortedProducts.length / +selectedTimesItems);
-    if (currentPage > maxPage) {
-      setCurrentPage(1);
+    if (+selectedPage > maxPage) {
+      setSearchParams((prev) => {
+        prev.set('numberOfPage', '1');
+        return prev;
+      });
     }
-  }, [currentPage, selectedTimesItems, sortedProducts.length]);
+  }, [+selectedPage, selectedTimesItems, sortedProducts.length]);
 
   useEffect(() => {
     fetchProductsByCategory(category);
   }, [category, fetchProductsByCategory]);
 
   return (
-    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 px-4 sm:px-6 lg:px-8 xl:px-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px]">
+    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 px-4 sm:px-6 lg:px-8 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px]">
       <CatalogBar />
 
       {!isLoading && (
