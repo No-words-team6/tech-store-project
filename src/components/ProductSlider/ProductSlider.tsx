@@ -32,7 +32,7 @@ export const ProductSlider: React.FC<Props> = ({ productList, title }) => {
   return (
     <section className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[24px]">
       <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px]">
-        <h2 className="color-white font-mont font-extrabold text-[22px] sm:text-[32px] col-span-2 sm:col-span-6 xl:col-span-12">
+        <h2 className="color-white font-mont font-extrabold text-[22px] sm:text-[32px] col-span-4 sm:col-span-6 xl:col-span-12">
           {title}
         </h2>
 

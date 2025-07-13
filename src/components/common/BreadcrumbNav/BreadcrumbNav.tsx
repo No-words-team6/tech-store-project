@@ -27,7 +27,7 @@ export const BreadcrumbNav: React.FC = () => {
   const pathnames = location.pathname.split('/').filter(Boolean);
 
   return (
-    <nav className="col-span-24 flex gap-x-[8px] text-gray-100 font-bold cursor-pointer mb-[40px]">
+    <nav className="col-span-4 sm:col-span-12 xl:col-span-24 flex gap-x-[8px] text-gray-100 font-bold cursor-pointer mb-6 sm:mb-10">
       <Link to="/">
         <House className="h-[16px] w-[16px]" />
       </Link>
@@ -41,7 +41,14 @@ export const BreadcrumbNav: React.FC = () => {
             className="flex items-center gap-x-[8px] font-mont text-xs"
           >
             <ChevronRight className="h-[16px] w-[16px]" />
-            <Link to={to}>{title}</Link>
+            {index === pathnames.length - 1 ?
+              <span className="text-[#75767F] cursor-default truncate max-w-[50vw]">
+                {title}
+              </span>
+            : <Link to={to} className="hover:underline">
+                {title}
+              </Link>
+            }
           </div>
         );
       })}
