@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { type Category, type Product } from '@/types';
-import { ProductCard } from '../ProductCard';
 import { useSearchParams } from 'react-router-dom';
 import { sortProducts } from '@/utils/sortProducts';
-import { Paginator } from '../Paginator';
 import { TimesItems } from '@/types/TimesItems';
 import { useProductStore } from '@/stores/productStore';
-import { CatalogBar } from '../CatalogBar';
+import { CatalogBar } from '@/components/CatalogBar';
+import { ProductCard } from '@/components/ProductCard';
+import { Paginator } from '@/components/Paginator';
 
 interface Props {
   category: Category;

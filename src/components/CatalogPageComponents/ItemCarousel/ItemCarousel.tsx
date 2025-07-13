@@ -15,9 +15,9 @@ export interface Props {
   carouselItems: carouselItem[];
 }
 
-export const PhoneCarousel: React.FC<Props> = ({ carouselItems }) => {
+export const ItemCarousel: React.FC<Props> = ({ carouselItems }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slidesRefs = useRef([]);
+  const slidesRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export const PhoneCarousel: React.FC<Props> = ({ carouselItems }) => {
   }, []);
 
   function getOffset() {
-    if (window.innerWidth > 1200) return 140;
+    if (window.innerWidth > 1200) return 150;
     if (window.innerWidth > 900) return 100;
     if (window.innerWidth > 600) return 70;
     return 60;
@@ -38,15 +38,27 @@ export const PhoneCarousel: React.FC<Props> = ({ carouselItems }) => {
     const xOffset = getOffset();
 
     if (index === currentIndex) {
-      // return { zIndex: 3, scale: 1, x: 0 };
-      return { zIndex: 3, scale: 1, rotateY: 0, x: 0 };
+      return { zIndex: 3, scale: 1, x: 0, opacity: 1, pointerEvents: 'auto' };
+      // return { zIndex: 3, scale: 1, rotateY: 0, x: 0 };
     }
     if ((index + 1) % carouselItems.length === currentIndex) {
-      // return { zIndex: 2, scale: 0.8, x: xOffset };
-      return { zIndex: 2, scale: 0.8, rotateY: 30, x: xOffset };
+      return {
+        zIndex: 2,
+        scale: 0.6,
+        x: xOffset,
+        opacity: 0.7,
+        pointerEvents: 'none',
+      };
+      // return { zIndex: 2, scale: 0.8, rotateY: 30, x: xOffset };
     }
-    // return { zIndex: 1, scale: 0.8, x: -xOffset };
-    return { zIndex: 1, scale: 0.8, rotateY: -30, x: -xOffset };
+    return {
+      zIndex: 1,
+      scale: 0.6,
+      x: -xOffset,
+      opacity: 0.5,
+      pointerEvents: 'none',
+    };
+    // return { zIndex: 1, scale: 0.8, rotateY: -30, x: -xOffset };
   };
 
   const goNext = () => {
@@ -78,7 +90,9 @@ export const PhoneCarousel: React.FC<Props> = ({ carouselItems }) => {
           <Link
             to={`/phones/apple-iphone-7-32gb-black`}
             key={item.id}
-            ref={(el) => (slidesRefs.current[i] = el)}
+            ref={(el) => {
+              slidesRefs.current[i] = el;
+            }}
             className="absolute inset-0 cursor-pointer"
           >
             <img

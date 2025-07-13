@@ -1,10 +1,11 @@
-import { CatalogPageBody } from '@/components/CatalogPageBody';
 import { WidthContainer } from '@/components/WidthContainer';
 import { GridContainer } from '@/components/GridContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
-import { CatalogPageHeader } from '@/components/CatalogPageHeader';
-import { CategoryCardsSection } from './HomePage/components/CategoryCardsSection';
-import { type carouselItem, PhoneCarousel } from '@/components/test1/test1';
+import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
+import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
+import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
+import { PreviewSection } from '@/components/CatalogPageComponents/PriviewSection';
+import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
   '/videos/phonesBanner-1.mp4',
@@ -12,33 +13,28 @@ const videoSources = [
   '/videos/phonesBanner-3.mp4',
 ];
 
-const phones: carouselItem[] = [
-  { id: 1, name: 'iPhone', image: '/img/carousel-items/carousel-phone-2.png' },
+const phones = [
+  { id: 1, name: 'Apple', image: '/img/carousel-items/carousel-phone-2.png' },
   { id: 2, name: 'Samsung', image: '/img/carousel-items/carousel-phone-3.png' },
   { id: 3, name: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.png' },
 ];
+
+const sources = {
+  apple: '/img/carousel-items/carousel-phone-3.png',
+  samsung: '/img/carousel-items/carousel-phone-2.png',
+  xiaomi: '/img/carousel-items/carousel-phone-4.png',
+};
 
 export const PhonesCatalogPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Mobile phones'} videoSources={videoSources} />
 
-      <div className="bg-black py-12 flex text-center justify-center text-white text-4xl">
-        <h2>Choose your brand</h2>
-      </div>
+      <PreviewSection />
 
-      <WidthContainer>
-        <PaddingContainer>
-          <GridContainer>
-            <CategoryCardsSection />
-          </GridContainer>
-        </PaddingContainer>
-      </WidthContainer>
+      <BrandSelectSection brandImageSources={sources} />
 
-      <div className="bg-black py-12 flex justify-center test text-white text-4xl gap-x-4 ">
-        <h2>Охуенные новинки</h2>
-        <PhoneCarousel carouselItems={phones} />
-      </div>
+      <CatalogPageRecomendationsSection carouselItems={phones} />
 
       <WidthContainer>
         <PaddingContainer>
