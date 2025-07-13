@@ -1,9 +1,10 @@
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+@import 'swiper/css/effect-fade';
 
 .swiper-pagination {
-  bottom: 0px !important; /* 432 - 400 - 8 */
+  bottom: 0px !important;
   position: absolute !important;
   width: 100%;
   display: flex !important;
