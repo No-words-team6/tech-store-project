@@ -4,6 +4,13 @@
   "mobile-phones": "Смартфони",
   "tablets": "Планшети",
   "accessories": "Аксесуари",
+  "favourites": "Обране",
+  "empty-favourites": "У вас жодного обраного предмета",
+  "cart": "Кошик",
+  "empty-cart": "Ваш кошик пустий",
+  "back-to-shopping": "Назад до покупок",
+  "total-for": "Сума за",
+  "checkout": "Оплатити",
   "contacts": "Контакти",
   "rights": "Права",
   "back-to-top": "Піднятися вгору",
@@ -19,6 +26,9 @@
   "screen": "Екран",
   "capacity": "Вбудована пам'ять",
   "ram": "Оперативна пам'ять",
-  "add-to-cart": "Додати в корзину",
-  "added-to-cart": "Додано в корзину"
+  "add-to-cart": "Додати в кошик",
+  "added-to-cart": "Додано в кошик",
+  "items": "предметів",
+  "item": "предмет",
+  "back": "Назад"
 }

@@ -4,6 +4,13 @@
   "mobile-phones": "Mobile phones",
   "tablets": "Tablets",
   "accessories": "Accessories",
+  "favourites": "Favourites",
+  "empty-favourites": "You don't have any favourite items",
+  "cart": "Cart",
+  "empty-cart": "Your cart is empty",
+  "back-to-shopping": "Back to shopping",
+  "total-for": "Total for",
+  "checkout": "Checkout",
   "contacts": "Contacts",
   "rights": "Rights",
   "back-to-top": "Back to top",
@@ -20,5 +27,8 @@
   "capacity": "Capacity",
   "ram": "RAM",
   "add-to-cart": "Add to cart",
-  "added-to-cart": "Added to cart"
+  "added-to-cart": "Added to cart",
+  "items": "items",
+  "item": "item",
+  "back": "Back"
 }

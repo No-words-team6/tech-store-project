@@ -5,10 +5,13 @@ import placeholder from '../../public/img/placeholder-angry-heart.png';
 import { WidthContainer } from '@/components/WidthContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
 import { GridContainer } from '@/components/GridContainer';
+import { useTranslation } from 'react-i18next';
 
 export const FavouritesPage = () => {
   const favouritesStore = useProductStore((state) => state.favouritesStore);
   const productsLength = favouritesStore.length;
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -19,11 +22,13 @@ export const FavouritesPage = () => {
 
             <div className="col-span-24 grid">
               <h1 className="col-span-24 color-white font-mont font-bold text-5xl mb-6">
-                Favourites
+                {t('favourites')}
               </h1>
 
               <p className="col-span-24 font-extralight text-[14px] text-[#75767F]">
-                {productsLength} items
+                {productsLength === 1 ?
+                  `${productsLength} ${t('item')}`
+                : `${productsLength} ${t('items')}`}
               </p>
 
               {!productsLength && (
@@ -35,7 +40,7 @@ export const FavouritesPage = () => {
                   />
 
                   <h2 className="col-span-6 col-start-10 font-mont text-[#515151] mt-[-20px]">
-                    You don&apos;t have any favourite items :(
+                    {t('empty-favourites')}
                   </h2>
                 </div>
               )}
