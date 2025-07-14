@@ -18,7 +18,7 @@ type Props = {
 
 export const MainSlider = ({ setSwiperInstance, onSlideChange }: Props) => {
   return (
-    <div className="relative w-full max-w-full h-[500px]">
+    <div className="relative w-full max-w-full" style={{ height: '80vh' }}>
       <Swiper
         effect="fade"
         fadeEffect={{ crossFade: true }}
