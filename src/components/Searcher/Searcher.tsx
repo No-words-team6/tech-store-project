@@ -33,7 +33,6 @@ export const Searcher = () => {
   };
 
   const filteredProducts = filterProducts(products, query);
-
   return (
     <div ref={ref}>
       <div className="relative flex min-w-45">
@@ -46,19 +45,23 @@ export const Searcher = () => {
         />
       </div>
 
-      {query.length === 0 || (
+      {query.length > 0 && filteredProducts.length > 0 && (
         <div className="absolute bg-gray-800 py-3">
           <div className=" flex flex-col gap-2 max-h-64 px-3 overflow-y-scroll ">
             {filteredProducts.map((product) => {
               return (
                 <Link
-                  to={`${product.itemId}`}
+                  to={`/${product.category}/${product.itemId}`}
                   key={product.id}
                   className="flex bg-gray-600 items-center px-2 hover:cursor-pointer"
                 >
                   <div className="w-[80px] h-[80px] flex-shrink-0">
                     <img
-                      src={product.image}
+                      src={
+                        product.image.startsWith('/') ?
+                          product.image
+                        : `/${product.image}`
+                      }
                       alt={product.name}
                       className="w-full h-full object-contain"
                     />
