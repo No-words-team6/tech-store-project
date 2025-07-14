@@ -9,10 +9,11 @@ import {
 import type { SortBy } from '@/types';
 import type { TimesItems } from '@/types/TimesItems';
 import { useChangeSearchParam } from '@/hooks/useChangeSearchParam';
+import type { Brands } from '@/types/Brands';
 
 interface SelectorProps {
   title: string;
-  options: SortBy[] | TimesItems[];
+  options: SortBy[] | TimesItems[] | Brands[];
   keySelectedSort: string;
   selectedSort: string;
   selectorWidth: string;

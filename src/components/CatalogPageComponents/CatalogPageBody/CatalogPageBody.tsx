@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { type Category, type Product } from '@/types';
 import { useSearchParams } from 'react-router-dom';
-import { sortProducts } from '@/utils/sortProducts';
 import { TimesItems } from '@/types/TimesItems';
 import { useProductStore } from '@/stores/productStore';
 import { CatalogBar } from '@/components/CatalogBar';
 import { ProductCard } from '@/components/ProductCard';
 import { Paginator } from '@/components/Paginator';
+import { prepareProductList } from '@/utils/prepareProductList';
 
 interface Props {
   category: Category;
@@ -25,9 +25,12 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
     searchParams.get('timesItems') ?? TimesItems.Twelve;
   const selectedPage = searchParams.get('numberOfPage') ?? '1';
 
-  const sortedProducts = sortProducts(products, {
+  const selectedBrand = searchParams.get('brand') ?? 'All';
+
+  const sortedProducts = prepareProductList(products, {
     selectedSortBy,
     selectedTimesItems,
+    selectedBrand,
   });
 
   const quantityPages = (arrLenght: number, itemInOnePAge: number) => {
@@ -79,7 +82,7 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   }, [category, fetchProductsByCategory]);
 
   return (
-    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 px-4 sm:px-6 lg:px-8 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px]">
+    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-0">
       <CatalogBar />
 
       {!isLoading && (

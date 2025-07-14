@@ -1,18 +1,21 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Selector } from '../Selector';
 import { TimesItems } from '@/types/TimesItems';
 import { SortBy } from '@/types';
+import { Brands } from '@/types/Brands';
 
 const sortByOptions: SortBy[] = Object.values(SortBy).map((value) => value);
 const timesItemsOptions: TimesItems[] = Object.values(TimesItems).map(
   (value) => value,
 );
+const brandOptions = Object.values(Brands).map((value) => value);
 
 export const CatalogBar = () => {
   const [searchParams] = useSearchParams();
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
+  const selectedBrand = searchParams.get('brand') ?? Brands.All;
 
   return (
     <div
@@ -35,7 +38,15 @@ export const CatalogBar = () => {
         selectorWidth="w-[106px] sm:w-[128px]"
       />
 
-      <div className="flex flex-col gap-1">
+      <Selector
+        title="Current brand"
+        options={brandOptions}
+        keySelectedSort="brand"
+        selectedSort={selectedBrand}
+        selectorWidth="w-[106px] sm:w-[128px]"
+      />
+
+      {/* <div className="flex flex-col gap-1">
         <p className="font-mont text-xs text-gray-500">Comparison</p>
         <Link
           to="comparison"
@@ -43,7 +54,7 @@ export const CatalogBar = () => {
         >
           Comparison
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
