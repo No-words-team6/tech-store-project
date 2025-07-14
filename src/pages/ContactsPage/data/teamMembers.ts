@@ -1,47 +1,43 @@
 type TeamMember = {
-  name: string;
+  nameKey: string;
   photo: string;
   github: string;
   linkedin: string;
-  position: string;
-  description: string;
+  positionKey: string;
+  descriptionKey: string;
 };
 
 export const teamMembers: TeamMember[] = [
   {
-    name: 'Denys Kasatskyi',
+    nameKey: 'team.denys.name',
     photo: '/img/teamFoto/denis.jpg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
-    position: 'Team Lead & Frontend Developer',
-    description:
-      'Soon, there will be a lot of information about us here, but at this stage of our life, we are unemployed.',
+    positionKey: 'team.denys.position',
+    descriptionKey: 'team.denys.description',
   },
   {
-    name: 'Hryhorii Korsun',
+    nameKey: 'team.hryhorii.name',
     photo: '/img/teamFoto/gregoryjpeg.jpeg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
-    position: 'Frontend Developer',
-    description:
-      'Soon, there will be a lot of information about us here, but at this stage of our life, we are unemployed.',
+    positionKey: 'team.hryhorii.position',
+    descriptionKey: 'team.hryhorii.description',
   },
   {
-    name: 'Anna Kolisnichenko',
+    nameKey: 'team.anna.name',
     photo: '/img/teamFoto/ann.jpeg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
-    position: 'Tech Lead & Frontend Developer',
-    description:
-      'Soon, there will be a lot of information about us here, but at this stage of our life, we are unemployed.',
+    positionKey: 'team.anna.position',
+    descriptionKey: 'team.anna.description',
   },
   {
-    name: 'Andrii Kushnirenko',
+    nameKey: 'team.andrii.name',
     photo: '/img/teamFoto/andrii.jpeg',
     github: 'https://github.com/placeholder',
     linkedin: 'https://linkedin.com/in/placeholder',
-    position: 'Frontend Developer',
-    description:
-      'Soon, there will be a lot of information about us here, but at this stage of our life, we are unemployed.',
+    positionKey: 'team.andrii.position',
+    descriptionKey: 'team.andrii.description',
   },
 ];

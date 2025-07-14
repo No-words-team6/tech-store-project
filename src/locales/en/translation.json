@@ -2,6 +2,10 @@
   "home": "Home",
   "phones": "Phones",
   "mobile-phones": "Mobile phones",
+  "browse-categories": "Browse categories",
+  "top3": "Elevate Your Tech: Top 3 New Arrivals",
+  "choose-brand": "Choose your brand",
+  "choose-all": "Or discover all devices",
   "tablets": "Tablets",
   "accessories": "Accessories",
   "favourites": "Favourites",
@@ -13,6 +17,7 @@
   "checkout": "Checkout",
   "contacts": "Contacts",
   "rights": "Rights",
+  "terms-policies": "Terms & Policies",
   "back-to-top": "Back to top",
   "welcome-text": "Welcome to Nice Gadgets store!",
   "new-models": "Brand new models",
@@ -30,5 +35,87 @@
   "added-to-cart": "Added to cart",
   "items": "items",
   "item": "item",
-  "back": "Back"
+  "back": "Back",
+
+  "phones-carousel": {
+    "apple13": {
+      "short": "Flagship iPhone with top-tier camera and performance"
+    },
+    "samsungS24": {
+      "short": "Latest Galaxy with powerful AI and Pro-grade camera"
+    },
+    "redmi14": {
+      "short": "Affordable flagship with 200MP camera and fast charging"
+    }
+  },
+
+  "tablets-carousel": {
+    "ipadPro12": {
+      "short": "The ultimate iPad for creatives and professionals with an M2 chip and Liquid Retina XDR display"
+    },
+    "tabS10": {
+      "short": "Premium Android tablet with 16GB RAM, 1TB storage, and stunning 14.6\" AMOLED display"
+    },
+    "redmiPad2": {
+      "short": "Affordable and stylish tablet with 10.95\" display, smooth performance, and long battery life"
+    }
+  },
+
+  "smartwatches-carousel": {
+    "apple6": {
+      "short": "Розширене відстеження активності, сенсор кисню в крові та Retina-дисплей у класичному дизайні"
+    },
+    "galaxy8": {
+      "short": "Вишуканий AMOLED-дисплей, потужні сенсори здоровʼя, довгий заряд і водозахист"
+    },
+    "watch2": {
+      "short": "Розумний, легкий і стильний годинник із просунутими фітнес-функціями та до 12 днів автономності"
+    }
+  },
+
+  "ownership-and-ip": "1. Ownership and Intellectual Property",
+  "ownership-and-ip-content": "All content on this site — including text, images, graphics, logos, design, software, trademarks, and domain names — is owned by the Nice Gadgets team and is protected by copyright and intellectual property laws.",
+
+  "use-of-content": "2. Use of Content",
+  "use-of-content-content": "You may view, download, or print content from this website for personal, non-commercial use only. Any other use — such as copying, sharing, publishing, or selling — is not allowed without prior written permission.",
+
+  "copy-protection": "3. Copy Protection",
+  "copy-protection-content": "All materials are protected against unauthorized copying. Using bots, scripts, or automated tools to collect or copy content without permission is strictly prohibited.",
+
+  "privacy-policy": "4. Privacy Policy",
+  "privacy-policy-content": "Your privacy matters to us. We do not collect or store any personal data, except for information related to orders and your saved favorite products on this site.",
+
+  "updates-and-changes": "5. Updates and Changes",
+  "updates-and-changes-content": "We reserve the right to update these terms at any time. Changes take effect once published on the website. We encourage you to review the terms periodically to stay informed.",
+
+  "limitation-of-liability": "6. Limitation of Liability",
+  "limitation-of-liability-content": "We are not responsible for any damage or loss resulting from your use of this website. You use the site at your own risk.",
+
+  "contact-information": "7. Contact Information",
+  "contact-information-content": "If you have any questions or feedback about these terms, feel free to reach out via the Contacts page.",
+
+  "team-nemasliv": "TEAM NEMA SLIV",
+
+  "team": {
+    "denys": {
+      "name": "Denys Kasatskyi",
+      "position": "Team Lead & Frontend Developer",
+      "description": "I'm passionate about frontend architecture and building scalable UI systems. Leading the team with caffeine and love for TypeScript."
+    },
+    "hryhorii": {
+      "name": "Hryhorii Korsun",
+      "position": "Frontend Developer",
+      "description": "Enthusiastic developer with a passion for clean code, React, and solving real-world problems with elegant interfaces."
+    },
+    "anna": {
+      "name": "Anna Kolisnichenko",
+      "position": "Tech Lead & Frontend Developer",
+      "description": "Responsible for technical strategy and quality. Obsessed with performance, design systems, and DX (developer experience)."
+    },
+    "andrii": {
+      "name": "Andrii Kushnirenko",
+      "position": "Frontend Developer",
+      "description": "Frontend enthusiast who enjoys turning designs into reality and constantly learning modern web technologies."
+    }
+  }
 }

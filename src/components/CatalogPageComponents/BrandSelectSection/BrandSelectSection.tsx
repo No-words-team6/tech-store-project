@@ -1,4 +1,5 @@
 import type React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export interface BrandItem {
@@ -11,19 +12,21 @@ interface Props {
 }
 
 export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full max-w-[1200px] mx-auto pt-[24px] pb-[80px]">
       <section className=" grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[24px]">
         <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-between items-center w-full mb-6">
           <h2 className="color-white font-mont font-bold text-[22px] sm:text-[32px]">
-            Choose your brand
+            {t('choose-brand')}
           </h2>
 
           <Link
             to={`catalog`}
             className="bg-white/10 hover:bg-white/20 color-white font-mont font-extrabold text-[18px] sm:text-[22px] px-6 py-2 shadow transition border border-white/10"
           >
-            Or discover all devices
+            {t('choose-all')}
           </Link>
         </div>
 

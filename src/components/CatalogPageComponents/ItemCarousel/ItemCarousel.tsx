@@ -8,7 +8,7 @@ export interface carouselItem {
   title: string;
   to: string;
   price: number;
-  shortDescription: string;
+  descriptionKey: string;
 }
 
 export interface Props {
@@ -24,7 +24,6 @@ export const ItemCarousel: React.FC<Props> = ({
 }) => {
   const slidesRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
-
   const isAnimating = useRef(false);
 
   const touchData = useRef({ x: 0, startX: 0, dragging: false });
