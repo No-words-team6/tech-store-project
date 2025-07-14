@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const slides = [
   { src: '/img/main-banner-phones.png', link: '/phones' },
-  { src: '/img/banner-phones.png', link: '/phones' },
-  { src: '/img/banner-tablets.png', link: '/tablets' },
-  { src: '/img/banner-accessories.png', link: '/accessories' },
+  { src: '/img/main-banner-phones.png', link: '/phones' },
+  { src: '/img/main-banner-phones.png', link: '/tablets' },
+  { src: '/img/main-banner-phones.png', link: '/accessories' },
 ];
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 
 export const MainSlider = ({ setSwiperInstance, onSlideChange }: Props) => {
   return (
-    <div className="relative w-full max-w-full h-[432px]">
+    <div className="relative w-full max-w-full h-[500px]">
       <Swiper
         effect="fade"
         fadeEffect={{ crossFade: true }}
