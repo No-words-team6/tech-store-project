@@ -5,9 +5,12 @@ import * as Dialog from '@radix-ui/react-dialog';
 import placeholder from '../../public/img/placeholder-empty-bag.svg';
 import { Link } from 'react-router-dom';
 import { useProductStore } from '@/stores/productStore';
+import { useTranslation } from 'react-i18next';
 
 export const CartPage = () => {
   const [showModal, setShowModal] = useState(false);
+
+  const { t } = useTranslation();
 
   const cartStore = useProductStore((state) => state.cartStore);
 
@@ -30,7 +33,7 @@ export const CartPage = () => {
       <div className="max-w-[1200px] pt-[24px] pb-[80px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
         <NavBack to={''} />
         <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 color-white font-mont font-bold text-[32px] sm:text-5xl leading-[56px]">
-          Cart
+          {t('cart')}
         </h1>
 
         {!cartStore.length && (
@@ -42,7 +45,7 @@ export const CartPage = () => {
             />
 
             <h2 className="col-span-4 xl:col-span-6 col-start-1 sm:col-start-5 xl:col-start-10 font-mont text-[#515151]">
-              Your cart is empty
+              {t('empty-cart')}
             </h2>
 
             <Link
@@ -50,7 +53,7 @@ export const CartPage = () => {
               className="col-span-2 sm:col-span-4 col-start-2 sm:col-start-5 xl:col-start-11 justify-self-stretch mt-2"
             >
               <Button className="h-[48px] bg-[#905BFF] rounded-none w-full hover:cursor-pointer">
-                Back to shopping
+                {t('back-to-shopping')}
               </Button>
             </Link>
           </div>
@@ -68,7 +71,7 @@ export const CartPage = () => {
                     <div className="w-full sm:w-auto flex items-center gap-6 min-w-0">
                       <div className="flex items-center gap-6">
                         <button
-                          className="text-white opacity-50 hover:opacity-100 w-6 h-6 flex items-center justify-center"
+                          className="text-white opacity-50 hover:opacity-100 w-6 h-6 flex items-center justify-center hover:cursor-pointer"
                           onClick={() => handleDelete(product)}
                         >
                           ✕
@@ -92,7 +95,7 @@ export const CartPage = () => {
                       <div className="flex h-[32px]">
                         <Button
                           onClick={() => decreaseQuantity(product.itemId)}
-                          className="w-[32px] bg-[#323542] rounded-none h-[32px]"
+                          className="w-[32px] bg-[#323542] rounded-none h-[32px] hover:cursor-pointer"
                         >
                           -
                         </Button>
@@ -103,7 +106,7 @@ export const CartPage = () => {
 
                         <Button
                           onClick={() => increaseQuantity(product.itemId)}
-                          className="w-[32px] h-[32px] bg-[#323542] rounded-none"
+                          className="w-[32px] h-[32px] bg-[#323542] rounded-none hover:cursor-pointer"
                         >
                           +
                         </Button>
@@ -120,14 +123,19 @@ export const CartPage = () => {
             <div className="border border-[#3B3E4A] col-span-4 sm:col-span-12 xl:col-span-8 p-[24px] flex flex-col gap-y-[24px] self-start">
               <div className="flex flex-col items-center justify-center">
                 <h3 className="font-mont font-bold text-white text-[32px]">{`$${totalAmount}`}</h3>
-                <p className="font-mont text-[14px] text-white">{`Total for ${totalItems} items`}</p>
+                <p className="font-mont text-[14px] text-white">
+                  {t('total-for')}
+                  {totalItems === 1 ?
+                    ` ${totalItems} ${t('item')}`
+                  : ` ${totalItems} ${t('items')}`}
+                </p>
               </div>
               <hr className="w-full border-t border-[#3B3E4A]" />
               <Button
                 onClick={() => setShowModal(true)}
-                className="h-[48px] bg-[#905BFF] rounded-none"
+                className="h-[48px] bg-[#905BFF] rounded-none hover:cursor-pointer"
               >
-                Checkout
+                {t('checkout')}
               </Button>
             </div>
           </div>
