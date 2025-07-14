@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const slides = [
   { src: '/img/main-banner-phones.png', link: '/phones' },
-  { src: '/img/main-banner-phones.png', link: '/phones' },
-  { src: '/img/main-banner-phones.png', link: '/tablets' },
-  { src: '/img/main-banner-phones.png', link: '/accessories' },
+  { src: '/img/banner-phones.png', link: '/phones' },
+  { src: '/img/banner-tablets.png', link: '/tablets' },
+  { src: '/img/banner-accessories.png', link: '/accessories' },
 ];
 
 type Props = {
