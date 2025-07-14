@@ -3,6 +3,7 @@ import { Selector } from '../Selector';
 import { TimesItems } from '@/types/TimesItems';
 import { SortBy } from '@/types';
 import { Brands } from '@/types/Brands';
+import { Searcher } from '../Searcher';
 
 const sortByOptions: SortBy[] = Object.values(SortBy).map((value) => value);
 const timesItemsOptions: TimesItems[] = Object.values(TimesItems).map(
@@ -19,9 +20,14 @@ export const CatalogBar = () => {
 
   return (
     <div
-      className="col-span-4 sm:col-span-12 xl:col-span-24 flex gap-x-4"
+      className="col-span-4 sm:col-span-12 xl:col-span-24 flex flex-wrap gap-x-4"
       id="catalogBar"
     >
+      <div className="flex flex-col gap-1">
+        <p className="font-mont text-xs text-gray-500">Search</p>
+        <Searcher />
+      </div>
+
       <Selector
         title="Sort by"
         options={sortByOptions}
