@@ -22,8 +22,12 @@ export const MainSliderSection: React.FC = () => {
   };
 
   return (
-    <section className="w-screen-1 bg-[#1F2128] relative flex flex-col items-center justify-center text-center">
-      <h2 className="text-white font-mont font-extrabold text-[32px] sm:text-[42px] z-10 mb-6 absolute top-1/10 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+    <section className="w-screen-1 bg-[#1F2128] relative flex flex-col">
+      <h1 className="text-white font-mont font-extrabold text-[32px] sm:text-5xl z-10 mb-6 left-1/10 absolute top-1/10 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+        {t('welcome-text')}
+        {/* {t(slides[activeIndex].titleKey)} */}
+      </h1>
+      <h2 className="text-white font-mont font-extrabold text-[28px] sm:text-4xl z-10 mb-6 left-1/10 absolute top-3/4 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
         {t(slides[activeIndex].titleKey)}
       </h2>
 
@@ -41,7 +45,7 @@ export const MainSliderSection: React.FC = () => {
         <ChevronRight />
       </button>
 
-      <div className="w-full h-full max-h-[500px] sm:max-h-[600px] relative z-0">
+      <div className="w-full h-full max-h-screen relative z-0">
         <MainSlider
           setSwiperInstance={setSwiperInstance}
           onSlideChange={handleSlideChange}
