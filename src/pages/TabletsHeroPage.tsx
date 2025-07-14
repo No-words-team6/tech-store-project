@@ -1,11 +1,10 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
-import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
   '/videos/tabletsBanner-1.mp4',
-  '/videos/phonesBanner-2.mp4',
+  '/videos/tabletsBanner-2.mp4',
 ];
 
 const brands = [
@@ -52,16 +51,14 @@ const tablets = [
   },
 ];
 
-export const TabletsCatalogPage = () => {
+export const TabletsHeroPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Tablets'} videoSources={videoSources} />
 
-      <BrandSelectSection brandImageSources={brands} />
-
       <CatalogPageRecomendationsSection carouselItems={tablets} />
 
-      <CatalogPageBody category={'tablets'} />
+      <BrandSelectSection brandImageSources={brands} />
     </>
   );
 };

@@ -1,23 +1,29 @@
-import React, { useEffect } from 'react';
-import { type Category, type Product } from '@/types';
-import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { type Product } from '@/types';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { TimesItems } from '@/types/TimesItems';
 import { useProductStore } from '@/stores/productStore';
 import { CatalogBar } from '@/components/CatalogBar';
 import { ProductCard } from '@/components/ProductCard';
 import { Paginator } from '@/components/Paginator';
 import { prepareProductList } from '@/utils/prepareProductList';
+import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
+import { ErrorPage } from '@/pages/ErrorPage';
 
-interface Props {
-  category: Category;
-}
+const allowedCategories = ['phones', 'tablets', 'accessories'] as const;
+type Category = (typeof allowedCategories)[number];
 
-export const CatalogPageBody: React.FC<Props> = ({ category }) => {
+export const CatalogPageBody = () => {
   const products = useProductStore((state) => state.products);
   const isLoading = useProductStore((state) => state.isLoading);
   const fetchProductsByCategory = useProductStore(
     (state) => state.fetchProductsByCategory,
   );
+
+  const { pathname } = useLocation();
+  const category = pathname.split('/')[1];
+
+  const validCategory = category as Category;
 
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedPage = searchParams.get('numberOfPage') ?? '1';
@@ -77,11 +83,16 @@ export const CatalogPageBody: React.FC<Props> = ({ category }) => {
   }, [+selectedPage, selectedTimesItems, sortedProducts.length]);
 
   useEffect(() => {
-    fetchProductsByCategory(category);
-  }, [category, fetchProductsByCategory]);
+    fetchProductsByCategory(validCategory);
+  }, [validCategory, fetchProductsByCategory]);
 
+  if (!category || !allowedCategories.includes(category as Category)) {
+    return <ErrorPage />;
+  }
   return (
     <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-0">
+      <BreadcrumbNav />
+
       <CatalogBar />
 
       {!isLoading && (

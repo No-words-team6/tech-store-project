@@ -3,6 +3,7 @@ import { ChevronUp } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 
 import './footer.css';
+import { useTranslation } from 'react-i18next';
 
 const isLinkActive = ({ isActive }: { isActive: boolean }) =>
   isActive ?
@@ -10,6 +11,8 @@ const isLinkActive = ({ isActive }: { isActive: boolean }) =>
   : 'font-mont font-bold text-white hover:text-gray-400';
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="w-full back-color shadow-[0_-1px_0_0_#323542]">
       <div className="w-full px-4 sm:px-8 xl:px-8 py-8">
@@ -35,10 +38,10 @@ export const Footer = () => {
               Github
             </a>
             <NavLink to="/contacts" className={isLinkActive}>
-              Contacts
+              {t('contacts')}
             </NavLink>
             <NavLink to="/rights" className={isLinkActive}>
-              Rights
+              {t('rights')}
             </NavLink>
           </div>
 
@@ -47,7 +50,7 @@ export const Footer = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center gap-4 hover:cursor-pointer"
             >
-              <p className="text-gray-600">Back to top</p>
+              <p className="text-gray-600">{t('back-to-top')}</p>
               <ChevronUp className="w-8 h-8 bg-gray-600 text-white" />
             </button>
           </div>

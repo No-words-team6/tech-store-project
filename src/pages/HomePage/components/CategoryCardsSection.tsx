@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom';
 import phonesCaregory from '../../../../public/img/category-phones.png';
 import tabletsCaregory from '../../../../public/img/category-tablets.png';
 import accessoriesCaregory from '../../../../public/img/category-accessories.webp';
+import { useTranslation } from 'react-i18next';
 
 export const CategoryCardsSection: React.FC = () => {
   const products = useProductStore((state) => state.products);
+
+  const { t } = useTranslation();
 
   const { phonesCount, tabletsCount, accessoriesCount } = useMemo(
     () => getCategoryCounts(products),
@@ -17,7 +20,7 @@ export const CategoryCardsSection: React.FC = () => {
   return (
     <section className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[24px]">
       <h2 className="col-span-2 sm:col-span-6 xl:col-span-12 color-white font-mont font-extrabold text-[22px] sm:text-[32px]">
-        Shop by category
+        {t('category')}
       </h2>
 
       <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-[16px]">
@@ -34,10 +37,10 @@ export const CategoryCardsSection: React.FC = () => {
           </div>
 
           <h3 className="color-white font-mont font-semibold text-[20px]">
-            Mobile phones
+            {t('mobile-phones')}
           </h3>
 
-          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${phonesCount} models`}</p>
+          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${phonesCount} ${t('models')}`}</p>
         </Link>
 
         <Link
@@ -53,9 +56,9 @@ export const CategoryCardsSection: React.FC = () => {
           </div>
 
           <h3 className="color-white font-mont font-semibold text-[20px]">
-            Tablets
+            {t('tablets')}
           </h3>
-          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${tabletsCount} models`}</p>
+          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${tabletsCount} ${t('models')}`}</p>
         </Link>
 
         <Link
@@ -71,10 +74,10 @@ export const CategoryCardsSection: React.FC = () => {
           </div>
 
           <h3 className="color-white font-mont font-semibold text-[20px]">
-            Accessories
+            {t('accessories')}
           </h3>
 
-          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${accessoriesCount} models`}</p>
+          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${accessoriesCount} ${t('models')}`}</p>
         </Link>
       </div>
     </section>

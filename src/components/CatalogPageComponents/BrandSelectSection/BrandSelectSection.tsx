@@ -1,5 +1,5 @@
 import type React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export interface BrandItem {
   key: string;
@@ -11,8 +11,6 @@ interface Props {
 }
 
 export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
-  const [, setSearchParams] = useSearchParams();
-
   return (
     <div className="w-full max-w-[1200px] mx-auto pt-[24px] pb-[80px]">
       <section className=" grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[24px]">
@@ -21,21 +19,21 @@ export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
             Choose your brand
           </h2>
 
-          <button
-            onClick={() => setSearchParams({ brand: 'All' })}
+          <Link
+            to={`catalog`}
             className="bg-white/10 hover:bg-white/20 color-white font-mont font-extrabold text-[18px] sm:text-[22px] px-6 py-2 shadow transition border border-white/10"
           >
             Or discover all devices
-          </button>
+          </Link>
         </div>
 
         <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-[16px]">
           {brandImageSources.map(({ key, image }) => {
             return (
-              <div
+              <Link
+                to={`catalog?brand=${key}`}
                 key={key}
                 className="col-span-4 sm:col-span-4 xl:col-span-8 group cursor-pointer"
-                onClick={() => setSearchParams({ brand: key })}
               >
                 <div className="h-[288px] sm:h-[187px] xl:h-[368px] accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51]">
                   <img
@@ -48,7 +46,7 @@ export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
                 <h3 className="color-white font-mont font-semibold text-[20px]">
                   {key}
                 </h3>
-              </div>
+              </Link>
             );
           })}
         </div>

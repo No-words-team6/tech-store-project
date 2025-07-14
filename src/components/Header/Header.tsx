@@ -6,6 +6,7 @@ import { MobileSidebar } from './MobileSidebar';
 
 import './header.css';
 import { useProductStore } from '@/stores/productStore';
+import { useTranslation } from 'react-i18next';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
@@ -26,6 +27,8 @@ export const Header = () => {
   const [searchParams] = useSearchParams();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const { t } = useTranslation();
+
   const favouritesData = useProductStore((state) => state.favouritesStore);
   const cartData = useProductStore((state) => state.cartStore);
 
@@ -45,16 +48,16 @@ export const Header = () => {
 
             <nav className="hidden sm:flex items-center h-16 gap-16">
               <NavLink to="/" className={navLinkClass}>
-                Home
+                {t('home')}
               </NavLink>
               <NavLink to="/phones" className={navLinkClass}>
-                Phones
+                {t('phones')}
               </NavLink>
               <NavLink to="/tablets" className={navLinkClass}>
-                Tablets
+                {t('tablets')}
               </NavLink>
               <NavLink to="/accessories" className={navLinkClass}>
-                Accessories
+                {t('accessories')}
               </NavLink>
             </nav>
           </div>
