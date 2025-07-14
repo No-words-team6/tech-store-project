@@ -22,6 +22,10 @@
   font-style: normal;
 }
 
+body {
+  background-color: #0f1121;
+}
+
 .font-mont {
   font-family: 'Mont', 'sans-serif';
 }

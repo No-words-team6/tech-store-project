@@ -4,6 +4,7 @@ import '../../index.css';
 import { ButtonHeart } from '../common/ButtonHeart';
 import type { Product } from '@/types';
 import { ButtonAddToCart } from '../common/ButtonAddToCart';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   product: Product;
@@ -25,6 +26,8 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   const imagePath = image.startsWith('/') ? image : `/${image}`;
 
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const handleCardClick = () => {
     navigate(`/${category}/${itemId}`);
@@ -56,19 +59,19 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
 
       <div className="w-full text-xs text-[#75767F] mb-2 mt-2 pt-2 font-bold ">
         <div className="pb-2 flex justify-between">
-          <span>Screen</span>
+          <span>{t('screen')}</span>
 
           <span className="text-[#F1F2F9]">{screen}</span>
         </div>
 
         <div className="pb-2 flex justify-between">
-          <span>Capacity</span>
+          <span>{t('capacity')}</span>
 
           <span className="text-[#F1F2F9]">{capacity}</span>
         </div>
 
         <div className="pb-2 flex justify-between">
-          <span>RAM</span>
+          <span>{t('ram')}</span>
 
           <span className="text-[#F1F2F9]">{ram}</span>
         </div>

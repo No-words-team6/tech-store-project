@@ -2,10 +2,13 @@ import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
 import { ProductCard } from '@/components/ProductCard';
 import { useProductStore } from '@/stores/productStore';
 import placeholder from '../../public/img/placeholder-angry-heart.png';
+import { useTranslation } from 'react-i18next';
 
 export const FavouritesPage = () => {
   const favouritesStore = useProductStore((state) => state.favouritesStore);
   const productsLength = favouritesStore.length;
+
+  const { t } = useTranslation();
 
   return (
     <div className="w-full max-w-[1200px] mx-auto">
@@ -29,7 +32,7 @@ export const FavouritesPage = () => {
               sm:text-[48px] xl:leading-[56px]
               text-[#F1F2F9] mb-2"
           >
-            Favourites
+            {t('favourites')}
           </h1>
 
           <p
@@ -38,21 +41,24 @@ export const FavouritesPage = () => {
               text-[14px] leading-[21px]
               text-[#75767F] mb-10"
           >
-            {productsLength} items
+            {productsLength === 1 ?
+              `${productsLength} ${t('item')}`
+            : `${productsLength} ${t('items')}`}
           </p>
 
           {!productsLength && (
             <div
               className="col-span-full flex flex-col items-center justify-center text-center text-[#F1F2F9]
-                h-[50vh] sm:h-[60vh] xl:h-[40vh]"
+              h-[50vh] sm:h-[60vh] xl:h-[40vh]"
             >
               <img
                 src={placeholder}
                 alt="empty bag"
                 className="col-span-4 col-start-2 sm:col-start-6"
               />
+
               <h2 className="font-mont text-[#515151] mt-[-20px]">
-                You don&apos;t have any favourite items :(
+                {t('empty-favourites')}
               </h2>
             </div>
           )}

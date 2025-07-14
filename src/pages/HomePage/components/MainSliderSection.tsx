@@ -2,17 +2,20 @@ import SwiperCore from 'swiper';
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { MainSlider } from './MainSlider/MainSlider';
+import { useTranslation } from 'react-i18next';
 
 const slides = [
-  { title: 'Latest Smartphones in Store' },
-  { title: 'Discover New Phones' },
-  { title: 'Top Tablets for Work and Play' },
-  { title: 'Must-Have Accessories' },
+  { titleKey: 'latest-phones' },
+  { titleKey: 'new-phones' },
+  { titleKey: 'top-tablets' },
+  { titleKey: 'must-have-accessories' },
 ];
 
 export const MainSliderSection: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const { t } = useTranslation();
 
   const handleSlideChange = (swiper: SwiperCore) => {
     setActiveIndex(swiper.realIndex);
@@ -21,7 +24,7 @@ export const MainSliderSection: React.FC = () => {
   return (
     <section className="w-screen-1 bg-[#1F2128] relative flex flex-col items-center justify-center text-center">
       <h2 className="text-white font-mont font-extrabold text-[32px] sm:text-[42px] z-10 mb-6 absolute top-1/10 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
-        {slides[activeIndex].title}
+        {t(slides[activeIndex].titleKey)}
       </h2>
 
       <button

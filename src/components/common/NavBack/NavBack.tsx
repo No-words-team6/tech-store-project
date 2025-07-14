@@ -1,5 +1,6 @@
 import { ChevronLeft } from 'lucide-react';
 import type React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -7,13 +8,15 @@ interface Props {
 }
 
 export const NavBack: React.FC<Props> = ({ to }) => {
+  const { t } = useTranslation();
+
   return (
     <Link
       to={`/${to}`}
       className="flex gap-x-[4px] col-span-4 sm:col-span-12 xl:col-span-24 text-gray-100 font-bold cursor-pointer mb-[16px]"
     >
       <ChevronLeft className="w-[16px] h-[16px]" />
-      <p className="font-mont text-xs">Back</p>
+      <p className="font-mont text-xs">{t('back')}</p>
     </Link>
   );
 };

@@ -1,11 +1,10 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
-import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
   '/videos/watchesBanner-1.mp4',
-  '/videos/phonesBanner-2.mp4',
+  '/videos/watchesBanner-1.mp4',
 ];
 
 const smartwatches = [
@@ -50,16 +49,14 @@ const brands = [
   { key: 'Xiaomi', image: '/img/carousel-items/carousel-watch-xiaomi-1.webp' },
 ];
 
-export const AccessoriesCatalogPage = () => {
+export const AccessoriesHeroPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Accessories'} videoSources={videoSources} />
 
-      <BrandSelectSection brandImageSources={brands} />
-
       <CatalogPageRecomendationsSection carouselItems={smartwatches} />
 
-      <CatalogPageBody category={'accessories'} />
+      <BrandSelectSection brandImageSources={brands} />
     </>
   );
 };
