@@ -2,13 +2,21 @@ import { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Heart, ShoppingBag, X } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
+import type { Product } from '@/types';
 
 interface MobileSidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  favouritesData: Product[];
+  cartItemsAmount: number;
 }
 
-export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
+export const MobileSidebar = ({
+  isOpen,
+  onClose,
+  favouritesData,
+  cartItemsAmount,
+}: MobileSidebarProps) => {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/phones', label: 'Phones' },
@@ -92,7 +100,14 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
               onClick={onClose}
               className={`flex flex-col items-center justify-center w-1/2 h-full relative border-r border-[#3B3E4A] transition-all duration-300`}
             >
-              <Heart className="w-6 h-6 text-[#75767F] group-hover:text-[#F1F2F9] transition-colors" />
+              <div className="relative">
+                <Heart className="w-6 h-6 text-[#75767F] group-hover:text-[#F1F2F9] transition-colors" />
+                {!!favouritesData.length && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
+                    {favouritesData.length}
+                  </span>
+                )}
+              </div>
             </Link>
 
             <Link
@@ -100,7 +115,14 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
               onClick={onClose}
               className={`flex flex-col items-center justify-center w-1/2 h-full relative transition-all duration-300`}
             >
-              <ShoppingBag className="w-6 h-6 text-[#75767F] group-hover:text-[#F1F2F9] transition-colors" />
+              <div className="relative">
+                <ShoppingBag className="w-6 h-6 text-[#75767F] group-hover:text-[#F1F2F9] transition-colors" />
+                {!!cartItemsAmount && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
+                    {cartItemsAmount}
+                  </span>
+                )}
+              </div>
             </Link>
           </div>
         </div>
