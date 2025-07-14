@@ -8,7 +8,6 @@ import type { SwiperClass } from 'swiper/react';
 
 import './ProductSlider.css';
 import { useEffect, useState } from 'react';
-
 interface Props {
   productList: Product[];
   title: string;
