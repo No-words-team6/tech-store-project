@@ -2,7 +2,6 @@ import { ChevronLeft } from 'lucide-react';
 import type React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 interface Props {
   to: string;
