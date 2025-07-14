@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import type { Item, Product } from '@/types';
 import { ColorsSwitcher } from './components/ColorsSwitcher';
 import { CapacitySwitcher } from './components/CapacitySwitcher';
@@ -12,6 +12,7 @@ interface Props {
 }
 
 export const ProductOptions: React.FC<Props> = ({ item, product }) => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [products, setProducts] = useState<Item[]>([]);
 
@@ -35,7 +36,11 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
     );
 
     if (matching) {
-      navigate(`/${matching.category}/${matching.id}`);
+      navigate(`/${matching.category}/${matching.id}`, {
+        state: {
+          previousPage: location.pathname,
+        },
+      });
     }
   };
 
@@ -48,7 +53,11 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
     );
 
     if (matching) {
-      navigate(`/${matching.category}/${matching.id}`);
+      navigate(`/${matching.category}/${matching.id}`, {
+        state: {
+          previousPage: location.pathname,
+        },
+      });
     }
   };
 
