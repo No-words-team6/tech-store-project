@@ -65,7 +65,7 @@ export const FavouritesPage = () => {
 
           <div className="col-span-full flex flex-wrap gap-6 justify-center sm:justify-start">
             {favouritesStore.map((product) => (
-              <div key={product.id} className="w-[272px]">
+              <div key={product.id} className="w-full sm:w-[272px]">
                 <ProductCard product={product} />
               </div>
             ))}
