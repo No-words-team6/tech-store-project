@@ -113,6 +113,8 @@ export const Header = () => {
       <MobileSidebar
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
+        favouritesData={favouritesData}
+        cartItemsAmount={cartItemsAmount}
       />
     </header>
   );
