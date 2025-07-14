@@ -2,6 +2,7 @@ import type React from 'react';
 import { ItemCarousel, type carouselItem } from '../ItemCarousel';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   carouselItems: carouselItem[];
@@ -35,12 +36,14 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const { t } = useTranslation();
+
   return (
     <div className="w-full max-w-[1200px] mx-auto">
       <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
         <div className="flex flex-col gap-y-10 justify-center test text-white text-4xl col-span-24">
           <h2 className="color-white font-mont font-extrabold text-[18px] sm:text-[24px]">
-            Elevate Your Tech: Top 3 New Arrivals
+            {t('top3')}
           </h2>
 
           <div className="flex">
@@ -63,7 +66,7 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                   className="color-white font-mont font-semibold text-sm sm:text-base"
                   variants={itemVariants}
                 >
-                  {carouselItems[currentIndex].shortDescription}
+                  {t(carouselItems[currentIndex].descriptionKey)}
                 </motion.p>
                 <motion.p
                   className="color-white font-mont font-bold text-base sm:text-xl"

@@ -1,6 +1,7 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
+import { useTranslation } from 'react-i18next';
 
 const videoSources = [
   '/videos/tabletsBanner-1.mp4',
@@ -24,8 +25,7 @@ const tablets = [
     title: 'Apple iPad Pro 12.9',
     to: 'apple-ipad-pro-2022-12-9-1tb-spacegray',
     price: 1599,
-    shortDescription:
-      'The ultimate iPad for creatives and professionals with an M2 chip and Liquid Retina XDR display',
+    descriptionKey: 'tablets-carousel.ipadPro12.short',
   },
   {
     id: 2,
@@ -34,11 +34,8 @@ const tablets = [
     title: 'Samsung Galaxy Tab S10 Ultra',
     to: 'samsung-galaxy-tab-s10-ultra-x926-1tb-moonstone-gray',
     price: 1299,
-    shortDescription:
-      'Premium Android tablet with 16GB RAM, 1TB storage, and stunning 14.6" AMOLED display',
+    descriptionKey: 'tablets-carousel.tabS10.short',
   },
-  //  Samsung Galaxy Tab S10 Ultra 5G X926 16GB/1TB Moonstone Gray
-
   {
     id: 3,
     name: 'Xiaomi',
@@ -46,15 +43,16 @@ const tablets = [
     title: 'Xiaomi Redmi Pad 2',
     to: 'xiaomi-redmi-pad-2-128gb-gray',
     price: 189,
-    shortDescription:
-      'Affordable and stylish tablet with 10.95" display, smooth performance, and long battery life',
+    descriptionKey: 'tablets-carousel.redmiPad2.short',
   },
 ];
 
 export const TabletsHeroPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <CatalogPageHeader title={'Tablets'} videoSources={videoSources} />
+      <CatalogPageHeader title={t('tablets')} videoSources={videoSources} />
 
       <CatalogPageRecomendationsSection carouselItems={tablets} />
 

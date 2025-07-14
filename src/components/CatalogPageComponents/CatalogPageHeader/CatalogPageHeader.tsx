@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { WidthContainer } from '@/components/WidthContainer';
 import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
 import { ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,8 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
   const [videoIndex, setVideoIndex] = useState(0);
   const videoRefs = useRef<HTMLVideoElement[]>([]);
   const maskRef = useRef<HTMLDivElement>(null);
+
+  const { t } = useTranslation();
 
   const fadeToNextVideo = () => {
     const current = videoRefs.current[videoIndex];
@@ -134,7 +137,7 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
           z-11
         "
       >
-        <span>Browse categories</span>
+        <span>{t('browse-categories')}</span>
         <ChevronDown size={28} />
       </button>
 
