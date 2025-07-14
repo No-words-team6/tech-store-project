@@ -1,25 +1,23 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
-import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
   '/videos/phonesBanner-1.mp4',
   '/videos/phonesBanner-2.mp4',
-  '/videos/phonesBanner-3.mp4',
 ];
 
 const brands = [
-  { key: 'Apple', image: '/img/carousel-items/carousel-phone-3.png' },
-  { key: 'Samsung', image: '/img/carousel-items/carousel-phone-2.png' },
-  { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.png' },
+  { key: 'Apple', image: '/img/carousel-items/carousel-phone-3.webp' },
+  { key: 'Samsung', image: '/img/carousel-items/carousel-phone-2.webp' },
+  { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.webp' },
 ];
 
 const phones = [
   {
     id: 1,
     name: 'Apple',
-    image: '/img/carousel-items/carousel-phone-2.png',
+    image: '/img/carousel-items/carousel-phone-2.webp',
     title: 'iPhone 13 Pro Max',
     to: 'apple-iphone-13-pro-max-1tb-gold',
     price: 1199,
@@ -28,7 +26,7 @@ const phones = [
   {
     id: 2,
     name: 'Samsung',
-    image: '/img/carousel-items/carousel-phone-3.png',
+    image: '/img/carousel-items/carousel-phone-3.webp',
     title: 'Samsung Galaxy S24',
     to: 'samsung-galaxy-s24-256gb-violet',
     price: 716,
@@ -37,7 +35,7 @@ const phones = [
   {
     id: 3,
     name: 'Xiaomi',
-    image: '/img/carousel-items/carousel-phone-4.png',
+    image: '/img/carousel-items/carousel-phone-4.webp',
     title: 'Xiaomi Redmi Note 14 Pro',
     to: 'xiaomi-redmi-note-14-pro-256gb-yellow',
     price: 429,
@@ -45,16 +43,14 @@ const phones = [
   },
 ];
 
-export const PhonesCatalogPage = () => {
+export const PhonesHeroPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Mobile phones'} videoSources={videoSources} />
 
-      <BrandSelectSection brandImageSources={brands} />
-
       <CatalogPageRecomendationsSection carouselItems={phones} />
 
-      <CatalogPageBody category={'phones'} />
+      <BrandSelectSection brandImageSources={brands} />
     </>
   );
 };
