@@ -3,13 +3,17 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import placeholder from '../../public/img/placeholder-empty-bag.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useProductStore } from '@/stores/productStore';
 import { WidthContainer } from '@/components/WidthContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
 import { GridContainer } from '@/components/GridContainer';
 
 export const CartPage = () => {
+  const { state } = useLocation();
+  console.log(state);
+  const previousPage = state.previousPage.split('/')[1];
+
   const [showModal, setShowModal] = useState(false);
 
   const cartStore = useProductStore((state) => state.cartStore);
@@ -27,13 +31,12 @@ export const CartPage = () => {
     },
     { totalAmount: 0, totalItems: 0 },
   );
-
   return (
     <>
       <WidthContainer>
         <PaddingContainer>
           <GridContainer>
-            <NavBack to={''} />
+            <NavBack to={previousPage} />
             <h1 className="col-span-24 color-white font-mont font-bold text-5xl leading-[56px]">
               Cart
             </h1>

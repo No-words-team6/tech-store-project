@@ -45,7 +45,7 @@ export const Footer = () => {
           <div className="col-span-4 sm:col-span-3 xl:col-span-3 xl:col-start-22 justify-self-center sm:justify-self-end">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 hover:cursor-pointer"
             >
               <p className="text-gray-600">Back to top</p>
               <ChevronUp className="w-8 h-8 bg-gray-600 text-white" />

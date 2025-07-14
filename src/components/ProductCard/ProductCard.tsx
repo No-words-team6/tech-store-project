@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import '../../index.css';
 import { ButtonHeart } from '../common/ButtonHeart';
 import type { Product } from '@/types';
@@ -21,13 +21,18 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     capacity,
     ram,
   } = product;
+  const [searchParams] = useSearchParams();
 
   const imagePath = image.startsWith('/') ? image : `/${image}`;
 
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/${category}/${itemId}`);
+    navigate(`/${category}/${itemId}`, {
+      state: {
+        search: searchParams.toString(),
+      },
+    });
   };
 
   return (
