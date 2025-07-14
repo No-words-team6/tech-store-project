@@ -47,29 +47,51 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
   useEffect(() => {
     if (!maskRef.current) return;
 
-    gsap.to(maskRef.current, {
-      clipPath: 'inset(5% 15% 5% 15%)',
-      borderRadius: '48px',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: maskRef.current,
-        start: 'top top',
-        end: '+=500',
-        scrub: true,
-      },
+    const targetWidth = 1220;
+    const headerHeight = 64;
+
+    let st: ScrollTrigger | undefined;
+
+    const setClipPath = (progress: number) => {
+      const vw = window.innerWidth;
+      const side = Math.max(0, ((vw - targetWidth) / 2) * progress);
+      const border = 48 * progress;
+      maskRef.current!.style.clipPath = `inset(0px ${side}px 0px ${side}px)`;
+      maskRef.current!.style.borderRadius = `${border}px`;
+    };
+
+    // eslint-disable-next-line prefer-const
+    st = ScrollTrigger.create({
+      trigger: maskRef.current,
+      start: `top top+=${headerHeight}`,
+      end: '+=500',
+      scrub: true,
+      onUpdate: (self) => setClipPath(self.progress),
     });
+
+    setClipPath(0);
+
+    const handleResize = () => {
+      if (st) setClipPath(st.progress);
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (st) st.kill();
+    };
   }, []);
 
   return (
     <div
-      className="relative mx-auto w-full h-screen max-h-[1016px] max-w-[1920px] overflow-hidden mb-5 flex items-center justify-center"
-      style={{ height: 'calc(100vh - 64px)' }}
+      className="relative w-full h-[100vh] max-w-[1920px] mx-auto overflow-hidden flex items-center justify-center"
+      style={{ minHeight: 'calc(100vh - 0px)' }}
     >
       <div
         ref={maskRef}
-        className="sticky top-0 h-full w-full flex items-center justify-center z-0 overflow-hidden"
+        className="absolute inset-0 w-full h-full flex items-center justify-center z-0 overflow-hidden"
         style={{
-          clipPath: 'inset(0% 0% 0% 0%)',
+          clipPath: 'inset(0px 0px 0px 0px)',
           borderRadius: 0,
         }}
       >
@@ -116,7 +138,7 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
         <ChevronDown size={28} />
       </button>
 
-      <div className="absolute top-0 left-0 z-10 w-full h-full flex flex-col justify-start pt-6 md:pt-10">
+      <div className="absolute top-0 left-0 z-10 w-full h-full flex flex-col justify-start pt-6 md:pt-10 pointer-events-none">
         <WidthContainer>
           <BreadcrumbNav />
           <h1 className="text-white font-mont font-bold text-5xl">{title}</h1>

@@ -1426,5 +1426,173 @@
     "processor": "Apple S5",
     "ram": "1GB",
     "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+  },
+  {
+    "id": "samsung-galaxy-watch-8-44mm-gray",
+    "category": "accessories",
+    "namespaceId": "samsung-galaxy-watch-8",
+    "name": "Samsung Galaxy Watch 8 44mm SM-L330 Gray",
+    "capacityAvailable": ["44mm"],
+    "capacity": "44mm",
+    "priceRegular": 399,
+    "priceDiscount": 369,
+    "colorsAvailable": ["gray", "white"],
+    "color": "gray",
+    "images": [
+      "img/accessories/samsung-galaxy-watch-8/gray/00.webp",
+      "img/accessories/samsung-galaxy-watch-8/gray/01.webp",
+      "img/accessories/samsung-galaxy-watch-8/gray/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Super AMOLED Display",
+        "text": [
+          "The Galaxy Watch 8 features a bright and energy-efficient 1.5-inch Super AMOLED display with always-on support for vibrant visuals and quick glances."
+        ]
+      },
+      {
+        "title": "Advanced Fitness & Health Tracking",
+        "text": [
+          "Track your heart rate, sleep, blood oxygen, stress, and more with advanced Samsung Health sensors. The Watch 8 supports GPS, automatic workout detection, and personalized health insights."
+        ]
+      },
+      {
+        "title": "Smart Connectivity & Durability",
+        "text": [
+          "Stay connected with Wi-Fi and Bluetooth, manage calls and notifications from your wrist, and use voice assistant features. Water and dust resistant (IP68) with a robust aluminum case."
+        ]
+      }
+    ],
+    "screen": "1.5' Super AMOLED",
+    "resolution": "480x480",
+    "processor": "Samsung Exynos W1000 (or newer)",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "NFC"]
+  },
+  {
+    "id": "samsung-galaxy-watch-8-44mm-white",
+    "category": "accessories",
+    "namespaceId": "samsung-galaxy-watch-8",
+    "name": "Samsung Galaxy Watch 8 44mm SM-L330 White",
+    "capacityAvailable": ["44mm"],
+    "capacity": "44mm",
+    "priceRegular": 399,
+    "priceDiscount": 369,
+    "colorsAvailable": ["gray", "white"],
+    "color": "white",
+    "images": [
+      "img/accessories/samsung-galaxy-watch-8/white/00.webp",
+      "img/accessories/samsung-galaxy-watch-8/white/01.webp",
+      "img/accessories/samsung-galaxy-watch-8/white/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Super AMOLED Display",
+        "text": [
+          "The Galaxy Watch 8 features a bright and energy-efficient 1.5-inch Super AMOLED display with always-on support for vibrant visuals and quick glances."
+        ]
+      },
+      {
+        "title": "Advanced Fitness & Health Tracking",
+        "text": [
+          "Track your heart rate, sleep, blood oxygen, stress, and more with advanced Samsung Health sensors. The Watch 8 supports GPS, automatic workout detection, and personalized health insights."
+        ]
+      },
+      {
+        "title": "Smart Connectivity & Durability",
+        "text": [
+          "Stay connected with Wi-Fi and Bluetooth, manage calls and notifications from your wrist, and use voice assistant features. Water and dust resistant (IP68) with a robust aluminum case."
+        ]
+      }
+    ],
+    "screen": "1.5' Super AMOLED",
+    "resolution": "480x480",
+    "processor": "Samsung Exynos W1000 (or newer)",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "NFC"]
+  },
+  {
+    "id": "xiaomi-watch-2-black",
+    "category": "accessories",
+    "namespaceId": "xiaomi-watch-2",
+    "name": "Xiaomi Watch 2 Black",
+    "capacityAvailable": ["46mm"],
+    "capacity": "46mm",
+    "priceRegular": 229,
+    "priceDiscount": 199,
+    "colorsAvailable": ["black", "gray"],
+    "color": "black",
+    "images": [
+      "img/accessories/xiaomi-watch-2/black/00.webp",
+      "img/accessories/xiaomi-watch-2/black/01.webp",
+      "img/accessories/xiaomi-watch-2/black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Bright AMOLED Display",
+        "text": [
+          "Xiaomi Watch 2 features a 1.43-inch vibrant AMOLED touchscreen with always-on support, providing crisp visuals and smooth navigation even in bright sunlight."
+        ]
+      },
+      {
+        "title": "Comprehensive Health & Fitness Tracking",
+        "text": [
+          "Track heart rate, sleep, blood oxygen, stress, and over 150 sports modes. Built-in GPS and advanced sensors keep you informed and motivated."
+        ]
+      },
+      {
+        "title": "Smart Features & Long Battery",
+        "text": [
+          "Powered by Wear OS, with support for notifications, calls, Google Assistant, and app downloads. Up to 65 hours of battery life and fast charging for all-day use."
+        ]
+      }
+    ],
+    "screen": "1.43' AMOLED",
+    "resolution": "466x466",
+    "processor": "Qualcomm",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "NFC"]
+  },
+  {
+    "id": "xiaomi-watch-2-gray",
+    "category": "accessories",
+    "namespaceId": "xiaomi-watch-2",
+    "name": "Xiaomi Watch 2 Gray",
+    "capacityAvailable": ["46mm"],
+    "capacity": "46mm",
+    "priceRegular": 229,
+    "priceDiscount": 199,
+    "colorsAvailable": ["black", "gray"],
+    "color": "gray",
+    "images": [
+      "img/accessories/xiaomi-watch-2/gray/00.webp",
+      "img/accessories/xiaomi-watch-2/gray/01.webp",
+      "img/accessories/xiaomi-watch-2/gray/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Bright AMOLED Display",
+        "text": [
+          "Xiaomi Watch 2 features a 1.43-inch vibrant AMOLED touchscreen with always-on support, providing crisp visuals and smooth navigation even in bright sunlight."
+        ]
+      },
+      {
+        "title": "Comprehensive Health & Fitness Tracking",
+        "text": [
+          "Track heart rate, sleep, blood oxygen, stress, and over 150 sports modes. Built-in GPS and advanced sensors keep you informed and motivated."
+        ]
+      },
+      {
+        "title": "Smart Features & Long Battery",
+        "text": [
+          "Powered by Wear OS, with support for notifications, calls, Google Assistant, and app downloads. Up to 65 hours of battery life and fast charging for all-day use."
+        ]
+      }
+    ],
+    "screen": "1.43' AMOLED",
+    "resolution": "466x466",
+    "processor": "Qualcomm",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "NFC"]
   }
 ]
