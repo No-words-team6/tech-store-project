@@ -1,12 +1,10 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
-import { CatalogPageBody } from '@/components/CatalogPageComponents/CatalogPageBody';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 
 const videoSources = [
   '/videos/phonesBanner-1.mp4',
   '/videos/phonesBanner-2.mp4',
-  // '/videos/phonesBanner-3.mp4',
 ];
 
 const brands = [
@@ -45,16 +43,14 @@ const phones = [
   },
 ];
 
-export const PhonesCatalogPage = () => {
+export const PhonesHeroPage = () => {
   return (
     <>
       <CatalogPageHeader title={'Mobile phones'} videoSources={videoSources} />
 
-      <BrandSelectSection brandImageSources={brands} />
-
       <CatalogPageRecomendationsSection carouselItems={phones} />
 
-      <CatalogPageBody category={'phones'} />
+      <BrandSelectSection brandImageSources={brands} />
     </>
   );
 };
