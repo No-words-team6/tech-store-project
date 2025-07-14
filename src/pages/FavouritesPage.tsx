@@ -2,15 +2,14 @@ import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
 import { ProductCard } from '@/components/ProductCard';
 import { useProductStore } from '@/stores/productStore';
 import placeholder from '../../public/img/placeholder-angry-heart.png';
-import { WidthContainer } from '@/components/WidthContainer';
-import { PaddingContainer } from '@/components/PaddingContainer';
+
 export const FavouritesPage = () => {
   const favouritesStore = useProductStore((state) => state.favouritesStore);
   const productsLength = favouritesStore.length;
 
   return (
-    <WidthContainer>
-      <PaddingContainer>
+    <div className="w-full max-w-[1200px] mx-auto">
+      <div className="pt-[24px] pb-[80px]">
         <div className="px-4 sm:px-8 xl:px-0">
           <BreadcrumbNav />
         </div>
@@ -66,7 +65,7 @@ export const FavouritesPage = () => {
             ))}
           </div>
         </div>
-      </PaddingContainer>
-    </WidthContainer>
+      </div>
+    </div>
   );
 };
