@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { Heart, ShoppingBag, Menu } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 import { MobileSidebar } from './MobileSidebar';
@@ -23,6 +23,8 @@ const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
   }`;
 
 export const Header = () => {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const { t } = useTranslation();
@@ -79,7 +81,15 @@ export const Header = () => {
                 </div>
               </NavLink>
 
-              <NavLink to="/cart" className={iconLinkClass} aria-label="Cart">
+              <NavLink
+                to="/cart"
+                state={{
+                  search: searchParams.toString(),
+                  previousPage: location.pathname,
+                }}
+                className={iconLinkClass}
+                aria-label="Cart"
+              >
                 <div className="relative">
                   <ShoppingBag className="w-5 h-5 text-inherit transition-colors" />
                   {!!cartItemsAmount && (
