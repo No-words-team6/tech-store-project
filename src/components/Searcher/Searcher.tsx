@@ -3,12 +3,18 @@ import { Input } from '../ui/input';
 import { useProductStore } from '@/stores/productStore';
 import { Search } from 'lucide-react';
 import type { Product } from '@/types';
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Brands } from '@/types/Brands';
 
 export const Searcher = () => {
   const products = useProductStore((state) => state.products);
 
+  const [searchParams] = useSearchParams();
+  const currentBrand = searchParams.get('brand') ?? '';
+
   const [query, setQuery] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,13 +32,25 @@ export const Searcher = () => {
 
   const filterProducts = (items: Product[], queryParam: string) => {
     const normalizeQuery = queryParam.trim().toLowerCase();
+    const normalizeCurrentBrand = currentBrand.toLowerCase();
 
     return items.filter((item) =>
-      item.name.toLowerCase().includes(normalizeQuery),
+      currentBrand === Brands.All ?
+        item.name.toLowerCase().includes(normalizeQuery)
+      : item.name.toLowerCase().includes(normalizeQuery) &&
+        item.name.toLowerCase().split(' ')[0] === normalizeCurrentBrand,
     );
   };
 
   const filteredProducts = filterProducts(products, query);
+
+  const handleOnClick = (product: Product) => {
+    navigate(`/${product.category}/${product.itemId}`, {
+      state: {
+        previousPage: location.pathname,
+      },
+    });
+  };
   return (
     <div ref={ref}>
       <div className="relative flex min-w-45">
@@ -50,10 +68,10 @@ export const Searcher = () => {
           <div className=" flex flex-col gap-2 max-h-64 px-3 overflow-y-scroll ">
             {filteredProducts.map((product) => {
               return (
-                <Link
-                  to={`/${product.category}/${product.itemId}`}
+                <div
                   key={product.id}
                   className="flex bg-gray-600 items-center px-2 hover:cursor-pointer"
+                  onClick={() => handleOnClick(product)}
                 >
                   <div className="w-[80px] h-[80px] flex-shrink-0">
                     <img
@@ -76,7 +94,7 @@ export const Searcher = () => {
                   <div className="font-mont font-extrabold text-[18px] text-white">
                     {`$${product.price}`}
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
