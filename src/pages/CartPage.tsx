@@ -3,15 +3,11 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import placeholder from '../../public/img/placeholder-empty-bag.svg';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useProductStore } from '@/stores/productStore';
 import { useTranslation } from 'react-i18next';
 
 export const CartPage = () => {
-  const { state } = useLocation();
-  console.log(state);
-  const previousPage = state.previousPage.split('/')[1];
-
   const [showModal, setShowModal] = useState(false);
 
   const { t } = useTranslation();
@@ -34,7 +30,7 @@ export const CartPage = () => {
   return (
     <>
       <div className="max-w-[1200px] pt-[24px] pb-[80px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
-        <NavBack to={previousPage} />
+        <NavBack />
         <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 color-white font-mont font-bold text-[32px] sm:text-5xl leading-[56px]">
           {t('cart')}
         </h1>

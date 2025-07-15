@@ -1,21 +1,16 @@
 import { ChevronLeft } from 'lucide-react';
-import type React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-interface Props {
-  to: string;
-}
-
-export const NavBack: React.FC<Props> = ({ to }) => {
+export const NavBack = () => {
   const { state } = useLocation();
   const { t } = useTranslation();
 
   return (
     <Link
       to={{
-        pathname: `/${to}`,
-        search: state?.search,
+        pathname: state?.previousPage || '/',
+        search: state?.search || '',
       }}
       className="flex gap-x-[4px] col-span-4 sm:col-span-12 xl:col-span-24 text-gray-100 font-bold cursor-pointer mb-[16px]"
     >

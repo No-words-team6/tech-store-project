@@ -63,14 +63,12 @@ export const ProductPage = () => {
 
   const currentProduct = data.find((product) => product.itemId === item?.id);
 
-  const previousPage = location.state?.previousPage.split('/')[1];
-
   return (
     <WidthContainer>
       <PaddingContainer>
         <GridContainer>
           <BreadcrumbNav />
-          <NavBack to={previousPage} />
+          <NavBack />
           {isLoading && !item && (
             <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-center items-center">
               <Loader />
