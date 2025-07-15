@@ -9,12 +9,14 @@ import { GridContainer } from '@/components/GridContainer';
 import { WidthContainer } from '@/components/WidthContainer';
 import { MainSliderSection } from './components/MainSliderSection';
 import { useTranslation } from 'react-i18next';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 export const HomePage = () => {
   const fetchAllProducts = useProductStore((state) => state.fetchAllProducts);
   const newestList = useProductStore((state) => state.newestList);
   const cheapestList = useProductStore((state) => state.cheapestList);
 
+  const width = useScreenWidth();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -25,10 +27,11 @@ export const HomePage = () => {
     <>
       <MainSliderSection />
       <WidthContainer>
+        {width < 640 && <BannerSliderSection />}
         <PaddingContainer>
           <GridContainer>
             <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-y-14 sm:gap-y-16 xl:gap-y-20 gap-x-[16px] pt-0 sm:pt-2 xl:pt-8">
-              <BannerSliderSection />
+              {width >= 640 && <BannerSliderSection />}
 
               <ProductSlider productList={newestList} title={t('new-models')} />
 
