@@ -33,8 +33,10 @@ export const Selector: React.FC<SelectorProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-1">
-      <p className="font-mont text-xs text-gray-500">{title}</p>
+    <div className="flex flex-col">
+      <p className="font-mont text-xs text-gray-500 truncate whitespace-nowrap overflow-hidden">
+        {title}
+      </p>
 
       <Select value={selectedSort} onValueChange={handleSelectChange}>
         <SelectTrigger

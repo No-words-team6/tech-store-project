@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
@@ -23,19 +22,21 @@ export const SliderComparison: React.FC<SliderComparisonProps> = ({
   choosedItemIds,
 }) => {
   return (
-    <div className="flex">
+    <div className="mb-3">
       <Select value={choosedProdId} onValueChange={onProdIdChange}>
-        <SelectTrigger className="bg-white">
+        <SelectTrigger className="bg-white w-full rounded-none">
           <SelectValue placeholder="Choose" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="rounded-none">
           {products.map((product) => {
             return (
               <SelectItem
                 key={product.id}
                 value={product.itemId}
                 className={cn({
-                  'bg-blue-400': choosedItemIds?.includes(product.itemId),
+                  'bg-blue-400 rounded-none': choosedItemIds?.includes(
+                    product.itemId,
+                  ),
                 })}
                 disabled={choosedItemIds?.includes(product.itemId)}
               >
@@ -45,15 +46,6 @@ export const SliderComparison: React.FC<SliderComparisonProps> = ({
           })}
         </SelectContent>
       </Select>
-
-      {choosedProdId && (
-        <Button
-          onClick={() => onProdIdChange('')}
-          className="bg-gray-700 rounded-none"
-        >
-          Clear
-        </Button>
-      )}
     </div>
   );
 };
