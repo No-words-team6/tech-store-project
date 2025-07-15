@@ -13,6 +13,7 @@ import { ProductSpecs } from './components/ProductSpecs';
 import { WidthContainer } from '@/components/WidthContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
 import { GridContainer } from '@/components/GridContainer';
+import { useTranslation } from 'react-i18next';
 
 const prepareRecomendationList = (data: Product[], limit: number) => {
   return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
@@ -58,6 +59,8 @@ export const ProductPage = () => {
       .finally(() => {});
   }, [itemId, category]);
 
+  const { t } = useTranslation();
+
   const photoSet: string[] = item?.images || [];
   const reccomendationsList = prepareRecomendationList(data, 10);
 
@@ -96,7 +99,7 @@ export const ProductPage = () => {
                   <div className="col-span-4 sm:col-span-12 xl:col-span-12 flex flex-col gap-y-8">
                     <div>
                       <h2 className="text-[20px] sm:text-[22px] font-extrabold">
-                        About
+                        {t('About')}
                       </h2>
                       <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
                     </div>
@@ -106,7 +109,9 @@ export const ProductPage = () => {
 
                   <div className="col-start-1 xl:col-start-14 col-span-4 sm:col-span-12 xl:col-span-11 flex flex-col mt-[56px] sm:mt-[64px] xl:mt-0">
                     <div>
-                      <h2 className="text-[22px] font-extrabold">Tech specs</h2>
+                      <h2 className="text-[22px] font-extrabold">
+                        {t('Tech-specs')}
+                      </h2>
                       <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
                     </div>
 

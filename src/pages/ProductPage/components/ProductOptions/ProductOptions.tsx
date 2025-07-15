@@ -5,6 +5,7 @@ import { CapacitySwitcher } from './components/CapacitySwitcher';
 import { ButtonHeart } from '@/components/common/ButtonHeart';
 import { ButtonAddToCart } from '@/components/common/ButtonAddToCart';
 import { useCastomNavigator } from '@/hooks/useCastomNavigator';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   item: Item;
@@ -14,6 +15,8 @@ interface Props {
 export const ProductOptions: React.FC<Props> = ({ item, product }) => {
   const [products, setProducts] = useState<Item[]>([]);
   const navigate = useCastomNavigator();
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     Promise.all([
@@ -53,10 +56,10 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
   };
 
   const specs = [
-    { label: 'Screen', value: item.screen },
-    { label: 'Resolution', value: item.resolution },
-    { label: 'Processor', value: item.processor },
-    { label: 'RAM', value: item.ram },
+    { label: t('Screen'), value: item.screen },
+    { label: t('Resolution'), value: item.resolution },
+    { label: t('Processor'), value: item.processor },
+    { label: t('RAM'), value: item.ram },
   ];
 
   return (
@@ -65,11 +68,11 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
         className="
           col-span-4 sm:col-span-5 xl:col-span-12
           flex justify-between items-center
-          font-bold text-[#75767F]
+          font-bold text-[#75767F] text-xs
         "
       >
-        <p>Available colors</p>
-        <span className="text-xs text-[#4A4D58]">ID: {product.id}</span>
+        <p>{t('Available-colors')}</p>
+        <span className="text-[#4A4D58]">ID: {product.id}</span>
       </div>
 
       <div className="col-span-4 sm:col-span-5 xl:col-span-7 flex flex-col gap-y-6 pt-2 xl:pt-0">
@@ -78,7 +81,7 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
         <hr className="w-full border-t border-[#3B3E4A]" />
 
         <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
-          <p>Select capacity</p>
+          <p>{t('Select-capacity')}</p>
           <CapacitySwitcher item={item} onCapacityClick={handleCapacityClick} />
         </div>
 

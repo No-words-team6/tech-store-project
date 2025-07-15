@@ -9,9 +9,14 @@ import {
 import { useChangeSearchParam } from '@/hooks/useChangeSearchParam';
 import { useTranslation } from 'react-i18next';
 
+interface Option {
+  value: string;
+  label: string;
+}
+
 interface SelectorProps {
   title: string;
-  options: string[];
+  options: Option[];
   keySelectedSort: string;
   selectedSort: string;
   selectorWidth: string;
@@ -60,13 +65,13 @@ export const Selector: React.FC<SelectorProps> = ({
           style={{ maxHeight: '200px', overflowY: 'auto' }}
         >
           <SelectGroup>
-            {options.map((option) => (
+            {options.map(({ value, label }) => (
               <SelectItem
-                key={option}
-                value={option}
+                key={value}
+                value={value}
                 className="rounded-none data-[highlighted]:bg-gray-600 data-[highlighted]:text-white"
               >
-                {option}
+                {label}
               </SelectItem>
             ))}
           </SelectGroup>
