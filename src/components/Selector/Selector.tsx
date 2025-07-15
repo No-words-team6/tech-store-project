@@ -6,14 +6,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import type { SortBy } from '@/types';
-import type { TimesItems } from '@/types/TimesItems';
 import { useChangeSearchParam } from '@/hooks/useChangeSearchParam';
-import type { Brands } from '@/types/Brands';
+import { useTranslation } from 'react-i18next';
+
+interface Option {
+  value: string;
+  label: string;
+}
 
 interface SelectorProps {
   title: string;
-  options: SortBy[] | TimesItems[] | Brands[];
+  options: Option[];
   keySelectedSort: string;
   selectedSort: string;
   selectorWidth: string;
@@ -28,13 +31,17 @@ export const Selector: React.FC<SelectorProps> = ({
 }) => {
   const changeSearchParam = useChangeSearchParam();
 
+  const { t } = useTranslation();
+
   const handleSelectChange = (value: string) => {
     changeSearchParam(keySelectedSort, value);
   };
 
   return (
-    <div className="flex flex-col gap-1">
-      <p className="font-mont text-xs text-gray-500">{title}</p>
+    <div className="flex flex-col">
+      <p className="font-mont text-xs text-gray-500 truncate whitespace-nowrap overflow-hidden">
+        {title}
+      </p>
 
       <Select value={selectedSort} onValueChange={handleSelectChange}>
         <SelectTrigger
@@ -50,7 +57,7 @@ export const Selector: React.FC<SelectorProps> = ({
             hover:border-b-[0.5px]
             active:border-0`}
         >
-          <SelectValue placeholder={!selectedSort && 'Choose'} />
+          <SelectValue placeholder={!selectedSort && t('choose')} />
         </SelectTrigger>
 
         <SelectContent
@@ -58,13 +65,13 @@ export const Selector: React.FC<SelectorProps> = ({
           style={{ maxHeight: '200px', overflowY: 'auto' }}
         >
           <SelectGroup>
-            {options.map((option) => (
+            {options.map(({ value, label }) => (
               <SelectItem
-                key={option}
-                value={option}
+                key={value}
+                value={value}
                 className="rounded-none data-[highlighted]:bg-gray-600 data-[highlighted]:text-white"
               >
-                {option}
+                {label}
               </SelectItem>
             ))}
           </SelectGroup>

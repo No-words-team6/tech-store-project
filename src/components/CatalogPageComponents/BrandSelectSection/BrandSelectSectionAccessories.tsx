@@ -11,7 +11,9 @@ interface Props {
   brandImageSources: BrandItem[];
 }
 
-export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
+export const BrandSelectSectionAccessories: React.FC<Props> = ({
+  brandImageSources,
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -52,7 +54,7 @@ export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
                   <img
                     src={image}
                     alt={key}
-                    className="z-0 absolute bottom-0 right-0 object-contain translate-x-1/2 translate-y-1/1 scale-150 transition duration-1000 group-hover:scale-165"
+                    className="z-0 absolute bottom-0 right-0 object-contain translate-x-1/2 translate-y-1/2 scale-100 transition duration-1000 group-hover:scale-115"
                   />
                 </div>
               </Link>

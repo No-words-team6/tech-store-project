@@ -90,39 +90,23 @@ export const CatalogPageBody = () => {
     return <ErrorPage />;
   }
   return (
-    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-0">
+    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-8 xl:px-0">
       <BreadcrumbNav />
 
       <CatalogBar />
 
       {!isLoading && (
-        <>
-          {visibleItems.length !== 0 ?
-            <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
-              {visibleItems.map((product) => (
-                <div className="col-span-4 sm:col-span-6" key={product.id}>
-                  <ProductCard product={product} />
-                </div>
-              ))}
+        <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
+          {visibleItems.map((product) => (
+            <div className="col-span-4 sm:col-span-6" key={product.id}>
+              <ProductCard product={product} />
             </div>
-          : <div className="col-span-4 sm:col-span-12 xl:col-span-24">
-              <p className="text-center text-white">
-                При таких параметрах товар відсутній.
-              </p>
-            </div>
-          }
-        </>
+          ))}
+        </div>
       )}
 
       {!isLoading && (
-        <>
-          {visibleItems.length !== 0 && (
-            <Paginator
-              quantityPages={numberOfPages}
-              currentPage={+selectedPage}
-            />
-          )}
-        </>
+        <Paginator quantityPages={numberOfPages} currentPage={+selectedPage} />
       )}
     </div>
   );

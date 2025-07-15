@@ -1,46 +1,49 @@
 import type { Item } from '@/types';
 import type React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   item: Item;
 }
 
 export const ProductSpecs: React.FC<Props> = ({ item }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="text-sm text-[#75767F] font-semibold ">
       <div className="pb-2 flex justify-between">
-        <span>Screen</span>
+        <span>{t('Screen')}</span>
 
         <span className="text-[#F1F2F9]">{item.screen}</span>
       </div>
 
       <div className="pb-2 flex justify-between">
-        <span>Resolution</span>
+        <span>{t('Resolution')}</span>
 
         <span className="text-[#F1F2F9]">{item.resolution}</span>
       </div>
 
       <div className="pb-2 flex justify-between">
-        <span>Processor</span>
+        <span>{t('Processor')}</span>
 
         <span className="text-[#F1F2F9]">{item.processor}</span>
       </div>
 
       <div className="pb-2 flex justify-between">
-        <span>RAM</span>
+        <span>{t('RAM')}</span>
 
         <span className="text-[#F1F2F9]">{item.ram}</span>
       </div>
 
       <div className="pb-2 flex justify-between">
-        <span>Built in memory</span>
+        <span>{t('Built-in-memory')}</span>
 
         <span className="text-[#F1F2F9]">{item.capacity}</span>
       </div>
 
       {item.camera && (
         <div className="pb-2 flex justify-between">
-          <span>Camera</span>
+          <span>{t('Camera')}</span>
 
           <span className="text-[#F1F2F9]">{item.camera}</span>
         </div>
@@ -48,14 +51,14 @@ export const ProductSpecs: React.FC<Props> = ({ item }) => {
 
       {item.zoom && (
         <div className="pb-2 flex justify-between">
-          <span>Zoom</span>
+          <span>{t('Zoom')}</span>
 
           <span className="text-[#F1F2F9]">{item.zoom}</span>
         </div>
       )}
 
       <div className="pb-2 flex justify-between">
-        <span>Cell</span>
+        <span>{t('Cell')}</span>
 
         <span className="text-[#F1F2F9]">{item.cell.join(', ')}</span>
       </div>
