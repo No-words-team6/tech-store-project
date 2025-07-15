@@ -96,17 +96,33 @@ export const CatalogPageBody = () => {
       <CatalogBar />
 
       {!isLoading && (
-        <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
-          {visibleItems.map((product) => (
-            <div className="col-span-4 sm:col-span-6" key={product.id}>
-              <ProductCard product={product} />
+        <>
+          {visibleItems.length !== 0 ?
+            <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
+              {visibleItems.map((product) => (
+                <div className="col-span-4 sm:col-span-6" key={product.id}>
+                  <ProductCard product={product} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          : <div className="col-span-4 sm:col-span-12 xl:col-span-24">
+              <p className="text-center text-white">
+                При таких параметрах товар відсутній.
+              </p>
+            </div>
+          }
+        </>
       )}
 
       {!isLoading && (
-        <Paginator quantityPages={numberOfPages} currentPage={+selectedPage} />
+        <>
+          {visibleItems.length !== 0 && (
+            <Paginator
+              quantityPages={numberOfPages}
+              currentPage={+selectedPage}
+            />
+          )}
+        </>
       )}
     </div>
   );

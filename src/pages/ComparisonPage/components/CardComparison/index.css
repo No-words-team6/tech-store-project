@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+.parameters {
+  @apply flex flex-col items-center gap-y-1 text-[16px] border-t-1 first:border-t-0 py-3 first:pt-0 last:pb-0;
+}
+
+.describers {
+  @apply truncate;
+}
