@@ -24,7 +24,7 @@ export const SliderComparison: React.FC<SliderComparisonProps> = ({
   return (
     <div className="mb-3">
       <Select value={choosedProdId} onValueChange={onProdIdChange}>
-        <SelectTrigger className="bg-white w-full rounded-none">
+        <SelectTrigger className="w-full text-white bg-gray-700 [&>span]:text-white border-0 rounded-none">
           <SelectValue placeholder="Choose" />
         </SelectTrigger>
         <SelectContent className="rounded-none">

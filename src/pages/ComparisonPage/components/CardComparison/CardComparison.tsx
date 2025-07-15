@@ -1,4 +1,3 @@
-// import { ProductCard } from '@/components/ProductCard';
 import type { Product } from '@/types';
 import {
   CalendarClock,
@@ -92,7 +91,7 @@ export const CardComparison: React.FC<CardComparisonProps> = ({ product }) => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col items-end gap-y-3">
+          <div className="flex gap-x-5">
             <ButtonAddToCart product={product} />
 
             <ButtonHeart product={product} />
