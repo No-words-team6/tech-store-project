@@ -26,12 +26,11 @@ export const CatalogPageBody = () => {
   const validCategory = category as Category;
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const selectedPage = searchParams.get('numberOfPage') ?? '1';
+  const selectedBrand = searchParams.get('brand') ?? 'All';
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
-  const selectedPage = searchParams.get('numberOfPage') ?? '1';
-
-  const selectedBrand = searchParams.get('brand') ?? 'All';
 
   const sortedProducts = prepareProductList(products, {
     selectedSortBy,
@@ -77,7 +76,7 @@ export const CatalogPageBody = () => {
     const maxPage = Math.ceil(sortedProducts.length / +selectedTimesItems);
     if (+selectedPage > maxPage) {
       setSearchParams((prev) => {
-        prev.set('numberOfPage', '1');
+        prev.set('numberOfPage', selectedPage);
         return prev;
       });
     }
