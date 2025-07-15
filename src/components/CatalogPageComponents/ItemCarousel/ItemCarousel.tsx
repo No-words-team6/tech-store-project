@@ -80,9 +80,10 @@ export const ItemCarousel: React.FC<Props> = ({
   }, []);
 
   function getOffset() {
-    if (window.innerWidth > 1200) return 150;
+    if (window.innerWidth > 1200) return 180;
     if (window.innerWidth > 900) return 100;
     if (window.innerWidth > 600) return 70;
+    if (window.innerWidth < 600) return 100;
     return 60;
   }
 
@@ -158,33 +159,31 @@ export const ItemCarousel: React.FC<Props> = ({
   }, [currentIndex]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto select-none">
-      <div
-        ref={containerRef}
-        className="relative w-full h-[180px] sm:h-[230px] md:h-[300px] lg:h-[350px] xl:h-[380px] flex justify-center items-center perspective-[1000px] overflow-hidden"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        onMouseDown={handleMouseDown}
-      >
-        {carouselItems.map((item, i) => (
-          <div
-            key={item.id}
-            ref={(el) => {
-              slidesRefs.current[i] = el;
-            }}
-            className="absolute inset-0 cursor-pointer"
-            style={{ userSelect: 'none' }}
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="h-full w-full block rounded-lg shadow-lg object-contain pointer-events-none"
-              draggable={false}
-            />
-          </div>
-        ))}
-      </div>
+    <div
+      ref={containerRef}
+      className="relative w-full h-[180px] sm:h-[230px] md:h-[300px] lg:h-[350px] xl:h-[350px] flex justify-center items-center perspective-[1000px] overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onMouseDown={handleMouseDown}
+    >
+      {carouselItems.map((item, i) => (
+        <div
+          key={item.id}
+          ref={(el) => {
+            slidesRefs.current[i] = el;
+          }}
+          className="absolute inset-0 cursor-pointer"
+          style={{ userSelect: 'none' }}
+        >
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-full w-full block object-contain pointer-events-none"
+            draggable={false}
+          />
+        </div>
+      ))}
     </div>
   );
 };
