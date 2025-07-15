@@ -4,8 +4,8 @@ import { TimesItems } from '@/types/TimesItems';
 import { SortBy } from '@/types';
 import { Brands } from '@/types/Brands';
 import { Searcher } from '../Searcher';
+import { useTranslation } from 'react-i18next';
 
-const sortByOptions: SortBy[] = Object.values(SortBy).map((value) => value);
 const timesItemsOptions: TimesItems[] = Object.values(TimesItems).map(
   (value) => value,
 );
@@ -13,6 +13,13 @@ const brandOptions = Object.values(Brands).map((value) => value);
 
 export const CatalogBar = () => {
   const [searchParams] = useSearchParams();
+
+  const { t } = useTranslation();
+
+  const sortByOptions: string[] = Object.values(SortBy).map((value) =>
+    t(value),
+  );
+
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
@@ -24,12 +31,12 @@ export const CatalogBar = () => {
       id="catalogBar"
     >
       <div className="flex flex-col gap-1">
-        <p className="font-mont text-xs text-gray-500">Search</p>
+        <p className="font-mont text-xs text-gray-500">{t('search')}</p>
         <Searcher />
       </div>
 
       <Selector
-        title="Sort by"
+        title={t('sortby')}
         options={sortByOptions}
         keySelectedSort="sortBy"
         selectedSort={selectedSortBy}
@@ -37,7 +44,7 @@ export const CatalogBar = () => {
       />
 
       <Selector
-        title="Items on page"
+        title={t('items-on-page')}
         options={timesItemsOptions}
         keySelectedSort="timesItems"
         selectedSort={selectedTimesItems}
@@ -45,7 +52,7 @@ export const CatalogBar = () => {
       />
 
       <Selector
-        title="Current brand"
+        title={t('current-brand')}
         options={brandOptions}
         keySelectedSort="brand"
         selectedSort={selectedBrand}

@@ -6,14 +6,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import type { SortBy } from '@/types';
-import type { TimesItems } from '@/types/TimesItems';
 import { useChangeSearchParam } from '@/hooks/useChangeSearchParam';
-import type { Brands } from '@/types/Brands';
+import { useTranslation } from 'react-i18next';
 
 interface SelectorProps {
   title: string;
-  options: SortBy[] | TimesItems[] | Brands[];
+  options: string[];
   keySelectedSort: string;
   selectedSort: string;
   selectorWidth: string;
@@ -27,6 +25,8 @@ export const Selector: React.FC<SelectorProps> = ({
   selectorWidth,
 }) => {
   const changeSearchParam = useChangeSearchParam();
+
+  const { t } = useTranslation();
 
   const handleSelectChange = (value: string) => {
     changeSearchParam(keySelectedSort, value);
@@ -50,7 +50,7 @@ export const Selector: React.FC<SelectorProps> = ({
             hover:border-b-[0.5px]
             active:border-0`}
         >
-          <SelectValue placeholder={!selectedSort && 'Choose'} />
+          <SelectValue placeholder={!selectedSort && t('choose')} />
         </SelectTrigger>
 
         <SelectContent
