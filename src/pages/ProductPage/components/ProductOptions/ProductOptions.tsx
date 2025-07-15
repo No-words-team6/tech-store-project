@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import type { Item, Product } from '@/types';
 import { ColorsSwitcher } from './components/ColorsSwitcher';
 import { CapacitySwitcher } from './components/CapacitySwitcher';
 import { ButtonHeart } from '@/components/common/ButtonHeart';
 import { ButtonAddToCart } from '@/components/common/ButtonAddToCart';
+import { useCastomNavigator } from '@/hooks/useCastomNavigator';
 
 interface Props {
   item: Item;
@@ -12,9 +12,8 @@ interface Props {
 }
 
 export const ProductOptions: React.FC<Props> = ({ item, product }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
   const [products, setProducts] = useState<Item[]>([]);
+  const navigate = useCastomNavigator();
 
   useEffect(() => {
     Promise.all([
@@ -36,11 +35,7 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
     );
 
     if (matching) {
-      navigate(`/${matching.category}/${matching.id}`, {
-        state: {
-          previousPage: location.pathname,
-        },
-      });
+      navigate(`/${matching.category}/${matching.id}`);
     }
   };
 
@@ -53,11 +48,7 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
     );
 
     if (matching) {
-      navigate(`/${matching.category}/${matching.id}`, {
-        state: {
-          previousPage: location.pathname,
-        },
-      });
+      navigate(`/${matching.category}/${matching.id}`);
     }
   };
 

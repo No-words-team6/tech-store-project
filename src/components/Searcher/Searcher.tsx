@@ -3,8 +3,9 @@ import { Input } from '../ui/input';
 import { useProductStore } from '@/stores/productStore';
 import { Search } from 'lucide-react';
 import type { Product } from '@/types';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { Brands } from '@/types/Brands';
+import { useSearchParams } from 'react-router-dom';
+import { useCastomNavigator } from '@/hooks/useCastomNavigator';
+import { filterProductSearchs } from '@/utils/filterProductSearchs';
 
 export const Searcher = () => {
   const products = useProductStore((state) => state.products);
@@ -13,9 +14,8 @@ export const Searcher = () => {
   const currentBrand = searchParams.get('brand') ?? '';
 
   const [query, setQuery] = useState('');
-  const location = useLocation();
-  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useCastomNavigator();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -30,26 +30,13 @@ export const Searcher = () => {
     };
   }, [ref]);
 
-  const filterProducts = (items: Product[], queryParam: string) => {
-    const normalizeQuery = queryParam.trim().toLowerCase();
-    const normalizeCurrentBrand = currentBrand.toLowerCase();
-
-    return items.filter((item) =>
-      currentBrand === Brands.All ?
-        item.name.toLowerCase().includes(normalizeQuery)
-      : item.name.toLowerCase().includes(normalizeQuery) &&
-        item.name.toLowerCase().split(' ')[0] === normalizeCurrentBrand,
-    );
-  };
-
-  const filteredProducts = filterProducts(products, query);
+  const filteredProducts = filterProductSearchs(products, {
+    query,
+    currentBrand,
+  });
 
   const handleOnClick = (product: Product) => {
-    navigate(`/${product.category}/${product.itemId}`, {
-      state: {
-        previousPage: location.pathname,
-      },
-    });
+    navigate(`/${product.category}/${product.itemId}`);
   };
   return (
     <div ref={ref}>

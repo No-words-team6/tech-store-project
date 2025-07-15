@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import '../../index.css';
 import { ButtonHeart } from '../common/ButtonHeart';
 import type { Product } from '@/types';
 import { ButtonAddToCart } from '../common/ButtonAddToCart';
 import { useTranslation } from 'react-i18next';
+import { useCastomNavigator } from '@/hooks/useCastomNavigator';
 
 interface Props {
   product: Product;
@@ -22,22 +22,13 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     capacity,
     ram,
   } = product;
-  const [searchParams] = useSearchParams();
-  const location = useLocation();
+  const navigate = useCastomNavigator();
+  const { t } = useTranslation();
 
   const imagePath = image.startsWith('/') ? image : `/${image}`;
 
-  const navigate = useNavigate();
-
-  const { t } = useTranslation();
-
   const handleCardClick = () => {
-    navigate(`/${category}/${itemId}`, {
-      state: {
-        previousPage: location.pathname,
-        search: searchParams.toString(),
-      },
-    });
+    navigate(`/${category}/${itemId}`);
   };
 
   return (
