@@ -15,40 +15,46 @@ export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto pt-[24px] pb-[80px]">
+    <div className="w-full max-w-[1200px] mx-auto pt-[20px] pb-[80px] font-mont text-white">
       <section className=" grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[24px]">
         <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-between items-center w-full mb-6">
-          <h2 className="color-white font-mont font-bold text-[22px] sm:text-[32px]">
+          <h2 className="font-mont font-bold text-[22px] sm:text-[32px]">
             {t('choose-brand')}
           </h2>
-
-          <Link
-            to={`catalog`}
-            className="bg-white/10 hover:bg-white/20 color-white font-mont font-extrabold text-[18px] sm:text-[22px] px-6 py-2 shadow transition border border-white/10"
-          >
-            {t('choose-all')}
-          </Link>
         </div>
 
-        <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-[16px]">
+        <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-1 sm:grid-cols-12 xl:grid-cols-24 gap-[16px]">
+          <Link
+            to={`catalog`}
+            className="col-span-1 sm:col-span-6 xl:col-span-12 group cursor-pointer"
+          >
+            <div className="h-[66px] sm:h-[187px] xl:h-[200px] accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51]">
+              <h3 className="zz-100 font-outline tracking-tighter leading-none text-[100px] lg:text-[200px]">
+                {t('choose-all')}
+              </h3>
+            </div>
+          </Link>
+
           {brandImageSources.map(({ key, image }) => {
             return (
               <Link
                 to={`catalog?brand=${key}`}
                 key={key}
-                className="col-span-4 sm:col-span-4 xl:col-span-8 group cursor-pointer"
+                className="col-span-1 sm:col-span-6 xl:col-span-12 group cursor-pointer font-mont"
               >
-                <div className="h-[288px] sm:h-[187px] xl:h-[368px] accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51]">
+                <div className="accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51]">
+                  <div className="flex align-text-bottom">
+                    <h3 className="z-100 font-outline tracking-tighter leading-none text-[80px] lg:text-[200px]">
+                      {key}
+                    </h3>
+                  </div>
+
                   <img
                     src={image}
                     alt={key}
-                    className="absolute bottom-0 right-0 object-contain translate-x-1/2 translate-y-2/3 scale-150 transition duration-1000 group-hover:scale-165"
+                    className="z-0 absolute bottom-0 right-0 object-contain translate-x-1/2 translate-y-2/3 scale-150 transition duration-1000 group-hover:scale-165"
                   />
                 </div>
-
-                <h3 className="color-white font-mont font-semibold text-[20px]">
-                  {key}
-                </h3>
               </Link>
             );
           })}

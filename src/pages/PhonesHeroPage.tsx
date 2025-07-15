@@ -9,16 +9,18 @@ const videoSources = [
 ];
 
 const brands = [
-  { key: 'Apple', image: '/img/carousel-items/carousel-phone-3.webp' },
+  // { key: 'Apple', image: '/img/carousel-items/carousel-phone-3.webp' },
+  // { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.webp' },
+  { key: 'Apple', image: '/img/carousel-items/carousel-phone-2.webp' },
   { key: 'Samsung', image: '/img/carousel-items/carousel-phone-2.webp' },
-  { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.webp' },
+  { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-2.webp' },
 ];
 
 const phones = [
   {
     id: 1,
     name: 'Apple',
-    image: '/img/carousel-items/carousel-phone-2.webp',
+    image: '/img/carousel-items/carousel-phone-3.webp',
     title: 'iPhone 13 Pro Max',
     to: 'apple-iphone-13-pro-max-1tb-gold',
     price: 1199,
@@ -27,7 +29,7 @@ const phones = [
   {
     id: 2,
     name: 'Samsung',
-    image: '/img/carousel-items/carousel-phone-3.webp',
+    image: '/img/carousel-items/carousel-phone-2.webp',
     title: 'Samsung Galaxy S24',
     to: 'samsung-galaxy-s24-256gb-violet',
     price: 716,
