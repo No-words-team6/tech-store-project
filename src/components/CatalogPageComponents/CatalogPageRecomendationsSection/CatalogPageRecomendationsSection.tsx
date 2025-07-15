@@ -67,21 +67,21 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                   exit="exit"
                 >
                   <motion.p
-                    className="ccolor-white font-mont font-semibold text-[20px]"
+                    className="font-mont font-extrabold text-2xl"
                     variants={itemVariants}
                   >
                     {carouselItems[currentIndex].title}
                   </motion.p>
                   {!isMobile && (
                     <motion.p
-                      className="color-white font-mont font-semibold text-[20px]"
+                      className="text-[#75767F] font-mont font-semibold text-[20px]"
                       variants={itemVariants}
                     >
                       {t(carouselItems[currentIndex].descriptionKey)}
                     </motion.p>
                   )}
                   <motion.p
-                    className="color-white font-mont font-semibold text-[20px]"
+                    className="font-mont font-extrabold text-2xl mt-3"
                     variants={itemVariants}
                   >
                     {`$${carouselItems[currentIndex].price}`}
@@ -90,22 +90,26 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
               </AnimatePresence>
 
               <AnimatePresence mode="wait">
-                <motion.button
+                <motion.a
                   key={carouselItems[currentIndex].id}
+                  href={carouselItems[currentIndex].to}
                   className="mt-8
-                bg-white text-neutral-900
-                font-mont font-semibold
-                text-[20px] px-8 py-3
-                rounded-2xl shadow-lg
-                transition hover:bg-neutral-100
-                w-full max-w-[320px] mx-auto"
+                    bg-white text-neutral-900
+                    font-mont font-semibold
+                    text-[20px] px-8 py-3
+                    rounded-2xl shadow-lg
+                    transition hover:bg-[#75767F]
+                    w-full max-w-[320px]
+                    hover:cursor-pointer
+                    block text-center
+                  "
                   initial={{ opacity: 0, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  {`Дізнатися більше`}
-                </motion.button>
+                  {t('learn-more')}
+                </motion.a>
               </AnimatePresence>
             </div>
           </div>

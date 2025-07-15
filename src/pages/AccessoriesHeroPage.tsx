@@ -1,7 +1,7 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
-import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 import { useTranslation } from 'react-i18next';
+import { BrandSelectSectionAccessories } from '@/components/CatalogPageComponents/BrandSelectSection/BrandSelectSectionAccessories';
 
 const videoSources = [
   '/videos/watchesBanner-1.mp4',
@@ -14,7 +14,7 @@ const smartwatches = [
     name: 'Apple',
     image: '/img/carousel-items/carousel-watch-apple-1.webp',
     title: 'Apple Watch Series 6',
-    to: 'apple-watch-series-6-44mm-spacegray',
+    to: 'accessories/apple-watch-series-6-44mm-spacegray',
     price: 399,
     descriptionKey: 'smartwatches-carousel.apple6.short',
   },
@@ -23,7 +23,7 @@ const smartwatches = [
     name: 'Samsung',
     image: '/img/carousel-items/carousel-watch-samsung-1.webp',
     title: 'Samsung Galaxy Watch 8 44mm',
-    to: 'samsung-galaxy-watch-8-44mm-gray',
+    to: 'accessories/samsung-galaxy-watch-8-44mm-gray',
     price: 369,
     descriptionKey: 'smartwatches-carousel.galaxy8.short',
   },
@@ -32,7 +32,7 @@ const smartwatches = [
     name: 'Xiaomi',
     image: '/img/carousel-items/carousel-watch-xiaomi-1.webp',
     title: 'Xiaomi Watch 2',
-    to: 'xiaomi-watch-2-black',
+    to: 'accessories/xiaomi-watch-2-black',
     price: 199,
     descriptionKey: 'smartwatches-carousel.watch2.short',
   },
@@ -56,7 +56,7 @@ export const AccessoriesHeroPage = () => {
 
       <CatalogPageRecomendationsSection carouselItems={smartwatches} />
 
-      <BrandSelectSection brandImageSources={brands} />
+      <BrandSelectSectionAccessories brandImageSources={brands} />
     </>
   );
 };
