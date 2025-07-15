@@ -17,18 +17,18 @@ export const ContactsPage = () => {
 
             <div
               id="contact-page"
-              className="col-span-24 min-h-screen px-10 py-12 text-[#F1F2F9]"
+              className="col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-12 min-h-screen text-[#F1F2F9]"
             >
-              <h1 className="text-4xl font-mont text-center mb-16">
+              <h1 className="text-2xl sm:text-4xl font-mont text-center">
                 {t('team-nemasliv')}
               </h1>
 
-              <div className="grid grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-8">
                 {teamMembers.map((member, index) => (
                   <div
                     id="contact-page-user"
                     key={index}
-                    className="bg-[#161827] hover:scale-[1.02] rounded-xl flex flex-col items-center text-center p-6 h-full"
+                    className="bg-[#161827] hover:scale-[1.02] rounded-xl flex flex-col items-center text-center p-4 h-full"
                   >
                     <img
                       src={member.photo}

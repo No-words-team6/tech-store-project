@@ -12,17 +12,17 @@ export const RightsPage = () => {
     <WidthContainer>
       <PaddingContainer>
         <GridContainer>
-          <div className="col-span-24 grid grid-cols-24 gap-x-[16px] pt-[24px] pb-[80px]">
+          <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px]">
             <BreadcrumbNav />
 
-            <div className="col-span-24 grid grid-cols-24 gap-x-[16px] gap-y-[24px]">
-              <h1 className="col-span-24 text-white font-mont font-bold text-5xl">
+            <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[24px]">
+              <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 text-white font-mont font-bold text-3xl sm:text-4xl">
                 {t('terms-policies')}
               </h1>
 
-              <div className="col-span-24 text-[#C1C2C7] space-y-8">
+              <div className="col-span-4 sm:col-span-12 xl:col-span-24 text-[#C1C2C7] space-y-8">
                 {sections.map((section, index) => (
-                  <div key={index} className="space-y-2">
+                  <div key={index} className="space-y-2 text-justify">
                     <p className="font-bold">{t(section.title)}</p>
                     <p>{t(section.content)}</p>
                   </div>
