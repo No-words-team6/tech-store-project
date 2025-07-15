@@ -121,7 +121,7 @@ export const ProductPage = () => {
 
                 <ProductSlider
                   productList={reccomendationsList}
-                  title={'You may also like'}
+                  title={t('You-may-like')}
                 />
               </div>
             </div>
