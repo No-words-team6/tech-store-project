@@ -61,11 +61,19 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
 
   return (
     <div className="col-start-1 sm:col-start-8 xl:col-start-14 col-span-4 sm:col-span-5 xl:col-span-11 grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-12 gap-x-[16px]">
-      <div className="col-span-4 sm:col-span-5 xl:col-span-7 flex flex-col gap-y-6">
-        <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
-          <p>Available colors</p>
-          <ColorsSwitcher item={item} onColorClick={handleColorClick} />
-        </div>
+      <div
+        className="
+          col-span-4 sm:col-span-5 xl:col-span-12
+          flex justify-between items-center
+          font-bold text-[#75767F]
+        "
+      >
+        <p>Available colors</p>
+        <span className="text-xs text-[#4A4D58]">ID: {product.id}</span>
+      </div>
+
+      <div className="col-span-4 sm:col-span-5 xl:col-span-7 flex flex-col gap-y-6 pt-2 xl:pt-0">
+        <ColorsSwitcher item={item} onColorClick={handleColorClick} />
 
         <hr className="w-full border-t border-[#3B3E4A]" />
 
@@ -82,7 +90,6 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
           <p className="text-[#F1F2F9] text-[32px] font-extrabold">
             ${item.priceDiscount}
           </p>
-
           <p className="text-[#75767F] line-through text-[22px]">
             ${item.priceRegular}
           </p>
@@ -90,7 +97,6 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
 
         <div className="flex h-[48px] gap-x-[8px]">
           <ButtonAddToCart product={product} />
-
           <ButtonHeart product={product} />
         </div>
       </div>
@@ -99,7 +105,6 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
         {specs.map(({ label, value }) => (
           <div key={label} className="pb-2 flex justify-between">
             <span>{label}</span>
-
             <span className="text-[#F1F2F9]">{value}</span>
           </div>
         ))}
