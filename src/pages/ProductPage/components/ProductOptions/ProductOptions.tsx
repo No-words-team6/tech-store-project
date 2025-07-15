@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import type { Item, Product } from '@/types';
 import { ColorsSwitcher } from './components/ColorsSwitcher';
 import { CapacitySwitcher } from './components/CapacitySwitcher';
@@ -8,26 +8,21 @@ import { useCastomNavigator } from '@/hooks/useCastomNavigator';
 
 interface Props {
   item: Item;
-  product: Product;
+  product: Product | null;
+  variants: Item[];
+  setCurrentItem: (item: Item) => void;
 }
 
-export const ProductOptions: React.FC<Props> = ({ item, product }) => {
-  const [products, setProducts] = useState<Item[]>([]);
+export const ProductOptions: React.FC<Props> = ({
+  item,
+  product,
+  variants,
+  setCurrentItem,
+}) => {
   const navigate = useCastomNavigator();
 
-  useEffect(() => {
-    Promise.all([
-      fetch('/gadgets/phones.json').then((res) => res.json()),
-      fetch('/gadgets/tablets.json').then((res) => res.json()),
-      fetch('/gadgets/accessories.json').then((res) => res.json()),
-    ]).then(([phones, tablets, accessories]) => {
-      const allItems = [...phones, ...tablets, ...accessories];
-      setProducts(allItems);
-    });
-  }, []);
-
   const handleColorClick = (color: string) => {
-    const matching = products.find(
+    const matching = variants.find(
       (p) =>
         p.namespaceId === item.namespaceId &&
         p.capacity === item.capacity &&
@@ -35,12 +30,13 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
     );
 
     if (matching) {
+      setCurrentItem(matching);
       navigate(`/${matching.category}/${matching.id}`);
     }
   };
 
   const handleCapacityClick = (capacity: string) => {
-    const matching = products.find(
+    const matching = variants.find(
       (p) =>
         p.namespaceId === item.namespaceId &&
         p.color === item.color &&
@@ -48,6 +44,7 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
     );
 
     if (matching) {
+      setCurrentItem(matching);
       navigate(`/${matching.category}/${matching.id}`);
     }
   };
@@ -69,7 +66,7 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
         "
       >
         <p>Available colors</p>
-        <span className="text-xs text-[#4A4D58]">ID: {product.id}</span>
+        <span className="text-xs text-[#4A4D58]">ID: {product?.id}</span>
       </div>
 
       <div className="col-span-4 sm:col-span-5 xl:col-span-7 flex flex-col gap-y-6 pt-2 xl:pt-0">
@@ -95,10 +92,12 @@ export const ProductOptions: React.FC<Props> = ({ item, product }) => {
           </p>
         </div>
 
-        <div className="flex h-[48px] gap-x-[8px]">
-          <ButtonAddToCart product={product} />
-          <ButtonHeart product={product} />
-        </div>
+        {product && (
+          <div className="flex h-[48px] gap-x-[8px]">
+            <ButtonAddToCart product={product} />
+            <ButtonHeart product={product} />
+          </div>
+        )}
       </div>
 
       <div className="col-span-4 sm:col-span-5 xl:col-span-7 text-xs text-[#75767F] font-bold mt-4">

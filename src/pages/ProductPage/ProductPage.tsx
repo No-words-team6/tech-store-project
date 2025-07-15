@@ -1,9 +1,8 @@
-import { getProductById, getProducts } from '@/api';
 import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
 import { Loader } from '@/components/common/Loader';
 import { ProductSlider } from '@/components/ProductSlider';
 import type { Category, Item, Product } from '@/types';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { NavBack } from '@/components/common/NavBack';
 import { ProductGallery } from './components/ProductGallery';
@@ -13,6 +12,8 @@ import { ProductSpecs } from './components/ProductSpecs';
 import { WidthContainer } from '@/components/WidthContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
 import { GridContainer } from '@/components/GridContainer';
+import { getProductById, getProducts } from '@/api';
+import { useProductPageStore } from '@/stores/productPageStore';
 
 const prepareRecomendationList = (data: Product[], limit: number) => {
   return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
@@ -25,43 +26,64 @@ export const ProductPage = () => {
   const category = pathParts[1] as Category;
   const itemId = pathParts[2];
 
-  const [item, setItem] = useState<Item | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [product, setProduct] = useState<null | Product>(null);
+  const [currentItem, setCurrentItem] = useState<null | Item>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [itemVariants, setItemVariants] = useState<Item[]>([]);
 
-  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
-  const [data, setData] = useState<Product[]>([]);
+  const [currentPhoto, setCurrentPhoto] = useState<string | null>(null);
+
+  const data = useProductPageStore((state) => state.data);
+  const getData = useProductPageStore((state) => state.getData);
+
+  const reccomendationsList = useMemo(() => {
+    return prepareRecomendationList(data, 10);
+  }, [data]);
 
   useEffect(() => {
-    setItem(null);
-    setIsLoading(true);
+    getData();
+  }, []);
 
-    if (!category || !itemId) {
-      return;
+  useEffect(() => {
+    setIsLoading(true);
+    if (!data.length) {
+      getProducts().then((allProducts) => {
+        const prod = allProducts.find((p) => p.itemId === itemId) ?? null;
+        setProduct(prod);
+      });
+    } else {
+      const prod = data.find((p) => p.itemId === itemId) ?? null;
+      setProduct(prod);
     }
 
-    getProductById(category, itemId)
-      .then((item) => {
-        if (item?.images?.length) {
-          setSelectedPhoto(item.images[0]);
-        }
-        setItem(item);
-      })
-      .catch(() => {
-        setItem(null);
-      })
-      .finally(() => {
+    if (itemVariants.length > 0) {
+      const nextItem = itemVariants.find((it) => it.id === itemId);
+      if (nextItem) {
+        setCurrentItem(nextItem);
+        setCurrentPhoto(nextItem.images?.[0] || null);
         setIsLoading(false);
-      });
+        return;
+      }
+    }
 
-    getProducts()
-      .then(setData)
-      .finally(() => {});
+    getProductById(category, itemId).then((item) => {
+      setCurrentItem(item ?? null);
+      if (item) {
+        setCurrentPhoto(item.images?.[0] || null);
+        fetch(`/gadgets/${category}.json`)
+          .then((res) => res.json())
+          .then((allItems: Item[]) => {
+            const variants = allItems.filter(
+              (it) => it.namespaceId === item.namespaceId,
+            );
+            setItemVariants(variants);
+          })
+          .finally(() => setIsLoading(false));
+      } else {
+        setIsLoading(false);
+      }
+    });
   }, [itemId, category]);
-
-  const photoSet: string[] = item?.images || [];
-  const reccomendationsList = prepareRecomendationList(data, 10);
-
-  const currentProduct = data.find((product) => product.itemId === item?.id);
 
   return (
     <WidthContainer>
@@ -69,27 +91,32 @@ export const ProductPage = () => {
         <GridContainer>
           <BreadcrumbNav />
           <NavBack />
-          {isLoading && !item && (
+          {isLoading && (
             <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-center items-center">
               <Loader />
             </div>
           )}
 
-          {!isLoading && item && currentProduct && (
+          {!isLoading && currentItem && (
             <div className="col-span-4 sm:col-span-12 xl:col-span-24">
               <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
-                {item.name}
+                {currentItem.name}
               </h1>
               <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[56px] sm:gap-y-[64px] xl:gap-y-[80px]">
                 <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px]">
                   <ProductGallery
-                    photoSet={photoSet}
-                    selectedPhoto={selectedPhoto}
-                    setSelectedPhoto={setSelectedPhoto}
-                    item={item}
+                    photoSet={currentItem.images}
+                    currentPhoto={currentPhoto}
+                    setCurrentPhoto={setCurrentPhoto}
+                    item={currentItem}
                   />
 
-                  <ProductOptions item={item} product={currentProduct} />
+                  <ProductOptions
+                    item={currentItem}
+                    product={product}
+                    variants={itemVariants}
+                    setCurrentItem={setCurrentItem}
+                  />
                 </div>
 
                 <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
@@ -101,7 +128,7 @@ export const ProductPage = () => {
                       <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
                     </div>
 
-                    <ProductDescription item={item} />
+                    <ProductDescription item={currentItem} />
                   </div>
 
                   <div className="col-start-1 xl:col-start-14 col-span-4 sm:col-span-12 xl:col-span-11 flex flex-col mt-[56px] sm:mt-[64px] xl:mt-0">
@@ -110,7 +137,7 @@ export const ProductPage = () => {
                       <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
                     </div>
 
-                    <ProductSpecs item={item} />
+                    <ProductSpecs item={currentItem} />
                   </div>
                 </div>
 
