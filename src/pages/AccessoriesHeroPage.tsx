@@ -1,6 +1,7 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
+import { useTranslation } from 'react-i18next';
 
 const videoSources = [
   '/videos/watchesBanner-1.mp4',
@@ -15,8 +16,7 @@ const smartwatches = [
     title: 'Apple Watch Series 6',
     to: 'apple-watch-series-6-44mm-spacegray',
     price: 399,
-    shortDescription:
-      'Advanced fitness tracking, blood oxygen sensor, and always-on Retina display in a classic design',
+    descriptionKey: 'smartwatches-carousel.apple6.short',
   },
   {
     id: 2,
@@ -25,8 +25,7 @@ const smartwatches = [
     title: 'Samsung Galaxy Watch 8 44mm',
     to: 'samsung-galaxy-watch-8-44mm-gray',
     price: 369,
-    shortDescription:
-      'Elegant AMOLED display, powerful health sensors, long battery life and water resistance',
+    descriptionKey: 'smartwatches-carousel.galaxy8.short',
   },
   {
     id: 3,
@@ -35,8 +34,7 @@ const smartwatches = [
     title: 'Xiaomi Watch 2',
     to: 'xiaomi-watch-2-black',
     price: 199,
-    shortDescription:
-      'Smart, lightweight, and stylish with advanced fitness features and up to 12 days battery life',
+    descriptionKey: 'smartwatches-carousel.watch2.short',
   },
 ];
 
@@ -50,9 +48,11 @@ const brands = [
 ];
 
 export const AccessoriesHeroPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <CatalogPageHeader title={'Accessories'} videoSources={videoSources} />
+      <CatalogPageHeader title={t('accessories')} videoSources={videoSources} />
 
       <CatalogPageRecomendationsSection carouselItems={smartwatches} />
 

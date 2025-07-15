@@ -27,11 +27,10 @@ export const CartPage = () => {
     },
     { totalAmount: 0, totalItems: 0 },
   );
-
   return (
     <>
       <div className="max-w-[1200px] pt-[24px] pb-[80px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
-        <NavBack to={''} />
+        <NavBack />
         <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 color-white font-mont font-bold text-[32px] sm:text-5xl leading-[56px]">
           {t('cart')}
         </h1>

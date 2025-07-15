@@ -1,6 +1,7 @@
 import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPageHeader';
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
+import { useTranslation } from 'react-i18next';
 
 const videoSources = [
   '/videos/phonesBanner-1.mp4',
@@ -21,7 +22,7 @@ const phones = [
     title: 'iPhone 13 Pro Max',
     to: 'apple-iphone-13-pro-max-1tb-gold',
     price: 1199,
-    shortDescription: 'Flagship iPhone with top-tier camera and performance',
+    descriptionKey: 'phones-carousel.apple13.short',
   },
   {
     id: 2,
@@ -30,7 +31,7 @@ const phones = [
     title: 'Samsung Galaxy S24',
     to: 'samsung-galaxy-s24-256gb-violet',
     price: 716,
-    shortDescription: 'Latest Galaxy with powerful AI and Pro-grade camera',
+    descriptionKey: 'phones-carousel.samsungS24.short',
   },
   {
     id: 3,
@@ -39,14 +40,19 @@ const phones = [
     title: 'Xiaomi Redmi Note 14 Pro',
     to: 'xiaomi-redmi-note-14-pro-256gb-yellow',
     price: 429,
-    shortDescription: 'Affordable flagship with 200MP camera and fast charging',
+    descriptionKey: 'phones-carousel.redmi14.short',
   },
 ];
 
 export const PhonesHeroPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <CatalogPageHeader title={'Mobile phones'} videoSources={videoSources} />
+      <CatalogPageHeader
+        title={t('mobile-phones')}
+        videoSources={videoSources}
+      />
 
       <CatalogPageRecomendationsSection carouselItems={phones} />
 

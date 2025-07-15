@@ -68,7 +68,7 @@ export const ProductPage = () => {
       <PaddingContainer>
         <GridContainer>
           <BreadcrumbNav />
-          <NavBack to={category} />
+          <NavBack />
           {isLoading && !item && (
             <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-center items-center">
               <Loader />

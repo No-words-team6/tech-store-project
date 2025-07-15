@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import type { Item, Product } from '@/types';
 import { ColorsSwitcher } from './components/ColorsSwitcher';
 import { CapacitySwitcher } from './components/CapacitySwitcher';
 import { ButtonHeart } from '@/components/common/ButtonHeart';
 import { ButtonAddToCart } from '@/components/common/ButtonAddToCart';
+import { useCastomNavigator } from '@/hooks/useCastomNavigator';
 
 interface Props {
   item: Item;
@@ -12,8 +12,8 @@ interface Props {
 }
 
 export const ProductOptions: React.FC<Props> = ({ item, product }) => {
-  const navigate = useNavigate();
   const [products, setProducts] = useState<Item[]>([]);
+  const navigate = useCastomNavigator();
 
   useEffect(() => {
     Promise.all([
