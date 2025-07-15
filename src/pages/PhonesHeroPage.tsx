@@ -9,11 +9,9 @@ const videoSources = [
 ];
 
 const brands = [
-  // { key: 'Apple', image: '/img/carousel-items/carousel-phone-3.webp' },
-  // { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.webp' },
-  { key: 'Apple', image: '/img/carousel-items/carousel-phone-2.webp' },
+  { key: 'Apple', image: '/img/carousel-items/carousel-phone-3.webp' },
   { key: 'Samsung', image: '/img/carousel-items/carousel-phone-2.webp' },
-  { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-2.webp' },
+  { key: 'Xiaomi', image: '/img/carousel-items/carousel-phone-4.webp' },
 ];
 
 const phones = [
@@ -22,7 +20,7 @@ const phones = [
     name: 'Apple',
     image: '/img/carousel-items/carousel-phone-3.webp',
     title: 'iPhone 13 Pro Max',
-    to: 'apple-iphone-13-pro-max-1tb-gold',
+    to: 'phones/apple-iphone-13-pro-max-1tb-gold',
     price: 1199,
     descriptionKey: 'phones-carousel.apple13.short',
   },
@@ -31,7 +29,7 @@ const phones = [
     name: 'Samsung',
     image: '/img/carousel-items/carousel-phone-2.webp',
     title: 'Samsung Galaxy S24',
-    to: 'samsung-galaxy-s24-256gb-violet',
+    to: 'phones/samsung-galaxy-s24-256gb-violet',
     price: 716,
     descriptionKey: 'phones-carousel.samsungS24.short',
   },
@@ -40,7 +38,7 @@ const phones = [
     name: 'Xiaomi',
     image: '/img/carousel-items/carousel-phone-4.webp',
     title: 'Xiaomi Redmi Note 14 Pro',
-    to: 'xiaomi-redmi-note-14-pro-256gb-yellow',
+    to: 'phones/xiaomi-redmi-note-14-pro-256gb-yellow',
     price: 429,
     descriptionKey: 'phones-carousel.redmi14.short',
   },
