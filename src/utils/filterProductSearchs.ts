@@ -2,7 +2,7 @@ import type { Product } from '@/types';
 import { Brands } from '@/types/Brands';
 
 interface FilterParams {
-  query: string;
+  appliedQuery: string;
   currentBrand: string;
 }
 
@@ -10,8 +10,8 @@ export const filterProductSearchs = (
   items: Product[],
   filterParams: FilterParams,
 ) => {
-  const { query, currentBrand } = filterParams;
-  const normalizeQuery = query.trim().toLowerCase();
+  const { appliedQuery, currentBrand } = filterParams;
+  const normalizeQuery = appliedQuery.trim().toLowerCase();
   const normalizeCurrentBrand = currentBrand.toLowerCase();
 
   return items.filter((item) =>

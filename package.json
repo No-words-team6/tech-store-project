@@ -25,6 +25,7 @@
     "gsap": "^3.13.0",
     "i18next": "^25.3.2",
     "i18next-browser-languagedetector": "^8.2.0",
+    "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
