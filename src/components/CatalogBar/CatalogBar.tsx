@@ -1,11 +1,10 @@
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Selector } from '../Selector';
 import { TimesItems } from '@/types/TimesItems';
 import { SortBy } from '@/types';
 import { Brands } from '@/types/Brands';
 import { Searcher } from '../Searcher';
-import { useCastomNavigator } from '@/hooks/useCastomNavigator';
-import { Button } from '../ui/button';
+import { ButtonComparison } from '../common/ButtonComparison';
 
 const sortByOptions: SortBy[] = Object.values(SortBy).map((value) => value);
 const timesItemsOptions: TimesItems[] = Object.values(TimesItems).map(
@@ -14,13 +13,11 @@ const timesItemsOptions: TimesItems[] = Object.values(TimesItems).map(
 const brandOptions = Object.values(Brands).map((value) => value);
 
 export const CatalogBar = () => {
-  const navigation = useCastomNavigator();
   const [searchParams] = useSearchParams();
   const selectedSortBy = searchParams.get('sortBy') ?? '';
   const selectedTimesItems =
     searchParams.get('timesItems') ?? TimesItems.Twelve;
   const selectedBrand = searchParams.get('brand') ?? Brands.All;
-  const category = useLocation().pathname.split('/')[1];
 
   return (
     <div
@@ -56,15 +53,7 @@ export const CatalogBar = () => {
         selectorWidth="w-[106px] sm:w-[128px]"
       />
 
-      <div className="flex flex-col gap-1">
-        <p className="font-mont text-xs text-gray-500">Comparison</p>
-        <Button
-          onClick={() => navigation(`/${category}/comparison`)}
-          className="flex items-center text-white bg-gray-700 h-9 px-3 py-2 rounded-none hover:border-b-[0.5px] hover:bg-gray-700"
-        >
-          Comparison
-        </Button>
-      </div>
+      <ButtonComparison />
     </div>
   );
 };

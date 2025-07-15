@@ -2,23 +2,46 @@ import { GridContainer } from '@/components/GridContainer';
 import { PaddingContainer } from '@/components/PaddingContainer';
 import { WidthContainer } from '@/components/WidthContainer';
 import { useProductStore } from '@/stores/productStore';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SliderComparison } from './components/SliderComparison';
 import { CardComparison } from './components/CardComparison';
 import { findProduct } from '@/utils/findProduct';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { NavBack } from '@/components/common/NavBack';
+import { Loader } from '@/components/common/Loader';
 
 export const ComparisonPage = () => {
   const products = useProductStore((state) => state.products);
+  const isLoading = useProductStore((state) => state.isLoading);
+  const fetchAllProducts = useProductStore((state) => state.fetchAllProducts);
 
-  const prodItemId1 = products[0].itemId;
-  const prodItemId2 = products[1].itemId;
-  const prodItemId3 = products[2].itemId;
+  const [choosedProdId1, setChoosedProdId1] = useState('');
+  const [choosedProdId2, setChoosedProdId2] = useState('');
+  const [choosedProdId3, setChoosedProdId3] = useState('');
 
-  const [choosedProdId1, setChoosedProdId1] = useState(prodItemId1);
-  const [choosedProdId2, setChoosedProdId2] = useState(prodItemId2);
-  const [choosedProdId3, setChoosedProdId3] = useState(prodItemId3);
+  const width = useScreenWidth();
+
+  useEffect(() => {
+    if (products.length === 0) {
+      fetchAllProducts();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (products.length >= 3) {
+      setChoosedProdId1(products[0].itemId);
+      setChoosedProdId2(products[1].itemId);
+      setChoosedProdId3(products[2].itemId);
+    }
+  }, [products]);
+
+  if (isLoading || products.length < 3) {
+    return (
+      <div className="text-center p-10">
+        <Loader />
+      </div>
+    );
+  }
 
   const product1 = findProduct(choosedProdId1, products);
   const product2 = findProduct(choosedProdId2, products);
@@ -32,8 +55,6 @@ export const ComparisonPage = () => {
         prod.itemId === choosedProdId3,
     )
     .map((prod) => prod.itemId);
-
-  const width = useScreenWidth();
 
   return (
     <WidthContainer>
