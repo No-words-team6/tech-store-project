@@ -4,9 +4,9 @@ import { ProductSlider } from '@/components/ProductSlider';
 import { useProductStore } from '@/stores/productStore';
 import { CategoryCardsSection } from './components/CategoryCardsSection';
 import { BannerSliderSection } from './components/BannerSliderSection';
-import { PaddingContainer } from '@/components/PaddingContainer';
-import { GridContainer } from '@/components/GridContainer';
-import { WidthContainer } from '@/components/WidthContainer';
+import { PaddingContainer } from '@/components/containers/PaddingContainer';
+import { GridContainer } from '@/components/containers/GridContainer';
+import { WidthContainer } from '@/components/containers/WidthContainer';
 import { MainSliderSection } from './components/MainSliderSection';
 import { useTranslation } from 'react-i18next';
 

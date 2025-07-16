@@ -74,7 +74,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
         <PaginationItem className="bg-gray-800 rounded-none">
           <PaginationPrevious
             className="rounded-none"
-            href="#catalogBar"
+            href="#breadcrumbId"
             onClick={handlePrev}
           />
         </PaginationItem>
@@ -84,7 +84,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
             {page === -1 ?
               <PaginationEllipsis />
             : <PaginationLink
-                href="#catalogBar"
+                href="#breadcrumbId"
                 className={cn('bg-gray-800 rounded-none', {
                   'bg-purple-500': currentPage === page,
                 })}
@@ -98,7 +98,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
 
         <PaginationItem className="bg-gray-800 rounded-none">
           <PaginationNext
-            href="#catalogBar"
+            href="#breadcrumbId"
             className="rounded-none"
             onClick={handleNext}
           />

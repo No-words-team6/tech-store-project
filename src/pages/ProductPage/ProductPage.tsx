@@ -9,9 +9,9 @@ import { ProductGallery } from './components/ProductGallery';
 import { ProductOptions } from './components/ProductOptions';
 import { ProductDescription } from './components/ProductDescription';
 import { ProductSpecs } from './components/ProductSpecs';
-import { WidthContainer } from '@/components/WidthContainer';
-import { PaddingContainer } from '@/components/PaddingContainer';
-import { GridContainer } from '@/components/GridContainer';
+import { WidthContainer } from '@/components/containers/WidthContainer';
+import { PaddingContainer } from '@/components/containers/PaddingContainer';
+import { GridContainer } from '@/components/containers/GridContainer';
 import { useTranslation } from 'react-i18next';
 import { getProductById, getProducts } from '@/api';
 import { useProductPageStore } from '@/stores/productPageStore';
@@ -25,7 +25,7 @@ export const ProductPage = () => {
 
   const pathParts = location.pathname.split('/');
   const category = pathParts[1] as Category;
-  const itemId = pathParts[2];
+  const itemId = pathParts[3];
 
   const [product, setProduct] = useState<null | Product>(null);
   const [currentItem, setCurrentItem] = useState<null | Item>(null);

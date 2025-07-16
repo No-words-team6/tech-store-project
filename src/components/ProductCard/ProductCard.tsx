@@ -28,7 +28,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   const imagePath = image.startsWith('/') ? image : `/${image}`;
 
   const handleCardClick = () => {
-    navigate(`/${category}/${itemId}`);
+    navigate(`/${category}/catalog/${itemId}`);
   };
 
   return (
