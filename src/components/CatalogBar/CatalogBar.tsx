@@ -38,7 +38,9 @@ export const CatalogBar = () => {
       id="catalogBar"
     >
       <div className="col-span-4 sm:col-span-6 order-1">
-        <p className="font-mont text-xs text-gray-500">{t('search')}</p>
+        <p className="font-mont text-xs text-[#919a9e] dark:text-[#75767F] ">
+          {t('search')}
+        </p>
         <Searcher />
       </div>
 

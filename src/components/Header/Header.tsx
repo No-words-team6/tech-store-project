@@ -17,7 +17,7 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   }`;
 
 const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `h-16 w-16 flex items-center justify-center group border border-elements transition-colors ${
+  `h-16 w-16 flex items-center justify-center group border border-[#E2E6E9] dark:border-[#323542] transition-colors ${
     isActive ?
       'border-b-4 border-b-link-hover-bg dark:border-b-dark-link-hover-bg text-link-hover-bg dark:text-dark-link-hover-bg'
     : 'text-link-text hover:text-link-hover-bg dark:text-dark-link-text dark:hover:text-dark-link-hover-bg'

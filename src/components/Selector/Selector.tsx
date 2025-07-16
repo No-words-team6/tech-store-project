@@ -39,7 +39,7 @@ export const Selector: React.FC<SelectorProps> = ({
 
   return (
     <div className="flex flex-col">
-      <p className="font-mont text-xs text-gray-500 truncate whitespace-nowrap overflow-hidden">
+      <p className="font-mont text-xs text-[#919a9e] dark:text-[#75767F] truncate whitespace-nowrap overflow-hidden">
         {title}
       </p>
 
@@ -49,28 +49,25 @@ export const Selector: React.FC<SelectorProps> = ({
             font-mont
             text-[14px]
             ${selectorWidth}
-            text-white
-            bg-gray-700
+            text-link-hover-bg 
+            dark:text-dark-link-hover-bg
+            bg-white
+            dark:bg-gray-700
             [&>span]:text-white
             border-0
             rounded-none
-            hover:border-b-[0.5px]
             active:border-0`}
         >
           <SelectValue placeholder={!selectedSort && t('choose')} />
         </SelectTrigger>
 
         <SelectContent
-          className="font-mont text-[14px] rounded-none p-0 bg-gray-700 border-0 text-white"
+          className="font-mont text-[14px] rounded-none p-0 bg-white dark:bg-gray-700 border-0 text-link-hover-bg dark:text-dark-link-hover-bg"
           style={{ maxHeight: '200px', overflowY: 'auto' }}
         >
           <SelectGroup>
             {options.map(({ value, label }) => (
-              <SelectItem
-                key={value}
-                value={value}
-                className="rounded-none data-[highlighted]:bg-gray-600 data-[highlighted]:text-white"
-              >
+              <SelectItem key={value} value={value} className="rounded-none ">
                 {label}
               </SelectItem>
             ))}
