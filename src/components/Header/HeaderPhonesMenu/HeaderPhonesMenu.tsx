@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './headerMenu.css';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   type: 'phones' | 'tablets' | 'accessories';
@@ -9,6 +10,8 @@ type Props = {
 const brands = ['Apple', 'Samsung', 'Xiaomi'];
 
 export const HeaderPhonesMenu: React.FC<Props> = ({ type }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`
@@ -23,25 +26,25 @@ export const HeaderPhonesMenu: React.FC<Props> = ({ type }) => {
         Nice Gadgets {type}
       </Link>
 
-      <hr className="border-elements my-1" />
+      <hr className="border-elements my-1 text-black dark:text-white" />
 
       {brands.map((brand) => (
         <Link
           key={brand}
           to={`/${type}/catalog?brand=${encodeURIComponent(brand)}&numberOfPage=1`}
-          className="text-white text-sm font-semibold hover:text-link-hover-bg transition-colors"
+          className="text-gray-600 dark:text-gray-300 text-sm font-semibold hover:text-link-hover-bg transition-colors"
         >
           {brand}
         </Link>
       ))}
 
-      <hr className="border-elements my-1" />
+      <hr className="border-elements my-1 text-black dark:text-white" />
 
       <Link
         to={`/${type}/catalog?numberOfPage=1`}
-        className="text-xs text-white hover:text-link-hover-bg transition-colors mt-1 underline"
+        className="text-black dark:text-white text-sm font-semibold hover:text-link-hover-bg transition-colors underline"
       >
-        ALL BRANDS
+        {t('choose-all')}
       </Link>
     </div>
   );
