@@ -59,7 +59,7 @@ export const Searcher = () => {
   return (
     <div ref={ref}>
       <div className="relative flex min-w-45">
-        <Search className="absolute top-1/2 left-2 -translate-y-1/2 text-white" />
+        <Search className="absolute top-1/2 left-2 -translate-y-1/2 text-link-hover-bg dark:text-dark-link-hover-bg" />
 
         <Input
           className="pl-10 text-white rounded-none"

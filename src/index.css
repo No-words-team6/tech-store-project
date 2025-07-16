@@ -30,7 +30,10 @@ body {
   --header-background: 255 255 255; /*#FFFFFF */
   --elements: 226 230 233; /*#E2E6E9 */
   --link-text: 137 147 154;
-  --link-hover-bg: 15 15 17;
+  --link-hover-bg: 49 50 55;
+  --dark-link-text: 117 118 127;
+  --dark-link-hover-bg: 241 242 249;
+  --secondary: 137 147 154;
   --burger-icon: 49, 50, 55; /*#313237 */
   --product-card-bg: 255 255 255; /*#FFFFFF */
   --product-card-border: 226 230 233; /*#E2E6E9 */

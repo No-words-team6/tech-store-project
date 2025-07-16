@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { Heart, ShoppingBag, Menu } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
+import dlogo from '@/assets/images/Dark-Logo.svg';
 import { MobileSidebar } from './MobileSidebar';
 
 import { useProductStore } from '@/stores/productStore';
@@ -11,15 +12,15 @@ import { ThemeToggle } from '../ThemeToggle';
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
     isActive ?
-      'border-link-hover-bg text-link-hover-bg'
-    : 'border-transparent text-link-text hover:text-link-hover-bg'
+      'border-link-hover-bg text-link-hover-bg dark:text-dark-link-hover-bg'
+    : 'border-transparent text-link-text hover:text-link-hover-bg dark:text-dark-link-text dark:hover:text-dark-link-hover-bg'
   }`;
 
 const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 w-16 flex items-center justify-center group border border-elements transition-colors ${
     isActive ?
-      'border-b-4 border-b-link-hover-bg text-link-hover-bg'
-    : 'text-link-text hover:text-link-hover-bg'
+      'border-b-4 border-b-link-hover-bg dark:border-b-dark-link-hover-bg text-link-hover-bg dark:text-dark-link-hover-bg'
+    : 'text-link-text hover:text-link-hover-bg dark:text-dark-link-text dark:hover:text-dark-link-hover-bg'
   }`;
 
 export const Header = () => {
@@ -42,7 +43,16 @@ export const Header = () => {
         <div className="h-12 sm:h-16 flex items-center justify-between">
           <div className="flex items-center gap-6 sm:gap-8">
             <NavLink to="/">
-              <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
+              <img
+                src={dlogo}
+                alt="Nice Gadgets Light"
+                className="h-6 w-auto block dark:hidden"
+              />
+              <img
+                src={logo}
+                alt="Nice Gadgets Dark"
+                className="h-6 w-auto hidden dark:block"
+              />
             </NavLink>
 
             <nav className="hidden sm:flex items-center h-16 gap-16">

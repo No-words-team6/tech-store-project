@@ -145,7 +145,9 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
         <WidthContainer>
           <div className="px-4 sm:px-8 xl:px-0">
             <BreadcrumbNav />
-            <h1 className="text-white font-mont font-bold text-5xl">{title}</h1>
+            <h1 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-bold text-5xl">
+              {title}
+            </h1>
           </div>
         </WidthContainer>
       </div>
