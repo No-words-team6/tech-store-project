@@ -4,7 +4,6 @@ import { Heart, ShoppingBag, Menu } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 import { MobileSidebar } from './MobileSidebar';
 
-import './header.css';
 import { useProductStore } from '@/stores/productStore';
 import { useTranslation } from 'react-i18next';
 

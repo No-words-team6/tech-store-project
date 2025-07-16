@@ -3,24 +3,24 @@ import type React from 'react';
 import cn from 'classnames';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { useState } from 'react';
 
 type Props = {
   photoSet: string[];
-  selectedPhoto: string | null;
-  setSelectedPhoto: (selectedPhoto: string) => void;
+  currentPhoto: string | null;
+  setCurrentPhoto: (selectedPhoto: string) => void;
   item: Item;
 };
 
 export const ProductGallery: React.FC<Props> = ({
   photoSet,
-  selectedPhoto,
-  setSelectedPhoto,
+  currentPhoto,
+  setCurrentPhoto,
   item,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(
-    selectedPhoto ? photoSet.indexOf(selectedPhoto) : 0,
-  );
+  const currentIndex =
+    currentPhoto && photoSet.includes(currentPhoto) ?
+      photoSet.indexOf(currentPhoto)
+    : 0;
 
   return (
     <div className="col-span-4 sm:col-span-7 xl:col-span-12 grid grid-cols-4 sm:grid-cols-7 xl:grid-cols-12 gap-x-[16px]">
@@ -33,8 +33,7 @@ export const ProductGallery: React.FC<Props> = ({
               key={photo}
               className="h-[50px] sm:h-[35px] xl:h-[80px] w-[50px] sm:w-[35px] xl:w-[80px] cursor-pointer"
               onClick={() => {
-                setCurrentIndex(index);
-                setSelectedPhoto(photo);
+                setCurrentPhoto(photo);
               }}
             >
               <img
@@ -57,8 +56,7 @@ export const ProductGallery: React.FC<Props> = ({
           initialSlide={currentIndex}
           onSlideChange={(swiper) => {
             const newIndex = swiper.activeIndex;
-            setCurrentIndex(newIndex);
-            setSelectedPhoto(photoSet[newIndex]);
+            setCurrentPhoto(photoSet[newIndex]);
           }}
           key={currentIndex}
           className="w-full h-full"
