@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 
-import './footer.css';
 import { useTranslation } from 'react-i18next';
 
 const isLinkActive = ({ isActive }: { isActive: boolean }) =>
@@ -14,7 +13,7 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="w-full back-color shadow-[0_-1px_0_0_#323542]">
+    <footer className="w-full bg-background shadow-[0_1px_0_0_rgb(var(--elements))]">
       <div className="w-full px-4 sm:px-8 xl:px-8 py-8">
         <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 items-center gap-y-4">
           <a

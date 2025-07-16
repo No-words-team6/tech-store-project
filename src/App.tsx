@@ -13,7 +13,7 @@ export const App = () => {
   }, [getLocaleStore]);
 
   return (
-    <div className="flex flex-col min-h-screen scroll-smooth back-color">
+    <div className="flex flex-col min-h-screen scroll-smooth bg-header-background">
       <Header />
 
       <main className="flex-grow">
