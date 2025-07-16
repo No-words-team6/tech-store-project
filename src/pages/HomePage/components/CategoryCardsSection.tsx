@@ -19,7 +19,7 @@ export const CategoryCardsSection: React.FC = () => {
   );
   return (
     <section className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[24px]">
-      <h2 className="col-span-2 sm:col-span-6 xl:col-span-12 color-white font-mont font-extrabold text-[22px] sm:text-[32px]">
+      <h2 className="col-span-2 sm:col-span-6 xl:col-span-12 text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-extrabold text-[22px] sm:text-[32px]">
         {t('category')}
       </h2>
 
@@ -36,11 +36,11 @@ export const CategoryCardsSection: React.FC = () => {
             />
           </div>
 
-          <h3 className="color-white font-mont font-semibold text-[20px]">
+          <h3 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-semibold text-[20px]">
             {t('mobile-phones')}
           </h3>
 
-          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${phonesCount} ${t('models')}`}</p>
+          <p className="font-mont text-[#919a9e] dark:text-[#75767F] font-regular text-[14px]">{`${phonesCount} ${t('models')}`}</p>
         </Link>
 
         <Link
@@ -55,10 +55,10 @@ export const CategoryCardsSection: React.FC = () => {
             />
           </div>
 
-          <h3 className="color-white font-mont font-semibold text-[20px]">
+          <h3 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-semibold text-[20px]">
             {t('tablets')}
           </h3>
-          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${tabletsCount} ${t('models')}`}</p>
+          <p className="font-mont text-[#919a9e] dark:text-[#75767F] font-regular text-[14px]">{`${tabletsCount} ${t('models')}`}</p>
         </Link>
 
         <Link
@@ -73,11 +73,11 @@ export const CategoryCardsSection: React.FC = () => {
             />
           </div>
 
-          <h3 className="color-white font-mont font-semibold text-[20px]">
+          <h3 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-semibold text-[20px]">
             {t('accessories')}
           </h3>
 
-          <p className="font-mont text-gray-500 font-regular text-[14px]">{`${accessoriesCount} ${t('models')}`}</p>
+          <p className="font-mont text-[#919a9e] dark:text-[#75767F] font-regular text-[14px]">{`${accessoriesCount} ${t('models')}`}</p>
         </Link>
       </div>
     </section>

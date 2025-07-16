@@ -15,7 +15,7 @@ export const BrandSelectSection: React.FC<Props> = ({ brandImageSources }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto pt-[20px] pb-[80px] font-mont text-white">
+    <div className="w-full max-w-[1200px] mx-auto pt-[20px] pb-[80px] font-mont text-link-hover-bg dark:text-dark-link-hover-bg">
       <section className=" grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[24px]">
         <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-between items-center w-full mb-6 pt-10 sm:pt-30 lg:pt-0 xl:pt-0">
           <h2 className="font-mont font-bold text-[22px] sm:text-[32px]">

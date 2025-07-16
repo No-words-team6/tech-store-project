@@ -46,8 +46,8 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
       className="w-full max-w-[1200px] mx-auto mt-[56px] lg:mt-[80px]"
     >
       <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
-        <div className="flex flex-col gap-y-[24px] justify-center test text-white text-4xl col-span-24">
-          <h2 className="ccolor-white font-mont font-bold text-[22px] sm:text-[32px]">
+        <div className="flex flex-col gap-y-[24px] justify-center test text-4xl col-span-24">
+          <h2 className="font-mont font-bold text-[22px] sm:text-[32px] text-link-hover-bg dark:text-dark-link-hover-bg">
             {t('top3')}
           </h2>
 
@@ -77,7 +77,7 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                   </motion.p>
                   {!isMobile && (
                     <motion.p
-                      className="text-[#75767F] font-mont font-semibold text-[20px]"
+                      className="text-[#919a9e] dark:text-[#75767F] font-mont font-semibold text-[20px]"
                       variants={itemVariants}
                     >
                       {t(carouselItems[currentIndex].descriptionKey)}
@@ -97,11 +97,11 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                   key={carouselItems[currentIndex].id}
                   href={carouselItems[currentIndex].to}
                   className="mt-8
-                    bg-white text-neutral-900
+                    bg-[#313237] dark:bg-white text-dark-link-hover-bg dark:text-black
                     font-mont font-semibold
                     text-[20px] px-8 py-3
                     rounded-2xl shadow-lg
-                    transition hover:bg-[#75767F]
+                    transition hover:bg-[#75767F] dark:hover:bg-[#75767F]
                     w-full max-w-[320px]
                     hover:cursor-pointer
                     block text-center

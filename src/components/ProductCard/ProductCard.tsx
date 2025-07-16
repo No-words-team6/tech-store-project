@@ -43,34 +43,44 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         />
       </div>
 
-      <h3 className="text-sm font-semibold pt-4 min-h-[4rem]">{name}</h3>
+      <h3 className="text-sm font-semibold pt-4 min-h-[4rem] text-link-hover-bg dark:text-dark-link-hover-bg">
+        {name}
+      </h3>
 
       <div className="flex gap-2 mt-2 mb-2 text-[22px]">
-        <p className="font-extrabold">${price}</p>
-        <p className="text-[#75767F] line-through font-semibold">
+        <p className="font-extrabold text-link-hover-bg dark:text-dark-link-hover-bg">
+          ${price}
+        </p>
+        <p className="text-[#919a9e] dark:text-[#75767F] line-through font-semibold">
           ${fullPrice}
         </p>
       </div>
 
       <hr className="w-full border-t border-[#3B3E4A]" />
 
-      <div className="w-full text-xs text-[#75767F] mb-2 mt-2 pt-2 font-bold ">
+      <div className="w-full text-xs text-[#919a9e] dark:text-[#75767F] mb-2 mt-2 pt-2 font-bold ">
         <div className="pb-2 flex justify-between">
           <span>{t('screen')}</span>
 
-          <span className="text-[#F1F2F9]">{screen}</span>
+          <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+            {screen}
+          </span>
         </div>
 
         <div className="pb-2 flex justify-between">
           <span>{t('capacity')}</span>
 
-          <span className="text-[#F1F2F9]">{capacity}</span>
+          <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+            {capacity}
+          </span>
         </div>
 
         <div className="pb-2 flex justify-between">
           <span>{t('ram')}</span>
 
-          <span className="text-[#F1F2F9]">{ram}</span>
+          <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+            {ram}
+          </span>
         </div>
       </div>
 

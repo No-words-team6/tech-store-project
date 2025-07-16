@@ -21,10 +21,13 @@ module.exports = {
     },
     extend: {
       colors: {
+        'secondary': 'rgb(var(--secondary))',
         'header-background': 'rgb(var(--header-background))',
         'header-elements': 'rgb(var(--header-elements))',
         'link-text': 'rgb(var(--link-text))',
         'link-hover-bg': 'rgb(var(--link-hover-bg))',
+        'dark-link-text': 'rgb(var(--dark-link-text))',
+        'dark-link-hover-bg': 'rgb(var(--dark-link-hover-bg))',
         'burger-icon': 'rgb(var(--burger-icon))',
         'product-card-bg': 'rgb(var(--product-card-bg))',
         'product-card-border': 'rgb(var(--product-card-border))',
