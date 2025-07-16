@@ -44,18 +44,18 @@ export const MobileSidebar = ({
   return (
     <>
       <div
-        className={`fixed top-0 right-0 h-full w-full bg-[#0F1121] z-[20] transform transition-transform duration-300 sm:hidden ${
+        className={`fixed top-0 right-0 h-full w-full bg-header-background z-[20] transform transition-transform duration-300 sm:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex flex-col justify-between h-full box-border ">
           <div>
-            <div className="border-b border-[#3B3E4A]">
+            <div className="border-b border-elements">
               <div className="flex items-center justify-between h-12">
                 <Link
                   to="/"
                   onClick={onClose}
-                  className="flex-1 flex items-center h-full px-4 border-r border-[#3B3E4A]"
+                  className="flex-1 flex items-center h-full px-4 border-r border-elements"
                 >
                   <img
                     src={logo}
@@ -67,7 +67,7 @@ export const MobileSidebar = ({
                 <button
                   onClick={onClose}
                   aria-label="Close menu"
-                  className="w-12 h-full flex items-center justify-center text-[#F1F2F9]"
+                  className="w-12 h-full flex items-center justify-center text-burger-icon"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -83,8 +83,8 @@ export const MobileSidebar = ({
                   className={({ isActive }) =>
                     `group text-sm font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
                       isActive ?
-                        'text-[#F1F2F9] border-[#F1F2F9]'
-                      : 'text-[#75767F] border-transparent hover:text-[#F1F2F9] hover:border-[#F1F2F9]'
+                        'text-burger-icon border-burger-icon'
+                      : 'text-[#75767F] border-transparent hover:text-burger-icon hover:border-burger-icon'
                     }`
                   }
                 >
@@ -94,14 +94,14 @@ export const MobileSidebar = ({
             </nav>
           </div>
 
-          <div className="flex items-center justify-between h-16 border-t border-[#3B3E4A]">
+          <div className="flex items-center justify-between h-16 border-t border-elements">
             <Link
               to="/favourites"
               onClick={onClose}
-              className={`flex flex-col items-center justify-center w-1/2 h-full relative border-r border-[#3B3E4A] transition-all duration-300`}
+              className={`flex flex-col items-center justify-center w-1/2 h-full relative border-r border-elements transition-all duration-300`}
             >
               <div className="relative">
-                <Heart className="w-6 h-6 text-[#75767F] group-hover:text-[#F1F2F9] transition-colors" />
+                <Heart className="w-6 h-6 text-[#75767F] group-hover:text-burger-icon transition-colors" />
                 {!!favouritesData.length && (
                   <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
                     {favouritesData.length}
@@ -116,7 +116,7 @@ export const MobileSidebar = ({
               className={`flex flex-col items-center justify-center w-1/2 h-full relative transition-all duration-300`}
             >
               <div className="relative">
-                <ShoppingBag className="w-6 h-6 text-[#75767F] group-hover:text-[#F1F2F9] transition-colors" />
+                <ShoppingBag className="w-6 h-6 text-[#75767F] group-hover:text-burger-icon transition-colors" />
                 {!!cartItemsAmount && (
                   <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
                     {cartItemsAmount}
