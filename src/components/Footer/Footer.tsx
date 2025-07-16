@@ -14,7 +14,7 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="w-full bg-header-background shadow-[0px_0px_0px_1px_rgb(var(--elements))]">
+    <footer className="w-full bg-header-background shadow-[0_-1px_0_0_rgb(var(--header-elements))]">
       <div className="w-full px-4 sm:px-8 xl:px-8 py-8">
         <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 items-center gap-y-4">
           <a

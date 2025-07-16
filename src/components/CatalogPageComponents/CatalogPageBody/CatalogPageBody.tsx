@@ -9,6 +9,9 @@ import { Paginator } from '@/components/Paginator';
 import { prepareProductList } from '@/utils/prepareProductList';
 import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
 import { ErrorPage } from '@/pages/ErrorPage';
+import { GridContainer } from '@/components/containers/GridContainer';
+import { PaddingContainer } from '@/components/containers/PaddingContainer';
+import { WidthContainer } from '@/components/containers/WidthContainer';
 
 const allowedCategories = ['phones', 'tablets', 'accessories'] as const;
 type Category = (typeof allowedCategories)[number];
@@ -90,24 +93,31 @@ export const CatalogPageBody = () => {
     return <ErrorPage />;
   }
   return (
-    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-8 xl:px-0">
-      <BreadcrumbNav />
+    <WidthContainer>
+      <PaddingContainer>
+        <GridContainer>
+          <BreadcrumbNav />
 
-      <CatalogBar />
+          <CatalogBar />
 
-      {!isLoading && (
-        <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
-          {visibleItems.map((product) => (
-            <div className="col-span-4 sm:col-span-6" key={product.id}>
-              <ProductCard product={product} />
+          {!isLoading && (
+            <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
+              {visibleItems.map((product) => (
+                <div className="col-span-4 sm:col-span-6" key={product.id}>
+                  <ProductCard product={product} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          )}
 
-      {!isLoading && (
-        <Paginator quantityPages={numberOfPages} currentPage={+selectedPage} />
-      )}
-    </div>
+          {!isLoading && (
+            <Paginator
+              quantityPages={numberOfPages}
+              currentPage={+selectedPage}
+            />
+          )}
+        </GridContainer>
+      </PaddingContainer>
+    </WidthContainer>
   );
 };

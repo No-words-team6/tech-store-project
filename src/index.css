@@ -27,23 +27,22 @@ body {
 }
 
 :root {
-  --header-background: 255 255 255; /*#FFFFFF */
-  --elements: 226 230 233; /*#E2E6E9 */
-  --link-text: 137 147 154;
-  --link-hover-bg: 49 50 55;
-  --dark-link-text: 117 118 127;
-  --dark-link-hover-bg: 241 242 249;
-  --secondary: 137 147 154;
+  --header-background: 255, 255, 255; /*#FFFFFF */
+  --header-elements: 226, 230, 233; /*#E2E6E9 */
+  --link-text: 137, 147, 154;
+  --link-hover-bg: 49, 50, 55;
+  --dark-link-text: 117, 118, 127;
+  --dark-link-hover-bg: 241, 242, 249;
   --burger-icon: 49, 50, 55; /*#313237 */
-  --product-card-bg: 255 255 255; /*#FFFFFF */
-  --product-card-border: 226 230 233; /*#E2E6E9 */
+  --product-card-bg: 255, 255, 255; /*#FFFFFF */
+  --product-card-border: 226, 230, 233; /*#E2E6E9 */
 }
 
 .dark {
-  --header-background: 15 17 33; /*#0F1121 */
-  --elements: 59 62 74; /*#3B3E4A */
-  --link-text: 117 118 127;
-  --link-hover-bg: 241 242 249;
+  --header-background: 15, 17, 33; /*#0F1121 */
+  --header-elements: 59, 62, 74; /*#3B3E4A */
+  --link-text: 117, 118, 127;
+  --link-hover-bg: 241, 242, 249;
   --burger-icon: 241, 242, 249; /*#F1F2F9 */
   --product-card-bg: 22, 24, 39; /*#161827 */
 }
@@ -86,7 +85,7 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root {
+/* :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -119,7 +118,7 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
+} */
 
 .font-outline {
   color: transparent;
@@ -179,7 +178,7 @@ body {
   color: #eb5757;
 }
 
-.dark {
+/* .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -211,7 +210,7 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
+} */
 
 @layer base {
   * {

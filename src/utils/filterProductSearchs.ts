@@ -15,7 +15,7 @@ export const filterProductSearchs = (
   const normalizeCurrentBrand = currentBrand.toLowerCase();
 
   return items.filter((item) =>
-    currentBrand === Brands.All ?
+    currentBrand === Brands.All || currentBrand === '' ?
       item.name.toLowerCase().includes(normalizeQuery)
     : item.name.toLowerCase().includes(normalizeQuery) &&
       item.name.toLowerCase().split(' ')[0] === normalizeCurrentBrand,

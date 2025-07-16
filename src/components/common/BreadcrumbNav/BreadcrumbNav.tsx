@@ -27,7 +27,10 @@ export const BreadcrumbNav: React.FC = () => {
   const pathnames = location.pathname.split('/').filter(Boolean);
 
   return (
-    <nav className="col-span-4 sm:col-span-12 xl:col-span-24 flex gap-x-[8px] text-link-hover-bg dark:text-dark-link-hover-bg font-bold cursor-pointer mb-6 sm:mb-10">
+    <nav
+      id="breadcrumbId"
+      className="col-span-4 sm:col-span-12 xl:col-span-24 flex gap-x-[8px] text-link-hover-bg dark:text-dark-link-hover-bg font-bold cursor-pointer mb-6 sm:mb-10"
+    >
       <Link to="/">
         <House className="h-[16px] w-[16px]" />
       </Link>

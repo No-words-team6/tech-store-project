@@ -38,7 +38,7 @@ export const Header = () => {
   }, 0);
 
   return (
-    <header className="bg-header-background sticky top-0 z-50 w-full h-12 sm:h-16 shadow-[0_1px_0_0_rgb(var(--elements))]">
+    <header className="bg-header-background sticky top-0 z-50 w-full h-12 sm:h-16 shadow-[0_1px_0_0_rgb(var(--header-elements))]">
       <div className="w-full pl-4 sm:pl-6 sm:pr-0 lg:pl-0 lg:pr-0">
         <div className="h-12 sm:h-16 flex items-center justify-between">
           <div className="flex items-center gap-6 sm:gap-8">

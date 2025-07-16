@@ -1,7 +1,7 @@
 import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
-import { WidthContainer } from '@/components/WidthContainer';
-import { PaddingContainer } from '@/components/PaddingContainer';
-import { GridContainer } from '@/components/GridContainer';
+import { WidthContainer } from '@/components/containers/WidthContainer';
+import { PaddingContainer } from '@/components/containers/PaddingContainer';
+import { GridContainer } from '@/components/containers/GridContainer';
 import { useTranslation } from 'react-i18next';
 import { sections } from './data/sections';
 
