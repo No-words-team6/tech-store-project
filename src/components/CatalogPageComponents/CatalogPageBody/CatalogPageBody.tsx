@@ -29,6 +29,8 @@ export const CatalogPageBody = () => {
   const validCategory = category as Category;
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = useProductStore((state) => state.searchQuery);
+
   const selectedPage = searchParams.get('numberOfPage') ?? '1';
   const selectedBrand = searchParams.get('brand') ?? 'All';
   const selectedSortBy = searchParams.get('sortBy') ?? '';
@@ -40,6 +42,10 @@ export const CatalogPageBody = () => {
     selectedTimesItems,
     selectedBrand,
   });
+
+  const filteredProducts = sortedProducts.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
 
   const quantityPages = (arrLenght: number, itemInOnePAge: number) => {
     let timePages: number[] = [];
@@ -65,25 +71,25 @@ export const CatalogPageBody = () => {
   };
 
   const numberOfPages = quantityPages(
-    sortedProducts.length,
+    filteredProducts.length,
     +selectedTimesItems,
   );
 
   const visibleItems = countVisibleItems(
-    sortedProducts,
+    filteredProducts,
     +selectedTimesItems,
     +selectedPage,
   );
 
   useEffect(() => {
-    const maxPage = Math.ceil(sortedProducts.length / +selectedTimesItems);
+    const maxPage = Math.ceil(filteredProducts.length / +selectedTimesItems);
     if (+selectedPage > maxPage) {
       setSearchParams((prev) => {
         prev.set('numberOfPage', selectedPage);
         return prev;
       });
     }
-  }, [+selectedPage, selectedTimesItems, sortedProducts.length]);
+  }, [+selectedPage, selectedTimesItems, filteredProducts.length]);
 
   useEffect(() => {
     fetchProductsByCategory(validCategory);
