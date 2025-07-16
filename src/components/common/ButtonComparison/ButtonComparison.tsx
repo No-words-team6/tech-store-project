@@ -15,7 +15,7 @@ export const ButtonComparison = () => {
         {t('comparison')}
       </p>
       <Button
-        onClick={() => navigation(`/${category}/comparison`)}
+        onClick={() => navigation(`/${category}/catalog/comparison`)}
         className="flex items-center text-link-hover-bg dark:text-dark-link-hover-bg
             bg-white
             dark:bg-gray-700 h-9 px-3 py-2 rounded-none hover:bg-gray-200 dark:hover:bg-gray-600 hover:cursor-pointer w-full"
