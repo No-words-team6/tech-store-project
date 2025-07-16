@@ -1,5 +1,965 @@
 [
   {
+    "id": "xiaomi-15-ultra-1tb-silver",
+    "category": "phones",
+    "namespaceId": "xiaomi-15-ultra",
+    "name": "Xiaomi 15 Ultra 1TB Silver",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1599,
+    "priceDiscount": 1499,
+    "colorsAvailable": ["black", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/xiaomi-15-ultra-silver/00.webp",
+      "img/phones/xiaomi-15-ultra-silver/01.webp",
+      "img/phones/xiaomi-15-ultra-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Ultra AMOLED Display",
+        "text": [
+          "6.73\" AMOLED display with 3200x1400 resolution and 120Hz refresh rate for vibrant clarity.",
+          "522 ppi pixel density delivers sharp visuals. IP68 water and dust resistance ensures durability."
+        ]
+      },
+      {
+        "title": "Professional Quad Camera",
+        "text": [
+          "Quad camera setup: 50 MP + 50 MP + 200 MP + 50 MP with OIS and autofocus for stunning photography.",
+          "8K UHD video recording, f/1.63–f/2.6 aperture range, and 32 MP front camera with f/2.0 lens."
+        ]
+      },
+      {
+        "title": "Elite Power & AI Features",
+        "text": [
+          "Snapdragon 8 Elite CPU (4.32GHz), Adreno 830 GPU, 16GB RAM, and 512GB internal storage (no microSD).",
+          "5410mAh battery with 90W fast charging, wireless charging, reverse charging, and rich AI features."
+        ]
+      }
+    ],
+    "screen": "6.73' AMOLED",
+    "resolution": "3200x1400",
+    "processor": "Snapdragon 8 Elite",
+    "ram": "16GB",
+    "camera": "50 MP + 50 MP + 200 MP + 50 MP",
+    "zoom": "Optical + AI digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-ultra-1tb-black",
+    "category": "phones",
+    "namespaceId": "xiaomi-15-ultra",
+    "name": "Xiaomi 15 Ultra 1TB Black",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1599,
+    "priceDiscount": 1499,
+    "colorsAvailable": ["black", "silver"],
+    "color": "black",
+    "images": [
+      "img/phones/xiaomi-15-ultra-black/00.webp",
+      "img/phones/xiaomi-15-ultra-black/01.webp",
+      "img/phones/xiaomi-15-ultra-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Ultra AMOLED Display",
+        "text": [
+          "6.73\" AMOLED display with 3200x1400 resolution and 120Hz refresh rate for vibrant clarity.",
+          "522 ppi pixel density delivers sharp visuals. IP68 water and dust resistance ensures durability."
+        ]
+      },
+      {
+        "title": "Professional Quad Camera",
+        "text": [
+          "Quad camera setup: 50 MP + 50 MP + 200 MP + 50 MP with OIS and autofocus for stunning photography.",
+          "8K UHD video recording, f/1.63–f/2.6 aperture range, and 32 MP front camera with f/2.0 lens."
+        ]
+      },
+      {
+        "title": "Elite Power & AI Features",
+        "text": [
+          "Snapdragon 8 Elite CPU (4.32GHz), Adreno 830 GPU, 16GB RAM, and 512GB internal storage (no microSD).",
+          "5410mAh battery with 90W fast charging, wireless charging, reverse charging, and rich AI features."
+        ]
+      }
+    ],
+    "screen": "6.73' AMOLED",
+    "resolution": "3200x1400",
+    "processor": "Snapdragon 8 Elite",
+    "ram": "16GB",
+    "camera": "50 MP + 50 MP + 200 MP + 50 MP",
+    "zoom": "Optical + AI digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-ultra-512gb-silver",
+    "category": "phones",
+    "namespaceId": "xiaomi-15-ultra",
+    "name": "Xiaomi 15 Ultra 512GB Silver",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1499,
+    "priceDiscount": 1399,
+    "colorsAvailable": ["black", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/xiaomi-15-ultra-silver/00.webp",
+      "img/phones/xiaomi-15-ultra-silver/01.webp",
+      "img/phones/xiaomi-15-ultra-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Ultra AMOLED Display",
+        "text": [
+          "6.73\" AMOLED display with 3200x1400 resolution and 120Hz refresh rate for vibrant clarity.",
+          "522 ppi pixel density delivers sharp visuals. IP68 water and dust resistance ensures durability."
+        ]
+      },
+      {
+        "title": "Professional Quad Camera",
+        "text": [
+          "Quad camera setup: 50 MP + 50 MP + 200 MP + 50 MP with OIS and autofocus for stunning photography.",
+          "8K UHD video recording, f/1.63–f/2.6 aperture range, and 32 MP front camera with f/2.0 lens."
+        ]
+      },
+      {
+        "title": "Elite Power & AI Features",
+        "text": [
+          "Snapdragon 8 Elite CPU (4.32GHz), Adreno 830 GPU, 16GB RAM, and 512GB internal storage (no microSD).",
+          "5410mAh battery with 90W fast charging, wireless charging, reverse charging, and rich AI features."
+        ]
+      }
+    ],
+    "screen": "6.73' AMOLED",
+    "resolution": "3200x1400",
+    "processor": "Snapdragon 8 Elite",
+    "ram": "16GB",
+    "camera": "50 MP + 50 MP + 200 MP + 50 MP",
+    "zoom": "Optical + AI digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-ultra-512gb-black",
+    "category": "phones",
+    "namespaceId": "xiaomi-15-ultra",
+    "name": "Xiaomi 15 Ultra 512GB Black",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1499,
+    "priceDiscount": 1399,
+    "colorsAvailable": ["black", "silver"],
+    "color": "black",
+    "images": [
+      "img/phones/xiaomi-15-ultra-black/00.webp",
+      "img/phones/xiaomi-15-ultra-black/01.webp",
+      "img/phones/xiaomi-15-ultra-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Ultra AMOLED Display",
+        "text": [
+          "6.73\" AMOLED display with 3200x1400 resolution and 120Hz refresh rate for vibrant clarity.",
+          "522 ppi pixel density delivers sharp visuals. IP68 water and dust resistance ensures durability."
+        ]
+      },
+      {
+        "title": "Professional Quad Camera",
+        "text": [
+          "Quad camera setup: 50 MP + 50 MP + 200 MP + 50 MP with OIS and autofocus for stunning photography.",
+          "8K UHD video recording, f/1.63–f/2.6 aperture range, and 32 MP front camera with f/2.0 lens."
+        ]
+      },
+      {
+        "title": "Elite Power & AI Features",
+        "text": [
+          "Snapdragon 8 Elite CPU (4.32GHz), Adreno 830 GPU, 16GB RAM, and 512GB internal storage (no microSD).",
+          "5410mAh battery with 90W fast charging, wireless charging, reverse charging, and rich AI features."
+        ]
+      }
+    ],
+    "screen": "6.73' AMOLED",
+    "resolution": "3200x1400",
+    "processor": "Snapdragon 8 Elite",
+    "ram": "16GB",
+    "camera": "50 MP + 50 MP + 200 MP + 50 MP",
+    "zoom": "Optical + AI digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-512gb-white",
+    "category": "phones",
+    "namespaceId": "xiaomi-15",
+    "name": "Xiaomi 15 512GB White",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "512GB",
+    "priceRegular": 1099,
+    "priceDiscount": 999,
+    "colorsAvailable": ["white", "black"],
+    "color": "white",
+    "images": [
+      "img/phones/xiaomi-15-white/00.webp",
+      "img/phones/xiaomi-15-white/01.webp",
+      "img/phones/xiaomi-15-white/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Flagship AMOLED Display",
+        "text": [
+          "6.36\" CrystalRes AMOLED with up to 3200 nits brightness and adaptive refresh rate from 1–120Hz.",
+          "Resolution: 2670×1200 (460 ppi), 68 billion colors, Dolby Vision, HDR10+, and TÜV Rheinland certifications."
+        ]
+      },
+      {
+        "title": "Leica Professional Camera",
+        "text": [
+          "Triple Leica camera: 50 MP main (f/1.62, 23mm), 50 MP telephoto (f/2.0, 60mm), 50 MP ultra-wide (f/2.2, 14mm).",
+          "Up to 60x digital zoom, Leica filters, RAW capture, and 8K Dolby Vision HDR video recording supported."
+        ]
+      },
+      {
+        "title": "Next-Gen Performance & Battery",
+        "text": [
+          "Snapdragon 8 Gen 4 (3nm), up to 4.32 GHz, Adreno GPU, 12GB LPDDR5X RAM, UFS 4.0 256GB storage.",
+          "5240 mAh battery with 90W wired and 50W wireless HyperCharge. USB-C port (adapter not included)."
+        ]
+      }
+    ],
+    "screen": "6.36' CrystalRes AMOLED",
+    "resolution": "2670x1200",
+    "processor": "Snapdragon 8 Gen 4",
+    "ram": "12GB",
+    "camera": "50 MP + 50 MP + 50 MP",
+    "zoom": "3x–60x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-512gb-black",
+    "category": "phones",
+    "namespaceId": "xiaomi-15",
+    "name": "Xiaomi 15 512GB Black",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "512GB",
+    "priceRegular": 1099,
+    "priceDiscount": 999,
+    "colorsAvailable": ["white", "black"],
+    "color": "black",
+    "images": [
+      "img/phones/xiaomi-15-black/00.webp",
+      "img/phones/xiaomi-15-black/01.webp",
+      "img/phones/xiaomi-15-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Flagship AMOLED Display",
+        "text": [
+          "6.36\" CrystalRes AMOLED with up to 3200 nits brightness and adaptive refresh rate from 1–120Hz.",
+          "Resolution: 2670×1200 (460 ppi), 68 billion colors, Dolby Vision, HDR10+, and TÜV Rheinland certifications."
+        ]
+      },
+      {
+        "title": "Leica Professional Camera",
+        "text": [
+          "Triple Leica camera: 50 MP main (f/1.62, 23mm), 50 MP telephoto (f/2.0, 60mm), 50 MP ultra-wide (f/2.2, 14mm).",
+          "Up to 60x digital zoom, Leica filters, RAW capture, and 8K Dolby Vision HDR video recording supported."
+        ]
+      },
+      {
+        "title": "Next-Gen Performance & Battery",
+        "text": [
+          "Snapdragon 8 Gen 4 (3nm), up to 4.32 GHz, Adreno GPU, 12GB LPDDR5X RAM, UFS 4.0 256GB storage.",
+          "5240 mAh battery with 90W wired and 50W wireless HyperCharge. USB-C port (adapter not included)."
+        ]
+      }
+    ],
+    "screen": "6.36' CrystalRes AMOLED",
+    "resolution": "2670x1200",
+    "processor": "Snapdragon 8 Gen 4",
+    "ram": "12GB",
+    "camera": "50 MP + 50 MP + 50 MP",
+    "zoom": "3x–60x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-256gb-white",
+    "category": "phones",
+    "namespaceId": "xiaomi-15",
+    "name": "Xiaomi 15 256GB White",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "256GB",
+    "priceRegular": 1049,
+    "priceDiscount": 949,
+    "colorsAvailable": ["white", "black"],
+    "color": "white",
+    "images": [
+      "img/phones/xiaomi-15-white/00.webp",
+      "img/phones/xiaomi-15-white/01.webp",
+      "img/phones/xiaomi-15-white/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Flagship AMOLED Display",
+        "text": [
+          "6.36\" CrystalRes AMOLED with up to 3200 nits brightness and adaptive refresh rate from 1–120Hz.",
+          "Resolution: 2670×1200 (460 ppi), 68 billion colors, Dolby Vision, HDR10+, and TÜV Rheinland certifications."
+        ]
+      },
+      {
+        "title": "Leica Professional Camera",
+        "text": [
+          "Triple Leica camera: 50 MP main (f/1.62, 23mm), 50 MP telephoto (f/2.0, 60mm), 50 MP ultra-wide (f/2.2, 14mm).",
+          "Up to 60x digital zoom, Leica filters, RAW capture, and 8K Dolby Vision HDR video recording supported."
+        ]
+      },
+      {
+        "title": "Next-Gen Performance & Battery",
+        "text": [
+          "Snapdragon 8 Gen 4 (3nm), up to 4.32 GHz, Adreno GPU, 12GB LPDDR5X RAM, UFS 4.0 256GB storage.",
+          "5240 mAh battery with 90W wired and 50W wireless HyperCharge. USB-C port (adapter not included)."
+        ]
+      }
+    ],
+    "screen": "6.36' CrystalRes AMOLED",
+    "resolution": "2670x1200",
+    "processor": "Snapdragon 8 Gen 4",
+    "ram": "12GB",
+    "camera": "50 MP + 50 MP + 50 MP",
+    "zoom": "3x–60x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "xiaomi-15-256gb-black",
+    "category": "phones",
+    "namespaceId": "xiaomi-15",
+    "name": "Xiaomi 15 256GB Black",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "256GB",
+    "priceRegular": 1049,
+    "priceDiscount": 949,
+    "colorsAvailable": ["white", "black"],
+    "color": "black",
+    "images": [
+      "img/phones/xiaomi-15-black/00.webp",
+      "img/phones/xiaomi-15-black/01.webp",
+      "img/phones/xiaomi-15-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Flagship AMOLED Display",
+        "text": [
+          "6.36\" CrystalRes AMOLED with up to 3200 nits brightness and adaptive refresh rate from 1–120Hz.",
+          "Resolution: 2670×1200 (460 ppi), 68 billion colors, Dolby Vision, HDR10+, and TÜV Rheinland certifications."
+        ]
+      },
+      {
+        "title": "Leica Professional Camera",
+        "text": [
+          "Triple Leica camera: 50 MP main (f/1.62, 23mm), 50 MP telephoto (f/2.0, 60mm), 50 MP ultra-wide (f/2.2, 14mm).",
+          "Up to 60x digital zoom, Leica filters, RAW capture, and 8K Dolby Vision HDR video recording supported."
+        ]
+      },
+      {
+        "title": "Next-Gen Performance & Battery",
+        "text": [
+          "Snapdragon 8 Gen 4 (3nm), up to 4.32 GHz, Adreno GPU, 12GB LPDDR5X RAM, UFS 4.0 256GB storage.",
+          "5240 mAh battery with 90W wired and 50W wireless HyperCharge. USB-C port (adapter not included)."
+        ]
+      }
+    ],
+    "screen": "6.36' CrystalRes AMOLED",
+    "resolution": "2670x1200",
+    "processor": "Snapdragon 8 Gen 4",
+    "ram": "12GB",
+    "camera": "50 MP + 50 MP + 50 MP",
+    "zoom": "3x–60x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s21-plus-256gb-silver",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s21",
+    "name": "Samsung Galaxy S21+ 256GB Silver",
+    "capacityAvailable": ["128GB", "256GB"],
+    "capacity": "256GB",
+    "priceRegular": 1149,
+    "priceDiscount": 949,
+    "colorsAvailable": ["silver", "black"],
+    "color": "silver",
+    "images": [
+      "img/phones/samsung-galaxy-s21-silver/00.webp",
+      "img/phones/samsung-galaxy-s21-silver/01.webp",
+      "img/phones/samsung-galaxy-s21-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Brilliant AMOLED Display",
+        "text": [
+          "6.7\" Dynamic AMOLED 2X display with FHD+ resolution (2400x1080) for vivid visuals and deep contrast.",
+          "Corning Gorilla Glass Victus ensures enhanced protection against drops and scratches."
+        ]
+      },
+      {
+        "title": "Pro-Grade Camera System",
+        "text": [
+          "Triple rear cameras: 64 MP + 12 MP + 12 MP with optical zoom, 8K video recording, and fast autofocus.",
+          "Front camera: 10 MP delivers sharp selfies and high-quality video calls."
+        ]
+      },
+      {
+        "title": "Strong Performance & Battery Life",
+        "text": [
+          "Powered by Exynos 2100 (octa-core up to 2.9 GHz) and Mali-G78 MP14 GPU for smooth daily performance.",
+          "8GB RAM and 128GB internal storage. 4800 mAh battery supports fast charging and delivers up to 40h talk time."
+        ]
+      }
+    ],
+    "screen": "6.7' Dynamic AMOLED 2X",
+    "resolution": "2400x1080",
+    "processor": "Exynos 2100",
+    "ram": "8GB",
+    "camera": "64 MP + 12 MP + 12 MP",
+    "zoom": "3x optical, 30x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s21-plus-256gb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s21",
+    "name": "Samsung Galaxy S21+ 256GB black",
+    "capacityAvailable": ["128GB", "256GB"],
+    "capacity": "256GB",
+    "priceRegular": 1149,
+    "priceDiscount": 949,
+    "colorsAvailable": ["silver", "black"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-s21-black/00.webp",
+      "img/phones/samsung-galaxy-s21-black/01.webp",
+      "img/phones/samsung-galaxy-s21-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Brilliant AMOLED Display",
+        "text": [
+          "6.7\" Dynamic AMOLED 2X display with FHD+ resolution (2400x1080) for vivid visuals and deep contrast.",
+          "Corning Gorilla Glass Victus ensures enhanced protection against drops and scratches."
+        ]
+      },
+      {
+        "title": "Pro-Grade Camera System",
+        "text": [
+          "Triple rear cameras: 64 MP + 12 MP + 12 MP with optical zoom, 8K video recording, and fast autofocus.",
+          "Front camera: 10 MP delivers sharp selfies and high-quality video calls."
+        ]
+      },
+      {
+        "title": "Strong Performance & Battery Life",
+        "text": [
+          "Powered by Exynos 2100 (octa-core up to 2.9 GHz) and Mali-G78 MP14 GPU for smooth daily performance.",
+          "8GB RAM and 128GB internal storage. 4800 mAh battery supports fast charging and delivers up to 40h talk time."
+        ]
+      }
+    ],
+    "screen": "6.7' Dynamic AMOLED 2X",
+    "resolution": "2400x1080",
+    "processor": "Exynos 2100",
+    "ram": "8GB",
+    "camera": "64 MP + 12 MP + 12 MP",
+    "zoom": "3x optical, 30x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s21-plus-128gb-silver",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s21",
+    "name": "Samsung Galaxy S21+ 128GB Silver",
+    "capacityAvailable": ["128GB", "256GB"],
+    "capacity": "128GB",
+    "priceRegular": 1099,
+    "priceDiscount": 899,
+    "colorsAvailable": ["silver", "black"],
+    "color": "silver",
+    "images": [
+      "img/phones/samsung-galaxy-s21-silver/00.webp",
+      "img/phones/samsung-galaxy-s21-silver/01.webp",
+      "img/phones/samsung-galaxy-s21-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Brilliant AMOLED Display",
+        "text": [
+          "6.7\" Dynamic AMOLED 2X display with FHD+ resolution (2400x1080) for vivid visuals and deep contrast.",
+          "Corning Gorilla Glass Victus ensures enhanced protection against drops and scratches."
+        ]
+      },
+      {
+        "title": "Pro-Grade Camera System",
+        "text": [
+          "Triple rear cameras: 64 MP + 12 MP + 12 MP with optical zoom, 8K video recording, and fast autofocus.",
+          "Front camera: 10 MP delivers sharp selfies and high-quality video calls."
+        ]
+      },
+      {
+        "title": "Strong Performance & Battery Life",
+        "text": [
+          "Powered by Exynos 2100 (octa-core up to 2.9 GHz) and Mali-G78 MP14 GPU for smooth daily performance.",
+          "8GB RAM and 128GB internal storage. 4800 mAh battery supports fast charging and delivers up to 40h talk time."
+        ]
+      }
+    ],
+    "screen": "6.7' Dynamic AMOLED 2X",
+    "resolution": "2400x1080",
+    "processor": "Exynos 2100",
+    "ram": "8GB",
+    "camera": "64 MP + 12 MP + 12 MP",
+    "zoom": "3x optical, 30x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s21-plus-128gb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s21",
+    "name": "Samsung Galaxy S21+ 128GB black",
+    "capacityAvailable": ["128GB", "256GB"],
+    "capacity": "128GB",
+    "priceRegular": 1099,
+    "priceDiscount": 899,
+    "colorsAvailable": ["silver", "black"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-s21-black/00.webp",
+      "img/phones/samsung-galaxy-s21-black/01.webp",
+      "img/phones/samsung-galaxy-s21-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Brilliant AMOLED Display",
+        "text": [
+          "6.7\" Dynamic AMOLED 2X display with FHD+ resolution (2400x1080) for vivid visuals and deep contrast.",
+          "Corning Gorilla Glass Victus ensures enhanced protection against drops and scratches."
+        ]
+      },
+      {
+        "title": "Pro-Grade Camera System",
+        "text": [
+          "Triple rear cameras: 64 MP + 12 MP + 12 MP with optical zoom, 8K video recording, and fast autofocus.",
+          "Front camera: 10 MP delivers sharp selfies and high-quality video calls."
+        ]
+      },
+      {
+        "title": "Strong Performance & Battery Life",
+        "text": [
+          "Powered by Exynos 2100 (octa-core up to 2.9 GHz) and Mali-G78 MP14 GPU for smooth daily performance.",
+          "8GB RAM and 128GB internal storage. 4800 mAh battery supports fast charging and delivers up to 40h talk time."
+        ]
+      }
+    ],
+    "screen": "6.7' Dynamic AMOLED 2X",
+    "resolution": "2400x1080",
+    "processor": "Exynos 2100",
+    "ram": "8GB",
+    "camera": "64 MP + 12 MP + 12 MP",
+    "zoom": "3x optical, 30x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s25-512gb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s25",
+    "name": "Samsung Galaxy S25 Ultra 512GB Black",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "512GB",
+    "priceRegular": 1499,
+    "priceDiscount": 1399,
+    "colorsAvailable": ["black", "grey"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-s25-black/00.webp",
+      "img/phones/samsung-galaxy-s25-black/01.webp",
+      "img/phones/samsung-galaxy-s25-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro QHD+ Display",
+        "text": [
+          "6.9\" Dynamic AMOLED 2X display with QHD+ resolution (3120x1440) and a smooth 120Hz refresh rate.",
+          "Corning Gorilla Armor glass provides exceptional durability and scratch resistance."
+        ]
+      },
+      {
+        "title": "Advanced Camera System",
+        "text": [
+          "Quad rear cameras: 200 MP + 50 MP + 50 MP + 10 MP with multiple optical and digital zoom levels up to 100x.",
+          "Front camera: 12 MP for clear selfies and video, supported by intelligent image processing."
+        ]
+      },
+      {
+        "title": "Top-Tier Performance",
+        "text": [
+          "Powered by Snapdragon 8 Elite Gen 4 processor (up to 4.47 GHz) and Adreno 830 GPU for seamless multitasking.",
+          "12GB of RAM and 256GB internal storage with no microSD card support."
+        ]
+      }
+    ],
+    "screen": "6.9' Dynamic AMOLED 2X",
+    "resolution": "3120x1440",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "12GB",
+    "camera": "200 MP + 50 MP + 50 MP + 10 MP",
+    "zoom": "3x & 5x optical, 100x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s25-512gb-grey",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s25",
+    "name": "Samsung Galaxy S25 Ultra 512GB Grey",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "512GB",
+    "priceRegular": 1499,
+    "priceDiscount": 1399,
+    "colorsAvailable": ["black", "grey"],
+    "color": "grey",
+    "images": [
+      "img/phones/samsung-galaxy-s25-grey/00.webp",
+      "img/phones/samsung-galaxy-s25-grey/01.webp",
+      "img/phones/samsung-galaxy-s25-grey/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro QHD+ Display",
+        "text": [
+          "6.9\" Dynamic AMOLED 2X display with QHD+ resolution (3120x1440) and a smooth 120Hz refresh rate.",
+          "Corning Gorilla Armor glass provides exceptional durability and scratch resistance."
+        ]
+      },
+      {
+        "title": "Advanced Camera System",
+        "text": [
+          "Quad rear cameras: 200 MP + 50 MP + 50 MP + 10 MP with multiple optical and digital zoom levels up to 100x.",
+          "Front camera: 12 MP for clear selfies and video, supported by intelligent image processing."
+        ]
+      },
+      {
+        "title": "Top-Tier Performance",
+        "text": [
+          "Powered by Snapdragon 8 Elite Gen 4 processor (up to 4.47 GHz) and Adreno 830 GPU for seamless multitasking.",
+          "12GB of RAM and 256GB internal storage with no microSD card support."
+        ]
+      }
+    ],
+    "screen": "6.9' Dynamic AMOLED 2X",
+    "resolution": "3120x1440",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "12GB",
+    "camera": "200 MP + 50 MP + 50 MP + 10 MP",
+    "zoom": "3x & 5x optical, 100x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s25-256gb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s25",
+    "name": "Samsung Galaxy S25 Ultra 256GB Black",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "256GB",
+    "priceRegular": 1399,
+    "priceDiscount": 1299,
+    "colorsAvailable": ["black", "grey"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-s25-black/00.webp",
+      "img/phones/samsung-galaxy-s25-black/01.webp",
+      "img/phones/samsung-galaxy-s25-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro QHD+ Display",
+        "text": [
+          "6.9\" Dynamic AMOLED 2X display with QHD+ resolution (3120x1440) and a smooth 120Hz refresh rate.",
+          "Corning Gorilla Armor glass provides exceptional durability and scratch resistance."
+        ]
+      },
+      {
+        "title": "Advanced Camera System",
+        "text": [
+          "Quad rear cameras: 200 MP + 50 MP + 50 MP + 10 MP with multiple optical and digital zoom levels up to 100x.",
+          "Front camera: 12 MP for clear selfies and video, supported by intelligent image processing."
+        ]
+      },
+      {
+        "title": "Top-Tier Performance",
+        "text": [
+          "Powered by Snapdragon 8 Elite Gen 4 processor (up to 4.47 GHz) and Adreno 830 GPU for seamless multitasking.",
+          "12GB of RAM and 256GB internal storage with no microSD card support."
+        ]
+      }
+    ],
+    "screen": "6.9' Dynamic AMOLED 2X",
+    "resolution": "3120x1440",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "12GB",
+    "camera": "200 MP + 50 MP + 50 MP + 10 MP",
+    "zoom": "3x & 5x optical, 100x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-s25-256gb-grey",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-s25",
+    "name": "Samsung Galaxy S25 Ultra 256GB Grey",
+    "capacityAvailable": ["256GB", "512GB"],
+    "capacity": "256GB",
+    "priceRegular": 1399,
+    "priceDiscount": 1299,
+    "colorsAvailable": ["black", "grey"],
+    "color": "grey",
+    "images": [
+      "img/phones/samsung-galaxy-s25-grey/00.webp",
+      "img/phones/samsung-galaxy-s25-grey/01.webp",
+      "img/phones/samsung-galaxy-s25-grey/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro QHD+ Display",
+        "text": [
+          "6.9\" Dynamic AMOLED 2X display with QHD+ resolution (3120x1440) and a smooth 120Hz refresh rate.",
+          "Corning Gorilla Armor glass provides exceptional durability and scratch resistance."
+        ]
+      },
+      {
+        "title": "Advanced Camera System",
+        "text": [
+          "Quad rear cameras: 200 MP + 50 MP + 50 MP + 10 MP with multiple optical and digital zoom levels up to 100x.",
+          "Front camera: 12 MP for clear selfies and video, supported by intelligent image processing."
+        ]
+      },
+      {
+        "title": "Top-Tier Performance",
+        "text": [
+          "Powered by Snapdragon 8 Elite Gen 4 processor (up to 4.47 GHz) and Adreno 830 GPU for seamless multitasking.",
+          "12GB of RAM and 256GB internal storage with no microSD card support."
+        ]
+      }
+    ],
+    "screen": "6.9' Dynamic AMOLED 2X",
+    "resolution": "3120x1440",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "12GB",
+    "camera": "200 MP + 50 MP + 50 MP + 10 MP",
+    "zoom": "3x & 5x optical, 100x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-fold-7-512gb-blue",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-fold-7",
+    "name": "Samsung Galaxy Fold 7 512GB Blue",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1499,
+    "priceDiscount": 1399,
+    "colorsAvailable": ["black", "blue"],
+    "color": "blue",
+    "images": [
+      "img/phones/samsung-galaxy-fold-7-blue/00.webp",
+      "img/phones/samsung-galaxy-fold-7-blue/01.webp",
+      "img/phones/samsung-galaxy-fold-7-blue/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro AMOLED Display",
+        "text": [
+          "8\" main Dynamic AMOLED 2X display (2184x1968) with 120Hz refresh rate for immersive viewing.",
+          "Additional 6.5\" AMOLED cover display (2520x1080) with adaptive refresh rate up to 120Hz."
+        ]
+      },
+      {
+        "title": "High-Resolution Camera",
+        "text": [
+          "Triple rear camera: 200 MP + 10 MP + 12 MP with OIS, autofocus, and up to 10x digital zoom.",
+          "Dual 10 MP front cameras with screen flash for bright selfies and video calls."
+        ]
+      },
+      {
+        "title": "Powerful & Reliable",
+        "text": [
+          "Snapdragon 8 Elite Gen 4 processor (octa-core up to 4.32 GHz) and Adreno 830 GPU for smooth performance.",
+          "Comes with 16GB RAM and 1TB internal storage. No microSD card support."
+        ]
+      }
+    ],
+    "screen": "8' + 6.5' Dynamic AMOLED 2X",
+    "resolution": "2184x1968 + 2520x1080",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "16GB",
+    "camera": "200 MP + 10 MP + 12 MP",
+    "zoom": "3x optical, 10x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-fold-7-512gb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-fold-7",
+    "name": "Samsung Galaxy Fold 7 512GB Black",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1499,
+    "priceDiscount": 1399,
+    "colorsAvailable": ["black", "blue"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-fold-7-black/00.webp",
+      "img/phones/samsung-galaxy-fold-7-black/01.webp",
+      "img/phones/samsung-galaxy-fold-7-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro AMOLED Display",
+        "text": [
+          "8\" main Dynamic AMOLED 2X display (2184x1968) with 120Hz refresh rate for immersive viewing.",
+          "Additional 6.5\" AMOLED cover display (2520x1080) with adaptive refresh rate up to 120Hz."
+        ]
+      },
+      {
+        "title": "High-Resolution Camera",
+        "text": [
+          "Triple rear camera: 200 MP + 10 MP + 12 MP with OIS, autofocus, and up to 10x digital zoom.",
+          "Dual 10 MP front cameras with screen flash for bright selfies and video calls."
+        ]
+      },
+      {
+        "title": "Powerful & Reliable",
+        "text": [
+          "Snapdragon 8 Elite Gen 4 processor (octa-core up to 4.32 GHz) and Adreno 830 GPU for smooth performance.",
+          "Comes with 16GB RAM and 1TB internal storage. No microSD card support."
+        ]
+      }
+    ],
+    "screen": "8' + 6.5' Dynamic AMOLED 2X",
+    "resolution": "2184x1968 + 2520x1080",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "16GB",
+    "camera": "200 MP + 10 MP + 12 MP",
+    "zoom": "3x optical, 10x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-fold-7-1tb-blue",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-fold-7",
+    "name": "Samsung Galaxy Fold 7 1TB Blue",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1599,
+    "priceDiscount": 1499,
+    "colorsAvailable": ["black", "blue"],
+    "color": "blue",
+    "images": [
+      "img/phones/samsung-galaxy-fold-7-blue/00.webp",
+      "img/phones/samsung-galaxy-fold-7-blue/01.webp",
+      "img/phones/samsung-galaxy-fold-7-blue/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro AMOLED Display",
+        "text": [
+          "8\" main Dynamic AMOLED 2X display (2184x1968) with 120Hz refresh rate for immersive viewing.",
+          "Additional 6.5\" AMOLED cover display (2520x1080) with adaptive refresh rate up to 120Hz."
+        ]
+      },
+      {
+        "title": "High-Resolution Camera",
+        "text": [
+          "Triple rear camera: 200 MP + 10 MP + 12 MP with OIS, autofocus, and up to 10x digital zoom.",
+          "Dual 10 MP front cameras with screen flash for bright selfies and video calls."
+        ]
+      },
+      {
+        "title": "Powerful & Reliable",
+        "text": [
+          "Snapdragon 8 Elite Gen 4 processor (octa-core up to 4.32 GHz) and Adreno 830 GPU for smooth performance.",
+          "Comes with 16GB RAM and 1TB internal storage. No microSD card support."
+        ]
+      }
+    ],
+    "screen": "8' + 6.5' Dynamic AMOLED 2X",
+    "resolution": "2184x1968 + 2520x1080",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "16GB",
+    "camera": "200 MP + 10 MP + 12 MP",
+    "zoom": "3x optical, 10x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
+    "id": "samsung-galaxy-fold-7-1tb-black",
+    "category": "phones",
+    "namespaceId": "samsung-galaxy-fold-7",
+    "name": "Samsung Galaxy Fold 7 1TB Black",
+    "capacityAvailable": ["512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1599,
+    "priceDiscount": 1499,
+    "colorsAvailable": ["black", "blue"],
+    "color": "black",
+    "images": [
+      "img/phones/samsung-galaxy-fold-7-black/00.webp",
+      "img/phones/samsung-galaxy-fold-7-black/01.webp",
+      "img/phones/samsung-galaxy-fold-7-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Pro AMOLED Display",
+        "text": [
+          "8\" main Dynamic AMOLED 2X display (2184x1968) with 120Hz refresh rate for immersive viewing.",
+          "Additional 6.5\" AMOLED cover display (2520x1080) with adaptive refresh rate up to 120Hz."
+        ]
+      },
+      {
+        "title": "High-Resolution Camera",
+        "text": [
+          "Triple rear camera: 200 MP + 10 MP + 12 MP with OIS, autofocus, and up to 10x digital zoom.",
+          "Dual 10 MP front cameras with screen flash for bright selfies and video calls."
+        ]
+      },
+      {
+        "title": "Powerful & Reliable",
+        "text": [
+          "Snapdragon 8 Elite Gen 4 processor (octa-core up to 4.32 GHz) and Adreno 830 GPU for smooth performance.",
+          "Comes with 16GB RAM and 1TB internal storage. No microSD card support."
+        ]
+      }
+    ],
+    "screen": "8' + 6.5' Dynamic AMOLED 2X",
+    "resolution": "2184x1968 + 2520x1080",
+    "processor": "Snapdragon 8 Elite Gen 4",
+    "ram": "16GB",
+    "camera": "200 MP + 10 MP + 12 MP",
+    "zoom": "3x optical, 10x digital",
+    "cell": ["2G", "3G", "4G", "5G"]
+  },
+
+  {
     "id": "xiaomi-redmi-note-14-pro-256gb-black",
     "category": "phones",
     "namespaceId": "xiaomi-redmi-note-14-pro",

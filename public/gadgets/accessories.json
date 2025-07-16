@@ -1,5 +1,373 @@
 [
   {
+    "id": "xiaomi-watch-2-pro-black",
+    "category": "accessories",
+    "namespaceId": "xiaomi-watch-2-pro",
+    "name": "Xiaomi Watch 2 Pro 32GB Black",
+    "capacityAvailable": ["32GB"],
+    "capacity": "32GB",
+    "priceRegular": 299,
+    "priceDiscount": 249,
+    "colorsAvailable": ["silver", "black"],
+    "color": "black",
+    "images": [
+      "img/accessories/xiaomi-watch-2-pro-black/00.webp",
+      "img/accessories/xiaomi-watch-2-pro-black/01.webp",
+      "img/accessories/xiaomi-watch-2-pro-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Advanced fitness and health tracking",
+        "text": [
+          "Track your steps, calories, heart rate, blood oxygen levels, sleep, and more with high-precision sensors like accelerometer, barometer, compass, and PPG heart rate sensor.",
+          "Smart features include sleep tracking, smart alarm, and real-time activity monitoring."
+        ]
+      },
+      {
+        "title": "Smart notifications and voice assistant",
+        "text": [
+          "Receive calls, messages, social updates, emails, and calendar events directly on your wrist.",
+          "Comes with a built-in microphone and support for voice commands via Google Assistant on Wear OS."
+        ]
+      },
+      {
+        "title": "Stylish build with fast performance",
+        "text": [
+          "Powered by Snapdragon W5+ Gen 1, with 2GB RAM and 32GB storage, the watch runs Google Wear OS smoothly.",
+          "Features a 1.43'' AMOLED display (466x466), stainless steel case, and up to 2 days of battery life."
+        ]
+      }
+    ],
+    "screen": "1.43' AMOLED",
+    "resolution": "466x466",
+    "processor": "Snapdragon W5+ Gen 1",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
+    "id": "xiaomi-watch-2-pro-silver",
+    "category": "accessories",
+    "namespaceId": "xiaomi-watch-2-pro",
+    "name": "Xiaomi Watch 2 Pro 32GB Silver",
+    "capacityAvailable": ["32GB"],
+    "capacity": "32GB",
+    "priceRegular": 299,
+    "priceDiscount": 249,
+    "colorsAvailable": ["silver", "black"],
+    "color": "silver",
+    "images": [
+      "img/accessories/xiaomi-watch-2-pro-silver/00.webp",
+      "img/accessories/xiaomi-watch-2-pro-silver/01.webp",
+      "img/accessories/xiaomi-watch-2-pro-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Advanced fitness and health tracking",
+        "text": [
+          "Track your steps, calories, heart rate, blood oxygen levels, sleep, and more with high-precision sensors like accelerometer, barometer, compass, and PPG heart rate sensor.",
+          "Smart features include sleep tracking, smart alarm, and real-time activity monitoring."
+        ]
+      },
+      {
+        "title": "Smart notifications and voice assistant",
+        "text": [
+          "Receive calls, messages, social updates, emails, and calendar events directly on your wrist.",
+          "Comes with a built-in microphone and support for voice commands via Google Assistant on Wear OS."
+        ]
+      },
+      {
+        "title": "Stylish build with fast performance",
+        "text": [
+          "Powered by Snapdragon W5+ Gen 1, with 2GB RAM and 32GB storage, the watch runs Google Wear OS smoothly.",
+          "Features a 1.43'' AMOLED display (466x466), stainless steel case, and up to 2 days of battery life."
+        ]
+      }
+    ],
+    "screen": "1.43' AMOLED",
+    "resolution": "466x466",
+    "processor": "Snapdragon W5+ Gen 1",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
+    "id": "xiaomi-watch-s4-silver",
+    "category": "accessories",
+    "namespaceId": "xiaomi-watch-s4",
+    "name": "Xiaomi Watch S4 16GB Silver",
+    "capacityAvailable": ["16GB"],
+    "capacity": "16GB",
+    "priceRegular": 189,
+    "priceDiscount": 159,
+    "colorsAvailable": ["rainbow", "silver"],
+    "color": "silver",
+    "images": [
+      "img/accessories/xiaomi-watch-s4-silver/00.webp",
+      "img/accessories/xiaomi-watch-s4-silver/01.webp",
+      "img/accessories/xiaomi-watch-s4-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Track your health and fitness",
+        "text": [
+          "Monitor your heart rate, blood oxygen levels, sleep, stress, and activity with precision thanks to built-in sensors like accelerometer, gyroscope, barometer, and compass.",
+          "Set goals and stay active with a reliable step counter, calorie tracker, and motion speed tracking."
+        ]
+      },
+      {
+        "title": "Stay updated with smart notifications",
+        "text": [
+          "Receive alerts for calls, messages, social apps, emails, and calendar events right on your wrist.",
+          "Built-in vibration motor ensures you never miss important updates even on the move."
+        ]
+      },
+      {
+        "title": "Durable design with long battery life",
+        "text": [
+          "Features a 1.43'' AMOLED touchscreen with 466x466 resolution and 460 ppi under durable tempered glass.",
+          "Aluminum case, 5 ATM water resistance, 486mAh battery offering up to 15 days of use, and magnetic charger included."
+        ]
+      }
+    ],
+    "screen": "1.43' AMOLED",
+    "resolution": "466x466",
+    "processor": "Proprietary",
+    "ram": "2GB",
+    "cell": ["Bluetooth", "NFC", "GPS"]
+  },
+
+  {
+    "id": "xiaomi-watch-s4-rainbow",
+    "category": "accessories",
+    "namespaceId": "xiaomi-watch-s4",
+    "name": "Xiaomi Watch S4 16GB Rainbow",
+    "capacityAvailable": ["16GB"],
+    "capacity": "16GB",
+    "priceRegular": 189,
+    "priceDiscount": 159,
+    "colorsAvailable": ["rainbow", "silver"],
+    "color": "rainbow",
+    "images": [
+      "img/accessories/xiaomi-watch-s4-rainbow/00.webp",
+      "img/accessories/xiaomi-watch-s4-rainbow/01.webp",
+      "img/accessories/xiaomi-watch-s4-rainbow/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Track your health and fitness",
+        "text": [
+          "Monitor your heart rate, blood oxygen levels, sleep, stress, and activity with precision thanks to built-in sensors like accelerometer, gyroscope, barometer, and compass.",
+          "Set goals and stay active with a reliable step counter, calorie tracker, and motion speed tracking."
+        ]
+      },
+      {
+        "title": "Stay updated with smart notifications",
+        "text": [
+          "Receive alerts for calls, messages, social apps, emails, and calendar events right on your wrist.",
+          "Built-in vibration motor ensures you never miss important updates even on the move."
+        ]
+      },
+      {
+        "title": "Durable design with long battery life",
+        "text": [
+          "Features a 1.43'' AMOLED touchscreen with 466x466 resolution and 460 ppi under durable tempered glass.",
+          "Aluminum case, 5 ATM water resistance, 486mAh battery offering up to 15 days of use, and magnetic charger included."
+        ]
+      }
+    ],
+    "screen": "1.43' AMOLED",
+    "resolution": "466x466",
+    "processor": "Proprietary",
+    "ram": "2GB",
+    "cell": ["Bluetooth", "NFC", "GPS"]
+  },
+
+  {
+    "id": "samsung-galaxy-watch-6-classic-43mm-silver",
+    "category": "accessories",
+    "namespaceId": "samsung-galaxy-watch-6",
+    "name": "Samsung Galaxy Watch 6 Classic 43mm Silver",
+    "capacityAvailable": ["16GB"],
+    "capacity": "16GB",
+    "priceRegular": 349,
+    "priceDiscount": 249,
+    "colorsAvailable": ["silver", "black"],
+    "color": "silver",
+    "images": [
+      "img/accessories/samsung-galaxy-watch-6-silver/00.webp",
+      "img/accessories/samsung-galaxy-watch-6-silver/01.webp",
+      "img/accessories/samsung-galaxy-watch-6-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Monitor your health",
+        "text": [
+          "Track your heart rate, SpO2, sleep, stress, calories, and activity levels with advanced sensors including a 3-in-1 BioActive sensor and temperature tracking.",
+          "Stay on top of your fitness with automatic workout detection and smart wellness insights."
+        ]
+      },
+      {
+        "title": "Stay connected on the go",
+        "text": [
+          "Receive calls, SMS, emails, and app notifications directly on your wrist via Bluetooth and Wi-Fi.",
+          "Built-in GPS, NFC, and SOS functionality let you stay safe and connected during your day."
+        ]
+      },
+      {
+        "title": "Premium design, long battery life",
+        "text": [
+          "Featuring a stainless steel case with a mechanical rotating bezel and sapphire glass display, the Watch 6 Classic combines elegance with durability.",
+          "Up to 40 hours of battery life and support for fast wireless charging to keep you going longer."
+        ]
+      }
+    ],
+    "screen": "1.3' Super AMOLED",
+    "resolution": "432x432",
+    "processor": "Exynos W930 Dual-Core 1.4GHz",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
+    "id": "samsung-galaxy-watch-6-classic-43mm-black",
+    "category": "accessories",
+    "namespaceId": "samsung-galaxy-watch-6",
+    "name": "Samsung Galaxy Watch 6 Classic 43mm Black",
+    "capacityAvailable": ["16GB"],
+    "capacity": "16GB",
+    "priceRegular": 349,
+    "priceDiscount": 259,
+    "colorsAvailable": ["silver", "black"],
+    "color": "black",
+    "images": [
+      "img/accessories/samsung-galaxy-watch-6-black/00.webp",
+      "img/accessories/samsung-galaxy-watch-6-black/01.webp",
+      "img/accessories/samsung-galaxy-watch-6-black/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Monitor your health",
+        "text": [
+          "Track your heart rate, SpO2, sleep, stress, calories, and activity levels with advanced sensors including a 3-in-1 BioActive sensor and temperature tracking.",
+          "Stay on top of your fitness with automatic workout detection and smart wellness insights."
+        ]
+      },
+      {
+        "title": "Stay connected on the go",
+        "text": [
+          "Receive calls, SMS, emails, and app notifications directly on your wrist via Bluetooth and Wi-Fi.",
+          "Built-in GPS, NFC, and SOS functionality let you stay safe and connected during your day."
+        ]
+      },
+      {
+        "title": "Premium design, long battery life",
+        "text": [
+          "Featuring a stainless steel case with a mechanical rotating bezel and sapphire glass display, the Watch 6 Classic combines elegance with durability.",
+          "Up to 40 hours of battery life and support for fast wireless charging to keep you going longer."
+        ]
+      }
+    ],
+    "screen": "1.3' Super AMOLED",
+    "resolution": "432x432",
+    "processor": "Exynos W930 Dual-Core 1.4GHz",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
+    "id": "samsung-galaxy-watch-ultra-64gb-blue",
+    "category": "accessories",
+    "namespaceId": "samsung-galaxy-watch-ultra-2025",
+    "name": "Samsung Galaxy Watch Ultra (2025) 64GB Blue",
+    "capacityAvailable": ["64GB"],
+    "capacity": "64GB",
+    "priceRegular": 699,
+    "priceDiscount": 599,
+    "colorsAvailable": ["blue", "silver"],
+    "color": "blue",
+    "images": [
+      "img/accessories/samsung-galaxy-watch-ultra-blue/00.webp",
+      "img/accessories/samsung-galaxy-watch-ultra-blue/01.webp",
+      "img/accessories/samsung-galaxy-watch-ultra-blue/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Monitor your health",
+        "text": [
+          "The Galaxy Watch Ultra features a comprehensive sensor suite to track your heart rate, sleep, stress, and body composition with high precision.",
+          "It includes advanced sensors like ECG, temperature, SpO2, and a 3-in-1 BioActive Sensor for deeper health insights."
+        ]
+      },
+      {
+        "title": "Stay connected on the go",
+        "text": [
+          "With eSIM and 4G LTE support, you can make calls, send messages, and stream music without your phone.",
+          "Built-in GPS, NFC, Wi-Fi, and Bluetooth 5.3 keep you connected anywhere with seamless performance."
+        ]
+      },
+      {
+        "title": "Built to perform, ready for anything",
+        "text": [
+          "A titanium body, sapphire glass, and IP68/10ATM/MIL-STD-810H durability make it ideal for extreme conditions.",
+          "Enjoy up to 100 hours of battery life in power-saving mode and fast wireless charging support."
+        ]
+      }
+    ],
+    "screen": "1.5' Super AMOLED",
+    "resolution": "480x480",
+    "processor": "Exynos W1000",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "LTE", "GPS", "NFC"]
+  },
+
+  {
+    "id": "samsung-galaxy-watch-ultra-64gb-silver",
+    "category": "accessories",
+    "namespaceId": "samsung-galaxy-watch-ultra-2025",
+    "name": "Samsung Galaxy Watch Ultra (2025) 64GB Silver",
+    "capacityAvailable": ["64GB"],
+    "capacity": "64GB",
+    "priceRegular": 699,
+    "priceDiscount": 599,
+    "colorsAvailable": ["blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/accessories/samsung-galaxy-watch-ultra-silver/00.webp",
+      "img/accessories/samsung-galaxy-watch-ultra-silver/01.webp",
+      "img/accessories/samsung-galaxy-watch-ultra-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Monitor your health",
+        "text": [
+          "The Galaxy Watch Ultra features a comprehensive sensor suite to track your heart rate, sleep, stress, and body composition with high precision.",
+          "It includes advanced sensors like ECG, temperature, SpO2, and a 3-in-1 BioActive Sensor for deeper health insights."
+        ]
+      },
+      {
+        "title": "Stay connected on the go",
+        "text": [
+          "With eSIM and 4G LTE support, you can make calls, send messages, and stream music without your phone.",
+          "Built-in GPS, NFC, Wi-Fi, and Bluetooth 5.3 keep you connected anywhere with seamless performance."
+        ]
+      },
+      {
+        "title": "Built to perform, ready for anything",
+        "text": [
+          "A titanium body, sapphire glass, and IP68/10ATM/MIL-STD-810H durability make it ideal for extreme conditions.",
+          "Enjoy up to 100 hours of battery life in power-saving mode and fast wireless charging support."
+        ]
+      }
+    ],
+    "screen": "1.5' Super AMOLED",
+    "resolution": "480x480",
+    "processor": "Exynos W1000",
+    "ram": "2GB",
+    "cell": ["Wi-Fi", "Bluetooth", "LTE", "GPS", "NFC"]
+  },
+
+  {
     "id": "apple-watch-series-3-38mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
