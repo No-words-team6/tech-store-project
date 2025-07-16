@@ -17,7 +17,7 @@ export const ButtonComparison = () => {
       <Button
         onClick={() => navigation(`/${category}/catalog/comparison`)}
         className="flex items-center text-link-hover-bg dark:text-dark-link-hover-bg
-            bg-white
+            bg-white border border-[#B4BDC3] dark:border-none
             dark:bg-gray-700 h-9 px-3 py-2 rounded-none hover:bg-gray-200 dark:hover:bg-gray-600 hover:cursor-pointer w-full"
       >
         {t('compare')}
