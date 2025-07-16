@@ -41,7 +41,10 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
   const isMobile = window.innerWidth < 640;
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto mt-[56px] lg:mt-[80px]">
+    <div
+      id="catalogPageRecomendationsSectionId"
+      className="w-full max-w-[1200px] mx-auto mt-[56px] lg:mt-[80px]"
+    >
       <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
         <div className="flex flex-col gap-y-[24px] justify-center test text-white text-4xl col-span-24">
           <h2 className="ccolor-white font-mont font-bold text-[22px] sm:text-[32px]">
