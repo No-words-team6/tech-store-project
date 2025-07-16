@@ -3,8 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { WidthContainer } from '@/components/containers/WidthContainer';
 import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
-import { ChevronDown } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { ButtonCheckCategory } from '@/components/common/ButtonCheckCategory';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,8 +18,6 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
   const [videoIndex, setVideoIndex] = useState(0);
   const videoRefs = useRef<HTMLVideoElement[]>([]);
   const maskRef = useRef<HTMLDivElement>(null);
-
-  const { t } = useTranslation();
 
   const fadeToNextVideo = () => {
     const current = videoRefs.current[videoIndex];
@@ -119,27 +116,7 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
         ))}
       </div>
 
-      <button
-        onClick={() => {
-          document
-            .getElementById('Brands')
-            ?.scrollIntoView({ behavior: 'smooth' });
-        }}
-        className="
-          absolute left-1/2 top-[80%] transform -translate-x-1/2 -translate-y-1/2
-          px-8 py-3 rounded-xl
-          bg-white/30 backdrop-blur-md
-          text-black font-bold text-xl
-          shadow-lg border 
-          flex items-center gap-2
-          hover:bg-white/50 hover:scale-105
-          transition-all duration-400
-          z-11
-        "
-      >
-        <span>{t('browse-categories')}</span>
-        <ChevronDown size={28} />
-      </button>
+      <ButtonCheckCategory />
 
       <div className="absolute top-0 left-0 z-10 w-full h-full flex flex-col justify-start pt-6 md:pt-10 pointer-events-none">
         <WidthContainer>
