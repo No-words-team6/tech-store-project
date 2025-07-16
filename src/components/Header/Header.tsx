@@ -7,6 +7,7 @@ import { MobileSidebar } from './MobileSidebar';
 import { useProductStore } from '@/stores/productStore';
 import { useTranslation } from 'react-i18next';
 import { ThemeToggle } from '../ThemeToggle';
+import { HeaderPhonesMenu } from './HeaderPhonesMenu/HeaderPhonesMenu';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
@@ -26,15 +27,18 @@ export const Header = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   const { t } = useTranslation();
 
   const favouritesData = useProductStore((state) => state.favouritesStore);
   const cartData = useProductStore((state) => state.cartStore);
+  const cartItemsAmount = cartData.reduce(
+    (acc, product) => acc + product.quantity,
+    0,
+  );
 
-  const cartItemsAmount = cartData.reduce((acc, product) => {
-    return acc + product.quantity;
-  }, 0);
+  const [hoveredLink, setHoveredLink] = useState<
+    'phones' | 'tablets' | 'accessories' | null
+  >(null);
 
   return (
     <header className="bg-header-background sticky top-0 z-50 w-full h-12 sm:h-16 shadow-[0_1px_0_0_rgb(var(--header-elements))]">
@@ -45,19 +49,37 @@ export const Header = () => {
               <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
             </NavLink>
 
-            <nav className="hidden sm:flex items-center h-16 gap-16">
+            <nav className="hidden sm:flex items-center h-16 gap-16 relative">
               <NavLink to="/" className={navLinkClass}>
                 {t('home')}
               </NavLink>
-              <NavLink to="/phones" className={navLinkClass}>
-                {t('phones')}
-              </NavLink>
-              <NavLink to="/tablets" className={navLinkClass}>
-                {t('tablets')}
-              </NavLink>
-              <NavLink to="/accessories" className={navLinkClass}>
-                {t('accessories')}
-              </NavLink>
+
+              {(['phones', 'tablets', 'accessories'] as const).map((type) => (
+                <div
+                  key={type}
+                  className="relative"
+                  onMouseEnter={() => setHoveredLink(type)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                >
+                  <NavLink to={`/${type}`} className={navLinkClass}>
+                    {t(type)}
+                  </NavLink>
+
+                  {hoveredLink === type && (
+                    <div className="absolute top-full left-0 z-40 pt-3 ml-[-18px]">
+                      <HeaderPhonesMenu type={type} />
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              <div
+                className={`
+                         fixed inset-x-0 top-16 min-h-[240px]
+                         backdrop-blur-md bg-header-background/60 z-30 transition-opacity ease-in-out pointer-events-none
+                         ${hoveredLink ? 'opacity-100 duration-0' : 'opacity-0 duration-1500'}
+                           `}
+              />
             </nav>
           </div>
 
