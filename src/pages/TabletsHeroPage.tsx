@@ -2,7 +2,7 @@ import { CatalogPageHeader } from '@/components/CatalogPageComponents/CatalogPag
 import { CatalogPageRecomendationsSection } from '@/components/CatalogPageComponents/CatalogPageRecomendationsSection';
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import { useThemeStore } from '@/hooks/useThemeStore';
 
 const videoSourcesDark = [
   '/videos/tabletsBanner-1.mp4',
@@ -10,8 +10,8 @@ const videoSourcesDark = [
 ];
 
 const videoSourcesLight = [
-  '/videos/phonesBanner-1-light.mp4',
-  '/videos/tabletsBanner-2.mp4',
+  '/videos/tabletsBanner-1-light.mp4',
+  '/videos/tabletsBanner-2-light.mp4',
 ];
 
 const brands = [
@@ -55,26 +55,8 @@ const tablets = [
 
 export const TabletsHeroPage = () => {
   const { t } = useTranslation();
-  const [isDark, setIsDark] = useState(() =>
-    typeof window !== 'undefined' ?
-      document.documentElement.classList.contains('dark') ||
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    : false,
-  );
 
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      const isDarkMode = document.documentElement.classList.contains('dark');
-      setIsDark(isDarkMode);
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const isDark = useThemeStore((state) => state.isDark);
 
   const selectedVideoSources = isDark ? videoSourcesDark : videoSourcesLight;
 

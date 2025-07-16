@@ -1,3 +1,4 @@
+import { useThemeStore } from '@/hooks/useThemeStore';
 import { useEffect, useState } from 'react';
 
 export const ThemeToggle = () => {
@@ -8,6 +9,8 @@ export const ThemeToggle = () => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
+  const zustandSetIsDark = useThemeStore((state) => state.setIsDark);
+
   useEffect(() => {
     const root = window.document.documentElement;
     if (isDark) {
@@ -17,6 +20,8 @@ export const ThemeToggle = () => {
       root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+
+    zustandSetIsDark(isDark);
   }, [isDark]);
 
   return (
