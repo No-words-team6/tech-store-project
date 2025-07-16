@@ -22,7 +22,7 @@ module.exports = {
     extend: {
       colors: {
         'header-background': 'rgb(var(--header-background))',
-        'elements': 'rgb(var(--elements))',
+        'header-elements': 'rgb(var(--header-elements))',
         'link-text': 'rgb(var(--link-text))',
         'link-hover-bg': 'rgb(var(--link-hover-bg))',
         'burger-icon': 'rgb(var(--burger-icon))',
