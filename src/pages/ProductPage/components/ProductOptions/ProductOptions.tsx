@@ -34,7 +34,7 @@ export const ProductOptions: React.FC<Props> = ({
 
     if (matching) {
       setCurrentItem(matching);
-      navigate(`/${matching.category}/${matching.id}`);
+      navigate(`/${matching.category}/catalog/${matching.id}`);
     }
   };
 
@@ -48,7 +48,7 @@ export const ProductOptions: React.FC<Props> = ({
 
     if (matching) {
       setCurrentItem(matching);
-      navigate(`/${matching.category}/${matching.id}`);
+      navigate(`/${matching.category}/catalog/${matching.id}`);
     }
   };
 
