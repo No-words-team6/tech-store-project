@@ -16,6 +16,7 @@ interface ProductStoreState {
   cartStore: LocaleProduct[];
   favouritesStore: Product[];
   isLoading: boolean;
+  searchQuery: string;
   fetchAllProducts: () => void;
   fetchProductsByCategory: (category: Category) => void;
   getLocaleStore: () => void;
@@ -24,6 +25,7 @@ interface ProductStoreState {
   clearCart: () => void;
   increaseQuantity: (itemId: string) => void;
   decreaseQuantity: (itemId: string) => void;
+  setSearchQuery: (query: string) => void;
 }
 
 export const useProductStore = create<ProductStoreState>((set, get) => ({
@@ -35,6 +37,9 @@ export const useProductStore = create<ProductStoreState>((set, get) => ({
   cartStore: [],
   favouritesStore: [],
   isLoading: false,
+  searchQuery: '',
+
+  setSearchQuery: (query: string) => set({ searchQuery: query }),
 
   fetchAllProducts: async () => {
     set({ isLoading: true, products: [], newestList: [], cheapestList: [] });
