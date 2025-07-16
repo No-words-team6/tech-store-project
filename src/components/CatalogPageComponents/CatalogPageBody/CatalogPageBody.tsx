@@ -90,7 +90,7 @@ export const CatalogPageBody = () => {
     return <ErrorPage />;
   }
   return (
-    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-0">
+    <div className="w-full max-w-[1200px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 xl:mx-auto pt-[24px] pb-[80px] gap-x-[16px] gap-y-[24px] px-4 sm:px-8 xl:px-0">
       <BreadcrumbNav />
 
       <CatalogBar />

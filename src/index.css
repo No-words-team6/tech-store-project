@@ -26,6 +26,12 @@ body {
   background-color: #0f1121;
 }
 
+.font-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #e2e2e2;
+  font-family: inherit;
+}
+
 .font-mont {
   font-family: 'Mont', 'sans-serif';
 }

@@ -29,6 +29,7 @@ export const ButtonAddToCart: React.FC<Props> = ({ product }) => {
         'hover:bg-[#A378FF]',
         'hover:cursor-pointer',
         'rounded-none',
+        'truncate',
         { 'bg-[#323542]': isInCart },
       )}
     >

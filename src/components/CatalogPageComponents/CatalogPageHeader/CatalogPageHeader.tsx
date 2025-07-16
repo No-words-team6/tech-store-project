@@ -143,8 +143,10 @@ export const CatalogPageHeader: React.FC<Props> = ({ title, videoSources }) => {
 
       <div className="absolute top-0 left-0 z-10 w-full h-full flex flex-col justify-start pt-6 md:pt-10 pointer-events-none">
         <WidthContainer>
-          <BreadcrumbNav />
-          <h1 className="text-white font-mont font-bold text-5xl">{title}</h1>
+          <div className="px-4 sm:px-8 xl:px-0">
+            <BreadcrumbNav />
+            <h1 className="text-white font-mont font-bold text-5xl">{title}</h1>
+          </div>
         </WidthContainer>
       </div>
     </div>
