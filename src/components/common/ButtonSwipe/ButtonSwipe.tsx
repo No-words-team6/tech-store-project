@@ -21,10 +21,11 @@ export const ButtonSwipe = ({
       <button
         onClick={onPrevClick}
         className={cn(
-          'w-full h-8 w-8 flex items-center justify-center transition border',
+          'w-full h-8 flex items-center justify-center transition border bg-white hover:border-[#313237]',
           {
-            'bg-[#0F1121] text-[#4A4D58] border-[#3B3E4A]': disablePrev,
-            'bg-[#323542] hover:opacity-80 border-transparent text-[#F1F2F9] hover:cursor-pointer':
+            'dark:bg-[#0F1121] text-[#B4BDC3] dark:text-[#4A4D58] border-[#B4BDC3] dark:border-[#3B3E4A]':
+              disablePrev,
+            'dark:bg-[#323542] hover:opacity-80 border-[#B4BDC3] dark:border-transparent text-[#313237] dark:text-[#F1F2F9] hover:cursor-pointer':
               !disablePrev,
           },
         )}
@@ -36,10 +37,11 @@ export const ButtonSwipe = ({
       <button
         onClick={onNextClick}
         className={cn(
-          'w-full h-8 w-8 flex items-center justify-center transition border ',
+          'w-full h-8 flex items-center justify-center transition border bg-white hover:border-[#313237]',
           {
-            'bg-[#0F1121] text-[#4A4D58] border-[#3B3E4A]': disableNext,
-            'bg-[#323542] hover:opacity-80 border-transparent text-[#F1F2F9] hover:cursor-pointer':
+            'dark:bg-[#0F1121] text-[#B4BDC3] dark:text-[#4A4D58] border-[#B4BDC3] dark:border-[#3B3E4A]':
+              disableNext,
+            'dark:bg-[#323542] hover:opacity-80 border-[#B4BDC3] dark:border-transparent text-[#313237] dark:text-[#F1F2F9] hover:cursor-pointer':
               !disableNext,
           },
         )}

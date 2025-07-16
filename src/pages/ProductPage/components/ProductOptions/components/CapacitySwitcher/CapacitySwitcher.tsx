@@ -21,10 +21,10 @@ export const CapacitySwitcher: React.FC<Props> = ({
             key={capacity}
             onClick={() => onCapacityClick?.(capacity)}
             className={cn(
-              'w-14 h-8 border border-[#4A4D58] text-sm flex items-center justify-center cursor-pointer',
+              'w-14 h-8 border border-[#919a9e] text-sm flex items-center justify-center cursor-pointer',
               isSelected ?
-                'border-[#F1F2F9] bg-[#F1F2F9] text-[#0F1121]'
-              : 'border-[#3B3E4A] text-[#75767F]',
+                'bg-[#313237] dark:border-[#F1F2F9] dark:bg-[#F1F2F9] text-dark-link-hover-bg dark:text-[#3B3E4A]'
+              : 'dark:border-[#3B3E4A] dark:text-[#75767F] text-link-hover-bg',
             )}
           >
             {capacity}

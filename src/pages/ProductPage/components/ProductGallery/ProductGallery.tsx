@@ -39,8 +39,9 @@ export const ProductGallery: React.FC<Props> = ({
               <img
                 src={`/${photo}`}
                 alt={item.name}
-                className={cn('object-contain border w-full h-full', {
-                  'border-gray-600': !isActive,
+                className={cn('object-contain border-2 w-full h-full', {
+                  'border-gray-800 dark:border-gray-200': !!isActive,
+                  'border-gray-200 dark:border-gray-800': !isActive,
                 })}
               />
             </div>

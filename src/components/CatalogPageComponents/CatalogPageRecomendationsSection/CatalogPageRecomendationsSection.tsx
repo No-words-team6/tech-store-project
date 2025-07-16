@@ -70,7 +70,7 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                   exit="exit"
                 >
                   <motion.p
-                    className="font-mont font-extrabold text-2xl"
+                    className="font-mont font-extrabold text-2xl text-link-hover-bg dark:text-dark-link-hover-bg"
                     variants={itemVariants}
                   >
                     {carouselItems[currentIndex].title}
@@ -84,7 +84,7 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                     </motion.p>
                   )}
                   <motion.p
-                    className="font-mont font-extrabold text-2xl mt-3"
+                    className="font-mont font-extrabold text-2xl mt-3 text-link-hover-bg dark:text-dark-link-hover-bg"
                     variants={itemVariants}
                   >
                     {`$${carouselItems[currentIndex].price}`}

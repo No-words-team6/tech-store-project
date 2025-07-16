@@ -70,8 +70,11 @@ export const Paginator: React.FC<PaginatorProps> = ({
 
   return (
     <Pagination className="col-span-4 sm:col-span-12 xl:col-span-24">
-      <PaginationContent className="bg-none text-white">
-        <PaginationItem className="bg-gray-800 rounded-none">
+      <PaginationContent
+        className="bg-none text-link-hover-bg 
+            dark:text-dark-link-hover-bg"
+      >
+        <PaginationItem className="rounded-none">
           <PaginationPrevious
             className="rounded-none"
             href="#breadcrumbId"
@@ -85,9 +88,13 @@ export const Paginator: React.FC<PaginatorProps> = ({
               <PaginationEllipsis />
             : <PaginationLink
                 href="#breadcrumbId"
-                className={cn('bg-gray-800 rounded-none', {
-                  'bg-purple-500': currentPage === page,
-                })}
+                className={cn(
+                  'bg-white dark:bg-gray-800 hover:bg-gray-200 hover:dark:bg-gray-700 border-gray-200 border dark:border-transparent rounded-none',
+                  {
+                    'bg-[#313237] hover:bg-[#313237] text-white hover:text-white dark:bg-purple-500 hover:dark:bg-purple-400':
+                      currentPage === page,
+                  },
+                )}
                 onClick={() => handleSelectChange(page.toString())}
               >
                 {page}
@@ -96,7 +103,7 @@ export const Paginator: React.FC<PaginatorProps> = ({
           </PaginationItem>
         ))}
 
-        <PaginationItem className="bg-gray-800 rounded-none">
+        <PaginationItem className="rounded-none">
           <PaginationNext
             href="#breadcrumbId"
             className="rounded-none"

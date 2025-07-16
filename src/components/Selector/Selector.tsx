@@ -53,7 +53,7 @@ export const Selector: React.FC<SelectorProps> = ({
             dark:text-dark-link-hover-bg
             bg-white
             dark:bg-gray-700
-            [&>span]:text-white
+            hover:bg-gray-200 dark:hover:bg-gray-600
             border-0
             rounded-none
             active:border-0`}

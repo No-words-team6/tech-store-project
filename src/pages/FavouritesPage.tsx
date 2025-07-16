@@ -17,11 +17,11 @@ export const FavouritesPage = () => {
           <BreadcrumbNav />
 
           <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid">
-            <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 color-white font-mont font-bold text-[32px] sm:text-[48px]">
+            <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-bold text-[32px] sm:text-[48px]">
               {t('favourites')}
             </h1>
 
-            <p className="col-span-4 sm:col-span-12 xl:col-span-24 font-extralight text-[14px] text-[#75767F]">
+            <p className="col-span-4 sm:col-span-12 xl:col-span-24 font-extralight text-[14px] text-[#919a9e] dark:text-[#75767F]">
               {productsLength === 1 ?
                 `${productsLength} ${t('item')}`
               : `${productsLength} ${t('items')}`}
