@@ -24,10 +24,10 @@ interface CardComparisonProps {
 
 export const CardComparison: React.FC<CardComparisonProps> = ({ product }) => {
   return (
-    <div className="text-white">
+    <div className="text-link-hover-bg dark:text-gray-300 mx-5">
       {product ?
-        <div className="flex flex-col gap-3">
-          <div className="w-[120px] h-[120px] flex-shrink-0 m-auto">
+        <div className="flex flex-col gap-6">
+          <div className="w-full h-[200px]">
             <img
               src={
                 product.image.startsWith('/') ?
@@ -41,53 +41,59 @@ export const CardComparison: React.FC<CardComparisonProps> = ({ product }) => {
 
           <div className="grid">
             <div className="parameters">
-              <Maximize2 />
-              <p className="describers">
+              <Maximize2 className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
                 Size screen: {isPresent(product.screen.split(' ')[0])}
               </p>
             </div>
 
             <div className="parameters">
-              <Microchip />
-              <p className="describers">
+              <Microchip className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
                 Capacity: {isPresent(product.capacity)}
               </p>
             </div>
 
             <div className="parameters">
-              <Cpu />
-              <p className="describers">RAM: {isPresent(product.ram)}</p>
+              <Cpu className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
+                RAM: {isPresent(product.ram)}
+              </p>
             </div>
 
             <div className="parameters">
-              <Smartphone />
-              <p className="describers">
+              <Smartphone className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
                 Type screen: {isPresent(product.screen.split(' ')[1])}
               </p>
             </div>
 
             <div className="parameters">
-              <Palette />
-              <p className="describers">Color: {isPresent(product.color)}</p>
+              <Palette className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
+                Color: {isPresent(product.color)}
+              </p>
             </div>
 
             <div className="parameters">
-              <CirclePercent />
-              <p className="describers">
+              <CirclePercent className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
                 Discont price: {isPresent(product.price)}$
               </p>
             </div>
 
             <div className="parameters">
-              <CircleDollarSign />
-              <p className="describers">
+              <CircleDollarSign className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
                 Full price: {isPresent(product.fullPrice)}$
               </p>
             </div>
 
             <div className="parameters">
-              <CalendarClock />
-              <p className="describers">Year: {isPresent(product.year)}</p>
+              <CalendarClock className="mt-4" size={40} />
+              <p className="describers text-[18px] text-gray-500 mt-2">
+                Year: {isPresent(product.year)}
+              </p>
             </div>
           </div>
 

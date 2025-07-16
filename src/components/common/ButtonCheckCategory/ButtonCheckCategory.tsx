@@ -27,12 +27,12 @@ export const ButtonCheckCategory = () => {
       id="buttonCheckCategoryId"
       className="
         absolute left-1/2 top-[80%] transform -translate-x-1/2 -translate-y-1/2
-        px-8 py-3 rounded-xl
-        bg-white/30 backdrop-blur-md
-        text-black font-bold text-xl
-        shadow-lg border 
+        px-8 py-3 rounded-full
+      bg-black/30 backdrop-blur-md
+        text-white font-bold text-xl
+        shadow-lg border border-white
         flex items-center gap-2
-        hover:bg-white/50 hover:scale-105
+        hover:bg-white/50 dark:hover:bg-black/50 hover:scale-105
         z-11
         opacity-0
         animate-slide-up"

@@ -50,11 +50,11 @@ export const Selector: React.FC<SelectorProps> = ({
             text-[14px]
             ${selectorWidth}
             text-link-hover-bg 
-            dark:text-dark-link-hover-bg
+            dark:text-white
             bg-white
             dark:bg-gray-700
             hover:bg-gray-200 dark:hover:bg-gray-600
-            border-0
+            border-[#B4BDC3] dark:border-none
             rounded-none
             active:border-0`}
         >

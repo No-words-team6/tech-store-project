@@ -1,8 +1,10 @@
 {
+  "dark": "Switch to Dark Theme",
+  "light": "Switch to Light Theme",
   "home": "Home",
   "phones": "Phones",
   "mobile-phones": "Mobile phones",
-  "browse-categories": "Browse categories",
+  "browse-categories": "Go to shopping",
   "top3": "Elevate Your Tech: Top 3 New Arrivals",
   "choose-brand": "Choose your brand",
   "choose-all": "All brands",
