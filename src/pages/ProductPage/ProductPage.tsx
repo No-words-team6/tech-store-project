@@ -38,8 +38,13 @@ export const ProductPage = () => {
   const getData = useProductPageStore((state) => state.getData);
 
   const reccomendationsList = useMemo(() => {
-    return prepareRecomendationList(data, 10);
-  }, [data]);
+    if (!currentItem || !data.length) return [];
+
+    return prepareRecomendationList(
+      data.filter((p) => p.itemId !== currentItem.id),
+      10,
+    );
+  }, [currentItem?.namespaceId, data]);
 
   useEffect(() => {
     getData();

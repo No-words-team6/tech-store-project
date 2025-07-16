@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const ThemeToggle = () => {
+  const { t } = useTranslation();
   const [isDark, setIsDark] = useState(() => {
     if (typeof window === 'undefined') return false;
     const saved = localStorage.getItem('theme');
@@ -24,7 +26,7 @@ export const ThemeToggle = () => {
       onClick={() => setIsDark(!isDark)}
       className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
     >
-      {isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+      {isDark ? t('light') : t('dark')}
     </button>
   );
 };
