@@ -21,49 +21,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: 'rgb(var(--border))',
-        input: 'rgb(var(--input))',
-        ring: 'rgb(var(--ring))',
-        background: 'rgb(var(--background))',
-        foreground: 'rgb(var(--foreground))',
-        primary: {
-          DEFAULT: 'rgb(var(--primary))',
-          foreground: 'rgb(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'rgb(var(--secondary))',
-          foreground: 'rgb(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'rgb(var(--destructive) / <alpha-value>)',
-          foreground: 'rgb(var(--destructive-foreground) / <alpha-value>)',
-        },
-        muted: {
-          DEFAULT: 'rgb(var(--muted))',
-          foreground: 'rgb(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'rgb(var(--accent))',
-          foreground: 'rgb(var(--accent-foreground))',
-        },
-        popover: {
-          DEFAULT: 'rgb(var(--popover))',
-          foreground: 'rgb(var(--popover-foreground))',
-        },
-        card: {
-          DEFAULT: 'rgb(var(--card))',
-          foreground: 'rgb(var(--card-foreground))',
-        },
-        sidebar: {
-          'DEFAULT': 'rgb(var(--sidebar-background))',
-          'foreground': 'rgb(var(--sidebar-foreground))',
-          'primary': 'rgb(var(--sidebar-primary))',
-          'primary-foreground': 'rgb(var(--sidebar-primary-foreground))',
-          'accent': 'rgb(var(--sidebar-accent))',
-          'accent-foreground': 'rgb(var(--sidebar-accent-foreground))',
-          'border': 'rgb(var(--sidebar-border))',
-          'ring': 'rgb(var(--sidebar-ring))',
-        },
+        'header-background': 'rgb(var(--header-background))',
+        'elements': 'rgb(var(--elements))',
+        'link-text': 'rgb(var(--link-text))',
+        'link-hover-bg': 'rgb(var(--link-hover-bg))',
+        'burger-icon': 'rgb(var(--burger-icon))',
+        'product-card-bg': 'rgb(var(--product-card-bg))',
+        'product-card-border': 'rgb(var(--product-card-border))',
       },
       borderRadius: {
         xl: 'calc(var(--radius) + 4px)',

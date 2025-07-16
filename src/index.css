@@ -26,67 +26,24 @@ body {
   background-color: #0f1121;
 }
 
-.font-outline {
-  color: transparent;
-  -webkit-text-stroke: 2px #e2e2e2;
-  font-family: inherit;
+:root {
+  --header-background: 255 255 255; /*#FFFFFF */
+  --elements: 226 230 233; /*#E2E6E9 */
+  --link-text: 137 147 154;
+  --link-hover-bg: 15 15 17;
+  --burger-icon: 49, 50, 55; /*#313237 */
+  --product-card-bg: 255 255 255; /*#FFFFFF */
+  --product-card-border: 226 230 233; /*#E2E6E9 */
 }
 
-.font-mont {
-  font-family: 'Mont', 'sans-serif';
+.dark {
+  --header-background: 15 17 33; /*#0F1121 */
+  --elements: 59 62 74; /*#3B3E4A */
+  --link-text: 117 118 127;
+  --link-hover-bg: 241 242 249;
+  --burger-icon: 241, 242, 249; /*#F1F2F9 */
+  --product-card-bg: 22, 24, 39; /*#161827 */
 }
-
-.back-color {
-  background-color: rgba(15, 17, 33, 1);
-}
-
-.color-secondary {
-  color: #75767f;
-}
-
-.color-icons {
-  color: #4a4d58;
-}
-
-.color-elements {
-  color: #3b3e4a;
-}
-
-.color-surface2 {
-  color: #323542;
-}
-
-.color-surface1 {
-  color: #161827;
-}
-
-.background-surface1 {
-  background-color: #161827;
-}
-
-.color-black {
-  color: #0f1121;
-}
-
-.color-white {
-  color: #f1f2f9;
-}
-
-.color-accent {
-  color: #905bff;
-}
-
-.color-green {
-  color: #27ae60;
-}
-
-.color-red {
-  color: #eb5757;
-}
-
-/* @theme {
-  --font-mont: "Mont", "sans-serif"; 
-} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -159,6 +116,64 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+.font-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #e2e2e2;
+  font-family: inherit;
+}
+
+.font-mont {
+  font-family: 'Mont', 'sans-serif';
+}
+
+.back-color {
+  background-color: rgba(15, 17, 33, 1);
+}
+
+.color-secondary {
+  color: #75767f;
+}
+
+.color-icons {
+  color: #4a4d58;
+}
+
+.color-elements {
+  color: #3b3e4a;
+}
+
+.color-surface2 {
+  color: #323542;
+}
+
+.color-surface1 {
+  color: #161827;
+}
+
+.background-surface1 {
+  background-color: #161827;
+}
+
+.color-black {
+  color: #0f1121;
+}
+
+.color-white {
+  color: #f1f2f9;
+}
+
+.color-accent {
+  color: #905bff;
+}
+
+.color-green {
+  color: #27ae60;
+}
+
+.color-red {
+  color: #eb5757;
 }
 
 .dark {

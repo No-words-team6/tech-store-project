@@ -1,5 +1,581 @@
 [
   {
+    "id": "xiaomi-pad-7-pro-256gb-gray",
+    "category": "tablets",
+    "namespaceId": "xiaomi-pad-7-pro",
+    "name": "Xiaomi Pad 7 Pro 256GB Gray",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 499,
+    "priceDiscount": 449,
+    "colorsAvailable": ["gray", "blue", "green"],
+    "color": "gray",
+    "images": [
+      "img/tablets/xiaomi-pad-7-pro-gray/00.webp",
+      "img/tablets/xiaomi-pad-7-pro-gray/01.webp",
+      "img/tablets/xiaomi-pad-7-pro-gray/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Stunning 11.2\" high-resolution display",
+        "text": [
+          "Xiaomi Pad 7 Pro features a sharp 11.2\" IPS display with a resolution of 3200x2136 and 344 ppi pixel density for crisp and vibrant visuals.",
+          "Ideal for multimedia, reading, and productivity."
+        ]
+      },
+      {
+        "title": "Flagship-level performance",
+        "text": [
+          "Powered by the Snapdragon 8s Gen 3 chipset with 8-core CPU running at up to 3GHz, paired with 8GB RAM and 256GB storage.",
+          "Delivers exceptional performance for gaming, multitasking, and creative apps."
+        ]
+      },
+      {
+        "title": "Pro-grade camera and fast charging",
+        "text": [
+          "Equipped with a 50MP main camera and a 32MP front camera for sharp photos and video calls.",
+          "Comes with an 8850mAh battery and 67W fast charging support for all-day power and quick top-ups."
+        ]
+      }
+    ],
+    "screen": "11.2' IPS",
+    "resolution": "3200x2136",
+    "processor": "Snapdragon 8s Gen 3",
+    "ram": "8GB",
+    "camera": "50MP + 32MP",
+    "zoom": "Digital zoom",
+    "cell": ["Wi-Fi", "Bluetooth"]
+  },
+
+  {
+    "id": "xiaomi-pad-7-pro-256gb-blue",
+    "category": "tablets",
+    "namespaceId": "xiaomi-pad-7-pro",
+    "name": "Xiaomi Pad 7 Pro 256GB Blue",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 499,
+    "priceDiscount": 449,
+    "colorsAvailable": ["gray", "blue", "green"],
+    "color": "blue",
+    "images": [
+      "img/tablets/xiaomi-pad-7-pro-blue/00.webp",
+      "img/tablets/xiaomi-pad-7-pro-blue/01.webp",
+      "img/tablets/xiaomi-pad-7-pro-blue/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Stunning 11.2\" high-resolution display",
+        "text": [
+          "Xiaomi Pad 7 Pro features a sharp 11.2\" IPS display with a resolution of 3200x2136 and 344 ppi pixel density for crisp and vibrant visuals.",
+          "Ideal for multimedia, reading, and productivity."
+        ]
+      },
+      {
+        "title": "Flagship-level performance",
+        "text": [
+          "Powered by the Snapdragon 8s Gen 3 chipset with 8-core CPU running at up to 3GHz, paired with 8GB RAM and 256GB storage.",
+          "Delivers exceptional performance for gaming, multitasking, and creative apps."
+        ]
+      },
+      {
+        "title": "Pro-grade camera and fast charging",
+        "text": [
+          "Equipped with a 50MP main camera and a 32MP front camera for sharp photos and video calls.",
+          "Comes with an 8850mAh battery and 67W fast charging support for all-day power and quick top-ups."
+        ]
+      }
+    ],
+    "screen": "11.2' IPS",
+    "resolution": "3200x2136",
+    "processor": "Snapdragon 8s Gen 3",
+    "ram": "8GB",
+    "camera": "50MP + 32MP",
+    "zoom": "Digital zoom",
+    "cell": ["Wi-Fi", "Bluetooth"]
+  },
+
+  {
+    "id": "xiaomi-pad-7-pro-256gb-green",
+    "category": "tablets",
+    "namespaceId": "xiaomi-pad-7-pro",
+    "name": "Xiaomi Pad 7 Pro 256GB Green",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 499,
+    "priceDiscount": 449,
+    "colorsAvailable": ["gray", "blue", "green"],
+    "color": "green",
+    "images": [
+      "img/tablets/xiaomi-pad-7-pro-green/00.webp",
+      "img/tablets/xiaomi-pad-7-pro-green/01.webp",
+      "img/tablets/xiaomi-pad-7-pro-green/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Stunning 11.2\" high-resolution display",
+        "text": [
+          "Xiaomi Pad 7 Pro features a sharp 11.2\" IPS display with a resolution of 3200x2136 and 344 ppi pixel density for crisp and vibrant visuals.",
+          "Ideal for multimedia, reading, and productivity."
+        ]
+      },
+      {
+        "title": "Flagship-level performance",
+        "text": [
+          "Powered by the Snapdragon 8s Gen 3 chipset with 8-core CPU running at up to 3GHz, paired with 8GB RAM and 256GB storage.",
+          "Delivers exceptional performance for gaming, multitasking, and creative apps."
+        ]
+      },
+      {
+        "title": "Pro-grade camera and fast charging",
+        "text": [
+          "Equipped with a 50MP main camera and a 32MP front camera for sharp photos and video calls.",
+          "Comes with an 8850mAh battery and 67W fast charging support for all-day power and quick top-ups."
+        ]
+      }
+    ],
+    "screen": "11.2' IPS",
+    "resolution": "3200x2136",
+    "processor": "Snapdragon 8s Gen 3",
+    "ram": "8GB",
+    "camera": "50MP + 32MP",
+    "zoom": "Digital zoom",
+    "cell": ["Wi-Fi", "Bluetooth"]
+  },
+
+  {
+    "id": "xiaomi-redmi-pad-pro-256gb-gray",
+    "category": "tablets",
+    "namespaceId": "xiaomi-redmi-pad-pro",
+    "name": "Xiaomi Redmi Pad Pro 256GB Mint Gray",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 399,
+    "priceDiscount": 299,
+    "colorsAvailable": ["gray", "blue", "green"],
+    "color": "gray",
+    "images": [
+      "img/tablets/xiaomi-redmi-pad-pro-gray/00.webp",
+      "img/tablets/xiaomi-redmi-pad-pro-gray/01.webp",
+      "img/tablets/xiaomi-redmi-pad-pro-gray/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Immersive 12.1\" display",
+        "text": [
+          "Enjoy a large 12.1\" LCD display with 2560x1600 resolution and 249 ppi for clear visuals and comfortable viewing.",
+          "Protected by Corning Gorilla Glass 3, perfect for work, study, or entertainment."
+        ]
+      },
+      {
+        "title": "Smooth performance and multitasking",
+        "text": [
+          "Powered by Snapdragon 7s Gen 2 and 8-core CPU with 8GB RAM and 256GB storage.",
+          "Supports microSD expansion up to 1TB and runs Android 14 for a fluid and optimized tablet experience."
+        ]
+      },
+      {
+        "title": "Big battery and fast charging",
+        "text": [
+          "Equipped with a 10000mAh battery that supports 33W fast charging via USB Type-C.",
+          "Stereo speakers, headphone jack, and modern sensors like accelerometer, compass, and ambient light sensor included."
+        ]
+      }
+    ],
+    "screen": "12.1' LCD",
+    "resolution": "2560x1600",
+    "processor": "Snapdragon 7s Gen 2",
+    "ram": "8GB",
+    "camera": "8MP + 8MP",
+    "zoom": "Digital zoom",
+    "cell": ["Wi-Fi", "Bluetooth"]
+  },
+
+  {
+    "id": "xiaomi-redmi-pad-pro-256gb-blue",
+    "category": "tablets",
+    "namespaceId": "xiaomi-redmi-pad-pro",
+    "name": "Xiaomi Redmi Pad Pro 256GB Mint Blue",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 399,
+    "priceDiscount": 299,
+    "colorsAvailable": ["gray", "blue", "green"],
+    "color": "blue",
+    "images": [
+      "img/tablets/xiaomi-redmi-pad-pro-blue/00.webp",
+      "img/tablets/xiaomi-redmi-pad-pro-blue/01.webp",
+      "img/tablets/xiaomi-redmi-pad-pro-blue/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Immersive 12.1\" display",
+        "text": [
+          "Enjoy a large 12.1\" LCD display with 2560x1600 resolution and 249 ppi for clear visuals and comfortable viewing.",
+          "Protected by Corning Gorilla Glass 3, perfect for work, study, or entertainment."
+        ]
+      },
+      {
+        "title": "Smooth performance and multitasking",
+        "text": [
+          "Powered by Snapdragon 7s Gen 2 and 8-core CPU with 8GB RAM and 256GB storage.",
+          "Supports microSD expansion up to 1TB and runs Android 14 for a fluid and optimized tablet experience."
+        ]
+      },
+      {
+        "title": "Big battery and fast charging",
+        "text": [
+          "Equipped with a 10000mAh battery that supports 33W fast charging via USB Type-C.",
+          "Stereo speakers, headphone jack, and modern sensors like accelerometer, compass, and ambient light sensor included."
+        ]
+      }
+    ],
+    "screen": "12.1' LCD",
+    "resolution": "2560x1600",
+    "processor": "Snapdragon 7s Gen 2",
+    "ram": "8GB",
+    "camera": "8MP + 8MP",
+    "zoom": "Digital zoom",
+    "cell": ["Wi-Fi", "Bluetooth"]
+  },
+
+  {
+    "id": "xiaomi-redmi-pad-pro-256gb-green",
+    "category": "tablets",
+    "namespaceId": "xiaomi-redmi-pad-pro",
+    "name": "Xiaomi Redmi Pad Pro 256GB Mint Green",
+    "capacityAvailable": ["256GB"],
+    "capacity": "256GB",
+    "priceRegular": 399,
+    "priceDiscount": 299,
+    "colorsAvailable": ["gray", "blue", "green"],
+    "color": "green",
+    "images": [
+      "img/tablets/xiaomi-redmi-pad-pro-green/00.webp",
+      "img/tablets/xiaomi-redmi-pad-pro-green/01.webp",
+      "img/tablets/xiaomi-redmi-pad-pro-green/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Immersive 12.1\" display",
+        "text": [
+          "Enjoy a large 12.1\" LCD display with 2560x1600 resolution and 249 ppi for clear visuals and comfortable viewing.",
+          "Protected by Corning Gorilla Glass 3, perfect for work, study, or entertainment."
+        ]
+      },
+      {
+        "title": "Smooth performance and multitasking",
+        "text": [
+          "Powered by Snapdragon 7s Gen 2 and 8-core CPU with 8GB RAM and 256GB storage.",
+          "Supports microSD expansion up to 1TB and runs Android 14 for a fluid and optimized tablet experience."
+        ]
+      },
+      {
+        "title": "Big battery and fast charging",
+        "text": [
+          "Equipped with a 10000mAh battery that supports 33W fast charging via USB Type-C.",
+          "Stereo speakers, headphone jack, and modern sensors like accelerometer, compass, and ambient light sensor included."
+        ]
+      }
+    ],
+    "screen": "12.1' LCD",
+    "resolution": "2560x1600",
+    "processor": "Snapdragon 7s Gen 2",
+    "ram": "8GB",
+    "camera": "8MP + 8MP",
+    "zoom": "Digital zoom",
+    "cell": ["Wi-Fi", "Bluetooth"]
+  },
+
+  {
+    "id": "samsung-galaxy-tab-s6-64gb-gray",
+    "category": "tablets",
+    "namespaceId": "samsung-galaxy-tab-s6",
+    "name": "Samsung Galaxy Tab S6 Lite 64GB Gray",
+    "capacityAvailable": ["64GB"],
+    "capacity": "64GB",
+    "priceRegular": 349,
+    "priceDiscount": 299,
+    "colorsAvailable": ["gray", "blue", "pink"],
+    "color": "gray",
+    "images": [
+      "img/tablets/samsung-galaxy-tab-s6-gray/00.webp",
+      "img/tablets/samsung-galaxy-tab-s6-gray/01.webp",
+      "img/tablets/samsung-galaxy-tab-s6-gray/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Compact and immersive display",
+        "text": [
+          "The 10.4\" WUXGA+ TFT display with 2000x1200 resolution delivers clear visuals and supports multitouch input for a smooth user experience.",
+          "Includes S Pen support for note-taking, drawing, and navigating with precision."
+        ]
+      },
+      {
+        "title": "Reliable performance and connectivity",
+        "text": [
+          "Powered by the Snapdragon 720G with 8-core CPU and Adreno 618 GPU, plus 4GB RAM and 64GB storage (expandable via microSD).",
+          "Stay connected with 4G LTE, Wi-Fi, Bluetooth, and GPS with GLONASS and A-GPS support."
+        ]
+      },
+      {
+        "title": "All-day battery and modern features",
+        "text": [
+          "7040mAh battery offers long-lasting usage with 15W fast charging. Ideal for work, study, and entertainment on the go.",
+          "Includes dual speakers by AKG, USB Type-C, 3.5mm audio jack, and comes with S Pen in the box."
+        ]
+      }
+    ],
+    "screen": "10.4' TFT",
+    "resolution": "2000x1200",
+    "processor": "Snapdragon 720G",
+    "ram": "4GB",
+    "camera": "8MP + 5MP",
+    "zoom": "Digital zoom",
+    "cell": ["2G", "3G", "4G", "Wi-Fi", "Bluetooth", "GPS"]
+  },
+
+  {
+    "id": "samsung-galaxy-tab-s6-64gb-blue",
+    "category": "tablets",
+    "namespaceId": "samsung-galaxy-tab-s6",
+    "name": "Samsung Galaxy Tab S6 Lite 64GB Blue",
+    "capacityAvailable": ["64GB"],
+    "capacity": "64GB",
+    "priceRegular": 349,
+    "priceDiscount": 299,
+    "colorsAvailable": ["gray", "blue", "pink"],
+    "color": "blue",
+    "images": [
+      "img/tablets/samsung-galaxy-tab-s6-blue/00.webp",
+      "img/tablets/samsung-galaxy-tab-s6-blue/01.webp",
+      "img/tablets/samsung-galaxy-tab-s6-blue/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Compact and immersive display",
+        "text": [
+          "The 10.4\" WUXGA+ TFT display with 2000x1200 resolution delivers clear visuals and supports multitouch input for a smooth user experience.",
+          "Includes S Pen support for note-taking, drawing, and navigating with precision."
+        ]
+      },
+      {
+        "title": "Reliable performance and connectivity",
+        "text": [
+          "Powered by the Snapdragon 720G with 8-core CPU and Adreno 618 GPU, plus 4GB RAM and 64GB storage (expandable via microSD).",
+          "Stay connected with 4G LTE, Wi-Fi, Bluetooth, and GPS with GLONASS and A-GPS support."
+        ]
+      },
+      {
+        "title": "All-day battery and modern features",
+        "text": [
+          "7040mAh battery offers long-lasting usage with 15W fast charging. Ideal for work, study, and entertainment on the go.",
+          "Includes dual speakers by AKG, USB Type-C, 3.5mm audio jack, and comes with S Pen in the box."
+        ]
+      }
+    ],
+    "screen": "10.4' TFT",
+    "resolution": "2000x1200",
+    "processor": "Snapdragon 720G",
+    "ram": "4GB",
+    "camera": "8MP + 5MP",
+    "zoom": "Digital zoom",
+    "cell": ["2G", "3G", "4G", "Wi-Fi", "Bluetooth", "GPS"]
+  },
+
+  {
+    "id": "samsung-galaxy-tab-s6-64gb-pink",
+    "category": "tablets",
+    "namespaceId": "samsung-galaxy-tab-s6",
+    "name": "Samsung Galaxy Tab S6 Lite 64GB Pink",
+    "capacityAvailable": ["64GB"],
+    "capacity": "64GB",
+    "priceRegular": 349,
+    "priceDiscount": 299,
+    "colorsAvailable": ["gray", "blue", "pink"],
+    "color": "pink",
+    "images": [
+      "img/tablets/samsung-galaxy-tab-s6-pink/00.webp",
+      "img/tablets/samsung-galaxy-tab-s6-pink/01.webp",
+      "img/tablets/samsung-galaxy-tab-s6-pink/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Compact and immersive display",
+        "text": [
+          "The 10.4\" WUXGA+ TFT display with 2000x1200 resolution delivers clear visuals and supports multitouch input for a smooth user experience.",
+          "Includes S Pen support for note-taking, drawing, and navigating with precision."
+        ]
+      },
+      {
+        "title": "Reliable performance and connectivity",
+        "text": [
+          "Powered by the Snapdragon 720G with 8-core CPU and Adreno 618 GPU, plus 4GB RAM and 64GB storage (expandable via microSD).",
+          "Stay connected with 4G LTE, Wi-Fi, Bluetooth, and GPS with GLONASS and A-GPS support."
+        ]
+      },
+      {
+        "title": "All-day battery and modern features",
+        "text": [
+          "7040mAh battery offers long-lasting usage with 15W fast charging. Ideal for work, study, and entertainment on the go.",
+          "Includes dual speakers by AKG, USB Type-C, 3.5mm audio jack, and comes with S Pen in the box."
+        ]
+      }
+    ],
+    "screen": "10.4' TFT",
+    "resolution": "2000x1200",
+    "processor": "Snapdragon 720G",
+    "ram": "4GB",
+    "camera": "8MP + 5MP",
+    "zoom": "Digital zoom",
+    "cell": ["2G", "3G", "4G", "Wi-Fi", "Bluetooth", "GPS"]
+  },
+
+  {
+    "id": "samsung-galaxy-tab-s9-128gb-gray",
+    "category": "tablets",
+    "namespaceId": "samsung-galaxy-tab-s9",
+    "name": "Samsung Galaxy Tab S9 FE+ 5G 128GB Gray",
+    "capacityAvailable": ["128GB"],
+    "capacity": "128GB",
+    "priceRegular": 599,
+    "priceDiscount": 499,
+    "colorsAvailable": ["gray", "green", "silver"],
+    "color": "gray",
+    "images": [
+      "img/tablets/samsung-galaxy-tab-s9-grey/00.webp",
+      "img/tablets/samsung-galaxy-tab-s9-grey/01.webp",
+      "img/tablets/samsung-galaxy-tab-s9-grey/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Large immersive display",
+        "text": [
+          "Experience your content on a vivid 12.4\" WQXGA display with a resolution of 2560x1600 and 90Hz refresh rate for smooth visuals.",
+          "With S Pen support and multitouch input, the screen is perfect for productivity, creativity, and entertainment."
+        ]
+      },
+      {
+        "title": "Reliable performance and connectivity",
+        "text": [
+          "Powered by the Exynos 1380 processor and 8GB RAM, the Tab S9 FE+ delivers smooth multitasking across apps, games, and more.",
+          "5G connectivity, dual SIM (nano + eSIM), GPS, Bluetooth 5.3, and Wi-Fi Direct keep you connected wherever you go."
+        ]
+      },
+      {
+        "title": "All-day power and durability",
+        "text": [
+          "A massive 10090mAh battery provides up to 20 hours of video playback and supports 45W fast charging.",
+          "With an aluminum body and IP68 water and dust resistance, the Tab S9 FE+ is built for every adventure."
+        ]
+      }
+    ],
+    "screen": "12.4' TFT",
+    "resolution": "2560x1600",
+    "processor": "Samsung Exynos 1380",
+    "ram": "8GB",
+    "camera": "8MP + 8MP",
+    "zoom": "Digital zoom",
+    "cell": ["2G", "3G", "4G", "5G", "Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
+    "id": "samsung-galaxy-tab-s9-128gb-green",
+    "category": "tablets",
+    "namespaceId": "samsung-galaxy-tab-s9",
+    "name": "Samsung Galaxy Tab S9 FE+ 5G 128GB Green",
+    "capacityAvailable": ["128GB"],
+    "capacity": "128GB",
+    "priceRegular": 599,
+    "priceDiscount": 499,
+    "colorsAvailable": ["gray", "green", "silver"],
+    "color": "green",
+    "images": [
+      "img/tablets/samsung-galaxy-tab-s9-green/00.webp",
+      "img/tablets/samsung-galaxy-tab-s9-green/01.webp",
+      "img/tablets/samsung-galaxy-tab-s9-green/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Large immersive display",
+        "text": [
+          "Experience your content on a vivid 12.4\" WQXGA display with a resolution of 2560x1600 and 90Hz refresh rate for smooth visuals.",
+          "With S Pen support and multitouch input, the screen is perfect for productivity, creativity, and entertainment."
+        ]
+      },
+      {
+        "title": "Reliable performance and connectivity",
+        "text": [
+          "Powered by the Exynos 1380 processor and 8GB RAM, the Tab S9 FE+ delivers smooth multitasking across apps, games, and more.",
+          "5G connectivity, dual SIM (nano + eSIM), GPS, Bluetooth 5.3, and Wi-Fi Direct keep you connected wherever you go."
+        ]
+      },
+      {
+        "title": "All-day power and durability",
+        "text": [
+          "A massive 10090mAh battery provides up to 20 hours of video playback and supports 45W fast charging.",
+          "With an aluminum body and IP68 water and dust resistance, the Tab S9 FE+ is built for every adventure."
+        ]
+      }
+    ],
+    "screen": "12.4' TFT",
+    "resolution": "2560x1600",
+    "processor": "Samsung Exynos 1380",
+    "ram": "8GB",
+    "camera": "8MP + 8MP",
+    "zoom": "Digital zoom",
+    "cell": ["2G", "3G", "4G", "5G", "Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
+    "id": "samsung-galaxy-tab-s9-128gb-silver",
+    "category": "tablets",
+    "namespaceId": "samsung-galaxy-tab-s9",
+    "name": "Samsung Galaxy Tab S9 FE+ 5G 128GB Silver",
+    "capacityAvailable": ["128GB"],
+    "capacity": "128GB",
+    "priceRegular": 599,
+    "priceDiscount": 499,
+    "colorsAvailable": ["gray", "green", "silver"],
+    "color": "silver",
+    "images": [
+      "img/tablets/samsung-galaxy-tab-s9-silver/00.webp",
+      "img/tablets/samsung-galaxy-tab-s9-silver/01.webp",
+      "img/tablets/samsung-galaxy-tab-s9-silver/02.webp"
+    ],
+    "description": [
+      {
+        "title": "Large immersive display",
+        "text": [
+          "Experience your content on a vivid 12.4\" WQXGA display with a resolution of 2560x1600 and 90Hz refresh rate for smooth visuals.",
+          "With S Pen support and multitouch input, the screen is perfect for productivity, creativity, and entertainment."
+        ]
+      },
+      {
+        "title": "Reliable performance and connectivity",
+        "text": [
+          "Powered by the Exynos 1380 processor and 8GB RAM, the Tab S9 FE+ delivers smooth multitasking across apps, games, and more.",
+          "5G connectivity, dual SIM (nano + eSIM), GPS, Bluetooth 5.3, and Wi-Fi Direct keep you connected wherever you go."
+        ]
+      },
+      {
+        "title": "All-day power and durability",
+        "text": [
+          "A massive 10090mAh battery provides up to 20 hours of video playback and supports 45W fast charging.",
+          "With an aluminum body and IP68 water and dust resistance, the Tab S9 FE+ is built for every adventure."
+        ]
+      }
+    ],
+    "screen": "12.4' TFT",
+    "resolution": "2560x1600",
+    "processor": "Samsung Exynos 1380",
+    "ram": "8GB",
+    "camera": "8MP + 8MP",
+    "zoom": "Digital zoom",
+    "cell": ["2G", "3G", "4G", "5G", "Wi-Fi", "Bluetooth", "GPS", "NFC"]
+  },
+
+  {
     "id": "apple-ipad-pro-11-2021-128gb-spacegray",
     "category": "tablets",
     "namespaceId": "apple-ipad-pro-11-2021",

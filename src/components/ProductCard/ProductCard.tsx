@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../index.css';
 import { ButtonHeart } from '../common/ButtonHeart';
 import type { Product } from '@/types';
 import { ButtonAddToCart } from '../common/ButtonAddToCart';
@@ -34,7 +33,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <div
       onClick={handleCardClick}
-      className=" bg-[#161827] cursor-pointer text-[#F1F2F9] h-[440px] sm:h-[506px] p-8 flex flex-col border border-transparent hover:border-[#323542]"
+      className=" bg-product-card-bg cursor-pointer text-[#F1F2F9] h-[440px] sm:h-[506px] p-8 flex flex-col border dark:border-transparent hover:border-[#323542]"
     >
       <div className="flex justify-center">
         <img

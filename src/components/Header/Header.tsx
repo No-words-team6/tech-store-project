@@ -6,19 +6,20 @@ import { MobileSidebar } from './MobileSidebar';
 
 import { useProductStore } from '@/stores/productStore';
 import { useTranslation } from 'react-i18next';
+import { ThemeToggle } from '../ThemeToggle';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
     isActive ?
-      'border-[#F1F2F9] text-[#F1F2F9]'
-    : 'border-transparent text-[#75767F] hover:text-[#F1F2F9]'
+      'border-link-hover-bg text-link-hover-bg'
+    : 'border-transparent text-link-text hover:text-link-hover-bg'
   }`;
 
 const iconLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `h-16 w-16 flex items-center justify-center group border border-[#323542] transition-colors ${
+  `h-16 w-16 flex items-center justify-center group border border-elements transition-colors ${
     isActive ?
-      'border-b-4 border-b-[#F1F2F9] text-[#F1F2F9]'
-    : 'text-[#75767F] hover:text-[#F1F2F9]'
+      'border-b-4 border-b-link-hover-bg text-link-hover-bg'
+    : 'text-link-text hover:text-link-hover-bg'
   }`;
 
 export const Header = () => {
@@ -36,10 +37,9 @@ export const Header = () => {
   }, 0);
 
   return (
-    <header className="back-color sticky top-0 z-50 w-full h-12 sm:h-16 shadow-[0_1px_0_0_#323542]">
+    <header className="bg-header-background sticky top-0 z-50 w-full h-12 sm:h-16 shadow-[0_1px_0_0_rgb(var(--elements))]">
       <div className="w-full pl-4 sm:pl-6 sm:pr-0 lg:pl-0 lg:pr-0">
         <div className="h-12 sm:h-16 flex items-center justify-between">
-          {/* Лого + навігація */}
           <div className="flex items-center gap-6 sm:gap-8">
             <NavLink to="/">
               <img src={logo} alt="Nice Gadgets" className="h-6 w-auto" />
@@ -61,9 +61,8 @@ export const Header = () => {
             </nav>
           </div>
 
-          {/* Іконки + бургер */}
           <div className="flex items-center sm:gap-2">
-            {/* Іконки */}
+            <ThemeToggle />
             <div className="hidden sm:flex">
               <NavLink
                 to="/favourites"
@@ -100,13 +99,12 @@ export const Header = () => {
               </NavLink>
             </div>
 
-            {/* Бургер */}
             <button
               className="sm:hidden mr-4"
               onClick={() => setIsSidebarOpen(true)}
               aria-label="Open mobile menu"
             >
-              <Menu className="w-6 h-6 text-[#F1F2F9]" />
+              <Menu className="w-6 h-6 text-burger-icon" />
             </button>
           </div>
         </div>
