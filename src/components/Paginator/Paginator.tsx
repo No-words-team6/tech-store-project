@@ -89,9 +89,9 @@ export const Paginator: React.FC<PaginatorProps> = ({
             : <PaginationLink
                 href="#breadcrumbId"
                 className={cn(
-                  'bg-white dark:bg-gray-800 hover:bg-gray-200 hover:dark:bg-gray-700 border-gray-200 border dark:border-transparent rounded-none',
+                  'text-button-paginator-text-color bg-button-paginator-bg border-1 border-button-paginator-border hover:bg-button-paginator-bg-hover hover:border-button-paginator-border-hover rounded-none',
                   {
-                    'bg-[#313237] hover:bg-[#313237] text-white hover:text-white dark:bg-purple-500 hover:dark:bg-purple-400':
+                    'bg-button-paginator-bg-selected text-button-paginator-text-color-selected border-button-paginator-border-selected hover:bg-button-paginator-bg-selected hover:text-button-paginator-text-color-selected':
                       currentPage === page,
                   },
                 )}

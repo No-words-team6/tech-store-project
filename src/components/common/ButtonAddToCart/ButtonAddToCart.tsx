@@ -21,19 +21,18 @@ export const ButtonAddToCart: React.FC<Props> = ({ product }) => {
       onClick={() => toggleCartProduct(product)}
       className={cn(
         'flex-1',
-        'bg-[#313237]',
-        'dark:bg-[#905BFF]',
-        'text-[#F1F2F9]',
+        'bg-add-to-cart-bg',
+        'text-add-to-cart-text-color',
         'h-[40px]',
         'text-sm',
         'font-bold',
-        'hover:bg-[#46484e]',
-        'dark:hover:bg-[#A378FF]',
+        'hover:drop-shadow-add-to-cart-drop-shadow',
+        'hover:bg-add-to-cart-bg-hover',
         'hover:cursor-pointer',
         'rounded-none',
         'truncate',
         {
-          'border border-[#E2E6E9] dark:border-transparent bg-transparent text-[#27AE60] hover:text-white dark:text-white dark:bg-[#323542]':
+          'bg-add-to-cart-bg-selected text-add-to-cart-text-color-selected':
             isInCart,
         },
       )}
