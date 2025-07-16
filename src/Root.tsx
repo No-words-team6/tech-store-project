@@ -17,9 +17,11 @@ import { CatalogPage } from './pages/CatalogPage';
 import { PhonesHeroPage } from './pages/PhonesHeroPage';
 import { TabletsHeroPage } from './pages/TabletsHeroPage';
 import { AccessoriesHeroPage } from './pages/AccessoriesHeroPage';
+import { ScrollToTop } from './components/common/ScrollToTop';
 
 export const Root = () => (
   <Router>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<HomePage />} />
@@ -27,23 +29,29 @@ export const Root = () => (
 
         <Route path="phones">
           <Route index element={<PhonesHeroPage />} />
-          <Route path="catalog" element={<CatalogPage />} />
-          <Route path="comparison" element={<ComparisonPage />} />
-          <Route path=":itemId" element={<ProductPage />} />
+          <Route path="catalog">
+            <Route index element={<CatalogPage />} />
+            <Route path="comparison" element={<ComparisonPage />} />
+            <Route path=":itemId" element={<ProductPage />} />
+          </Route>
         </Route>
 
         <Route path="tablets">
           <Route index element={<TabletsHeroPage />} />
-          <Route path="catalog" element={<CatalogPage />} />
-          <Route path="comparison" element={<ComparisonPage />} />
-          <Route path=":itemId" element={<ProductPage />} />
+          <Route path="catalog">
+            <Route index element={<CatalogPage />} />
+            <Route path="comparison" element={<ComparisonPage />} />
+            <Route path=":itemId" element={<ProductPage />} />
+          </Route>
         </Route>
 
         <Route path="accessories">
           <Route index element={<AccessoriesHeroPage />} />
-          <Route path="catalog" element={<CatalogPage />} />
-          <Route path="comparison" element={<ComparisonPage />} />
-          <Route path=":itemId" element={<ProductPage />} />
+          <Route path="catalog">
+            <Route index element={<CatalogPage />} />
+            <Route path="comparison" element={<ComparisonPage />} />
+            <Route path=":itemId" element={<ProductPage />} />
+          </Route>
         </Route>
 
         <Route path="favourites" element={<FavouritesPage />} />

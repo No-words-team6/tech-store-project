@@ -1,6 +1,6 @@
-import { GridContainer } from '@/components/GridContainer';
-import { PaddingContainer } from '@/components/PaddingContainer';
-import { WidthContainer } from '@/components/WidthContainer';
+import { GridContainer } from '@/components/containers/GridContainer';
+import { PaddingContainer } from '@/components/containers/PaddingContainer';
+import { WidthContainer } from '@/components/containers/WidthContainer';
 import { useProductStore } from '@/stores/productStore';
 import { useEffect, useState } from 'react';
 import { SliderComparison } from './components/SliderComparison';

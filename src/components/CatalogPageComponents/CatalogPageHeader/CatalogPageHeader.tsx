@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { WidthContainer } from '@/components/WidthContainer';
+import { WidthContainer } from '@/components/containers/WidthContainer';
 import { BreadcrumbNav } from '@/components/common/BreadcrumbNav';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
