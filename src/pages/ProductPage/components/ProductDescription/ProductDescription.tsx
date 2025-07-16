@@ -14,7 +14,7 @@ export const ProductDescription: React.FC<Props> = ({ item }) => {
             <h3 className="text-[16px] sm:text-xl font-bold mb-4">
               {partOfDescription.title}
             </h3>
-            <p className="text-sm font-semibold text-[#75767F]">
+            <p className="text-sm font-semibold text-[#919a9e] dark:text-[#75767F]">
               {partOfDescription.text}
             </p>
           </div>

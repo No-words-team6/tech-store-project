@@ -23,10 +23,10 @@ export const MainSliderSection: React.FC = () => {
 
   return (
     <section className="w-screen-1 bg-[#1F2128] relative flex flex-col">
-      <h1 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-extrabold text-[32px] sm:text-5xl z-10 mb-6 left-1/10 absolute top-1/10 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+      <h1 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-extrabold text-[32px] sm:text-5xl z-10 mb-6 left-1/10 absolute top-1/10 drop-shadow-[0_4px_6px_rgba(255,255,255,0.7)] dark:drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
         {t('welcome-text')}
       </h1>
-      <h2 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-extrabold text-[28px] sm:text-4xl z-10 mb-6 left-1/10 absolute top-3/4 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+      <h2 className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-extrabold text-[28px] sm:text-4xl z-10 mb-6 left-1/10 absolute top-3/4 drop-shadow-[0_4px_6px_rgba(255,255,255,0.7)] dark:drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
         {t(slides[activeIndex].titleKey)}
       </h2>
 

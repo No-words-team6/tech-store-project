@@ -31,7 +31,7 @@ export const CartPage = () => {
     <>
       <div className="max-w-[1200px] pt-[24px] pb-[80px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
         <NavBack />
-        <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 color-white font-mont font-bold text-[32px] sm:text-5xl leading-[56px]">
+        <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-bold text-[32px] sm:text-5xl leading-[56px]">
           {t('cart')}
         </h1>
 
@@ -51,7 +51,7 @@ export const CartPage = () => {
               to={'/'}
               className="col-span-2 sm:col-span-4 col-start-2 sm:col-start-5 xl:col-start-11 justify-self-stretch mt-2"
             >
-              <Button className="h-[48px] bg-[#905BFF] rounded-none w-full hover:cursor-pointer">
+              <Button className="h-[48px] bg-[#313237] dark:bg-[#905BFF] hover:bg-[#46484e] dark:hover:bg-[#A378FF] text-[#F1F2F9] rounded-none w-full hover:cursor-pointer">
                 {t('back-to-shopping')}
               </Button>
             </Link>
@@ -65,12 +65,12 @@ export const CartPage = () => {
                 return (
                   <div
                     key={product.id}
-                    className="flex flex-col sm:flex-row items-center justify-between bg-[#161827] p-6"
+                    className="flex flex-col sm:flex-row items-center justify-between border border-[#E2E6E9] dark:border-transparent bg-white dark:bg-[#161827] p-6"
                   >
                     <div className="w-full sm:w-auto flex items-center gap-6 min-w-0">
                       <div className="flex items-center gap-6">
                         <button
-                          className="text-white opacity-50 hover:opacity-100 w-6 h-6 flex items-center justify-center hover:cursor-pointer"
+                          className="text-black dark:text-white opacity-50 hover:opacity-100 w-6 h-6 flex items-center justify-center hover:cursor-pointer"
                           onClick={() => handleDelete(product)}
                         >
                           ✕
@@ -84,7 +84,7 @@ export const CartPage = () => {
                         </div>
                       </div>
                       <div className="flex-grow min-w-0">
-                        <p className="font-mont text-[14px] text-white">
+                        <p className="font-mont text-[14px] text-link-hover-bg dark:text-dark-link-hover-bg">
                           {product.name}
                         </p>
                       </div>
@@ -99,7 +99,7 @@ export const CartPage = () => {
                           -
                         </Button>
 
-                        <span className="w-[32px] font-mont text-[14px] text-white flex items-center justify-center">
+                        <span className="w-[32px] font-mont text-[14px] text-link-hover-bg dark:text-dark-link-hover-bg flex items-center justify-center">
                           {product.quantity}
                         </span>
 
@@ -110,7 +110,7 @@ export const CartPage = () => {
                           +
                         </Button>
                       </div>
-                      <h3 className="font-mont font-extrabold text-[22px] text-white">
+                      <h3 className="font-mont font-extrabold text-[22px] text-link-hover-bg dark:text-dark-link-hover-bg">
                         {`$${product.price}`}
                       </h3>
                     </div>
@@ -121,8 +121,8 @@ export const CartPage = () => {
 
             <div className="border border-[#3B3E4A] col-span-4 sm:col-span-12 xl:col-span-8 p-[24px] flex flex-col gap-y-[24px] self-start">
               <div className="flex flex-col items-center justify-center">
-                <h3 className="font-mont font-bold text-white text-[32px]">{`$${totalAmount}`}</h3>
-                <p className="font-mont text-[14px] text-white">
+                <h3 className="font-mont font-bold text-link-hover-bg dark:text-dark-link-hover-bg text-[32px]">{`$${totalAmount}`}</h3>
+                <p className="font-mont text-[14px] text-link-hover-bg dark:text-dark-link-hover-bg">
                   {t('total-for')}
                   {totalItems === 1 ?
                     ` ${totalItems} ${t('item')}`

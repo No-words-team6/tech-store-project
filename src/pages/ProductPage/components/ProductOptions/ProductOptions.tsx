@@ -65,32 +65,32 @@ export const ProductOptions: React.FC<Props> = ({
         className="
           col-span-4 sm:col-span-5 xl:col-span-12
           flex justify-between items-center
-          font-bold text-[#75767F] text-xs
+          font-bold text-[#919a9e] dark:text-[#75767F] text-xs
         "
       >
         <p>{t('Available-colors')}</p>
-        <span className="text-[#4A4D58]">ID: {product?.id}</span>
+        <span>ID: {product?.id}</span>
       </div>
 
       <div className="col-span-4 sm:col-span-5 xl:col-span-7 flex flex-col gap-y-6 pt-2 xl:pt-0">
         <ColorsSwitcher item={item} onColorClick={handleColorClick} />
 
-        <hr className="w-full border-t border-[#3B3E4A]" />
+        <hr className="w-full border-t border-[#E2E6E9] dark:border-[#3B3E4A]" />
 
-        <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#75767F]">
+        <div className="flex flex-col gap-y-[8px] text-xs font-bold text-[#919a9e] dark:text-[#75767F]">
           <p>{t('Select-capacity')}</p>
           <CapacitySwitcher item={item} onCapacityClick={handleCapacityClick} />
         </div>
 
-        <hr className="w-full border-t border-[#3B3E4A]" />
+        <hr className="w-full border-t border-[#E2E6E9] dark:border-[#3B3E4A]" />
       </div>
 
       <div className="col-span-4 sm:col-span-5 xl:col-span-7 flex flex-col gap-y-[16px]">
         <div className="flex gap-x-[8px] items-center">
-          <p className="text-[#F1F2F9] text-[32px] font-extrabold">
+          <p className="text-link-hover-bg dark:text-dark-link-hover-bg text-[32px] font-extrabold">
             ${item.priceDiscount}
           </p>
-          <p className="text-[#75767F] line-through text-[22px]">
+          <p className="text-[#919a9e] dark:text-[#75767F] line-through text-[22px]">
             ${item.priceRegular}
           </p>
         </div>
@@ -103,11 +103,13 @@ export const ProductOptions: React.FC<Props> = ({
         )}
       </div>
 
-      <div className="col-span-4 sm:col-span-5 xl:col-span-7 text-xs text-[#75767F] font-bold mt-4">
+      <div className="col-span-4 sm:col-span-5 xl:col-span-7 text-xs text-[#919a9e] dark:text-[#75767F] font-bold mt-4">
         {specs.map(({ label, value }) => (
           <div key={label} className="pb-2 flex justify-between">
             <span>{label}</span>
-            <span className="text-[#F1F2F9]">{value}</span>
+            <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+              {value}
+            </span>
           </div>
         ))}
       </div>

@@ -10,42 +10,54 @@ export const ProductSpecs: React.FC<Props> = ({ item }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="text-sm text-[#75767F] font-semibold ">
+    <div className="text-sm text-[#919a9e] dark:text-[#75767F] font-semibold ">
       <div className="pb-2 flex justify-between">
         <span>{t('Screen')}</span>
 
-        <span className="text-[#F1F2F9]">{item.screen}</span>
+        <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+          {item.screen}
+        </span>
       </div>
 
       <div className="pb-2 flex justify-between">
         <span>{t('Resolution')}</span>
 
-        <span className="text-[#F1F2F9]">{item.resolution}</span>
+        <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+          {item.resolution}
+        </span>
       </div>
 
       <div className="pb-2 flex justify-between">
         <span>{t('Processor')}</span>
 
-        <span className="text-[#F1F2F9]">{item.processor}</span>
+        <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+          {item.processor}
+        </span>
       </div>
 
       <div className="pb-2 flex justify-between">
         <span>{t('RAM')}</span>
 
-        <span className="text-[#F1F2F9]">{item.ram}</span>
+        <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+          {item.ram}
+        </span>
       </div>
 
       <div className="pb-2 flex justify-between">
         <span>{t('Built-in-memory')}</span>
 
-        <span className="text-[#F1F2F9]">{item.capacity}</span>
+        <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+          {item.capacity}
+        </span>
       </div>
 
       {item.camera && (
         <div className="pb-2 flex justify-between">
           <span>{t('Camera')}</span>
 
-          <span className="text-[#F1F2F9]">{item.camera}</span>
+          <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+            {item.camera}
+          </span>
         </div>
       )}
 
@@ -53,14 +65,18 @@ export const ProductSpecs: React.FC<Props> = ({ item }) => {
         <div className="pb-2 flex justify-between">
           <span>{t('Zoom')}</span>
 
-          <span className="text-[#F1F2F9]">{item.zoom}</span>
+          <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+            {item.zoom}
+          </span>
         </div>
       )}
 
       <div className="pb-2 flex justify-between">
         <span>{t('Cell')}</span>
 
-        <span className="text-[#F1F2F9]">{item.cell.join(', ')}</span>
+        <span className="text-link-hover-bg dark:text-dark-link-hover-bg">
+          {item.cell.join(', ')}
+        </span>
       </div>
     </div>
   );

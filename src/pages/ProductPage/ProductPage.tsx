@@ -101,7 +101,7 @@ export const ProductPage = () => {
 
           {!isLoading && currentItem && (
             <div className="col-span-4 sm:col-span-12 xl:col-span-24">
-              <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 font-mont font-bold text-white text-4xl mb-[40px]">
+              <h1 className="col-span-4 sm:col-span-12 xl:col-span-24 font-mont font-bold text-link-hover-bg dark:text-dark-link-hover-bg text-4xl mb-[40px]">
                 {currentItem.name}
               </h1>
               <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] gap-y-[56px] sm:gap-y-[64px] xl:gap-y-[80px]">
@@ -121,13 +121,13 @@ export const ProductPage = () => {
                   />
                 </div>
 
-                <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] text-[#F1F2F9]">
+                <div className="col-span-4 sm:col-span-12 xl:col-span-24 grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 gap-x-[16px] text-link-hover-bg dark:text-dark-link-hover-bg">
                   <div className="col-span-4 sm:col-span-12 xl:col-span-12 flex flex-col gap-y-8">
                     <div>
                       <h2 className="text-[20px] sm:text-[22px] font-extrabold">
                         {t('About')}
                       </h2>
-                      <hr className="mt-4 w-full border-t border-[#3B3E4A]" />
+                      <hr className="mt-4 w-full border-t border-[#E2E6E9] dark:border-[#3B3E4A]" />
                     </div>
 
                     <ProductDescription item={currentItem} />
@@ -138,7 +138,7 @@ export const ProductPage = () => {
                       <h2 className="text-[22px] font-extrabold">
                         {t('Tech-specs')}
                       </h2>
-                      <hr className="mt-4 mb-[25px] w-full border-t border-[#3B3E4A]" />
+                      <hr className="mt-4 mb-[25px] w-full border-t border-[#E2E6E9] dark:border-[#3B3E4A]" />
                     </div>
 
                     <ProductSpecs item={currentItem} />

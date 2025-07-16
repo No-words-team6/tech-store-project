@@ -17,7 +17,7 @@ export const ContactsPage = () => {
 
             <div
               id="contact-page"
-              className="col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-12 min-h-screen text-[#F1F2F9]"
+              className="col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-12 min-h-screen text-link-hover-bg dark:text-dark-link-hover-bg"
             >
               <h1 className="text-2xl sm:text-4xl font-mont text-center">
                 {t('team-nemasliv')}
@@ -38,10 +38,10 @@ export const ContactsPage = () => {
                     <h2 className="text-lg font-[montBold] mb-2">
                       {t(member.nameKey)}
                     </h2>
-                    <h3 className="text-sm text-[#A0A3BD] mb-1">
+                    <h3 className="text-sm text-[#919a9e] dark:text-[#75767F] mb-1">
                       {t(member.positionKey)}
                     </h3>
-                    <p className="text-sm text-[#C1C2C7] mb-2">
+                    <p className="text-sm text-[#919a9e] dark:text-[#75767F] mb-2">
                       {t(member.descriptionKey)}
                     </p>
                     <div className="flex gap-4 text-xl mt-2">
@@ -49,7 +49,7 @@ export const ContactsPage = () => {
                         href={member.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#F1F2F9] hover:text-[#905BFF]"
+                        className="text-link-hover-bg dark:text-dark-link-hover-bg hover:text-[#905BFF]"
                       >
                         GitHub
                       </a>
@@ -57,7 +57,7 @@ export const ContactsPage = () => {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#F1F2F9] hover:text-[#905BFF]"
+                        className="text-link-hover-bg dark:text-dark-link-hover-bg hover:text-[#905BFF]"
                       >
                         LinkedIn
                       </a>

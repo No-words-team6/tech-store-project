@@ -20,9 +20,10 @@ export const ButtonHeart: React.FC<ButtonHeartProps> = ({ product }) => {
   return (
     <Button
       className={cn(
-        'w-10 h-10 flex items-center justify-center hover:cursor-pointer rounded-none bg-[#323542] hover:bg-[#4A4D58]',
+        'w-10 h-10 flex items-center justify-center hover:cursor-pointer rounded-none bg-transparent dark:bg-[#323542] text-[#313237] dark:text-white border-2 border-[#B4BDC3] dark:border-transparent hover:border-[#313237] dark:hover:bg-[#4A4D58]',
         {
-          'bg-gray-800 border-gray-600 border-2': isInFavorites,
+          'bg-transparent dark:bg-gray-800 border-[#E2E6E9] dark:border-gray-600 border-2':
+            isInFavorites,
         },
       )}
       onClick={() => toggleFavouriteProduct(product)}
