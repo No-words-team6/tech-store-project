@@ -33,7 +33,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <div
       onClick={handleCardClick}
-      className=" bg-product-card-bg cursor-pointer text-[#F1F2F9] h-[440px] sm:h-[506px] p-8 flex flex-col border dark:border-transparent hover:border-[#323542]"
+      className=" bg-product-card-bg cursor-pointer text-[#F1F2F9] h-[440px] sm:h-[506px] p-8 flex flex-col border-2 border-product-card-border hover:border-product-card-border-hover hover:drop-shadow-product-card-drop-shadow"
     >
       <div className="flex justify-center">
         <img

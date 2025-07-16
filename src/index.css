@@ -34,8 +34,47 @@ body {
   --dark-link-text: 117, 118, 127;
   --dark-link-hover-bg: 241, 242, 249;
   --burger-icon: 49, 50, 55; /*#313237 */
+
   --product-card-bg: 255, 255, 255; /*#FFFFFF */
   --product-card-border: 226, 230, 233; /*#E2E6E9 */
+  --product-card-border-hover: 226, 230, 233;
+  --product-card-drop-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+
+  --add-to-cart-bg: 49, 50, 55;
+  --add-to-cart-bg-hover: 49, 50, 55;
+  --add-to-cart-bg-selected: 226, 230, 233;
+  --add-to-cart-text-color-selected: 39, 174, 96;
+  --add-to-cart-drop-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
+
+  --button-heart-text-color: 49, 50, 55;
+  --button-heart-bg: 255, 255, 255;
+  --button-heart-bg-hover: 255, 255, 255;
+  --button-heart-border: 180, 189, 195;
+  --button-heart-border-hover: 49, 50, 55;
+  --button-heart-bg-selected: 255, 255, 255;
+  --button-heart-border-selected: 226, 230, 233;
+  --button-heart-text-color-selected: 235, 87, 87;
+
+  --button-arrow-text-color: 49, 50, 55;
+  --button-arrow-bg: 255, 255, 255;
+  --button-arrow-bg-hover: 255, 255, 255;
+  --button-arrow-border: 180, 189, 195;
+  --button-arrow-border-hover: 49, 50, 55;
+  --button-arrow-bg-disabled: 255, 255, 255;
+  --button-arrow-border-disabled: 226, 230, 233;
+  --button-arrow-text-color-disabled: 180, 189, 195;
+
+  --button-page-text-color: 0, 0, 0;
+  --button-page-bg: 255, 255, 255;
+  --button-page-bg-hover: 255, 255, 255;
+  --button-page-border: 226, 230, 233;
+  --button-page-border-hover: 49, 50, 55;
+  --button-page-bg-selected: 49, 50, 55;
+  --button-page-border-selected: 49, 50, 55;
+  --button-page-text-color-selected: 255, 255, 255;
+
+  --breadcrumb-color: 137, 147, 154;
+  --breadcrumb-color-hover: 49, 50, 55;
 }
 
 .dark {
@@ -43,8 +82,50 @@ body {
   --header-elements: 59, 62, 74; /*#3B3E4A */
   --link-text: 117, 118, 127;
   --link-hover-bg: 241, 242, 249;
+  --dark-link-text: 117, 118, 127;
+  --dark-link-hover-bg: 241, 242, 249;
   --burger-icon: 241, 242, 249; /*#F1F2F9 */
+
   --product-card-bg: 22, 24, 39; /*#161827 */
+  --product-card-border: 22, 24, 39;
+  --product-card-border-hover: 50, 53, 66;
+  --product-card-drop-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  --add-to-cart-bg: 144, 91, 255;
+  --add-to-cart-bg-hover: 163, 120, 255;
+  --add-to-cart-bg-selected: 50, 53, 66;
+  --add-to-cart-text-color-selected: 241, 242, 249;
+  --add-to-cart-drop-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  --button-heart-text-color: 241, 242, 249;
+  --button-heart-bg: 50, 53, 66;
+  --button-heart-bg-hover: 74, 77, 88;
+  --button-heart-border: 50, 53, 66;
+  --button-heart-border-hover: 74, 77, 88;
+  --button-heart-bg-selected: 59, 62, 74;
+  --button-heart-border-selected: 59, 62, 74;
+  --button-heart-text-color-selected: 235, 87, 87;
+
+  --button-arrow-text-color: 241, 242, 249;
+  --button-arrow-bg: 50, 53, 66;
+  --button-arrow-bg-hover: 74, 77, 88;
+  --button-arrow-border: 50, 53, 66;
+  --button-arrow-border-hover: 74, 77, 88;
+  --button-arrow-bg-disabled: 15, 17, 33;
+  --button-arrow-border-disabled: 59, 62, 74;
+  --button-arrow-text-color-disabled: 74, 77, 88;
+
+  --button-page-text-color: 241, 242, 249;
+  --button-page-bg: 22, 24, 39;
+  --button-page-bg-hover: 59, 62, 74;
+  --button-page-border: 22, 24, 39;
+  --button-page-border-hover: 59, 62, 74;
+  --button-page-bg-selected: 144, 91, 255;
+  --button-page-border-selected: 144, 91, 255;
+  --button-page-text-color-selected: 241, 242, 249;
+
+  --breadcrumb-color: 241, 242, 249;
+  --breadcrumb-color-hover: 144, 91, 255;
 }
 
 @theme inline {
