@@ -53,12 +53,17 @@ module.exports = {
           '50%': { transform: 'rotateY(90deg) skewY(-20deg)' },
           '100%': { transform: 'rotateY(180deg) skewY(0deg)' },
         },
+        'slide-up': {
+          '0%': { transform: 'translateY(300%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'caret-blink': 'caret-blink 1.25s ease-out infinite',
         'paging': 'paging 0.2s linear infinite',
+        'slide-up': 'slide-up 0.4s ease-out 0.5s forwards',
       },
     },
   },
