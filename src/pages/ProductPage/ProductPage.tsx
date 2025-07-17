@@ -16,8 +16,20 @@ import { useTranslation } from 'react-i18next';
 import { getProductById, getProducts } from '@/api';
 import { useProductPageStore } from '@/stores/productPageStore';
 
-const prepareRecomendationList = (data: Product[], limit: number) => {
-  return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
+const prepareRecomendationList = (
+  data: Product[],
+  limit: number,
+  currentCategory: Category,
+  currentPrice: number,
+  priceSpread: number = 20,
+) => {
+  const filtered = data.filter(
+    (p) =>
+      p.category === currentCategory &&
+      Math.abs(p.price - currentPrice) <= priceSpread,
+  );
+
+  return [...filtered].sort(() => 0.5 - Math.random()).slice(0, limit);
 };
 
 export const ProductPage = () => {
@@ -40,9 +52,17 @@ export const ProductPage = () => {
   const reccomendationsList = useMemo(() => {
     if (!currentItem || !data.length) return [];
 
+    const currentPrice =
+      typeof currentItem.priceDiscount === 'number' ?
+        currentItem.priceDiscount
+      : currentItem.priceRegular;
+
     return prepareRecomendationList(
       data.filter((p) => p.itemId !== currentItem.id),
       10,
+      currentItem.category,
+      currentPrice,
+      30,
     );
   }, [currentItem?.namespaceId, data]);
 
