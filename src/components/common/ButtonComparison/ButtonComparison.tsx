@@ -11,14 +11,16 @@ export const ButtonComparison = () => {
 
   return (
     <div className="col-span-4 sm:col-span-6 xl:col-span-3 mt-4 sm:mt-0 order-last sm:order-2 xl:order-last">
-      <p className="font-mont text-xs text-[#919a9e] dark:text-[#75767F]">
+      <p className="font-mont text-xs text-drop-description-text-color">
         {t('comparison')}
       </p>
       <Button
         onClick={() => navigation(`/${category}/catalog/comparison`)}
-        className="flex items-center text-link-hover-bg dark:text-dark-link-hover-bg
-            bg-white border border-[#B4BDC3] dark:border-none
-            dark:bg-gray-700 h-9 px-3 py-2 rounded-none hover:bg-gray-200 dark:hover:bg-gray-600 hover:cursor-pointer w-full"
+        className="flex items-center 
+            text-button-omparison-text-color
+            bg-button-omparison-bg hover:bg-button-omparison-bg-hover
+            border-2 border-button-omparison-border hover:border-button-omparison-border-hover
+            hover:cursor-pointer w-full"
       >
         {t('compare')}
       </Button>

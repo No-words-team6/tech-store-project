@@ -60,7 +60,11 @@ export const CartPage = () => {
               to={'/'}
               className="col-span-2 sm:col-span-4 col-start-2 sm:col-start-5 xl:col-start-11 justify-self-stretch mt-2"
             >
-              <Button className="h-[48px] bg-[#313237] dark:bg-[#905BFF] hover:bg-[#46484e] dark:hover:bg-[#A378FF] text-[#F1F2F9] rounded-none w-full hover:cursor-pointer">
+              <Button
+                className="h-[48px] 
+                bg-[#313237] dark:bg-[#905BFF] hover:bg-[#46484e] dark:hover:bg-[#A378FF] 
+                text-[#F1F2F9] rounded-none w-full hover:cursor-pointer"
+              >
                 {t('back-to-shopping')}
               </Button>
             </Link>
@@ -103,7 +107,11 @@ export const CartPage = () => {
                       <div className="flex h-[32px]">
                         <Button
                           onClick={() => decreaseQuantity(product.itemId)}
-                          className="w-[32px] bg-[#323542] rounded-none h-[32px] hover:cursor-pointer"
+                          className="w-[32px] h-[32px] border-1
+                            bg-button-arrow-bg hover:bg-button-arrow-bg-hover
+                            text-button-arrow-text-color
+                            border-button-arrow-border hover:border-button-arrow-border-hover
+                            rounded-none hover:cursor-pointer"
                         >
                           -
                         </Button>
@@ -114,7 +122,11 @@ export const CartPage = () => {
 
                         <Button
                           onClick={() => increaseQuantity(product.itemId)}
-                          className="w-[32px] h-[32px] bg-[#323542] rounded-none hover:cursor-pointer"
+                          className="w-[32px] h-[32px] border-1
+                            bg-button-arrow-bg hover:bg-button-arrow-bg-hover
+                            text-button-arrow-text-color
+                            border-button-arrow-border hover:border-button-arrow-border-hover
+                            rounded-none hover:cursor-pointer"
                         >
                           +
                         </Button>
@@ -128,7 +140,7 @@ export const CartPage = () => {
               })}
             </div>
 
-            <div className="border border-[#3B3E4A] col-span-4 sm:col-span-12 xl:col-span-8 p-[24px] flex flex-col gap-y-[24px] self-start">
+            <div className="border border-[#E2E6E9] dark:border-[#3b3e4a] col-span-4 sm:col-span-12 xl:col-span-8 p-[24px] flex flex-col gap-y-[24px] self-start">
               <div className="flex flex-col items-center justify-center">
                 <h3 className="font-mont font-bold text-link-hover-bg dark:text-dark-link-hover-bg text-[32px]">{`$${totalAmount}`}</h3>
                 <p className="font-mont text-[14px] text-link-hover-bg dark:text-dark-link-hover-bg">
@@ -138,10 +150,14 @@ export const CartPage = () => {
                   : ` ${totalItems} ${t('items')}`}
                 </p>
               </div>
-              <hr className="w-full border-t border-[#3B3E4A]" />
+              <hr className="w-full border-t border-[#E2E6E9] dark:border-[#3b3e4a]" />
               <Button
                 onClick={() => setShowModal(true)}
-                className="h-[48px] bg-[#905BFF] rounded-none hover:cursor-pointer"
+                className="h-[48px]
+                  bg-cart-checkout-bg hover:bg-cart-checkout-bg-hover
+                  text-cart-checkout-text-color
+                  hover:drop-shadow-cart-checkout-drop-shadow
+                  rounded-none hover:cursor-pointer"
               >
                 {t('checkout')}
               </Button>
