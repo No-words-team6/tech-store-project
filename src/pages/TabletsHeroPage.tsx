@@ -3,6 +3,9 @@ import { CatalogPageRecomendationsSection } from '@/components/CatalogPageCompon
 import { BrandSelectSection } from '@/components/CatalogPageComponents/BrandSelectSection';
 import { useTranslation } from 'react-i18next';
 import { useThemeStore } from '@/hooks/useThemeStore';
+import { Loader } from '@/components/common/Loader';
+import { useEffect } from 'react';
+import { useProductStore } from '@/stores/productStore';
 
 const videoSourcesDark = [
   '/videos/tabletsBanner-1.mp4',
@@ -60,6 +63,13 @@ export const TabletsHeroPage = () => {
 
   const selectedVideoSources = isDark ? videoSourcesDark : videoSourcesLight;
 
+  const isLoading = useProductStore((state) => state.isLoading);
+  const startFakeLoading = useProductStore((state) => state.startFakeLoading);
+
+  useEffect(() => {
+    startFakeLoading();
+  }, [startFakeLoading]);
+
   return (
     <>
       <CatalogPageHeader
@@ -71,6 +81,8 @@ export const TabletsHeroPage = () => {
       <CatalogPageRecomendationsSection carouselItems={tablets} />
 
       <BrandSelectSection brandImageSources={brands} />
+
+      {isLoading && <Loader />}
     </>
   );
 };

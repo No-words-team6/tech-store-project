@@ -3,6 +3,9 @@ import { CatalogPageRecomendationsSection } from '@/components/CatalogPageCompon
 import { useTranslation } from 'react-i18next';
 import { BrandSelectSectionAccessories } from '@/components/CatalogPageComponents/BrandSelectSection/BrandSelectSectionAccessories';
 import { useThemeStore } from '@/hooks/useThemeStore';
+import { Loader } from '@/components/common/Loader';
+import { useEffect } from 'react';
+import { useProductStore } from '@/stores/productStore';
 
 const videoSourcesDark = [
   '/videos/watchesBanner-1.mp4',
@@ -59,6 +62,13 @@ export const AccessoriesHeroPage = () => {
 
   const selectedVideoSources = isDark ? videoSourcesDark : videoSourcesLight;
 
+  const isLoading = useProductStore((state) => state.isLoading);
+  const startFakeLoading = useProductStore((state) => state.startFakeLoading);
+
+  useEffect(() => {
+    startFakeLoading();
+  }, [startFakeLoading]);
+
   return (
     <>
       <CatalogPageHeader
@@ -70,6 +80,8 @@ export const AccessoriesHeroPage = () => {
       <CatalogPageRecomendationsSection carouselItems={smartwatches} />
 
       <BrandSelectSectionAccessories brandImageSources={brands} />
+
+      {isLoading && <Loader />}
     </>
   );
 };

@@ -5,17 +5,15 @@ import './MainSlider.css';
 import { Link } from 'react-router-dom';
 
 const slidesDark = [
-  { src: '/img/main-banner-phones.png', link: '/phones' },
   { src: '/img/banner-phones.png', link: '/phones' },
   { src: '/img/banner-tablets.png', link: '/tablets' },
   { src: '/img/banner-accessories.png', link: '/accessories' },
 ];
 
 const slidesLight = [
-  { src: '/img/main-banner-phones.png', link: '/phones' },
   { src: '/img/banner-phones-light.png', link: '/phones' },
   { src: '/img/banner-tablets-light.png', link: '/tablets' },
-  { src: '/img/banner-accessories.png', link: '/accessories' },
+  { src: '/img/banner-accessories-light.png', link: '/accessories' },
 ];
 
 type Props = {
