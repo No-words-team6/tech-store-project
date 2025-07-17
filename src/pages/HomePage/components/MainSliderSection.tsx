@@ -5,7 +5,6 @@ import { MainSlider } from './MainSlider/MainSlider';
 import { useTranslation } from 'react-i18next';
 
 const slides = [
-  { titleKey: 'latest-phones' },
   { titleKey: 'new-phones' },
   { titleKey: 'top-tablets' },
   { titleKey: 'must-have-accessories' },
