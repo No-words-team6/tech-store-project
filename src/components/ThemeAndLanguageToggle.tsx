@@ -1,7 +1,7 @@
 import { useThemeStore } from '@/hooks/useThemeStore';
 import { useProductStore } from '@/stores/productStore';
 import { useEffect, useState } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const ThemeAndLanguageToggle = () => {
@@ -49,8 +49,8 @@ export const ThemeAndLanguageToggle = () => {
     transition-colors"
       >
         {isDark ?
-          <EyeOff className="text-link-text group-hover:text-link-hover-bg" />
-        : <Eye className="text-link-text group-hover:text-link-hover-bg" />}
+          <Moon className="text-link-text group-hover:text-link-hover-bg" />
+        : <Sun className="text-link-text group-hover:text-link-hover-bg" />}
       </button>
 
       <button
