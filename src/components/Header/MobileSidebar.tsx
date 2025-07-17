@@ -48,7 +48,7 @@ export const MobileSidebar = ({
 
   return (
     <div
-      className={`fixed top-0 right-0 h-full w-full bg-header-background z-[20] transform transition-transform duration-300 sm:hidden ${
+      className={`fixed top-0 right-0 h-full w-full bg-header-background z-[20] transform transition-transform duration-300 md:hidden ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
@@ -60,7 +60,7 @@ export const MobileSidebar = ({
               <Link
                 to="/"
                 onClick={onClose}
-                className="flex-1 flex items-center h-full px-4 border-r border-elements"
+                className="flex-1 flex items-center h-full px-4"
               >
                 <img
                   src={dlogo}
@@ -79,7 +79,7 @@ export const MobileSidebar = ({
                 <button
                   onClick={onClose}
                   aria-label="Close menu"
-                  className="w-12 h-full flex items-center justify-center text-burger-icon"
+                  className="w-10 h-full flex items-center justify-center text-burger-icon"
                 >
                   <X className="w-6 h-6" />
                 </button>
