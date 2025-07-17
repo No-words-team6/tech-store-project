@@ -17,7 +17,7 @@ export const ContactsPage = () => {
 
             <div
               id="contact-page"
-              className="font-mont col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-1 min-h-screen text-link-hover-bg dark:text-dark-link-hover-bg"
+              className="font-mont col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-6 text-link-hover-bg dark:text-dark-link-hover-bg"
             >
               <h1 className="text-2xl sm:text-4xl font-mont text-center font-bold">
                 {t('team-nemasliv')}
