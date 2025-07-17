@@ -23,11 +23,19 @@ const prepareRecomendationList = (
   currentPrice: number,
   priceSpread: number = 20,
 ) => {
-  const filtered = data.filter(
+  let filtered = data.filter(
     (p) =>
       p.category === currentCategory &&
       Math.abs(p.price - currentPrice) <= priceSpread,
   );
+
+  if (filtered.length < 4) {
+    filtered = data.filter(
+      (p) =>
+        p.category === currentCategory &&
+        Math.abs(p.price - currentPrice) <= 100,
+    );
+  }
 
   return [...filtered].sort(() => 0.5 - Math.random()).slice(0, limit);
 };
