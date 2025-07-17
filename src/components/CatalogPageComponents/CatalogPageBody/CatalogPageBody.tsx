@@ -12,6 +12,7 @@ import { ErrorPage } from '@/pages/ErrorPage';
 import { GridContainer } from '@/components/containers/GridContainer';
 import { PaddingContainer } from '@/components/containers/PaddingContainer';
 import { WidthContainer } from '@/components/containers/WidthContainer';
+import { Loader } from '@/components/common/Loader';
 
 const allowedCategories = ['phones', 'tablets', 'accessories'] as const;
 type Category = (typeof allowedCategories)[number];
@@ -106,22 +107,20 @@ export const CatalogPageBody = () => {
 
           <CatalogBar />
 
-          {!isLoading && (
-            <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
-              {visibleItems.map((product) => (
-                <div className="col-span-4 sm:col-span-6" key={product.id}>
-                  <ProductCard product={product} />
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
+            {visibleItems.map((product) => (
+              <div className="col-span-4 sm:col-span-6" key={product.id}>
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
 
-          {!isLoading && (
-            <Paginator
-              quantityPages={numberOfPages}
-              currentPage={+selectedPage}
-            />
-          )}
+          <Paginator
+            quantityPages={numberOfPages}
+            currentPage={+selectedPage}
+          />
+
+          {isLoading && <Loader />}
         </GridContainer>
       </PaddingContainer>
     </WidthContainer>

@@ -97,7 +97,7 @@ export const CatalogPageRecomendationsSection: React.FC<Props> = ({
                   key={carouselItems[currentIndex].id}
                   href={carouselItems[currentIndex].to}
                   className="mt-8
-                    bg-[#313237] dark:bg-white text-dark-link-hover-bg dark:text-black
+                    bg-[#313237] dark:bg-white text-white dark:text-black
                     font-mont font-semibold
                     text-[20px] px-8 py-3
                     rounded-2xl shadow-lg

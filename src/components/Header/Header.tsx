@@ -7,8 +7,8 @@ import { MobileSidebar } from './MobileSidebar';
 
 import { useProductStore } from '@/stores/productStore';
 import { useTranslation } from 'react-i18next';
-import { ThemeToggle } from '../ThemeToggle';
 import { HeaderPhonesMenu } from './HeaderPhonesMenu/HeaderPhonesMenu';
+import { ThemeAndLanguageToggle } from '../ThemeAndLanguageToggle';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `h-16 flex items-center justify-center box-border text-[12px] leading-[11px] font-mont font-[800] tracking-[0.48px] uppercase transition-colors border-b-4 ${
@@ -94,8 +94,8 @@ export const Header = () => {
           </div>
 
           <div className="flex items-center sm:gap-2">
-            <ThemeToggle />
             <div className="hidden sm:flex">
+              <ThemeAndLanguageToggle />
               <NavLink
                 to="/favourites"
                 className={iconLinkClass}

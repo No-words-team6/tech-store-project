@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Heart, ShoppingBag, X } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 import type { Product } from '@/types';
@@ -17,6 +17,9 @@ export const MobileSidebar = ({
   favouritesData,
   cartItemsAmount,
 }: MobileSidebarProps) => {
+  const location = useLocation();
+  const { pathname } = location;
+
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/phones', label: 'Phones' },
@@ -42,91 +45,109 @@ export const MobileSidebar = ({
   }, [isOpen]);
 
   return (
-    <>
-      <div
-        className={`fixed top-0 right-0 h-full w-full bg-header-background z-[20] transform transition-transform duration-300 sm:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col justify-between h-full box-border ">
-          <div>
-            <div className="border-b border-elements">
-              <div className="flex items-center justify-between h-12">
-                <Link
-                  to="/"
-                  onClick={onClose}
-                  className="flex-1 flex items-center h-full px-4 border-r border-elements"
-                >
-                  <img
-                    src={logo}
-                    alt="Nice Gadgets"
-                    className="h-5 w-auto max-w-full"
-                  />
-                </Link>
-
-                <button
-                  onClick={onClose}
-                  aria-label="Close menu"
-                  className="w-12 h-full flex items-center justify-center text-burger-icon"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
+    <div
+      className={`fixed top-0 right-0 h-full w-full bg-header-background z-[20] transform transition-transform duration-300 sm:hidden ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      <div className="flex flex-col justify-between h-full box-border">
+        {/* Header */}
+        <div>
+          <div className="border-b border-elements">
+            <div className="flex items-center justify-between h-12">
+              <Link
+                to="/"
+                onClick={onClose}
+                className="flex-1 flex items-center h-full px-4 border-r border-elements"
+              >
+                <img
+                  src={logo}
+                  alt="Nice Gadgets"
+                  className="h-5 w-auto max-w-full"
+                />
+              </Link>
+              <button
+                onClick={onClose}
+                aria-label="Close menu"
+                className="w-12 h-full flex items-center justify-center text-burger-icon"
+              >
+                <X className="w-6 h-6" />
+              </button>
             </div>
-
-            <nav className="flex pt-[24px] flex-col items-center gap-6 text-center mb-6">
-              {navItems.map(({ path, label }) => (
-                <NavLink
-                  key={path}
-                  to={path}
-                  onClick={onClose}
-                  className={({ isActive }) =>
-                    `group text-sm font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
-                      isActive ?
-                        'text-burger-icon border-burger-icon'
-                      : 'text-[#75767F] border-transparent hover:text-burger-icon hover:border-burger-icon'
-                    }`
-                  }
-                >
-                  {label}
-                </NavLink>
-              ))}
-            </nav>
           </div>
 
-          <div className="flex items-center justify-between h-16 border-t border-elements">
-            <Link
-              to="/favourites"
-              onClick={onClose}
-              className={`flex flex-col items-center justify-center w-1/2 h-full relative border-r border-elements transition-all duration-300`}
-            >
-              <div className="relative">
-                <Heart className="w-6 h-6 text-[#75767F] group-hover:text-burger-icon transition-colors" />
-                {!!favouritesData.length && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
-                    {favouritesData.length}
-                  </span>
-                )}
-              </div>
-            </Link>
+          <nav className="flex pt-[24px] flex-col items-center gap-6 text-center mb-6">
+            {navItems.map(({ path, label }) => (
+              <NavLink
+                key={path}
+                to={path}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `group text-sm font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
+                    isActive ?
+                      'text-burger-icon border-burger-icon'
+                    : 'text-[#75767F] border-transparent hover:text-burger-icon hover:border-burger-icon'
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
 
-            <Link
-              to="/cart"
-              onClick={onClose}
-              className={`flex flex-col items-center justify-center w-1/2 h-full relative transition-all duration-300`}
-            >
-              <div className="relative">
-                <ShoppingBag className="w-6 h-6 text-[#75767F] group-hover:text-burger-icon transition-colors" />
-                {!!cartItemsAmount && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
-                    {cartItemsAmount}
-                  </span>
-                )}
-              </div>
-            </Link>
-          </div>
+        <div className="flex items-center justify-between h-16 border-t border-elements">
+          <Link
+            to="/favourites"
+            onClick={onClose}
+            className={`flex flex-col items-center justify-center w-1/2 h-full relative border-r border-elements border-b-2 transition-all duration-300 ${
+              pathname === '/favourites' ?
+                'text-burger-icon border-burger-icon'
+              : 'text-[#75767F] border-transparent hover:text-burger-icon hover:border-burger-icon'
+            }`}
+          >
+            <div className="relative group">
+              <Heart
+                className={`w-6 h-6 transition-colors ${
+                  pathname === '/favourites' ? 'text-burger-icon' : (
+                    'group-hover:text-burger-icon'
+                  )
+                }`}
+              />
+              {!!favouritesData.length && (
+                <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
+                  {favouritesData.length}
+                </span>
+              )}
+            </div>
+          </Link>
+
+          <Link
+            to="/cart"
+            onClick={onClose}
+            className={`flex flex-col items-center justify-center w-1/2 h-full relative border-b-2 transition-all duration-300 ${
+              pathname === '/cart' ?
+                'text-burger-icon border-burger-icon'
+              : 'text-[#75767F] border-transparent hover:text-burger-icon hover:border-burger-icon'
+            }`}
+          >
+            <div className="relative group">
+              <ShoppingBag
+                className={`w-6 h-6 transition-colors ${
+                  pathname === '/cart' ? 'text-burger-icon' : (
+                    'group-hover:text-burger-icon'
+                  )
+                }`}
+              />
+              {!!cartItemsAmount && (
+                <span className="absolute -top-1.5 -right-2 bg-[#EB5757] text-white text-[9px] font-semibold rounded-full w-[14px] h-[14px] flex items-center justify-center">
+                  {cartItemsAmount}
+                </span>
+              )}
+            </div>
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };

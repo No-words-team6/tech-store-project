@@ -26,6 +26,7 @@ interface ProductStoreState {
   increaseQuantity: (itemId: string) => void;
   decreaseQuantity: (itemId: string) => void;
   setSearchQuery: (query: string) => void;
+  startFakeLoading: () => void;
 }
 
 export const useProductStore = create<ProductStoreState>((set, get) => ({
@@ -38,6 +39,11 @@ export const useProductStore = create<ProductStoreState>((set, get) => ({
   favouritesStore: [],
   isLoading: false,
   searchQuery: '',
+
+  startFakeLoading: () => {
+    set({ isLoading: true });
+    setTimeout(() => set({ isLoading: false }), 500);
+  },
 
   setSearchQuery: (query: string) => set({ searchQuery: query }),
 

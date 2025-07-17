@@ -45,10 +45,13 @@ export const BreadcrumbNav: React.FC = () => {
           >
             <ChevronRight className="h-[16px] w-[16px]" />
             {index === pathnames.length - 1 ?
-              <span className="text-[#919a9e] dark:text-[#75767F] cursor-default truncate max-w-[50vw]">
+              <span className="text-breadcrumb-color-current cursor-default truncate max-w-[50vw]">
                 {title}
               </span>
-            : <Link to={to} className="hover:underline">
+            : <Link
+                to={to}
+                className="text-breadcrumb-color hover:text-breadcrumb-color-hover"
+              >
                 {title}
               </Link>
             }
