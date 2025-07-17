@@ -9,11 +9,13 @@ import { GridContainer } from '@/components/containers/GridContainer';
 import { WidthContainer } from '@/components/containers/WidthContainer';
 import { MainSliderSection } from './components/MainSliderSection';
 import { useTranslation } from 'react-i18next';
+import { Loader } from '@/components/common/Loader';
 
 export const HomePage = () => {
   const fetchAllProducts = useProductStore((state) => state.fetchAllProducts);
   const newestList = useProductStore((state) => state.newestList);
   const cheapestList = useProductStore((state) => state.cheapestList);
+  const isLoading = useProductStore((state) => state.isLoading);
 
   const { t } = useTranslation();
 
@@ -42,6 +44,8 @@ export const HomePage = () => {
           </GridContainer>
         </PaddingContainer>
       </WidthContainer>
+
+      {isLoading && <Loader />}
     </>
   );
 };

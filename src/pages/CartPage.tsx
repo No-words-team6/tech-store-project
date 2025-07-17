@@ -1,11 +1,12 @@
 import { NavBack } from '@/components/common/NavBack';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import placeholder from '../../public/img/placeholder-empty-bag.svg';
 import { Link } from 'react-router-dom';
 import { useProductStore } from '@/stores/productStore';
 import { useTranslation } from 'react-i18next';
+import { Loader } from '@/components/common/Loader';
 
 export const CartPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,6 +19,9 @@ export const CartPage = () => {
   const decreaseQuantity = useProductStore((state) => state.decreaseQuantity);
   const increaseQuantity = useProductStore((state) => state.increaseQuantity);
   const handleDelete = useProductStore((state) => state.toggleCartProduct);
+  const startFakeLoading = useProductStore((state) => state.startFakeLoading);
+
+  const isLoading = useProductStore((state) => state.isLoading);
 
   const { totalAmount, totalItems } = cartStore.reduce(
     (acc, product) => {
@@ -27,6 +31,11 @@ export const CartPage = () => {
     },
     { totalAmount: 0, totalItems: 0 },
   );
+
+  useEffect(() => {
+    startFakeLoading();
+  }, [startFakeLoading]);
+
   return (
     <>
       <div className="max-w-[1200px] pt-[24px] pb-[80px] grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto">
@@ -169,6 +178,8 @@ export const CartPage = () => {
           </Dialog.Portal>
         </Dialog.Root>
       </div>
+
+      {isLoading && <Loader />}
     </>
   );
 };

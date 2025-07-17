@@ -3,12 +3,21 @@ import { ProductCard } from '@/components/ProductCard';
 import { useProductStore } from '@/stores/productStore';
 import placeholder from '../../public/img/placeholder-angry-heart.png';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
+import { Loader } from '@/components/common/Loader';
 
 export const FavouritesPage = () => {
   const favouritesStore = useProductStore((state) => state.favouritesStore);
   const productsLength = favouritesStore.length;
+  const isLoading = useProductStore((state) => state.isLoading);
+
+  const startFakeLoading = useProductStore((state) => state.startFakeLoading);
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    startFakeLoading();
+  }, [startFakeLoading]);
 
   return (
     <div className="w-full max-w-[1200px] mx-auto">
@@ -49,6 +58,8 @@ export const FavouritesPage = () => {
               ))}
             </div>
           </div>
+
+          {isLoading && <Loader />}
         </div>
       </div>
     </div>

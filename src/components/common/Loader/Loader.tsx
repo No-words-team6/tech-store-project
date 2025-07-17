@@ -2,17 +2,33 @@ import styled from 'styled-components';
 
 export const Loader = () => {
   return (
-    <StyledWrapper>
+    <StyledOverlay>
       <div className="container">
         <div className="loader" />
         <div className="loader" />
         <div className="loader" />
       </div>
-    </StyledWrapper>
+    </StyledOverlay>
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+
+  .container {
+    position: relative;
+    width: 200px;
+    height: 120px;
+  }
+
   .loader {
     position: absolute;
     top: 50%;
