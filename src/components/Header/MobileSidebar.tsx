@@ -5,6 +5,7 @@ import logo from '@/assets/images/Logo.svg';
 import dlogo from '@/assets/images/Dark-Logo.svg';
 import type { Product } from '@/types';
 import { ThemeAndLanguageToggle } from '../ThemeAndLanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -21,12 +22,13 @@ export const MobileSidebar = ({
 }: MobileSidebarProps) => {
   const location = useLocation();
   const { pathname } = location;
+  const { t } = useTranslation();
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/phones', label: 'Phones' },
-    { path: '/tablets', label: 'Tablets' },
-    { path: '/accessories', label: 'Accessories' },
+    { path: '/', label: t('home') },
+    { path: '/phones', label: t('phones') },
+    { path: '/tablets', label: t('tablets') },
+    { path: '/accessories', label: t('accessories') },
   ];
 
   useEffect(() => {
