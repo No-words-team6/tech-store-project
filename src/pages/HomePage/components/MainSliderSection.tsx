@@ -32,7 +32,7 @@ export const MainSliderSection: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.68, 1, 0.68, 1] }}
+          transition={{ duration: 1, ease: [0.68, 1, 0.68, 1] }}
           className="text-link-hover-bg dark:text-dark-link-hover-bg font-mont font-extrabold text-[24px] sm:text-4xl z-10 mb-6 left-1/10 absolute top-1/4 drop-shadow-[0_4px_6px_rgba(255,255,255,0.7)] dark:drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]"
         >
           {t(slides[activeIndex].titleKey)}

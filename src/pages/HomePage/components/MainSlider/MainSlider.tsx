@@ -35,7 +35,7 @@ export const MainSlider = ({ setSwiperInstance, onSlideChange }: Props) => {
       <Swiper
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        speed={1000}
+        speed={3000}
         modules={[Pagination, Autoplay, EffectFade]}
         onSwiper={setSwiperInstance}
         onSlideChange={onSlideChange}
