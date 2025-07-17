@@ -59,7 +59,7 @@ export const Header = () => {
               />
             </NavLink>
 
-            <nav className="hidden sm:flex items-center h-16 gap-16 relative">
+            <nav className="hidden md:flex items-center h-16 gap-16 relative">
               <NavLink to="/" className={navLinkClass}>
                 {t('home')}
               </NavLink>
@@ -94,7 +94,7 @@ export const Header = () => {
           </div>
 
           <div className="flex items-center sm:gap-2">
-            <div className="hidden sm:flex">
+            <div className="hidden md:flex">
               <ThemeAndLanguageToggle />
               <NavLink
                 to="/favourites"
@@ -132,7 +132,7 @@ export const Header = () => {
             </div>
 
             <button
-              className="sm:hidden mr-4"
+              className="md:hidden mr-4"
               onClick={() => setIsSidebarOpen(true)}
               aria-label="Open mobile menu"
             >
