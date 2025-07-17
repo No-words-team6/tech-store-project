@@ -10,9 +10,9 @@ export const ErrorPage = () => {
       <img
         src={img}
         alt="404"
-        className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-5 xl:col-span-8 xl:col-start-8"
+        className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-5 xl:col-span-8 xl:col-start-9"
       />
-      <p className="text-2xl col-span-4 col-start-1 sm:col-span-4 sm:col-start-5 xl:col-span-4 xl:col-start-10 text-gray-600 text-center -mt-10 mb-10">
+      <p className="text-2xl col-span-4 col-start-1 sm:col-span-4 sm:col-start-5 xl:col-span-4 xl:col-start-11 text-gray-600 text-center -mt-10 mb-10">
         Page not found
       </p>
     </Link>

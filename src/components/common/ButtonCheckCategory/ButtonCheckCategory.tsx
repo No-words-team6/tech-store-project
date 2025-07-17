@@ -29,10 +29,11 @@ export const ButtonCheckCategory = () => {
         absolute left-1/2 top-[80%] transform -translate-x-1/2 -translate-y-1/2
         px-8 py-3 rounded-full
       bg-black/30 backdrop-blur-md
-        text-white font-bold text-xl
+        w-[65%] sm:w-auto
+      text-white font-bold text-[16px] sm:text-xl
         shadow-lg border border-white
-        flex items-center gap-2
-        hover:bg-white/50 dark:hover:bg-black/50 hover:scale-105
+        flex items-center justify-center gap-2
+      hover:bg-white/50 dark:hover:bg-black/50 hover:scale-105
         z-11
         opacity-0
         animate-slide-up"
@@ -40,7 +41,7 @@ export const ButtonCheckCategory = () => {
     >
       <span>{t('browse-categories')}</span>
 
-      <ChevronDown size={28} />
+      <ChevronDown className="h-4 sm:h-7 w-4 sm:w-7" />
     </button>
   );
 };
