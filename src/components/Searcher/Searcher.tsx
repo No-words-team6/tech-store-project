@@ -18,7 +18,7 @@ export const Searcher = () => {
   );
 
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const value = event.target.value.trimStart();
     setQuery(value);
     applyQuery(value);
   };
@@ -28,7 +28,7 @@ export const Searcher = () => {
       <div className="relative flex min-w-45">
         <Search className="absolute top-1/2 left-2 -translate-y-1/2 text-link-hover-bg dark:text-dark-link-hover-bg" />
         <Input
-          className="pl-10 text-link-hover-bg dark:text-dark-link-hover-bg border-1 border-[#B4BDC3] dark:border-[#323542] rounded-none"
+          className="pl-10 text-link-hover-bg dark:text-dark-link-hover-bg border-2 border-[#B4BDC3] dark:border-[#323542] rounded-none"
           value={query}
           onChange={handleQueryChange}
         />
