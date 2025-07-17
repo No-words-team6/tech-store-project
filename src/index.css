@@ -102,6 +102,11 @@ body {
   --button-omparison-bg-hover: 255, 255, 255;
   --button-omparison-border: 180, 189, 195;
   --button-omparison-border-hover: 137, 147, 154;
+
+  --cart-checkout-text-color: 255, 255, 255;
+  --cart-checkout-bg: 49, 50, 55;
+  --cart-checkout-bg-hover: 49, 50, 55;
+  --cart-checkout-drop-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
 }
 
 .dark {
@@ -180,6 +185,11 @@ body {
   --button-omparison-bg-hover: 15, 17, 33;
   --button-omparison-border: 50, 53, 66;
   --button-omparison-border-hover: 74, 77, 88;
+
+  --cart-checkout-text-color: 241, 242, 249;
+  --cart-checkout-bg: 144, 91, 255;
+  --cart-checkout-bg-hover: 163, 120, 255;
+  --cart-checkout-drop-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 @theme inline {

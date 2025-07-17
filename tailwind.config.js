@@ -107,10 +107,15 @@ module.exports = {
         'button-omparison-border': 'rgb(var(--button-omparison-border))',
         'button-omparison-border-hover':
           'rgb(var(--button-omparison-border-hover))',
+
+        'cart-checkout-text-color': 'rgb(var(--cart-checkout-text-color))',
+        'cart-checkout-bg': 'rgb(var(--cart-checkout-bg))',
+        'cart-checkout-bg-hover': 'rgb(var(--cart-checkout-bg-hover))',
       },
       dropShadow: {
         'add-to-cart-drop-shadow': 'var(--add-to-cart-drop-shadow)',
         'product-card-drop-shadow': 'var(--product-card-drop-shadow)',
+        'cart-checkout-drop-shadow': 'var(--cart-checkout-drop-shadow)',
       },
       borderRadius: {
         xl: 'calc(var(--radius) + 4px)',
