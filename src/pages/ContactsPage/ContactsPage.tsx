@@ -17,7 +17,7 @@ export const ContactsPage = () => {
 
             <div
               id="contact-page"
-              className="font-mont col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-12 min-h-screen text-link-hover-bg dark:text-dark-link-hover-bg"
+              className="font-mont col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-1 min-h-screen text-link-hover-bg dark:text-dark-link-hover-bg"
             >
               <h1 className="text-2xl sm:text-4xl font-mont text-center font-bold">
                 {t('team-nemasliv')}
@@ -35,7 +35,7 @@ export const ContactsPage = () => {
                       alt={t(member.nameKey)}
                       className="w-24 h-24 object-cover rounded-[20px] mb-4 transition duration-800 hover:scale-130"
                     />
-                    <h2 className="text-lg font-[montBold] mb-2">
+                    <h2 className="text-lg font-mont font-semibold mb-2">
                       {t(member.nameKey)}
                     </h2>
                     <h3 className="text-sm text-[#919a9e] dark:text-[#75767F] mb-1">
