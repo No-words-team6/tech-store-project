@@ -31,7 +31,10 @@ export const BreadcrumbNav: React.FC = () => {
       id="breadcrumbId"
       className="col-span-4 sm:col-span-12 xl:col-span-24 flex gap-x-[8px] text-link-hover-bg dark:text-dark-link-hover-bg font-bold cursor-pointer mb-6 sm:mb-10"
     >
-      <Link to="/">
+      <Link
+        to="/"
+        className="cursor-pointer pointer-events-auto z-2 dark:text-breadcrumb-color hover:text-gray-400 dark:hover:text-breadcrumb-color-hover"
+      >
         <House className="h-[16px] w-[16px]" />
       </Link>
 
