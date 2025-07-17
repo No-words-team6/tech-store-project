@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Heart, ShoppingBag, X } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
+import dlogo from '@/assets/images/Dark-Logo.svg';
 import type { Product } from '@/types';
 import { ThemeAndLanguageToggle } from '../ThemeAndLanguageToggle';
 
@@ -62,9 +63,14 @@ export const MobileSidebar = ({
                 className="flex-1 flex items-center h-full px-4 border-r border-elements"
               >
                 <img
+                  src={dlogo}
+                  alt="Nice Gadgets Light"
+                  className="h-6 w-auto block dark:hidden"
+                />
+                <img
                   src={logo}
-                  alt="Nice Gadgets"
-                  className="h-5 w-auto max-w-full"
+                  alt="Nice Gadgets Dark"
+                  className="h-6 w-auto hidden dark:block"
                 />
               </Link>
 

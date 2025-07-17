@@ -1,10 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type ChangeEvent,
-} from 'react';
+import { useCallback, useRef, useState, type ChangeEvent } from 'react';
 import { Input } from '../ui/input';
 import { Search } from 'lucide-react';
 import { useProductStore } from '@/stores/productStore';
@@ -22,18 +16,6 @@ export const Searcher = () => {
     }, 400),
     [],
   );
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        setQuery('');
-        setSearchQuery('');
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [setSearchQuery]);
 
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;

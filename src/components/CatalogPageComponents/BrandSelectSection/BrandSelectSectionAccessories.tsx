@@ -30,8 +30,8 @@ export const BrandSelectSectionAccessories: React.FC<Props> = ({
             to={`catalog`}
             className="col-span-1 sm:col-span-6 xl:col-span-12 group cursor-pointer"
           >
-            <div className="h-[66px] sm:h-[187px] xl:h-[200px] accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51] pl-4">
-              <h3 className="z-1 font-outline tracking-tighter leading-none text-[70px] lg:text-[100px] whitespace-nowrap">
+            <div className="h-[66px] sm:h-[187px] xl:h-[200px] bg-gray-500 dark:bg-[#5d3ba5] relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#6A7282] dark:group-hover:shadow-[0_0px_14px_#905BFF] pl-4">
+              <h3 className="z-1 font-mont text-white tracking-tighter leading-none text-[70px] sm:text-[60px] xl:text-[100px] whitespace-nowrap sm:translate-y-4/2 xl:translate-y-1/1">
                 {t('choose-all')}
               </h3>
             </div>
@@ -44,9 +44,9 @@ export const BrandSelectSectionAccessories: React.FC<Props> = ({
                 key={key}
                 className="col-span-1 sm:col-span-6 xl:col-span-12 group cursor-pointer"
               >
-                <div className="h-[66px] sm:h-[187px] xl:h-[200px] accessories-category relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#D53C51] pl-4">
+                <div className="h-[66px] sm:h-[187px] xl:h-[200px] bg-gray-500 dark:bg-[#5d3ba5] relative overflow-hidden transition duration-1000 group-hover:shadow-[0_0px_14px_#6A7282] dark:group-hover:shadow-[0_0px_14px_#905BFF] pl-4">
                   <div className="flex">
-                    <h3 className="z-1 font-outline tracking-tighter leading-none text-[70px] lg:text-[100px] whitespace-nowrap">
+                    <h3 className="z-1 font-mont text-white tracking-tighter leading-none text-[70px] sm:text-[60px] xl:text-[100px] whitespace-nowrap sm:translate-y-4/2 xl:translate-y-1/1">
                       {key}
                     </h3>
                   </div>
