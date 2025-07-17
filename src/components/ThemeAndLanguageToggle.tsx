@@ -40,10 +40,10 @@ export const ThemeAndLanguageToggle = () => {
   };
 
   return (
-    <div className="hidden sm:flex items-center">
+    <div className="flex items-center">
       <button
         onClick={handleClick}
-        className="h-16 w-16 flex items-center justify-center group border border-[#E2E6E9] dark:border-[#323542] transition-colors"
+        className="h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center group sm:border border-[#E2E6E9] dark:border-[#323542] transition-colors"
       >
         {isDark ?
           <EyeOff className="text-link-text group-hover:text-link-hover-bg" />
@@ -52,7 +52,7 @@ export const ThemeAndLanguageToggle = () => {
 
       <button
         onClick={toggleLanguage}
-        className="h-16 w-16 flex items-center justify-center group border-t border-b border-r border-[#E2E6E9] dark:border-[#323542] transition-colors text-sm font-medium text-link-text hover:text-link-hover-bg -ml-px"
+        className="h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center group sm:border-t sm:border-b sm:border-r border-[#E2E6E9] dark:border-[#323542] transition-colors text-sm font-medium text-link-text hover:text-link-hover-bg -ml-px"
       >
         {i18n.language === 'en' ? 'EN' : 'UK'}
       </button>

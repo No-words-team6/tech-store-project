@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Heart, ShoppingBag, X } from 'lucide-react';
 import logo from '@/assets/images/Logo.svg';
 import type { Product } from '@/types';
+import { ThemeAndLanguageToggle } from '../ThemeAndLanguageToggle';
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -54,7 +55,7 @@ export const MobileSidebar = ({
         {/* Header */}
         <div>
           <div className="border-b border-elements">
-            <div className="flex items-center justify-between h-12">
+            <div className="flex items-center justify-between h-12 px-4">
               <Link
                 to="/"
                 onClick={onClose}
@@ -66,13 +67,17 @@ export const MobileSidebar = ({
                   className="h-5 w-auto max-w-full"
                 />
               </Link>
-              <button
-                onClick={onClose}
-                aria-label="Close menu"
-                className="w-12 h-full flex items-center justify-center text-burger-icon"
-              >
-                <X className="w-6 h-6" />
-              </button>
+
+              <div className="flex items-center gap-4 ">
+                <ThemeAndLanguageToggle />
+                <button
+                  onClick={onClose}
+                  aria-label="Close menu"
+                  className="w-12 h-full flex items-center justify-center text-burger-icon"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
             </div>
           </div>
 
