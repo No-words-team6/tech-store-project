@@ -75,8 +75,38 @@ body {
   --button-paginator-text-color-selected: 255, 255, 255;
 
   --breadcrumb-color: 137, 147, 154;
-  --breadcrumb-color-current: 213, 214, 224;
+  --breadcrumb-color-current: 50, 53, 66;
   --breadcrumb-color-hover: 49, 50, 55;
+
+  --drop-text-color: 49, 50, 55;
+  --drop-arrow-color: 49, 50, 55;
+  --drop-bg: 255 255 255;
+  --drop-border: 180, 189, 195;
+  --drop-bg-hover: 255 255 255;
+  --drop-border-hover: 137, 147, 154;
+  --drop-bg-focus: 255 255 255;
+  --drop-border-focus: 49, 50, 55;
+
+  --drop-list-bg: 255, 255, 255;
+  --drop-list-border: 180, 189, 195;
+
+  --drop-item-text-color: 137, 147, 154;
+  --drop-item-text-color-hover: 49, 50, 55;
+  --drop-item-bg: 255, 255, 255;
+  --drop-item-bg-hover: 255, 255, 255;
+
+  --drop-description-text-color: 137, 147, 154;
+
+  --button-omparison-text-color: 49, 50, 55;
+  --button-omparison-bg: 255, 255, 255;
+  --button-omparison-bg-hover: 255, 255, 255;
+  --button-omparison-border: 180, 189, 195;
+  --button-omparison-border-hover: 137, 147, 154;
+
+  --cart-checkout-text-color: 255, 255, 255;
+  --cart-checkout-bg: 49, 50, 55;
+  --cart-checkout-bg-hover: 49, 50, 55;
+  --cart-checkout-drop-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
 }
 
 .dark {
@@ -130,6 +160,36 @@ body {
   --breadcrumb-color: 241, 242, 249;
   --breadcrumb-color-current: 175, 176, 179;
   --breadcrumb-color-hover: 144, 91, 255;
+
+  --drop-text-color: 241, 242, 249;
+  --drop-arrow-color: 117, 118, 127;
+  --drop-bg: 50, 53, 66;
+  --drop-border: 50, 53, 66;
+  --drop-bg-hover: 50, 53, 66;
+  --drop-border-hover: 74, 77, 88;
+  --drop-bg-focus: 50, 53, 66;
+  --drop-border-focus: 144, 91, 255;
+
+  --drop-list-bg: 15, 17, 33;
+  --drop-list-border: 50, 53, 66;
+
+  --drop-item-text-color: 117, 118, 127;
+  --drop-item-text-color-hover: 241, 242, 249;
+  --drop-item-bg: 15, 17, 33;
+  --drop-item-bg-hover: 50, 53, 66;
+
+  --drop-description-text-color: 117, 118, 127;
+
+  --button-omparison-text-color: 241, 242, 249;
+  --button-omparison-bg: 15, 17, 33;
+  --button-omparison-bg-hover: 15, 17, 33;
+  --button-omparison-border: 50, 53, 66;
+  --button-omparison-border-hover: 74, 77, 88;
+
+  --cart-checkout-text-color: 241, 242, 249;
+  --cart-checkout-bg: 144, 91, 255;
+  --cart-checkout-bg-hover: 163, 120, 255;
+  --cart-checkout-drop-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 @theme inline {
