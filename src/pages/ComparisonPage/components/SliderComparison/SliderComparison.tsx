@@ -29,25 +29,30 @@ export const SliderComparison: React.FC<SliderComparisonProps> = ({
             w-full
             font-mont
             text-[14px]
-            text-link-hover-bg 
-            dark:text-white
-            bg-white
-            dark:bg-gray-700
-            hover:bg-gray-200 dark:hover:bg-gray-600
-            border-[#B4BDC3] dark:border-none
-            rounded-none
-            active:border-0`}
+            text-drop-text-color
+            bg-drop-bg hover:drop-bg-hover focus:bg-drop-bg-focus
+            border-2 border-drop-border hover:border-drop-border-hover focus:border-drop-border-focus
+            rounded-none outline-none
+            [&>span]:text-drop-text-color
+            [&>svg]:drop-arrow-color
+            `}
         >
           <SelectValue placeholder="Choose" />
         </SelectTrigger>
-        <SelectContent className="font-mont text-[14px] rounded-none p-0 bg-white dark:bg-gray-700 border-0 text-link-hover-bg dark:text-dark-link-hover-bg">
+        <SelectContent
+          className="font-mont text-[14px] rounded-none p-0
+            bg-drop-list-bg 
+            border-2 border-drop-list-border
+            text-link-hover-bg
+            outline-none"
+        >
           {products.map((product) => {
             return (
               <SelectItem
                 key={product.id}
                 value={product.itemId}
                 className={cn({
-                  'bg-[#313237] text-white dark:bg-[#905BFF] rounded-none':
+                  'text-drop-item-text-color hover:text-drop-item-text-color-hover bg-drop-item-bg hover:bg-drop-item-bg-hover border-0 rounded-none':
                     choosedItemIds?.includes(product.itemId),
                 })}
                 disabled={choosedItemIds?.includes(product.itemId)}

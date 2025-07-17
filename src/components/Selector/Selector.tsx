@@ -39,7 +39,7 @@ export const Selector: React.FC<SelectorProps> = ({
 
   return (
     <div className="flex flex-col">
-      <p className="font-mont text-xs text-[#919a9e] dark:text-[#75767F] truncate whitespace-nowrap overflow-hidden">
+      <p className="font-mont text-xs text-drop-description-text-color truncate whitespace-nowrap overflow-hidden">
         {title}
       </p>
 
@@ -49,25 +49,35 @@ export const Selector: React.FC<SelectorProps> = ({
             font-mont
             text-[14px]
             ${selectorWidth}
-            text-link-hover-bg 
-            dark:text-white
-            bg-white
-            dark:bg-gray-700
-            hover:bg-gray-200 dark:hover:bg-gray-600
-            border-[#B4BDC3] dark:border-none
+            text-drop-text-color
+            bg-drop-bg hover:bg-drop-bg-hover focus:bg-drop-bg-focus
+            border-2 border-drop-border hover:border-drop-border-hover focus:border-drop-border-focus
             rounded-none
-            active:border-0`}
+            [&>span]:text-drop-text-color
+            [&>svg]:drop-arrow-color
+            `}
         >
           <SelectValue placeholder={!selectedSort && t('choose')} />
         </SelectTrigger>
 
         <SelectContent
-          className="font-mont text-[14px] rounded-none p-0 bg-white dark:bg-gray-700 border-0 text-link-hover-bg dark:text-dark-link-hover-bg"
+          className="font-mont text-[14px] rounded-none p-0
+           bg-drop-list-bg 
+           border-2 border-drop-list-border
+           text-link-hover-bg
+           outline-none"
           style={{ maxHeight: '200px', overflowY: 'auto' }}
         >
           <SelectGroup>
             {options.map(({ value, label }) => (
-              <SelectItem key={value} value={value} className="rounded-none ">
+              <SelectItem
+                key={value}
+                value={value}
+                className="
+                  text-drop-item-text-color hover:text-drop-item-text-color-hover
+                  bg-drop-item-bg hover:bg-drop-item-bg-hover
+                  border-0 rounded-none"
+              >
                 {label}
               </SelectItem>
             ))}

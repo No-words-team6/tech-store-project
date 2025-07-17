@@ -78,6 +78,34 @@ module.exports = {
         'breadcrumb-color': 'rgb(var(--breadcrumb-color))',
         'breadcrumb-color-current': 'rgb(var(--breadcrumb-color-current))',
         'breadcrumb-color-hover': 'rgb(var(--breadcrumb-color-hover))',
+
+        'drop-text-color': 'rgb(var(--drop-text-color))',
+        'drop-arrow-color': 'rgb(var(--drop-arrow-color))',
+        'drop-bg': 'rgb(var(--drop-bg))',
+        'drop-border': 'rgb(var(--drop-border))',
+        'drop-bg-hover': 'rgb(var(--drop-bg-hover))',
+        'drop-border-hover': 'rgb(var(--drop-border-hover))',
+        'drop-bg-focus': 'rgb(var(--drop-bg-focus))',
+        'drop-border-focus': 'rgb(var(--drop-border-focus))',
+
+        'drop-list-bg': 'rgb(var(--drop-list-bg))',
+        'drop-list-border': 'rgb(var(--drop-list-border))',
+
+        'drop-item-text-color': 'rgb(var(--drop-item-text-color))',
+        'drop-item-text-color-hover': 'rgb(var(--drop-item-text-color-hover))',
+        'drop-item-bg': 'rgb(var(--drop-item-bg))',
+        'drop-item-bg-hover': 'rgb(var(--drop-item-bg-hover))',
+
+        'drop-description-text-color':
+          'rgb(var(--drop-description-text-color))',
+
+        'button-omparison-text-color':
+          'rgb(var(--button-omparison-text-color))',
+        'button-omparison-bg': 'rgb(var(--button-omparison-bg))',
+        'button-omparison-bg-hover': 'rgb(var(--button-omparison-bg-hover))',
+        'button-omparison-border': 'rgb(var(--button-omparison-border))',
+        'button-omparison-border-hover':
+          'rgb(var(--button-omparison-border-hover))',
       },
       dropShadow: {
         'add-to-cart-drop-shadow': 'var(--add-to-cart-drop-shadow)',
