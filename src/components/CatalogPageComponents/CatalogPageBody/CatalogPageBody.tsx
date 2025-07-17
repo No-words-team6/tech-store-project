@@ -13,6 +13,7 @@ import { GridContainer } from '@/components/containers/GridContainer';
 import { PaddingContainer } from '@/components/containers/PaddingContainer';
 import { WidthContainer } from '@/components/containers/WidthContainer';
 import { Loader } from '@/components/common/Loader';
+import imgNotFoundItems from '../../../../public/img/not-found-items.webp';
 
 const allowedCategories = ['phones', 'tablets', 'accessories'] as const;
 type Category = (typeof allowedCategories)[number];
@@ -107,18 +108,35 @@ export const CatalogPageBody = () => {
 
           <CatalogBar />
 
-          <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
-            {visibleItems.map((product) => (
-              <div className="col-span-4 sm:col-span-6" key={product.id}>
-                <ProductCard product={product} />
-              </div>
-            ))}
-          </div>
+          {visibleItems.length === 0 ?
+            <div className="col-span-4 sm:col-span-12 xl:col-span-24 flex justify-center">
+              <div className="flex flex-col justify-center">
+                <img
+                  src={imgNotFoundItems}
+                  alt="img-not-found-items"
+                  className="w-50 h-50 m-auto"
+                />
 
-          <Paginator
-            quantityPages={numberOfPages}
-            currentPage={+selectedPage}
-          />
+                <p className="font-mont text-[#515151] text-center">
+                  Not found any items
+                </p>
+              </div>
+            </div>
+          : <>
+              <div className="grid grid-cols-4 sm:grid-cols-12 xl:grid-cols-24 col-span-4 sm:col-span-12 xl:col-span-24 gap-x-[16px] gap-y-[40px]">
+                {visibleItems.map((product) => (
+                  <div className="col-span-4 sm:col-span-6" key={product.id}>
+                    <ProductCard product={product} />
+                  </div>
+                ))}
+              </div>
+
+              <Paginator
+                quantityPages={numberOfPages}
+                currentPage={+selectedPage}
+              />
+            </>
+          }
 
           {isLoading && <Loader />}
         </GridContainer>
