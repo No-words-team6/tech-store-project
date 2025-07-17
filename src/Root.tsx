@@ -60,8 +60,8 @@ export const Root = () => (
 
         <Route path="contacts" element={<ContactsPage />} />
         <Route path="rights" element={<RightsPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
-      <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
 );
