@@ -33,7 +33,7 @@ export const ContactsPage = () => {
                     <img
                       src={member.photo}
                       alt={t(member.nameKey)}
-                      className="w-24 h-24 object-cover rounded-xl mb-4"
+                      className="w-24 h-24 object-cover rounded-[20px] mb-4 transition duration-800 hover:scale-130"
                     />
                     <h2 className="text-lg font-[montBold] mb-2">
                       {t(member.nameKey)}
