@@ -17,9 +17,9 @@ export const ContactsPage = () => {
 
             <div
               id="contact-page"
-              className="col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-12 min-h-screen text-link-hover-bg dark:text-dark-link-hover-bg"
+              className="font-mont col-span-4 sm:col-span-12 xl:col-span-24 grid gap-y-8 sm:gap-y-12 min-h-screen text-link-hover-bg dark:text-dark-link-hover-bg"
             >
-              <h1 className="text-2xl sm:text-4xl font-mont text-center">
+              <h1 className="text-2xl sm:text-4xl font-mont text-center font-bold">
                 {t('team-nemasliv')}
               </h1>
 
@@ -28,7 +28,7 @@ export const ContactsPage = () => {
                   <div
                     id="contact-page-user"
                     key={index}
-                    className="bg-[#161827] hover:scale-[1.02] rounded-xl flex flex-col items-center text-center p-4 h-full"
+                    className="bg-white border-2 border-[#E2E6E9] dark:border-none dark:bg-[#161827] transition duration-500 hover:scale-110 flex flex-col items-center text-center p-4 h-full rounded-[20px]"
                   >
                     <img
                       src={member.photo}
