@@ -35,7 +35,7 @@ export const ThemeAndLanguageToggle = () => {
   };
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'uk' : 'en';
+    const newLang = i18n.language === 'en' ? 'ua' : 'en';
     i18n.changeLanguage(newLang);
   };
 
@@ -60,7 +60,7 @@ export const ThemeAndLanguageToggle = () => {
     md:border-[#E2E6E9] md:dark:border-[#323542] 
     transition-colors text-sm font-medium text-link-text hover:text-link-hover-bg -ml-px"
       >
-        {i18n.language === 'en' ? 'EN' : 'UK'}
+        {i18n.language === 'en' ? 'EN' : 'UA'}
       </button>
     </div>
   );
