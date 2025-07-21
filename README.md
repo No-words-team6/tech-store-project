@@ -1,6 +1,10 @@
 # tech-store-project
 
 Group Project for nemasliv-team. Creating functional techstore.
+Preview & Design:
+   - [Live Demo](https://tech-store-project-5ca4.vercel.app/)
+   - [Dark mode](https://www.figma.com/design/BUusqCIMAWALqfBahnyIiH/Phone-catalog--V2--Original-Dark?node-id=0-1&p=f&t=HuWscna99bD35I0w-0)
+   - [Light mode](https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog--V2--Original?node-id=0-1&p=f&t=jvHYNFWkfXtM9YZT-0)
 
 ---
 
